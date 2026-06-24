@@ -29,11 +29,12 @@ raw_lines = []
 for s in scores:
     mkt_cap = s.get('market_cap_yi', 0) or 0
     mkt_str = f'{mkt_cap:.1f}' if mkt_cap else '—'
+    prev_close = s.get('prev_close', s.get('price', 0)) or 0
     raw_lines.append(
         f'  ["{s["code"]}","{s["name"]}","{s["type"]}","{s["board"]}","{s["reason"]}",'
         f'{s["A1"]},{s["A2"]},{s["A3"]},{s["B1"]},{s["B2"]},{s["B3"]},'
         f'{s["C1"]},{s["D1"]},{s["E1"]},{s["F1"]},{str(s["delisted"]).lower()},'
-        f'"{s["note"]}",{mkt_cap},"{mkt_str}"]'
+        f'"{s["note"]}",{mkt_cap},"{mkt_str}",{prev_close}]'
     )
 raw_str = '[\n' + ',\n'.join(raw_lines) + '\n]'
 
@@ -377,7 +378,7 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
 
 <script>
 // ===================== V618 保壳能力评分数据 =====================
-// [代码, 简称, 类型, 板块, 风险原因, A1..F1(10个), 已锁定退市, 备注, 市值_亿, 市值_显示]
+// [代码, 简称, 类型, 板块, 风险原因, A1..F1(10个), 已锁定退市, 备注, 市值_亿, 市值_显示, 昨收]
 // 分数越高 = 保壳能力越强
 const RAW = {raw_str};
 

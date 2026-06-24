@@ -211,6 +211,8 @@ def score_stock(code):
     if price < 1.5 and price > 0:
         note += '；面值退市警戒'
 
+    mkt_cap = md.get('market_cap_yi', 0) or 0
+    prev_close = md.get('prev_close', price)
     return {
         'code': code, 'name': name, 'type': stype, 'board': board,
         'reason': reason,
@@ -219,7 +221,8 @@ def score_stock(code):
         'C1': c1, 'D1': d1, 'E1': e1, 'F1': f1,
         'total': total, 'level': level, 'note': note,
         'price': price,
-        'market_cap_yi': 0,
+        'prev_close': prev_close,
+        'market_cap_yi': mkt_cap,
         'delisted': False,
     }
 
