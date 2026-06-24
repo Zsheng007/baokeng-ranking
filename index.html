@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>保壳风云榜 · A股退市风险评估 V618</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f7f2; color: #1a2b1f; font-size: 14px; }
+
+/* 头部 */
+.header { background: linear-gradient(135deg, #1a3d2b 0%, #0f2519 100%); color: #fff; padding: 22px 24px 16px; border-bottom: 2px solid #2d6e47; }
+.header-inner { max-width: 1200px; margin: 0 auto; }
+.header h1 { font-size: 24px; font-weight: 600; letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
+.header p { font-size: 13px; color: #7dbf96; margin-top: 4px; }
+.header-meta { display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+.header-meta span { font-size: 12px; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 20px; color: #a8d8b8; border: 0.5px solid rgba(255,255,255,0.15); }
+
+/* 主容器 */
+.container { max-width: 1200px; margin: 0 auto; padding: 20px 16px; }
+
+/* 评分体系说明 */
+.score-legend { background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; padding: 16px 20px; margin-bottom: 20px; }
+.score-legend h3 { font-size: 14px; font-weight: 600; color: #1a3d2b; margin-bottom: 8px; }
+.score-legend-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.slg-item { font-size: 11px; padding: 8px; background: #f4fbf6; border-radius: 8px; text-align: center; }
+.slg-dim { font-weight: 600; color: #1a5e35; }
+.slg-weight { color: #999; font-size: 10px; }
+
+/* 统计卡片 */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+.stat-card { background: #fff; border-radius: 12px; padding: 16px 12px; border: 0.5px solid #c8e6d0; text-align: center; }
+.stat-num { font-size: 32px; font-weight: 700; margin-bottom: 4px; }
+.stat-label { font-size: 11px; color: #6b8a75; }
+.stat-card.lv-D .stat-num { color: #c0392b; }
+.stat-card.lv-C .stat-num { color: #d35400; }
+.stat-card.lv-B .stat-num { color: #1a6b3a; }
+.stat-card.lv-A .stat-num { color: #27ae60; }
+
+/* Tab */
+.tabs { display: flex; background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; margin-bottom: 20px; overflow: hidden; }
+.tab { flex: 1; padding: 12px 8px; text-align: center; font-size: 13px; cursor: pointer; border: none; background: transparent; color: #5a7a64; font-weight: 500; border-bottom: 2px solid transparent; transition: all 0.2s; }
+.tab.active { color: #1a5e35; border-bottom-color: #27ae60; background: #edf7f1; }
+.tab:hover:not(.active) { background: #f4fbf6; }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* 排行榜 */
+.rank-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.rank-panel { background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; overflow: hidden; }
+.rank-header-easy { padding: 14px 16px; border-bottom: 0.5px solid #c8e6d0; background: #edf7f1; }
+.rank-header-hard { padding: 14px 16px; border-bottom: 0.5px solid #fad5d0; background: #fdf3f1; }
+.rank-panel-title { font-size: 14px; font-weight: 600; }
+.rank-panel-sub { font-size: 12px; color: #888; margin-top: 2px; }
+
+.rank-item { display: flex; align-items: center; padding: 9px 14px; border-bottom: 0.5px solid #f2f9f4; cursor: pointer; transition: background 0.15s; }
+.rank-item:last-child { border-bottom: none; }
+.rank-item:hover { background: #f4fbf6; }
+.rank-num { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; margin-right: 10px; flex-shrink: 0; }
+.rank-num.gold { background: #1a5e35; color: #fff; }
+.rank-num.silver { background: #2e7d52; color: #fff; }
+.rank-num.bronze { background: #3e9468; color: #fff; }
+.rank-num.other { background: #e8f5ec; color: #4a7a60; }
+.rank-info { flex: 1; min-width: 0; }
+.rank-name { font-weight: 500; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rank-code { font-size: 11px; color: #999; margin-top: 1px; }
+.rank-score-col { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+.mini-bar-wrap { width: 60px; height: 5px; background: #eee; border-radius: 3px; }
+.mini-bar { height: 5px; border-radius: 3px; }
+.score-val { font-size: 13px; font-weight: 700; }
+
+/* 风险标签 */
+.rtag { font-size: 10px; padding: 1px 6px; border-radius: 8px; margin-left: 5px; flex-shrink: 0; }
+.rtag-A { background: #d5f5e3; color: #1a6b3a; }
+.rtag-B { background: #d6eaf8; color: #1a5276; }
+.rtag-C { background: #fde8d8; color: #a04000; }
+.rtag-D { background: #fadbd8; color: #922b21; }
+
+/* 查询区 */
+.search-box { background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; padding: 20px; }
+.search-row { display: flex; gap: 10px; margin-bottom: 16px; }
+.search-input { flex: 1; padding: 10px 14px; border: 0.5px solid #a8d8b8; border-radius: 8px; font-size: 14px; outline: none; background: #f8fcf9; }
+.search-input:focus { border-color: #27ae60; box-shadow: 0 0 0 2px rgba(39,174,96,0.15); }
+.search-btn { padding: 10px 22px; background: #1a5e35; color: #fff; border: none; border-radius: 8px; font-size: 14px; cursor: pointer; }
+.search-btn:hover { background: #1e7a44; }
+
+/* 详情报告 */
+.report-card { border: 0.5px solid #c8e6d0; border-radius: 12px; padding: 20px; }
+.report-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 0.5px solid #e8f5ec; }
+.report-name { font-size: 20px; font-weight: 700; }
+.report-sub { font-size: 13px; color: #888; margin-top: 3px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.score-big { font-size: 38px; font-weight: 700; line-height: 1; }
+.score-label { font-size: 11px; color: #888; text-align: right; margin-top: 4px; }
+
+.info-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+.info-chip { background: #f4fbf6; border-radius: 8px; padding: 10px 12px; border: 0.5px solid #c8e6d0; }
+.info-chip-label { font-size: 11px; color: #7a9a82; margin-bottom: 3px; }
+.info-chip-val { font-size: 13px; font-weight: 500; }
+
+.factors-section { margin-bottom: 14px; }
+.factors-title { font-size: 12px; color: #5a7a64; font-weight: 500; margin-bottom: 8px; padding-bottom: 4px; border-bottom: 0.5px solid #e8f5ec; }
+.factor-row { display: flex; align-items: center; gap: 10px; padding: 5px 0; }
+.factor-label { width: 140px; font-size: 12px; color: #555; flex-shrink: 0; }
+.factor-bar-wrap { flex: 1; height: 6px; background: #e8f5ec; border-radius: 3px; }
+.factor-bar { height: 6px; border-radius: 3px; transition: width 0.4s; }
+.factor-score { width: 32px; text-align: right; font-size: 12px; font-weight: 600; }
+
+.conclusion-box { padding: 12px 14px; border-radius: 8px; margin-top: 12px; }
+.conclusion-box.A { background: #d5f5e3; border-left: 3px solid #27ae60; }
+.conclusion-box.B { background: #d6eaf8; border-left: 3px solid #2980b9; }
+.conclusion-box.C { background: #fde8d8; border-left: 3px solid #e67e22; }
+.conclusion-box.D { background: #fadbd8; border-left: 3px solid #c0392b; }
+.conclusion-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.conclusion-text { font-size: 12px; line-height: 1.7; color: #444; }
+
+/* 全名单 */
+.table-wrap { overflow-x: auto; background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; }
+table { width: 100%; border-collapse: collapse; }
+thead th { background: #1a5e35; color: #fff; padding: 10px 12px; font-size: 12px; font-weight: 500; text-align: left; white-space: nowrap; }
+tbody tr { border-bottom: 0.5px solid #f0f9f3; cursor: pointer; transition: background 0.15s; }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: #f4fbf6; }
+tbody td { padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.link-style { color: #1a5e35; cursor: pointer; }
+
+/* 筛选 */
+.filter-row { display: flex; gap: 8px; padding: 12px 16px; background: #edf7f1; border-bottom: 0.5px solid #c8e6d0; flex-wrap: wrap; }
+.filter-chip { padding: 4px 12px; border-radius: 20px; font-size: 12px; cursor: pointer; border: 1px solid #c8e6d0; background: #fff; color: #5a7a64; transition: all 0.15s; }
+.filter-chip.active { background: #1a5e35; color: #fff; border-color: #1a5e35; }
+.filter-chip:hover:not(.active) { border-color: #27ae60; }
+
+/* 投票（公司级） */
+.vote-box { background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; padding: 20px; }
+.vote-box h3 { font-size: 15px; font-weight: 600; color: #1a3d2b; margin-bottom: 6px; }
+.vote-desc { font-size: 12px; color: #7a9a82; margin-bottom: 14px; }
+.vote-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 14px; }
+.vopt { border: 1.5px solid #c8e6d0; border-radius: 10px; padding: 12px 8px; cursor: pointer; transition: all 0.2s; text-align: center; }
+.vopt:hover { border-color: #27ae60; background: #f0fbf4; }
+.vopt.selected { border-color: #1a5e35; background: #e8f7ee; }
+.vopt-letter { font-size: 20px; font-weight: 700; margin-bottom: 2px; }
+.vopt-label { font-size: 11px; font-weight: 500; }
+.vopt.A .vopt-letter { color: #27ae60; }
+.vopt.B .vopt-letter { color: #2980b9; }
+.vopt.C .vopt-letter { color: #e67e22; }
+.vopt.D .vopt-letter { color: #c0392b; }
+
+.vote-btn { padding: 10px 24px; background: #1a5e35; color: #fff; border: none; border-radius: 8px; font-size: 13px; cursor: pointer; font-weight: 500; }
+.vote-btn:hover { background: #1e7a44; }
+.vote-btn:disabled { background: #a8c8b0; cursor: not-allowed; }
+
+.vresult-inline { margin-top: 14px; }
+.vbar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.vbar-letter { width: 18px; font-size: 13px; font-weight: 700; }
+.vbar-outer { flex: 1; height: 18px; background: #e8f5ec; border-radius: 4px; overflow: hidden; }
+.vbar-inner { height: 18px; border-radius: 4px; display: flex; align-items: center; padding-left: 6px; font-size: 10px; color: #fff; font-weight: 600; transition: width 0.6s ease; }
+.vbar-count { width: 48px; text-align: right; font-size: 11px; color: #666; }
+.vbar-A { background: #27ae60; }
+.vbar-B { background: #2980b9; }
+.vbar-C { background: #e67e22; }
+.vbar-D { background: #c0392b; }
+.voted-tip { font-size: 11px; color: #999; text-align: center; margin-top: 8px; }
+
+/* 投票排行Tab */
+.vote-rank-intro { font-size: 13px; color: #5a7a64; margin-bottom: 16px; text-align: center; }
+.vote-rank-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.vote-rank-card { background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; padding: 16px; }
+.vote-rank-card h4 { font-size: 13px; font-weight: 600; color: #1a3d2b; margin-bottom: 10px; }
+.vrc-item { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 0.5px solid #f0f9f3; }
+.vrc-item:last-child { border-bottom: none; }
+.vrc-rank { width: 22px; font-size: 12px; font-weight: 700; color: #5a7a64; flex-shrink: 0; }
+.vrc-name { flex: 1; font-size: 12px; cursor: pointer; color: #1a5e35; }
+.vrc-name:hover { text-decoration: underline; }
+.vrc-bar { width: 80px; height: 14px; background: #e8f5ec; border-radius: 3px; overflow: hidden; }
+.vrc-bar-inner { height: 14px; border-radius: 3px; }
+.vrc-count { width: 40px; text-align: right; font-size: 11px; color: #888; }
+.vote-empty { text-align: center; padding: 40px 20px; color: #aaa; font-size: 13px; }
+
+.empty-state { text-align: center; padding: 40px 20px; color: #aaa; }
+
+/* 数据来源提示 */
+.source-tip { font-size: 11px; color: #999; padding: 8px 16px; background: #fafafa; border-radius: 8px; margin-bottom: 16px; text-align: center; }
+
+@media(max-width:700px){
+  .rank-grid { grid-template-columns: 1fr; }
+  .stats-grid, .score-legend-grid { grid-template-columns: repeat(2,1fr); }
+  .info-row { grid-template-columns: repeat(2,1fr); }
+  .vote-options { grid-template-columns: repeat(2, 1fr); }
+  .vote-rank-grid { grid-template-columns: 1fr; }
+  .tabs .tab { font-size: 12px; padding: 10px 4px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+<div class="header-inner">
+  <h1>🌿 保壳风云榜 <span style="font-size:13px;font-weight:400;opacity:0.7">V618</span></h1>
+  <p>A股 ST / *ST 上市公司退市风险评估 · 100分制六维评分 · 实时排名</p>
+  <div class="header-meta">
+    <span>更新时间：2026-06-23</span>
+    <span>覆盖公司：188 家</span>
+    <span>数据来源：沪深交易所 · 风险警示板</span>
+    <span>评分模型：V618 六维100分制</span>
+    <span>每周五更新</span>
+  </div>
+</div>
+</div>
+
+<div class="container">
+
+  <!-- 评分体系说明 -->
+  <div class="score-legend">
+    <h3>📐 V618 100分制六维评分体系（分数越高=风险越大）</h3>
+    <div class="score-legend-grid">
+      <div class="slg-item"><div class="slg-dim">A 财务退市</div><div class="slg-weight">28分</div></div>
+      <div class="slg-item"><div class="slg-dim">B 治理合规</div><div class="slg-weight">25分</div></div>
+      <div class="slg-item"><div class="slg-dim">C 面值/市值</div><div class="slg-weight">15分</div></div>
+      <div class="slg-item"><div class="slg-dim">D 现金流质量</div><div class="slg-weight">12分</div></div>
+      <div class="slg-item"><div class="slg-dim">E 股权稳定性</div><div class="slg-weight">10分</div></div>
+      <div class="slg-item"><div class="slg-dim">F 持续经营</div><div class="slg-weight">10分</div></div>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card lv-D"><div class="stat-num">3</div><div class="stat-label">D级 · 极高风险（≥75分）</div></div>
+    <div class="stat-card lv-C"><div class="stat-num">86</div><div class="stat-label">C级 · 高风险（55-74分）</div></div>
+    <div class="stat-card lv-B"><div class="stat-num">59</div><div class="stat-label">B级 · 中风险（35-54分）</div></div>
+    <div class="stat-card lv-A"><div class="stat-num">40</div><div class="stat-label">A级 · 低风险（<35分）</div></div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('rank')">📊 风云榜</button>
+    <button class="tab" onclick="switchTab('query')">🔍 查询详情</button>
+    <button class="tab" onclick="switchTab('list')">📋 全名单（188家）</button>
+    <button class="tab" onclick="switchTab('vote')">🗳️ 投票排行</button>
+  </div>
+
+  <!-- 风云榜 -->
+  <div id="tab-rank" class="tab-content active">
+    <div class="source-tip">📊 数据覆盖 <b>188</b> 家 ST/*ST 公司 · V618六维评分 100分制 · 分数越低保壳越容易</div>
+    <div class="rank-grid">
+      <div class="rank-panel">
+        <div class="rank-header-easy">
+          <div class="rank-panel-title">🟢 保壳最容易 TOP 10</div>
+          <div class="rank-panel-sub">风险评分最低 · 退市概率最低</div>
+        </div>
+        <div id="easyList"></div>
+      </div>
+      <div class="rank-panel">
+        <div class="rank-header-hard">
+          <div class="rank-panel-title">🔴 保壳最困难 TOP 10</div>
+          <div class="rank-panel-sub">风险评分最高 · 退市风险最大</div>
+        </div>
+        <div id="hardList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 查询 -->
+  <div id="tab-query" class="tab-content">
+    <div class="search-box">
+      <div class="search-row">
+        <input class="search-input" id="qInput" placeholder="输入证券代码（600053）或公司简称（ST九鼎）…" />
+        <button class="search-btn" onclick="doQuery()">查询</button>
+      </div>
+      <div id="qResult">
+        <div class="empty-state">🔍 输入代码或简称开始查询</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 全名单 -->
+  <div id="tab-list" class="tab-content">
+    <div class="source-tip"><b id="listTotal">188</b> 家 · 排序：按风险评分（分数越高风险越大）</div>
+    <div class="filter-row">
+      <span class="filter-chip active" onclick="setFilter('all',this)">全部</span>
+      <span class="filter-chip" onclick="setFilter('ST',this)">ST</span>
+      <span class="filter-chip" onclick="setFilter('*ST',this)">*ST</span>
+      <span class="filter-chip" onclick="setFilter('A',this)">A级 &lt;35</span>
+      <span class="filter-chip" onclick="setFilter('B',this)">B级 35-54</span>
+      <span class="filter-chip" onclick="setFilter('C',this)">C级 55-74</span>
+      <span class="filter-chip" onclick="setFilter('D',this)">D级 ≥75</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:46px">排名</th>
+            <th style="width:80px">代码</th>
+            <th style="width:120px">简称</th>
+            <th style="width:55px">类型</th>
+            <th>退市风险原因</th>
+            <th style="width:55px">得分</th>
+            <th style="width:50px">等级</th>
+            <th style="width:55px">详情</th>
+          </tr>
+        </thead>
+        <tbody id="listBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 投票排行 -->
+  <div id="tab-vote" class="tab-content">
+    <div class="vote-rank-intro">🗳️ 对每家ST公司的保壳难度投票 · 查看大家怎么看<br><span style="font-size:11px;color:#aaa">在查询页查看公司详情时即可参与投票</span></div>
+    <div class="vote-rank-grid">
+      <div class="vote-rank-card">
+        <h4>🔴 「最难保壳」投票最多的公司</h4>
+        <div id="voteHardList"></div>
+      </div>
+      <div class="vote-rank-card">
+        <h4>🟢 「最容易保壳」投票最多的公司</h4>
+        <div id="voteEasyList"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ===================== V618 评分数据 =====================
+// [代码, 简称, 类型, 板块, 被ST原因, A1, A2, A3, B1, B2, B3, C1, D1, E1, F1, 已锁定退市, 备注]
+const RAW = [
+  ["000698","ST沈化","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,1,3,2,0,3,3,2,4,5,false,"风险相对可控，短期退市概率较低"],
+  ["603822","ST嘉澳","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,2,4,2,0,4,0,2,5,5,false,"风险相对可控，短期退市概率较低"],
+  ["300385","ST雪浪","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,5,2,1,2,2,0,4,3,5,false,"经营状况改善中，摘帽预期较好"],
+  ["300460","ST惠伦","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,1,4,2,0,4,1,2,5,5,false,"风险相对可控，短期退市概率较低"],
+  ["300831","ST派瑞","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,3,2,4,1,2,0,3,3,5,false,"基本面有一定支撑，持续关注年报表现"],
+  ["605199","ST葫芦娃","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,2,4,2,0,4,1,2,5,5,false,"风险相对可控，短期退市概率较低"],
+  ["300173","ST福能","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,1,3,3,0,3,4,2,4,5,false,"风险相对可控，短期退市概率较低"],
+  ["603008","ST喜临门","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,4,1,4,2,1,2,4,2,5,false,"经营状况改善中，摘帽预期较好"],
+  ["603517","ST绝味","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,5,2,1,3,2,0,5,3,5,false,"经营状况改善中，摘帽预期较好"],
+  ["000711","ST京蓝","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,4,1,4,2,1,2,4,2,5,false,"经营状况改善中，摘帽预期较好"],
+  ["300594","ST朗进","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,4,1,5,2,1,1,4,2,5,false,"基本面有一定支撑，持续关注年报表现"],
+  ["600169","ST太重","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,2,1,4,1,1,7,3,2,5,false,"风险相对可控，短期退市概率较低"],
+  ["300326","ST凯利","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,3,2,4,1,2,3,3,3,5,false,"基本面有一定支撑，持续关注年报表现"],
+  ["600082","ST海泰","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,1,3,3,0,3,7,2,4,5,false,"风险相对可控，短期退市概率较低"],
+  ["600289","ST信通","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,5,2,1,3,2,1,5,4,5,false,"经营状况改善中，摘帽预期较好"],
+  ["600568","ST中珠","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,1,4,2,0,4,6,2,4,5,false,"风险相对可控，短期退市概率较低"],
+  ["603595","ST东尼","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,2,2,3,2,0,5,3,5,false,"保壳难度较低，有望通过主业恢复达标"],
+  ["000821","ST京机","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,2,4,2,1,4,2,3,5,5,false,"风险相对可控，短期退市概率较低"],
+  ["300527","ST应急","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,5,3,1,2,3,1,4,4,5,false,"经营状况改善中，摘帽预期较好"],
+  ["600165","ST宁科","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,1,4,2,0,4,6,2,5,5,false,"风险相对可控，短期退市概率较低"],
+  ["600337","ST美克","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,3,2,4,1,2,4,4,3,5,false,"经营状况改善中，摘帽预期较好"],
+  ["603729","ST龙韵","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,2,4,4,1,4,0,3,5,5,false,"风险相对可控，短期退市概率较低"],
+  ["002424","ST百灵","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,5,2,1,3,2,3,5,3,5,false,"经营状况改善中，摘帽预期较好"],
+  ["300301","ST长方","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,1,4,3,0,4,4,2,5,5,false,"风险相对可控，短期退市概率较低"],
+  ["600302","ST标准","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,2,4,3,1,4,2,3,5,5,false,"风险相对可控，短期退市概率较低"],
+  ["600759","ST洲际","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,4,1,3,2,1,7,4,2,5,false,"基本面有一定支撑，持续关注年报表现"],
+  ["600818","ST中路","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,4,2,4,2,2,3,4,3,5,false,"基本面有一定支撑，持续关注年报表现"],
+  ["603869","ST智知","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,3,4,3,1,4,2,3,5,5,false,"基本面有一定支撑，持续关注年报表现"],
+  ["002193","ST如意","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,2,4,2,1,4,4,3,5,5,false,"风险相对可控，短期退市概率较低"],
+  ["002198","ST嘉应","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,2,4,2,1,4,4,3,5,5,false,"风险相对可控，短期退市概率较低"],
+  ["002872","ST天圣","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,5,3,1,2,3,3,4,4,5,false,"经营状况改善中，摘帽预期较好"],
+  ["600525","ST长园","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,1,5,3,0,5,4,2,6,5,false,"风险相对可控，短期退市概率较低"],
+  ["603922","ST金鸿顺","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,3,2,3,3,0,5,4,5,false,"保壳难度较低，有望通过主业恢复达标"],
+  ["300096","ST易联众","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,5,2,4,3,2,1,5,3,5,false,"经营状况改善中，摘帽预期较好"],
+  ["300352","ST信源","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,3,2,4,2,2,5,4,3,5,false,"基本面有一定支撑，持续关注年报表现"],
+  ["600365","ST通葡","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,4,3,1,2,3,6,4,4,5,false,"经营状况改善中，摘帽预期较好"],
+  ["000669","ST金鸿","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,3,4,3,1,4,4,3,5,5,false,"基本面有一定支撑，持续关注年报表现"],
+  ["002168","ST惠程","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,5,3,1,3,3,3,5,4,5,false,"经营状况改善中，摘帽预期较好"],
+  ["300123","ST亚光","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,2,4,3,1,4,4,3,5,5,false,"风险相对可控，短期退市概率较低"],
+  ["300419","ST浩丰","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,3,4,4,1,4,2,3,5,5,false,"基本面有一定支撑，持续关注年报表现"],
+  ["600678","ST金顶","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,5,2,4,3,2,3,5,3,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["600735","ST新华锦","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,5,2,4,3,2,3,5,3,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["603959","ST百利","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,2,4,4,1,4,4,3,5,5,false,"中等风险，存在退市隐患但有一定缓冲"],
+  ["002005","ST德豪","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,4,1,5,2,1,8,4,2,5,false,"保壳有一定希望，关注资产重组进展"],
+  ["002102","ST能特","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,4,1,5,2,1,8,4,2,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["002122","ST汇洲","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,2,4,2,1,4,7,3,5,5,false,"中等风险，存在退市隐患但有一定缓冲"],
+  ["002538","ST司特","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,5,2,4,3,2,3,5,3,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["002822","ST中装","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,5,2,2,3,2,6,5,3,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["300167","ST迪威迅","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,5,2,4,3,2,3,5,3,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["300311","ST任子行","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,3,1,4,3,1,6,4,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["300366","ST创意","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,5,2,4,3,2,3,5,3,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["300555","ST路通","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,3,2,4,3,0,6,4,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["600079","ST人福","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,3,5,4,1,5,1,3,6,5,false,"保壳有一定希望，关注资产重组进展"],
+  ["600753","ST海钦","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,4,2,3,4,0,5,5,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["600777","新潮能源","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,7,3,1,4,3,1,6,4,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["603789","ST星农","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,3,2,4,3,2,6,4,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["603825","ST华扬","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,6,2,5,3,2,3,5,3,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["000078","ST海王","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,4,2,1,2,2,12,4,3,5,false,"主业恢复缓慢，依靠非经常损益维持；面值退市警戒"],
+  ["002082","ST万邦","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,4,2,4,4,0,5,5,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["002211","ST宏达","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,5,2,4,3,2,5,5,3,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["002512","ST达华","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,5,2,4,3,2,5,5,3,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["300020","ST银江","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,5,2,4,3,2,5,5,3,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["000632","ST三木","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,7,3,1,4,3,3,6,4,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["000903","ST云动","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,4,1,5,2,1,11,4,2,5,false,"保壳有一定希望，关注资产重组进展"],
+  ["002055","ST得润","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,3,5,4,1,5,3,3,6,5,false,"保壳有一定希望，关注资产重组进展"],
+  ["002306","ST云网","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,4,1,5,2,1,11,4,2,5,false,"保壳有一定希望，关注资产重组进展"],
+  ["002485","ST雪发","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,4,2,3,4,2,5,5,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["300027","ST华谊","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,5,3,1,2,3,9,4,4,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["300477","ST合纵","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,5,3,2,3,3,6,5,4,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["600080","ST金花","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,4,2,3,4,3,5,5,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["600624","ST复华","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,3,5,4,1,5,4,3,6,5,false,"保壳有一定希望，关注资产重组进展"],
+  ["601718","ST际华","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,2,2,3,2,9,5,3,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["300081","ST恒信","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,3,2,4,3,4,6,4,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["600491","ST龙元","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,3,2,4,1,2,14,3,3,5,false,"保壳有一定希望，关注资产重组进展；面值退市警戒"],
+  ["603559","ST通脉","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,4,2,4,4,2,6,5,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["000488","ST晨鸣","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,5,2,4,3,2,8,5,3,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["002109","ST兴化","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,5,2,4,3,2,8,5,3,5,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["002360","ST同德","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,6,3,5,3,3,3,5,4,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["300010","ST豆神","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,3,1,4,3,6,6,4,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["300245","ST天玑","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,6,3,5,3,3,3,5,4,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["300396","ST迪瑞","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,4,2,4,4,2,6,5,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["300462","ST华铭","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,7,4,3,4,4,0,6,5,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["600239","ST云城","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,2,2,3,2,12,5,3,5,false,"风险可控，摘帽取决于经营改善进度；面值退市警戒"],
+  ["603377","ST东时","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,6,3,5,3,3,5,5,4,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["002024","ST易购","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,3,2,4,2,2,14,4,3,5,false,"保壳有一定希望，关注资产重组进展；面值退市警戒"],
+  ["300068","ST南都","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",3,3,5,4,2,5,5,4,6,5,false,"保壳有一定希望，关注资产重组进展"],
+  ["601010","ST文峰","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,5,2,4,2,2,13,4,3,5,false,"主业恢复缓慢，依靠非经常损益维持；面值退市警戒"],
+  ["000677","ST海龙","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,3,1,4,3,9,6,4,5,false,"风险可控，摘帽取决于经营改善进度"],
+  ["300237","ST美晨","ST","创业板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,4,2,4,4,10,3,5,5,false,"中等风险，存在退市隐患但有一定缓冲"],
+  ["600136","ST明诚","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,3,5,3,1,5,13,3,6,5,false,"保壳有一定希望，关注资产重组进展；面值退市警戒"],
+  ["000004","国华退","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,3,1,4,3,14,6,4,5,false,"风险可控，摘帽取决于经营改善进度；面值退市警戒"],
+  ["000639","ST西王","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",2,6,4,2,3,4,12,5,5,5,false,"风险可控，摘帽取决于经营改善进度；面值退市警戒"],
+  ["600745","*ST闻泰","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,8,5,6,4,4,0,7,4,7,false,"中等风险，存在退市隐患但有一定缓冲"],
+  ["002431","ST棕榈","ST","主板","其他风险警示：内控/违规担保/资金占用/持续经营",3,6,3,5,3,3,14,5,4,5,false,"风险可控，摘帽取决于经营改善进度；面值退市警戒"],
+  ["603021","*ST华鹏","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,7,8,4,3,6,1,6,6,7,false,"中等风险，存在退市隐患但有一定缓冲"],
+  ["002207","*ST准油","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,8,5,6,4,4,2,7,4,7,false,"中等风险，存在退市隐患但有一定缓冲"],
+  ["000972","*ST中基","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,8,5,6,4,4,4,7,4,7,false,"中等风险，存在退市隐患但有一定缓冲"],
+  ["002199","*ST东晶","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,11,6,3,5,5,0,8,5,7,false,"主业恢复缓慢，依靠非经常损益维持"],
+  ["002977","*ST天箭","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,6,6,4,5,0,7,5,7,false,"保壳有一定希望，关注资产重组进展"],
+  ["000911","*ST广糖","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,7,7,5,3,6,4,6,6,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["300212","*ST易录","*ST","创业板","财务退市风险：持续亏损触发退市预警",4,11,6,3,5,5,1,8,5,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["301030","*ST仕净","*ST","创业板","财务退市风险：持续亏损触发退市预警",5,9,6,6,4,5,1,7,5,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["603189","*ST网达","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,8,8,5,3,7,0,6,7,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["603272","*ST联翔","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,8,8,4,4,7,0,7,7,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["000595","*ST宝实","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,6,6,4,5,2,7,5,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["000826","*ST启环","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,7,7,4,3,6,6,6,6,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["002305","*ST南置","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,7,7,4,3,6,6,6,6,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["603389","*ST亚振","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,11,7,3,5,6,0,8,6,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["603580","*ST艾艾","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,7,9,5,3,8,0,6,8,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["000609","*ST中迪","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,10,6,6,5,5,0,8,5,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["002569","*ST步森","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,6,6,5,5,1,8,5,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["200488","ST晨鸣B","ST","B股","B股风险警示",2,4,7,2,0,3,14,8,8,9,false,"高风险标的，退市压力较大，密切关注（B股）；面值退市警戒"],
+  ["600889","*ST京化","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,10,6,6,5,5,1,8,5,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["603843","*ST正平","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,8,8,4,4,7,2,7,7,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["300044","*ST赛为","*ST","创业板","财务退市风险：持续亏损触发退市预警",5,10,6,6,5,5,2,8,4,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["300211","*ST亿通","*ST","创业板","财务退市风险：持续亏损触发退市预警",4,8,8,4,4,7,2,7,7,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["600119","*ST长投","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,6,6,4,5,5,7,5,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["605336","*ST帅电","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,8,8,6,4,7,0,7,7,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["000610","*ST西旅","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,7,9,5,3,8,2,6,8,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["000752","*ST西发","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,7,9,5,3,8,2,6,8,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["600107","*ST尔雅","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,11,6,6,5,5,2,8,5,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["600243","*ST海华","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,8,8,4,4,7,4,7,7,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["603828","*ST利达","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,10,5,7,5,4,5,8,4,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["002898","*ST赛隆","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,11,6,3,6,5,4,9,5,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["301139","*ST元道","*ST","创业板","财务退市风险：持续亏损触发退市预警",5,10,5,7,5,4,5,8,4,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["600265","*ST景谷","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,12,7,4,6,6,0,9,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["300147","*ST香雪","*ST","创业板","财务退市风险：持续亏损触发退市预警",4,7,7,5,7,6,2,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["300205","*ST天喻","*ST","创业板","财务退市风险：持续亏损触发退市预警",5,10,6,7,5,5,3,8,5,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["300295","*ST三六","*ST","创业板","财务退市风险：持续亏损触发退市预警",5,11,6,6,6,5,1,9,5,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["600053","*ST九鼎","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,8,6,4,7,2,7,7,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["600730","*ST高科","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,11,6,7,6,5,1,9,5,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["600965","*ST福成","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,6,6,4,5,8,7,5,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["603557","*ST起步","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,11,7,3,6,6,3,9,6,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["002175","*ST东智","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,12,6,4,6,5,4,9,5,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["002289","*ST宇顺","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,10,7,7,5,6,1,8,6,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["002323","*ST雅博","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,8,5,5,4,4,13,7,4,7,false,"高风险标的，退市压力较大，密切关注；面值退市警戒"],
+  ["002816","*ST和科","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,9,5,4,8,0,7,8,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["600084","*ST尼雅","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,8,8,6,4,7,4,7,7,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["600537","*ST亿晶","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,8,8,5,3,7,7,6,7,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["600543","*ST莫高","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,10,6,7,5,5,5,8,5,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["603398","*ST沐邦","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,13,7,3,7,6,0,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["603429","*ST集友","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,13,7,3,7,6,0,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["603838","*ST四通","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,9,9,5,4,8,2,7,8,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["000820","*ST节能","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,6,6,5,5,8,7,5,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["002227","*ST特迅","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,12,7,3,7,6,1,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["002253","*ST智胜","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,13,7,3,7,6,0,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["002514","*ST宝馨","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,11,7,3,5,6,6,8,6,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["600423","*ST柳化","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,7,9,5,3,8,7,6,8,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["600476","*ST湘邮","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,13,7,3,7,6,1,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["600892","*ST大晟","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,8,9,5,4,8,4,6,8,7,false,"高风险标的，退市压力较大，密切关注"],
+  ["002214","*ST大立","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,9,6,4,8,1,7,8,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["002547","*ST春兴","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,12,6,4,6,5,6,9,5,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["002932","*ST明德","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,9,6,4,8,1,7,8,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["300716","*ST泉为","*ST","创业板","财务退市风险：持续亏损触发退市预警",4,12,8,4,6,7,0,9,7,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["600238","*ST椰岛","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,9,9,5,4,8,4,7,8,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["600381","*ST春天","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,12,8,4,6,7,1,9,7,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["600581","*ST八钢","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,11,6,6,5,5,7,8,5,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["603378","*ST亚士","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,9,6,4,8,2,7,8,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["000016","*ST康佳A","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,11,7,3,6,6,6,9,6,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["002528","*ST英飞","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,12,7,3,7,6,3,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["600370","*ST三房","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,10,5,7,5,4,11,8,4,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["002856","*ST美芝","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,9,6,5,8,1,8,8,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["300125","*ST聆达","*ST","创业板","财务退市风险：持续亏损触发退市预警",5,9,9,5,5,8,2,8,8,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["300430","*ST益通","*ST","创业板","财务退市风险：持续亏损触发退市预警",5,10,7,7,5,6,5,8,6,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["300472","*ST新元","*ST","创业板","财务退市风险：持续亏损触发退市预警",4,12,8,4,6,7,2,9,7,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["603718","*ST海利","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,12,7,4,7,6,4,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["000010","*ST美丽","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,8,6,4,7,7,7,7,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["000793","*ST华闻","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,12,7,4,6,6,7,9,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["000909","*ST数源","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,12,8,4,6,7,4,9,7,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["300198","*ST纳川","*ST","创业板","财务退市风险：持续亏损触发退市预警",5,11,6,6,6,5,8,9,5,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["000615","*ST美谷","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,13,7,5,7,6,4,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["002883","*ST中设","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,13,8,4,7,7,2,10,7,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["300076","*ST宁视","*ST","创业板","财务退市风险：持续亏损触发退市预警",4,13,7,5,7,6,4,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["300091","*ST金灵","*ST","创业板","财务退市风险：持续亏损触发退市预警",5,11,6,7,6,5,8,9,5,7,false,"营收/净资产存疑，需持续跟踪季报变化"],
+  ["600187","*ST国中","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,11,7,3,6,6,12,9,6,7,false,"营收/净资产存疑，需持续跟踪季报变化；面值退市警戒"],
+  ["600340","*ST华幸","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,9,8,5,4,7,13,7,7,7,false,"各项风险指标偏高，保壳难度较大；面值退市警戒"],
+  ["603359","*ST东珠","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,9,9,5,5,8,7,8,8,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["002501","*ST利源","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,7,9,5,3,8,13,6,8,7,false,"高风险标的，退市压力较大，密切关注；面值退市警戒"],
+  ["300338","*ST开元","*ST","创业板","财务退市风险：持续亏损触发退市预警",5,10,9,6,5,8,5,8,8,7,false,"各项风险指标偏高，保壳难度较大"],
+  ["000056","*ST皇庭","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,13,7,3,7,6,9,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["600734","*ST实达","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,12,7,4,7,6,10,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["000838","*ST发展","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,12,8,4,6,7,9,9,7,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["002542","*ST中岩","*ST","主板","财务退市风险：净利润/净资产/营收不达标",4,12,7,4,6,6,13,9,6,7,false,"经营恢复不确定性高，需重大重组支撑；面值退市警戒"],
+  ["200056","*ST皇庭B","*ST","B股","B股风险警示",4,9,9,5,4,7,15,7,7,7,false,"各项风险指标偏高，保壳难度较大（B股）；面值退市警戒"],
+  ["300152","*ST动力","*ST","创业板","财务退市风险：持续亏损触发退市预警",4,13,7,4,7,6,10,10,6,7,false,"经营恢复不确定性高，需重大重组支撑"],
+  ["000656","*ST金科","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,12,6,7,6,5,14,9,5,7,false,"财务状况持续恶化，摘帽希望渺茫；面值退市警戒"],
+  ["600180","*ST瑞茂","*ST","主板","财务退市风险：净利润/净资产/营收不达标",5,12,7,7,6,6,14,9,6,7,false,"财务状况持续恶化，摘帽希望渺茫；面值退市警戒"],
+  ["200016","*ST康佳B","*ST","B股","B股风险警示",4,13,8,5,7,7,15,10,7,7,false,"财务状况持续恶化，摘帽希望渺茫（B股）；面值退市警戒"]
+];
+
+// V618总分 = 所有维度之和（A1..F1）
+function calcScore(r) { return r[5]+r[6]+r[7]+r[8]+r[9]+r[10]+r[11]+r[12]+r[13]+r[14]; }
+
+// 评级
+function calcLevel(s) { return s>=75?'D': s>=55?'C': s>=35?'B': 'A'; }
+
+const COS = RAW.map(r => {
+  const s = calcScore(r);
+  return { code:r[0], name:r[1], type:r[2], board:r[3], reason:r[4],
+    A1:r[5], A2:r[6], A3:r[7], B1:r[8], B2:r[9], B3:r[10],
+    C1:r[11], D1:r[12], E1:r[13], F1:r[14], delisted:r[15], note:r[16],
+    score:s, level:calcLevel(s) };
+});
+
+// 去重（按代码）
+const CODE_MAP = new Map();
+COS.forEach(c => { if(!CODE_MAP.has(c.code)) CODE_MAP.set(c.code, c); });
+const UNIQUE = Array.from(CODE_MAP.values());
+
+const BY_SCORE = [...UNIQUE].sort((a,b)=>a.score-b.score);
+BY_SCORE.forEach((c,i)=>c.rank=i+1);
+
+const LC = {'A':'#27ae60','B':'#2980b9','C':'#e67e22','D':'#c0392b'};
+const LT = {'A':'低风险·退市概率低','B':'中风险·保壳有希望','C':'高风险·保壳难度大','D':'极高风险·退市警钟'};
+const LE = {'A':'✅ 综合评估：保壳难度较低','B':'🔵 综合评估：中等退市风险','C':'🟠 综合评估：较高退市风险','D':'🔴 综合评估：退市风险极高'};
+
+let currentFilter = 'all';
+
+// ---- 统计 ----
+function initStats(){
+  try {
+    const active = UNIQUE.filter(c=>!c.delisted);
+    ['A','B','C','D'].forEach(l=>{
+      const el = document.getElementById('s'+l);
+      if(el) el.textContent=active.filter(c=>c.level===l).length;
+    });
+  } catch(e){ /* stats pre-filled, non-critical */ }
+}
+
+// ---- 排行榜 ----
+function renderRank(){
+  const easy = BY_SCORE.slice(0,10);
+  const hard = [...BY_SCORE].reverse().slice(0,10);
+  document.getElementById('easyList').innerHTML = easy.map((c,i)=>rankItemEasy(c,i)).join('');
+  document.getElementById('hardList').innerHTML = hard.map((c,i)=>rankItemHard(c,i)).join('');
+}
+
+function numClass(i){ return i===0?'gold':i===1?'silver':i===2?'bronze':'other'; }
+function rankItemEasy(c, i){
+  const col = LC[c.level];
+  return `<div class="rank-item" onclick="gotoDetail('${c.code}')">
+    <div class="rank-num ${numClass(i)}">${i+1}</div>
+    <div class="rank-info">
+      <div class="rank-name">${c.name}<span class="rtag rtag-${c.level}">${c.level}</span></div>
+      <div class="rank-code">${c.code} · ${c.board} · ${c.reason.length>20?c.reason.slice(0,20)+'…':c.reason}</div>
+    </div>
+    <div class="rank-score-col">
+      <div class="mini-bar-wrap"><div class="mini-bar" style="width:${Math.min(100,c.score)}%;background:${col}"></div></div>
+      <div class="score-val" style="color:${col}">${c.score}</div>
+    </div>
+  </div>`;
+}
+function rankItemHard(c, i){
+  const col = LC[c.level];
+  return `<div class="rank-item" onclick="gotoDetail('${c.code}')">
+    <div class="rank-num ${numClass(i)}">${i+1}</div>
+    <div class="rank-info">
+      <div class="rank-name">${c.name}<span class="rtag rtag-${c.level}">${c.level}</span></div>
+      <div class="rank-code">${c.code} · ${c.board} · ${c.reason.length>20?c.reason.slice(0,20)+'…':c.reason}</div>
+    </div>
+    <div class="rank-score-col">
+      <div class="mini-bar-wrap"><div class="mini-bar" style="width:${Math.min(100,c.score)}%;background:${col}"></div></div>
+      <div class="score-val" style="color:${col}">${c.score}</div>
+    </div>
+  </div>`;
+}
+
+// ---- 全名单 ----
+function getFiltered(){
+  if(currentFilter==='all') return BY_SCORE;
+  if(currentFilter==='ST') return BY_SCORE.filter(c=>c.type==='ST');
+  if(currentFilter==='*ST') return BY_SCORE.filter(c=>c.type==='*ST');
+  return BY_SCORE.filter(c=>c.level===currentFilter);
+}
+
+function setFilter(f, el){
+  currentFilter = f;
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  if(el) el.classList.add('active');
+  renderList();
+}
+
+function renderList(){
+  const data = getFiltered();
+  document.getElementById('listBody').innerHTML = data.map((c,i)=>`
+    <tr onclick="gotoDetail('${c.code}')">
+      <td>${i+1}</td><td>${c.code}</td><td>${c.name}</td><td>${c.type}</td>
+      <td title="${c.reason}">${c.reason.length>20?c.reason.slice(0,20)+'…':c.reason}</td>
+      <td style="font-weight:700;color:${LC[c.level]}">${c.score}</td>
+      <td><span class="rtag rtag-${c.level}">${c.level}</span></td>
+      <td class="link-style">查看 →</td>
+    </tr>`).join('');
+}
+
+// ---- Tab ----
+function switchTab(n){
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',['rank','query','list','vote'][i]===n));
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+n).classList.add('active');
+  if(n==='vote') renderVoteRank();
+}
+
+// ---- 查询 ----
+function doQuery(){
+  const q = document.getElementById('qInput').value.trim();
+  if(!q) return;
+  let c = UNIQUE.find(x=>x.code===q);
+  if(!c) c = UNIQUE.find(x=>x.name===q);
+  if(!c) c = UNIQUE.find(x=>x.name.replace(/[*＊]?ST/,'').includes(q.replace(/[*＊]?ST/,'')));
+  if(!c) c = UNIQUE.find(x=>q.includes(x.name.replace(/[*＊]?ST/,'')));
+  if(!c){
+    const kw = q.replace(/[*＊]?ST/gi,'').trim();
+    if(kw.length>=1) c = UNIQUE.find(x=>x.name.replace(/[*＊]?ST/gi,'').includes(kw));
+  }
+  if(!c){
+    document.getElementById('qResult').innerHTML=`
+      <div class="empty-state">
+        <div style="font-size:40px;margin-bottom:10px">😕</div>
+        <div style="margin-bottom:8px">未找到「<b>${q}</b>」</div>
+        <div style="font-size:12px;color:#aaa">当前数据覆盖 ${UNIQUE.length} 家ST公司。提示：输入完整代码或完整简称试试。</div>
+      </div>`;
+    return;
+  }
+  showReport(c);
+}
+document.getElementById('qInput').addEventListener('keydown',e=>{ if(e.key==='Enter') doQuery(); });
+
+function gotoDetail(code){
+  switchTab('query');
+  document.getElementById('qInput').value = code;
+  const c = UNIQUE.find(x=>x.code===code);
+  if(c) showReport(c);
+}
+
+function showReport(c){
+  const col = LC[c.level];
+  const factors = [
+    {label:'A1 净利润状况(5)','v':c.A1,'max':5,'col':'#e07020'},
+    {label:'A2 营业收入达标(13)','v':c.A2,'max':13,'col':'#c0392b'},
+    {label:'A3 净资产状况(10)','v':c.A3,'max':10,'col':'#8e44ad'},
+    {label:'B1 违规事项存量(8)','v':c.B1,'max':8,'col':'#2980b9'},
+    {label:'B2 内控审计结论(7)','v':c.B2,'max':7,'col':'#27ae60'},
+    {label:'B3 监管处罚记录(10)','v':c.B3,'max':10,'col':'#e67e22'},
+    {label:'C1 面值/市值风险(15)','v':c.C1,'max':15,'col':'#d35400'},
+    {label:'D1 现金流真实性(12)','v':c.D1,'max':12,'col':'#1a5276'},
+    {label:'E1 股权稳定性(10)','v':c.E1,'max':10,'col':'#6c3483'},
+    {label:'F1 持续经营能力(10)','v':c.F1,'max':10,'col':'#117a65'},
+  ];
+  document.getElementById('qResult').innerHTML=`
+    <div class="report-card">
+      <div class="report-top">
+        <div>
+          <div class="report-name">${c.name}</div>
+          <div class="report-sub">${c.code} · ${c.board} · ${c.type} <span class="rtag rtag-${c.level}">${LT[c.level]}</span></div>
+        </div>
+        <div style="text-align:right">
+          <div class="score-big" style="color:${col}">${c.score}<span style="font-size:16px;font-weight:400"> 分</span></div>
+          <div class="score-label">全榜第 ${c.rank} / ${UNIQUE.length}（越低越易保壳）</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-chip"><div class="info-chip-label">被ST原因</div><div class="info-chip-val" style="font-size:11px">${c.reason}</div></div>
+        <div class="info-chip"><div class="info-chip-label">所属板块</div><div class="info-chip-val">${c.board} · ${c.type}</div></div>
+        <div class="info-chip"><div class="info-chip-label">风险等级</div><div class="info-chip-val" style="color:${col}">${c.level} 级 · ${c.score}分</div></div>
+        <div class="info-chip"><div class="info-chip-label">备注</div><div class="info-chip-val" style="font-size:11px">${c.note}</div></div>
+      </div>
+      <div class="factors-section">
+        <div class="factors-title">V618 六维风险评分明细（满分100分，得分越高风险越大）</div>
+        ${factors.map(f=>`<div class="factor-row">
+          <div class="factor-label">${f.label}</div>
+          <div class="factor-bar-wrap"><div class="factor-bar" style="width:${Math.round(f.v/f.max*100)}%;background:${f.col}"></div></div>
+          <div class="factor-score" style="color:${f.col}">${f.v}/${f.max}</div>
+        </div>`).join('')}
+      </div>
+      <div class="conclusion-box ${c.level}">
+        <div class="conclusion-title">${LE[c.level]}</div>
+        <div class="conclusion-text">${c.note}</div>
+      </div>
+    </div>
+    ${voteSectionHTML(c.code)}`;
+}
+
+// ---- 投票（公司级保壳难度） ----
+const VK = 'bkfl_company_v1';
+
+function loadAllVotes(){ try{ return JSON.parse(localStorage.getItem(VK))||{}; }catch(e){ return {}; } }
+function saveAllVotes(v){ localStorage.setItem(VK,JSON.stringify(v)); }
+
+function loadCompanyVote(code){
+  const all = loadAllVotes();
+  return all[code] || {A:0,B:0,C:0,D:0,my:null};
+}
+function saveCompanyVote(code, data){
+  const all = loadAllVotes();
+  all[code] = data;
+  saveAllVotes(all);
+}
+
+function voteSectionHTML(code){
+  const v = loadCompanyVote(code);
+  const c = UNIQUE.find(x=>x.code===code);
+  const name = c ? c.name : code;
+  const total = (v.A||0)+(v.B||0)+(v.C||0)+(v.D||0);
+  const voted = !!v.my;
+  return `
+    <div class="vote-box" style="margin-top:16px" id="voteBox_${code}">
+      <h3>🗳️ 你觉得 ${name} 保壳难度如何？</h3>
+      <div class="vote-desc">为这家公司的保壳难度投票，${total} 人已参与</div>
+      <div class="vote-options">
+        <div class="vopt A ${v.my==='A'?'selected':''}" id="vo_${code}_A" onclick="pickCompanyVote('${code}','A')">
+          <div class="vopt-letter">A</div>
+          <div class="vopt-label">容易保壳</div>
+        </div>
+        <div class="vopt B ${v.my==='B'?'selected':''}" id="vo_${code}_B" onclick="pickCompanyVote('${code}','B')">
+          <div class="vopt-letter">B</div>
+          <div class="vopt-label">较容易</div>
+        </div>
+        <div class="vopt C ${v.my==='C'?'selected':''}" id="vo_${code}_C" onclick="pickCompanyVote('${code}','C')">
+          <div class="vopt-letter">C</div>
+          <div class="vopt-label">较困难</div>
+        </div>
+        <div class="vopt D ${v.my==='D'?'selected':''}" id="vo_${code}_D" onclick="pickCompanyVote('${code}','D')">
+          <div class="vopt-letter">D</div>
+          <div class="vopt-label">必定退市</div>
+        </div>
+      </div>
+      <div style="text-align:center">
+        <button class="vote-btn" id="vBtn_${code}" onclick="castCompanyVote('${code}')" ${voted?'disabled':''}>${voted?'已投票 ✓（点击修改）':'请选择后提交'}</button>
+      </div>
+      <div class="vresult-inline" id="vRes_${code}" style="display:${total>0?'block':'none'}">
+        ${voteBarsHTML(v, total)}
+        <div class="voted-tip">感谢投票！可随时修改你的判断</div>
+      </div>
+    </div>`;
+}
+
+function voteBarsHTML(v, total){
+  return ['A','B','C','D'].map(o=>{
+    const cnt=v[o]||0, pct=total>0?Math.round(cnt/total*100):0;
+    return `<div class="vbar-row">
+      <div class="vbar-letter" style="color:${LC[o]}">${o}</div>
+      <div class="vbar-outer"><div class="vbar-inner vbar-${o}" style="width:${pct}%;min-width:${pct>0?'20px':'0'}">${pct>=8?pct+'%':''}</div></div>
+      <div class="vbar-count">${cnt}票${v.my===o?' 👈':''}</div>
+    </div>`;
+  }).join('');
+}
+
+let pendingVote = {};
+function pickCompanyVote(code, opt){
+  pendingVote[code] = opt;
+  ['A','B','C','D'].forEach(x=>{
+    const el = document.getElementById('vo_'+code+'_'+x);
+    if(el) el.classList.toggle('selected', x===opt);
+  });
+  const btn = document.getElementById('vBtn_'+code);
+  if(btn){ btn.disabled=false; btn.textContent='提交投票：'+opt+' 级'; }
+}
+
+function castCompanyVote(code){
+  const opt = pendingVote[code];
+  if(!opt) return;
+  const v = loadCompanyVote(code);
+  if(v.my && v.my!==opt) v[v.my]--;
+  if(!v.my || v.my!==opt) v[opt]++;
+  v.my = opt;
+  saveCompanyVote(code, v);
+  const btn = document.getElementById('vBtn_'+code);
+  if(btn){ btn.textContent='已投票 ✓（点击修改）'; btn.disabled=false; }
+  const total = (v.A||0)+(v.B||0)+(v.C||0)+(v.D||0);
+  const res = document.getElementById('vRes_'+code);
+  if(res){ res.style.display='block'; res.innerHTML = voteBarsHTML(v,total)+'<div class="voted-tip">感谢投票！可随时修改你的判断</div>'; }
+  const box = document.getElementById('voteBox_'+code);
+  if(box){
+    const desc = box.querySelector('.vote-desc');
+    if(desc) desc.textContent='为这家公司的保壳难度投票，'+total+' 人已参与';
+  }
+  renderVoteRank();
+}
+
+function renderVoteRank(){
+  const all = loadAllVotes();
+  const entries = Object.entries(all).filter(([code,v])=>{
+    const t = (v.A||0)+(v.B||0)+(v.C||0)+(v.D||0);
+    return t > 0;
+  });
+  if(entries.length===0){
+    document.getElementById('voteHardList').innerHTML='<div class="vote-empty">暂无投票数据<br>去查询页看看公司详情并投票吧</div>';
+    document.getElementById('voteEasyList').innerHTML='<div class="vote-empty">暂无投票数据<br>去查询页看看公司详情并投票吧</div>';
+    return;
+  }
+  const scored = entries.map(([code,v])=>{
+    const t = (v.A||0)+(v.B||0)+(v.C||0)+(v.D||0);
+    const hard = (v.C||0)+(v.D||0);
+    const easy = (v.A||0)+(v.B||0);
+    const c = UNIQUE.find(x=>x.code===code);
+    const name = c ? c.name : code;
+    return {code, name, total:t, hard, easy, v};
+  });
+  const hardRank = [...scored].sort((a,b)=>b.hard-a.hard || b.total-a.total).slice(0,8);
+  const easyRank = [...scored].sort((a,b)=>b.easy-a.easy || b.total-a.total).slice(0,8);
+  const maxH = Math.max(1, hardRank[0]?.hard||1);
+  const maxE = Math.max(1, easyRank[0]?.easy||1);
+  document.getElementById('voteHardList').innerHTML = hardRank.map((r,i)=>`
+    <div class="vrc-item">
+      <div class="vrc-rank">${i+1}</div>
+      <div class="vrc-name" onclick="gotoDetail('${r.code}')">${r.name}</div>
+      <div class="vrc-bar"><div class="vrc-bar-inner" style="width:${Math.round(r.hard/maxH*100)}%;background:#c0392b"></div></div>
+      <div class="vrc-count">${r.hard}票</div>
+    </div>`).join('');
+  document.getElementById('voteEasyList').innerHTML = easyRank.map((r,i)=>`
+    <div class="vrc-item">
+      <div class="vrc-rank">${i+1}</div>
+      <div class="vrc-name" onclick="gotoDetail('${r.code}')">${r.name}</div>
+      <div class="vrc-bar"><div class="vrc-bar-inner" style="width:${Math.round(r.easy/maxE*100)}%;background:#27ae60"></div></div>
+      <div class="vrc-count">${r.easy}票</div>
+    </div>`).join('');
+}
+
+// ---- 启动 ----
+initStats();
+renderRank();
+renderList();
+renderVoteRank();
+</script>
+</body>
+</html>
