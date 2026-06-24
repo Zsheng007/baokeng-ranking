@@ -219,6 +219,7 @@ def score_stock(code):
         'C1': c1, 'D1': d1, 'E1': e1, 'F1': f1,
         'total': total, 'level': level, 'note': note,
         'price': price,
+        'market_cap_yi': 0,
         'delisted': False,
     }
 

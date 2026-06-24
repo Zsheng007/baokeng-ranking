@@ -27,11 +27,13 @@ today = date.today().isoformat()
 # Generate RAW data array
 raw_lines = []
 for s in scores:
+    mkt_cap = s.get('market_cap_yi', 0) or 0
+    mkt_str = f'{mkt_cap:.1f}' if mkt_cap else '—'
     raw_lines.append(
         f'  ["{s["code"]}","{s["name"]}","{s["type"]}","{s["board"]}","{s["reason"]}",'
         f'{s["A1"]},{s["A2"]},{s["A3"]},{s["B1"]},{s["B2"]},{s["B3"]},'
         f'{s["C1"]},{s["D1"]},{s["E1"]},{s["F1"]},{str(s["delisted"]).lower()},'
-        f'"{s["note"]}"]'
+        f'"{s["note"]}",{mkt_cap},"{mkt_str}"]'
     )
 raw_str = '[\n' + ',\n'.join(raw_lines) + '\n]'
 
@@ -333,11 +335,12 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
           <tr>
             <th style="width:46px">排名</th>
             <th style="width:80px">代码</th>
-            <th style="width:120px">简称</th>
+            <th style="width:100px">简称</th>
             <th style="width:55px">类型</th>
             <th>风险原因</th>
             <th style="width:55px">保壳分</th>
             <th style="width:50px">等级</th>
+            <th style="width:75px">市值(亿)</th>
             <th style="width:55px">详情</th>
           </tr>
         </thead>
@@ -374,7 +377,7 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
 
 <script>
 // ===================== V618 保壳能力评分数据 =====================
-// [代码, 简称, 类型, 板块, 风险原因, A1, A2, A3, B1, B2, B3, C1, D1, E1, F1, 已锁定退市, 备注]
+// [代码, 简称, 类型, 板块, 风险原因, A1..F1(10个), 已锁定退市, 备注, 市值_亿, 市值_显示]
 // 分数越高 = 保壳能力越强
 const RAW = {raw_str};
 
@@ -389,6 +392,7 @@ const COS = RAW.map(r => {{
   return {{ code:r[0], name:r[1], type:r[2], board:r[3], reason:r[4],
     A1:r[5], A2:r[6], A3:r[7], B1:r[8], B2:r[9], B3:r[10],
     C1:r[11], D1:r[12], E1:r[13], F1:r[14], delisted:r[15], note:r[16],
+    market_cap_yi:r[17], market_cap_str:r[18],
     score:s, level:calcLevel(s) }};
 }});
 
@@ -480,6 +484,7 @@ function renderList(){{
       <td title="${{c.reason}}">${{c.reason.length>20?c.reason.slice(0,20)+'…':c.reason}}</td>
       <td style="font-weight:700;color:${{LC[c.level]}}">${{c.score}}</td>
       <td><span class="rtag rtag-${{c.level}}">${{c.level}}</span></td>
+      <td style="font-weight:500;color:#1a3d2b">${{c.market_cap_str}}</td>
       <td class="link-style">查看 →</td>
     </tr>`).join('');
 }}
