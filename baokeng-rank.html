@@ -860,64 +860,54 @@ function renderVoteRank(){
     </div>`).join('');
 }
 
-// ---- 市值数据加载（JSONP批量，浏览器直连东方财富）----
+// ---- 市值数据加载（JSONP直连东方财富，全A股一页拉取）----
 (function loadMarketCap(){
-  const allCodes = COS.map(c=>c.code).filter((v,i,a)=>a.indexOf(v)===i); // 去重
-  const batchSize = 50;
-  let loaded = 0;
+  const allCodes = new Set(COS.map(c=>c.code)); // 用Set去重
+  const cbName = '_mktcb' + Math.random().toString(36).slice(2,10);
+  const TIMEOUT = 15000;
 
-  function fetchBatch(batch) {
-    return new Promise((resolve) => {
-      const secids = batch.map(code =>
-        (code.startsWith('6')||code.startsWith('9')?'0.':'1.') + code
-      ).join(',');
-      const cbName = '_mktcb' + (Date.now()%1e5) + '_' + Math.random().toString(36).slice(2,6);
-      window[cbName] = function(data) {
-        delete window[cbName];
-        document.head.removeChild(script);
-        const list = (data&&data.data&&data.data.diff) || [];
-        const caps = {};
-        list.forEach(item => {
-          const c = String(item.f12||'').padStart(6,'0');
-          const mv = parseFloat(item.f117) || 0; // 总市值(万)
-          if(c && mv>0) caps[c] = Math.round(mv/100); // 转亿元，保留1位小数*10后除10
-        });
-        resolve(caps);
-      };
-      const script = document.createElement('script');
-      script.src = 'https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&fields=f12,f117&secids='+secids+'&cb='+cbName;
-      script.onerror = () => { delete window[cbName]; resolve({}); };
-      document.head.appendChild(script);
-    });
-  }
-
-  async function loadAll(){
-    const batches = [];
-    for(let i=0; i<allCodes.length; i+=batchSize) batches.push(allCodes.slice(i,i+batchSize));
-    const results = await Promise.all(batches.map(b=>fetchBatch(b)));
-    // 合并 + 更新 COS
-    const merged = Object.assign({}, ...results);
-    let n = 0;
-    COS.forEach(c => {
-      if(merged[c.code]) {
-        c.market_cap_yi = merged[c.code];
-        c.market_cap_str = merged[c.code].toFixed(1);
+  window[cbName] = function(data){
+    clearTimeout(timer);
+    delete window[cbName];
+    document.head.removeChild(script);
+    try{
+      const list = (data&&data.data&&data.data.diff) || [];
+      if(!list.length){ console.log('[市值] API返回空'); return; }
+      let n=0;
+      COS.forEach(c=>{
+        const found = list.find(item=>String(item.f12||'').padStart(6,'0')===c.code);
+        if(!found) return;
+        const mv = parseFloat(found.f117) || 0; // 总市值(万元)
+        if(mv<=0) return;
+        const yi = Number((mv/10000).toFixed(2)); // 万元→亿元
+        c.market_cap_yi = yi;
+        c.market_cap_str = yi.toFixed(1);
         n++;
+      });
+      if(n>0){
+        console.log('[市值] 已加载 '+n+'/'+COS.length+' 只');
+        renderList();
+        renderRank();
+        const dv = document.getElementById('detailView');
+        if(dv&&dv.style.display!=='none'){
+          const cd = dv.dataset.currentCode;
+          if(cd) showReport(cd);
+        }
       }
-    });
-    if(n>0){
-      const lv = document.getElementById('listView');
-      if(lv.style.display!=='none') renderList();
-      const dv = document.getElementById('detailView');
-      if(dv.style.display!=='none'){
-        const cd = dv.dataset.currentCode;
-        if(cd) showReport(cd);
-      }
-      renderRank();
-      console.log('[保壳风云榜] 市值已加载 '+n+'/'+allCodes.length+' 只');
-    }
-  }
-  loadAll().catch(()=>{});
+    }catch(e){ console.log('[市值] 解析错误:',e); }
+  };
+
+  var timer = setTimeout(function(){
+    delete window[cbName];
+    if(script&&script.parentNode) script.parentNode.removeChild(script);
+    console.log('[市值] 超时，API无响应');
+  }, TIMEOUT);
+
+  var script = document.createElement('script');
+  // 东方财富 clist/get，一次性拉全部A股（含市值），JSONP格式
+  script.src = 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=6000&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23&fields=f12,f117&cb='+cbName;
+  script.onerror = function(){ clearTimeout(timer); delete window[cbName]; console.log('[市值] 网络错误'); };
+  document.head.appendChild(script);
 })();
 
 // ---- 启动 ----
