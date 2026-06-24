@@ -296,9 +296,9 @@ tbody td { padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: hi
             <th style="width:100px">简称</th>
             <th style="width:55px">类型</th>
             <th>风险原因</th>
+            <th style="width:75px">市值(亿)</th>
             <th style="width:55px">保壳分</th>
             <th style="width:50px">等级</th>
-            <th style="width:75px">市值(亿)</th>
             <th style="width:55px">详情</th>
           </tr>
         </thead>
@@ -629,9 +629,9 @@ function renderList(){
     <tr onclick="gotoDetail('${c.code}')">
       <td>${i+1}</td><td>${c.code}</td><td>${c.name}</td><td>${c.type}</td>
       <td title="${c.reason}">${c.reason.length>20?c.reason.slice(0,20)+'…':c.reason}</td>
+      <td style="font-weight:500;color:#1a3d2b">${c.market_cap_str}</td>
       <td style="font-weight:700;color:${LC[c.level]}">${c.score}</td>
       <td><span class="rtag rtag-${c.level}">${c.level}</span></td>
-      <td style="font-weight:500;color:#1a3d2b">${c.market_cap_str}</td>
       <td class="link-style">查看 →</td>
     </tr>`).join('');
 }
