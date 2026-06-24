@@ -860,6 +860,34 @@ function renderVoteRank(){
     </div>`).join('');
 }
 
+// ---- 市值数据加载 ----
+(async function loadMarketCap(){
+  try{
+    const r = await fetch('market_cap.json?t='+Date.now());
+    if(!r.ok) return;
+    const data = await r.json();   // {"600053":52.3, "000001":120.5, ...}
+    let n = 0;
+    COS.forEach(c=>{
+      if(data[c.code] && data[c.code]>0){
+        c.market_cap_yi = data[c.code];
+        c.market_cap_str = data[c.code].toFixed(1);
+        n++;
+      }
+    });
+    if(n>0){
+      const lv = document.getElementById('listView');
+      const dv = document.getElementById('detailView');
+      if(lv.style.display!=='none') renderList();
+      if(dv.style.display!=='none'){
+        const cd = dv.dataset.currentCode;
+        if(cd) showReport(cd);
+      }
+      renderRank();
+      console.log('[保壳风云榜] 市值数据已加载，'+n+'只');
+    }
+  }catch(e){}
+})();
+
 // ---- 启动 ----
 initStats();
 renderRank();
