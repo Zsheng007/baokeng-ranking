@@ -1,7 +1,7 @@
 {
  "report_date": "20251231",
  "fetch_time": "2026-07-03 11:53:32",
- "total_stocks": 214,
+ "total_stocks": 212,
  "coverage": {
   "revenue": 213,
   "net_profit": 213,
@@ -766,19 +766,6 @@
    "operating_cf": 122400795.39,
    "pledge_ratio": 16.86
   },
-  "600525": {
-   "code": "600525",
-   "name": "ST长园",
-   "revenue": 7895693737.51,
-   "net_profit": -1140414514.61,
-   "deducted_profit": -852999999.9999999,
-   "bps": 2.121414774477,
-   "ocf_per_share": 0.611863012615,
-   "total_equity": 3200132991.33,
-   "debt_ratio": 75.8962952393,
-   "operating_cf": 806912796.78,
-   "pledge_ratio": 15.91
-  },
   "600491": {
    "code": "600491",
    "name": "ST龙元",
@@ -999,19 +986,6 @@
    "debt_ratio": 80.979900763,
    "operating_cf": 2055945662.58,
    "pledge_ratio": null
-  },
-  "600165": {
-   "code": "600165",
-   "name": "ST宁科",
-   "revenue": 444481369.66,
-   "net_profit": -90376880.01,
-   "deducted_profit": -387000000.0,
-   "bps": 0.747545313913,
-   "ocf_per_share": -0.23108245058,
-   "total_equity": 1336020091.51,
-   "debt_ratio": 46.3457216925,
-   "operating_cf": -373402382.58,
-   "pledge_ratio": 29.2
   },
   "600136": {
    "code": "600136",

@@ -5,8 +5,8 @@
   "dims": "C1面值6/C2壳价值8(规则反转,基准28亿)/S1实控人12(新增,涉造假封顶4)/S2质押6(中登周报)/A1净资产10/A2扣非主营收入12(F10主营构成口径)/A3扣非6/D1现金流4/B1立案造假10/B2审计12/F2重组6/F1趋势4(F10同比)/H1司法4",
   "levels": "A(>70) B(51-70) C(31-50) D(≤30)，分数越高=保壳越容易；联动规则：C1≤1时C2降档(面值危机压制壳价值)；涉造假立案S1封顶4",
   "report_date": "20251231",
-  "generated_at": "2026-08-28 21:19:25",
-  "n": 209
+  "generated_at": "2026-08-28 21:40:08",
+  "n": 207
  },
  "data": [
   {
@@ -67,7 +67,7 @@
    "market_cap_yi": 19.25,
    "v1_total": 69,
    "v1_level": "A",
-   "v1_rank": 44,
+   "v1_rank": 43,
    "note": "无质押",
    "report_date": "20251231",
    "delisted": false,
@@ -131,7 +131,7 @@
    "market_cap_yi": 50.72,
    "v1_total": 70,
    "v1_level": "A",
-   "v1_rank": 37,
+   "v1_rank": 36,
    "note": "实控人：陕西省人民政府国有资产监督管理委员会（省级国资）；无质押；扣非盈利",
    "report_date": "20251231",
    "delisted": false,
@@ -195,7 +195,7 @@
    "market_cap_yi": 18.06,
    "v1_total": 66,
    "v1_level": "A",
-   "v1_rank": 62,
+   "v1_rank": 61,
    "note": "实控人：湖南省人民政府国有资产监督管理委员会（省级国资）；无质押",
    "report_date": "20251231",
    "delisted": false,
@@ -259,7 +259,7 @@
    "market_cap_yi": 14.69,
    "v1_total": 70,
    "v1_level": "A",
-   "v1_rank": 38,
+   "v1_rank": 37,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
@@ -355,7 +355,7 @@
    "market_cap_yi": 18.36,
    "v1_total": 65,
    "v1_level": "B",
-   "v1_rank": 80,
+   "v1_rank": 79,
    "note": "扣非盈利",
    "report_date": "20251231",
    "delisted": false,
@@ -387,7 +387,7 @@
    "market_cap_yi": 18.22,
    "v1_total": 70,
    "v1_level": "A",
-   "v1_rank": 41,
+   "v1_rank": 40,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
@@ -451,7 +451,7 @@
    "market_cap_yi": 19.96,
    "v1_total": 66,
    "v1_level": "A",
-   "v1_rank": 64,
+   "v1_rank": 63,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
@@ -579,7 +579,7 @@
    "market_cap_yi": 37.44,
    "v1_total": 69,
    "v1_level": "A",
-   "v1_rank": 46,
+   "v1_rank": 45,
    "note": "无质押",
    "report_date": "20251231",
    "delisted": false,
@@ -739,7 +739,7 @@
    "market_cap_yi": 38.57,
    "v1_total": 66,
    "v1_level": "A",
-   "v1_rank": 68,
+   "v1_rank": 67,
    "note": "无质押",
    "report_date": "20251231",
    "delisted": false,
@@ -803,7 +803,7 @@
    "market_cap_yi": 30.35,
    "v1_total": 67,
    "v1_level": "A",
-   "v1_rank": 60,
+   "v1_rank": 59,
    "note": "申请/预重整",
    "report_date": "20251231",
    "delisted": false,
@@ -867,7 +867,7 @@
    "market_cap_yi": 14.08,
    "v1_total": 61,
    "v1_level": "B",
-   "v1_rank": 107,
+   "v1_rank": 106,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
@@ -931,7 +931,7 @@
    "market_cap_yi": 16.73,
    "v1_total": 67,
    "v1_level": "A",
-   "v1_rank": 59,
+   "v1_rank": 58,
    "note": "出售资产/债务豁免",
    "report_date": "20251231",
    "delisted": false,
@@ -963,7 +963,7 @@
    "market_cap_yi": 20.89,
    "v1_total": 66,
    "v1_level": "A",
-   "v1_rank": 67,
+   "v1_rank": 66,
    "note": "申请/预重整",
    "report_date": "20251231",
    "delisted": false,
@@ -995,7 +995,7 @@
    "market_cap_yi": 23.28,
    "v1_total": 70,
    "v1_level": "A",
-   "v1_rank": 40,
+   "v1_rank": 39,
    "note": "面值退市警戒；实控人：云南省人民政府国有资产监督管理委员会（省级国资）",
    "report_date": "20251231",
    "delisted": false,
@@ -1027,7 +1027,7 @@
    "market_cap_yi": 20.93,
    "v1_total": 63,
    "v1_level": "B",
-   "v1_rank": 94,
+   "v1_rank": 93,
    "note": "无质押；带强调事项",
    "report_date": "20251231",
    "delisted": false,
@@ -1059,7 +1059,7 @@
    "market_cap_yi": 38.77,
    "v1_total": 68,
    "v1_level": "A",
-   "v1_rank": 50,
+   "v1_rank": 49,
    "note": "实控人：河南省人民政府国有资产监督管理委员会（省级国资）；无质押",
    "report_date": "20251231",
    "delisted": false,
@@ -1091,7 +1091,7 @@
    "market_cap_yi": 22.66,
    "v1_total": 58,
    "v1_level": "B",
-   "v1_rank": 140,
+   "v1_rank": 139,
    "note": "无质押",
    "report_date": "20251231",
    "delisted": false,
@@ -1283,7 +1283,7 @@
    "market_cap_yi": 110.7,
    "v1_total": 70,
    "v1_level": "A",
-   "v1_rank": 39,
+   "v1_rank": 38,
    "note": "面值退市警戒；实控人：福建省人民政府国有资产监督管理委员会（省级国资）；扣非盈利",
    "report_date": "20251231",
    "delisted": false,
@@ -1379,7 +1379,7 @@
    "market_cap_yi": 18.33,
    "v1_total": 65,
    "v1_level": "B",
-   "v1_rank": 73,
+   "v1_rank": 72,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
@@ -1411,7 +1411,7 @@
    "market_cap_yi": 26.11,
    "v1_total": 67,
    "v1_level": "A",
-   "v1_rank": 55,
+   "v1_rank": 54,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
@@ -1443,43 +1443,11 @@
    "market_cap_yi": 31.87,
    "v1_total": 69,
    "v1_level": "A",
-   "v1_rank": 45,
+   "v1_rank": 44,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
    "rank": 45
-  },
-  {
-   "code": "600525",
-   "name": "ST长园",
-   "type": "ST",
-   "board": "主板",
-   "C1": 6,
-   "C2": 0,
-   "S1": 1,
-   "S2": 6,
-   "A1": 10,
-   "A2": 12,
-   "A3": 3,
-   "D1": 4,
-   "B1": 10,
-   "B2": 12,
-   "F2": 0,
-   "F1": 4,
-   "H1": 4,
-   "total": 72,
-   "level": "A",
-   "controller": "无",
-   "controller_cat": "无实控人",
-   "price": 5.32,
-   "market_cap_yi": 70.16,
-   "v1_total": 71,
-   "v1_level": "A",
-   "v1_rank": 36,
-   "note": "",
-   "report_date": "20251231",
-   "delisted": false,
-   "rank": 46
   },
   {
    "code": "603729",
@@ -1507,11 +1475,11 @@
    "market_cap_yi": 10.93,
    "v1_total": 62,
    "v1_level": "B",
-   "v1_rank": 102,
+   "v1_rank": 101,
    "note": "市值≤壳基准5折(并购机会区)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 47
+   "rank": 46
   },
   {
    "code": "601718",
@@ -1539,11 +1507,11 @@
    "market_cap_yi": 81.55,
    "v1_total": 69,
    "v1_level": "A",
-   "v1_rank": 43,
+   "v1_rank": 42,
    "note": "实控人：国务院国有资产监督管理委员会（央企）；无质押",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 48
+   "rank": 47
   },
   {
    "code": "000632",
@@ -1571,11 +1539,11 @@
    "market_cap_yi": 20.44,
    "v1_total": 66,
    "v1_level": "A",
-   "v1_rank": 65,
+   "v1_rank": 64,
    "note": "无质押；低毛利收入占55%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 49
+   "rank": 48
   },
   {
    "code": "688033",
@@ -1607,7 +1575,7 @@
    "note": "无质押",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 50
+   "rank": 49
   },
   {
    "code": "300068",
@@ -1639,7 +1607,7 @@
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 51
+   "rank": 50
   },
   {
    "code": "002431",
@@ -1667,11 +1635,11 @@
    "market_cap_yi": 25.59,
    "v1_total": 66,
    "v1_level": "A",
-   "v1_rank": 66,
+   "v1_rank": 65,
    "note": "面值退市警戒；实控人：河南省人民政府国有资产监督管理委员会（省级国资）；低毛利收入占93%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 52
+   "rank": 51
   },
   {
    "code": "603008",
@@ -1703,7 +1671,7 @@
    "note": "扣非盈利",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 53
+   "rank": 52
   },
   {
    "code": "000821",
@@ -1735,7 +1703,7 @@
    "note": "扣非盈利",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 54
+   "rank": 53
   },
   {
    "code": "600753",
@@ -1767,7 +1735,7 @@
    "note": "无质押；低毛利收入占36%(冲量嫌疑)；扣非盈利；出售资产/债务豁免",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 55
+   "rank": 54
   },
   {
    "code": "300020",
@@ -1795,11 +1763,11 @@
    "market_cap_yi": 27.34,
    "v1_total": 63,
    "v1_level": "B",
-   "v1_rank": 91,
+   "v1_rank": 90,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 56
+   "rank": 55
   },
   {
    "code": "002424",
@@ -1831,7 +1799,7 @@
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 57
+   "rank": 56
   },
   {
    "code": "000909",
@@ -1859,11 +1827,11 @@
    "market_cap_yi": 19.65,
    "v1_total": 63,
    "v1_level": "B",
-   "v1_rank": 92,
+   "v1_rank": 91,
    "note": "无质押；营收缺口12%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 58
+   "rank": 57
   },
   {
    "code": "002816",
@@ -1891,11 +1859,11 @@
    "market_cap_yi": 25.07,
    "v1_total": 63,
    "v1_level": "B",
-   "v1_rank": 93,
+   "v1_rank": 92,
    "note": "营收缺口15%且已戴*ST；低毛利收入占49%(冲量嫌疑)；扣非盈利",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 59
+   "rank": 58
   },
   {
    "code": "000911",
@@ -1923,11 +1891,11 @@
    "market_cap_yi": 21.38,
    "v1_total": 69,
    "v1_level": "A",
-   "v1_rank": 49,
+   "v1_rank": 48,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 60
+   "rank": 59
   },
   {
    "code": "002360",
@@ -1955,11 +1923,11 @@
    "market_cap_yi": 23.38,
    "v1_total": 65,
    "v1_level": "B",
-   "v1_rank": 74,
+   "v1_rank": 73,
    "note": "限制消费",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 61
+   "rank": 60
   },
   {
    "code": "603595",
@@ -1991,7 +1959,7 @@
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 62
+   "rank": 61
   },
   {
    "code": "688184",
@@ -2019,11 +1987,11 @@
    "market_cap_yi": 17.1,
    "v1_total": 63,
    "v1_level": "B",
-   "v1_rank": 90,
+   "v1_rank": 89,
    "note": "无质押；立案调查中",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 63
+   "rank": 62
   },
   {
    "code": "600543",
@@ -2051,11 +2019,11 @@
    "market_cap_yi": 13.65,
    "v1_total": 53,
    "v1_level": "B",
-   "v1_rank": 176,
+   "v1_rank": 174,
    "note": "市值≤壳基准5折(并购机会区)；实控人：甘肃省人民政府国有资产监督管理委员会（省级国资）；无质押；营收缺口38%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 64
+   "rank": 63
   },
   {
    "code": "300555",
@@ -2083,11 +2051,11 @@
    "market_cap_yi": 25.36,
    "v1_total": 60,
    "v1_level": "B",
-   "v1_rank": 119,
+   "v1_rank": 118,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 65
+   "rank": 64
   },
   {
    "code": "002211",
@@ -2115,11 +2083,11 @@
    "market_cap_yi": 16.74,
    "v1_total": 60,
    "v1_level": "B",
-   "v1_rank": 120,
+   "v1_rank": 119,
    "note": "无质押",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 66
+   "rank": 65
   },
   {
    "code": "002082",
@@ -2147,11 +2115,11 @@
    "market_cap_yi": 58.91,
    "v1_total": 65,
    "v1_level": "B",
-   "v1_rank": 70,
+   "v1_rank": 69,
    "note": "带强调事项",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 67
+   "rank": 66
   },
   {
    "code": "600491",
@@ -2183,7 +2151,7 @@
    "note": "低毛利收入占34%(冲量嫌疑)；申请/预重整",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 68
+   "rank": 67
   },
   {
    "code": "300295",
@@ -2211,11 +2179,11 @@
    "market_cap_yi": 23.85,
    "v1_total": 61,
    "v1_level": "B",
-   "v1_rank": 109,
+   "v1_rank": 108,
    "note": "无质押",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 69
+   "rank": 68
   },
   {
    "code": "603825",
@@ -2243,11 +2211,11 @@
    "market_cap_yi": 21.48,
    "v1_total": 47,
    "v1_level": "B",
-   "v1_rank": 199,
+   "v1_rank": 197,
    "note": "资不抵债",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 70
+   "rank": 69
   },
   {
    "code": "000903",
@@ -2275,11 +2243,11 @@
    "market_cap_yi": 36.57,
    "v1_total": 67,
    "v1_level": "A",
-   "v1_rank": 56,
+   "v1_rank": 55,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 71
+   "rank": 70
   },
   {
    "code": "603789",
@@ -2307,43 +2275,11 @@
    "market_cap_yi": 16.5,
    "v1_total": 57,
    "v1_level": "B",
-   "v1_rank": 152,
+   "v1_rank": 151,
    "note": "带强调事项",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 72
-  },
-  {
-   "code": "600165",
-   "name": "ST宁科",
-   "type": "ST",
-   "board": "主板",
-   "C1": 5,
-   "C2": 0,
-   "S1": 3,
-   "S2": 6,
-   "A1": 10,
-   "A2": 12,
-   "A3": 3,
-   "D1": 0,
-   "B1": 10,
-   "B2": 12,
-   "F2": 0,
-   "F1": 4,
-   "H1": 4,
-   "total": 69,
-   "level": "B",
-   "controller": "刘喜荣",
-   "controller_cat": "民企(个人)",
-   "price": 3.16,
-   "market_cap_yi": 51.06,
-   "v1_total": 53,
-   "v1_level": "B",
-   "v1_rank": 174,
-   "note": "",
-   "report_date": "20251231",
-   "delisted": false,
-   "rank": 73
+   "rank": 71
   },
   {
    "code": "300352",
@@ -2371,11 +2307,11 @@
    "market_cap_yi": 37.99,
    "v1_total": 68,
    "v1_level": "A",
-   "v1_rank": 51,
+   "v1_rank": 50,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 74
+   "rank": 72
   },
   {
    "code": "000639",
@@ -2403,11 +2339,11 @@
    "market_cap_yi": 18.89,
    "v1_total": 65,
    "v1_level": "B",
-   "v1_rank": 72,
+   "v1_rank": 71,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 75
+   "rank": 73
   },
   {
    "code": "300385",
@@ -2435,11 +2371,11 @@
    "market_cap_yi": 42.51,
    "v1_total": 63,
    "v1_level": "B",
-   "v1_rank": 89,
+   "v1_rank": 88,
    "note": "无质押",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 76
+   "rank": 74
   },
   {
    "code": "300366",
@@ -2467,11 +2403,11 @@
    "market_cap_yi": 31.96,
    "v1_total": 68,
    "v1_level": "A",
-   "v1_rank": 52,
+   "v1_rank": 51,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 77
+   "rank": 75
   },
   {
    "code": "600624",
@@ -2499,11 +2435,11 @@
    "market_cap_yi": 29.82,
    "v1_total": 58,
    "v1_level": "B",
-   "v1_rank": 145,
+   "v1_rank": 144,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 78
+   "rank": 76
   },
   {
    "code": "300472",
@@ -2531,11 +2467,11 @@
    "market_cap_yi": 19.35,
    "v1_total": 56,
    "v1_level": "B",
-   "v1_rank": 156,
+   "v1_rank": 155,
    "note": "申请/预重整；限制消费",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 79
+   "rank": 77
   },
   {
    "code": "605199",
@@ -2563,11 +2499,11 @@
    "market_cap_yi": 24.05,
    "v1_total": 67,
    "v1_level": "A",
-   "v1_rank": 58,
+   "v1_rank": 57,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 80
+   "rank": 78
   },
   {
    "code": "000793",
@@ -2595,11 +2531,11 @@
    "market_cap_yi": 93.59,
    "v1_total": 55,
    "v1_level": "B",
-   "v1_rank": 164,
+   "v1_rank": 163,
    "note": "实控人：海南省国有资产监督管理委员会（省级国资）；低毛利收入占72%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 81
+   "rank": 79
   },
   {
    "code": "000488",
@@ -2627,11 +2563,11 @@
    "market_cap_yi": 56.77,
    "v1_total": 65,
    "v1_level": "B",
-   "v1_rank": 77,
+   "v1_rank": 76,
    "note": "低毛利收入占55%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 82
+   "rank": 80
   },
   {
    "code": "000615",
@@ -2659,11 +2595,11 @@
    "market_cap_yi": 58.99,
    "v1_total": 65,
    "v1_level": "B",
-   "v1_rank": 78,
+   "v1_rank": 77,
    "note": "出售资产/债务豁免",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 83
+   "rank": 81
   },
   {
    "code": "000711",
@@ -2691,11 +2627,11 @@
    "market_cap_yi": 184.59,
    "v1_total": 53,
    "v1_level": "B",
-   "v1_rank": 175,
+   "v1_rank": 173,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 84
+   "rank": 82
   },
   {
    "code": "002650",
@@ -2723,11 +2659,11 @@
    "market_cap_yi": 66.98,
    "v1_total": 61,
    "v1_level": "B",
-   "v1_rank": 112,
+   "v1_rank": 111,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 85
+   "rank": 83
   },
   {
    "code": "000669",
@@ -2755,11 +2691,11 @@
    "market_cap_yi": 28.99,
    "v1_total": 67,
    "v1_level": "A",
-   "v1_rank": 61,
+   "v1_rank": 60,
    "note": "无质押",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 86
+   "rank": 84
   },
   {
    "code": "600289",
@@ -2787,11 +2723,11 @@
    "market_cap_yi": 27.51,
    "v1_total": 64,
    "v1_level": "B",
-   "v1_rank": 85,
+   "v1_rank": 84,
    "note": "低毛利收入占53%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 87
+   "rank": 85
   },
   {
    "code": "300211",
@@ -2819,11 +2755,11 @@
    "market_cap_yi": 23.52,
    "v1_total": 67,
    "v1_level": "A",
-   "v1_rank": 57,
+   "v1_rank": 56,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 88
+   "rank": 86
   },
   {
    "code": "002822",
@@ -2851,11 +2787,11 @@
    "market_cap_yi": 62.01,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 133,
+   "v1_rank": 132,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 89
+   "rank": 87
   },
   {
    "code": "002306",
@@ -2883,11 +2819,11 @@
    "market_cap_yi": 18.35,
    "v1_total": 58,
    "v1_level": "B",
-   "v1_rank": 149,
+   "v1_rank": 148,
    "note": "出售资产/债务豁免",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 90
+   "rank": 88
   },
   {
    "code": "002719",
@@ -2915,11 +2851,11 @@
    "market_cap_yi": 11.51,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 138,
+   "v1_rank": 137,
    "note": "市值≤壳基准5折(并购机会区)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 91
+   "rank": 89
   },
   {
    "code": "601010",
@@ -2947,11 +2883,11 @@
    "market_cap_yi": 27.31,
    "v1_total": 67,
    "v1_level": "A",
-   "v1_rank": 54,
+   "v1_rank": 53,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 92
+   "rank": 90
   },
   {
    "code": "300594",
@@ -2983,7 +2919,7 @@
    "note": "市值≤壳基准5折(并购机会区)；股份冻结",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 93
+   "rank": 91
   },
   {
    "code": "600818",
@@ -3011,11 +2947,11 @@
    "market_cap_yi": 24.62,
    "v1_total": 61,
    "v1_level": "B",
-   "v1_rank": 108,
+   "v1_rank": 107,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 94
+   "rank": 92
   },
   {
    "code": "002634",
@@ -3043,11 +2979,11 @@
    "market_cap_yi": 19.52,
    "v1_total": 56,
    "v1_level": "B",
-   "v1_rank": 155,
+   "v1_rank": 154,
    "note": "资不抵债；申请/预重整",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 95
+   "rank": 93
   },
   {
    "code": "600889",
@@ -3075,11 +3011,11 @@
    "market_cap_yi": 78.78,
    "v1_total": 57,
    "v1_level": "B",
-   "v1_rank": 151,
+   "v1_rank": 150,
    "note": "营收缺口15%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 96
+   "rank": 94
   },
   {
    "code": "300477",
@@ -3107,11 +3043,11 @@
    "market_cap_yi": 27.66,
    "v1_total": 60,
    "v1_level": "B",
-   "v1_rank": 117,
+   "v1_rank": 116,
    "note": "资不抵债；申请/预重整",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 97
+   "rank": 95
   },
   {
    "code": "600136",
@@ -3139,11 +3075,11 @@
    "market_cap_yi": 30.0,
    "v1_total": 54,
    "v1_level": "B",
-   "v1_rank": 168,
+   "v1_rank": 167,
    "note": "面值退市警戒；实控人：湖北省人民政府国有资产监督管理委员会（省级国资）",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 98
+   "rank": 96
   },
   {
    "code": "600337",
@@ -3171,11 +3107,11 @@
    "market_cap_yi": 44.69,
    "v1_total": 63,
    "v1_level": "B",
-   "v1_rank": 87,
+   "v1_rank": 86,
    "note": "出售资产/债务豁免",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 99
+   "rank": 97
   },
   {
    "code": "603189",
@@ -3203,11 +3139,11 @@
    "market_cap_yi": 25.26,
    "v1_total": 62,
    "v1_level": "B",
-   "v1_rank": 95,
+   "v1_rank": 94,
    "note": "无质押；营收缺口15%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 100
+   "rank": 98
   },
   {
    "code": "603359",
@@ -3235,11 +3171,11 @@
    "market_cap_yi": 10.17,
    "v1_total": 63,
    "v1_level": "B",
-   "v1_rank": 88,
+   "v1_rank": 87,
    "note": "市值≤壳基准5折(并购机会区)；营收缺口6%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 101
+   "rank": 99
   },
   {
    "code": "300076",
@@ -3267,11 +3203,11 @@
    "market_cap_yi": 19.25,
    "v1_total": 55,
    "v1_level": "B",
-   "v1_rank": 161,
+   "v1_rank": 160,
    "note": "营收缺口18%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 102
+   "rank": 100
   },
   {
    "code": "002227",
@@ -3299,11 +3235,11 @@
    "market_cap_yi": 16.63,
    "v1_total": 64,
    "v1_level": "B",
-   "v1_rank": 83,
+   "v1_rank": 82,
    "note": "无质押；营收缺口15%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 103
+   "rank": 101
   },
   {
    "code": "603838",
@@ -3331,11 +3267,11 @@
    "market_cap_yi": 41.35,
    "v1_total": 60,
    "v1_level": "B",
-   "v1_rank": 116,
+   "v1_rank": 115,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 104
+   "rank": 102
   },
   {
    "code": "002305",
@@ -3363,11 +3299,11 @@
    "market_cap_yi": 36.77,
    "v1_total": 65,
    "v1_level": "B",
-   "v1_rank": 75,
+   "v1_rank": 74,
    "note": "无质押",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 105
+   "rank": 103
   },
   {
    "code": "002175",
@@ -3395,11 +3331,11 @@
    "market_cap_yi": 33.58,
    "v1_total": 62,
    "v1_level": "B",
-   "v1_rank": 103,
+   "v1_rank": 102,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 106
+   "rank": 104
   },
   {
    "code": "600243",
@@ -3427,11 +3363,11 @@
    "market_cap_yi": 16.68,
    "v1_total": 60,
    "v1_level": "B",
-   "v1_rank": 123,
+   "v1_rank": 122,
    "note": "无质押；低毛利收入占50%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 107
+   "rank": 105
   },
   {
    "code": "000610",
@@ -3459,11 +3395,11 @@
    "market_cap_yi": 16.17,
    "v1_total": 54,
    "v1_level": "B",
-   "v1_rank": 167,
+   "v1_rank": 166,
    "note": "资不抵债",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 108
+   "rank": 106
   },
   {
    "code": "300419",
@@ -3491,11 +3427,11 @@
    "market_cap_yi": 33.02,
    "v1_total": 61,
    "v1_level": "B",
-   "v1_rank": 111,
+   "v1_rank": 110,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 109
+   "rank": 107
   },
   {
    "code": "603959",
@@ -3523,11 +3459,11 @@
    "market_cap_yi": 21.28,
    "v1_total": 57,
    "v1_level": "B",
-   "v1_rank": 153,
+   "v1_rank": 152,
    "note": "申请/预重整",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 110
+   "rank": 108
   },
   {
    "code": "002122",
@@ -3555,11 +3491,11 @@
    "market_cap_yi": 56.04,
    "v1_total": 65,
    "v1_level": "B",
-   "v1_rank": 79,
+   "v1_rank": 78,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 111
+   "rank": 109
   },
   {
    "code": "603718",
@@ -3587,11 +3523,11 @@
    "market_cap_yi": 20.38,
    "v1_total": 61,
    "v1_level": "B",
-   "v1_rank": 105,
+   "v1_rank": 104,
    "note": "无质押；营收缺口37%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 112
+   "rank": 110
   },
   {
    "code": "603922",
@@ -3619,11 +3555,11 @@
    "market_cap_yi": 24.98,
    "v1_total": 61,
    "v1_level": "B",
-   "v1_rank": 106,
+   "v1_rank": 105,
    "note": "扣非盈利；立案调查中；实控人冻结/立案",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 113
+   "rank": 111
   },
   {
    "code": "603021",
@@ -3651,11 +3587,11 @@
    "market_cap_yi": 17.63,
    "v1_total": 61,
    "v1_level": "B",
-   "v1_rank": 110,
+   "v1_rank": 109,
    "note": "无质押；资不抵债",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 114
+   "rank": 112
   },
   {
    "code": "002485",
@@ -3683,11 +3619,11 @@
    "market_cap_yi": 32.31,
    "v1_total": 56,
    "v1_level": "B",
-   "v1_rank": 158,
+   "v1_rank": 157,
    "note": "高质押68%；低毛利收入占94%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 115
+   "rank": 113
   },
   {
    "code": "002207",
@@ -3715,11 +3651,11 @@
    "market_cap_yi": 15.33,
    "v1_total": 57,
    "v1_level": "B",
-   "v1_rank": 154,
+   "v1_rank": 153,
    "note": "营收缺口1%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 116
+   "rank": 114
   },
   {
    "code": "000010",
@@ -3747,11 +3683,11 @@
    "market_cap_yi": 18.39,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 136,
+   "v1_rank": 135,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 117
+   "rank": 115
   },
   {
    "code": "000826",
@@ -3779,11 +3715,11 @@
    "market_cap_yi": 27.51,
    "v1_total": 65,
    "v1_level": "B",
-   "v1_rank": 71,
+   "v1_rank": 70,
    "note": "申请/预重整",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 118
+   "rank": 116
   },
   {
    "code": "600476",
@@ -3811,11 +3747,11 @@
    "market_cap_yi": 15.54,
    "v1_total": 58,
    "v1_level": "B",
-   "v1_rank": 143,
+   "v1_rank": 142,
    "note": "无质押；资不抵债；低毛利收入占46%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 119
+   "rank": 117
   },
   {
    "code": "002620",
@@ -3843,11 +3779,11 @@
    "market_cap_yi": 21.03,
    "v1_total": 62,
    "v1_level": "B",
-   "v1_rank": 100,
+   "v1_rank": 99,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 120
+   "rank": 118
   },
   {
    "code": "002630",
@@ -3875,11 +3811,11 @@
    "market_cap_yi": 19.96,
    "v1_total": 69,
    "v1_level": "A",
-   "v1_rank": 47,
+   "v1_rank": 46,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 121
+   "rank": 119
   },
   {
    "code": "600381",
@@ -3907,11 +3843,11 @@
    "market_cap_yi": 27.47,
    "v1_total": 58,
    "v1_level": "B",
-   "v1_rank": 147,
+   "v1_rank": 146,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 122
+   "rank": 120
   },
   {
    "code": "300167",
@@ -3939,11 +3875,11 @@
    "market_cap_yi": 17.28,
    "v1_total": 66,
    "v1_level": "A",
-   "v1_rank": 69,
+   "v1_rank": 68,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 123
+   "rank": 121
   },
   {
    "code": "600423",
@@ -3971,11 +3907,11 @@
    "market_cap_yi": 23.48,
    "v1_total": 60,
    "v1_level": "B",
-   "v1_rank": 124,
+   "v1_rank": 123,
    "note": "营收缺口58%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 124
+   "rank": 122
   },
   {
    "code": "600568",
@@ -4003,11 +3939,11 @@
    "market_cap_yi": 43.05,
    "v1_total": 61,
    "v1_level": "B",
-   "v1_rank": 113,
+   "v1_rank": 112,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 125
+   "rank": 123
   },
   {
    "code": "600119",
@@ -4035,11 +3971,11 @@
    "market_cap_yi": 18.56,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 137,
+   "v1_rank": 136,
    "note": "无质押；营收缺口32%且已戴*ST；低毛利收入占51%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 126
+   "rank": 124
   },
   {
    "code": "002694",
@@ -4067,11 +4003,11 @@
    "market_cap_yi": 18.54,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 128,
+   "v1_rank": 127,
    "note": "资不抵债",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 127
+   "rank": 125
   },
   {
    "code": "002856",
@@ -4099,11 +4035,11 @@
    "market_cap_yi": 22.77,
    "v1_total": 50,
    "v1_level": "B",
-   "v1_rank": 189,
+   "v1_rank": 187,
    "note": "无质押；资不抵债；低毛利收入占60%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 128
+   "rank": 126
   },
   {
    "code": "300027",
@@ -4131,11 +4067,11 @@
    "market_cap_yi": 49.66,
    "v1_total": 58,
    "v1_level": "B",
-   "v1_rank": 142,
+   "v1_rank": 141,
    "note": "申请/预重整",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 129
+   "rank": 127
   },
   {
    "code": "300081",
@@ -4163,11 +4099,11 @@
    "market_cap_yi": 18.81,
    "v1_total": 58,
    "v1_level": "B",
-   "v1_rank": 144,
+   "v1_rank": 143,
    "note": "立案调查中；实控人冻结/立案",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 130
+   "rank": 128
   },
   {
    "code": "600581",
@@ -4195,11 +4131,11 @@
    "market_cap_yi": 36.64,
    "v1_total": 52,
    "v1_level": "B",
-   "v1_rank": 179,
+   "v1_rank": 177,
    "note": "实控人：中国宝武钢铁集团有限公司（央企）；无质押；资不抵债；低毛利收入占94%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 131
+   "rank": 129
   },
   {
    "code": "002512",
@@ -4227,11 +4163,11 @@
    "market_cap_yi": 45.09,
    "v1_total": 60,
    "v1_level": "B",
-   "v1_rank": 115,
+   "v1_rank": 114,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 132
+   "rank": 130
   },
   {
    "code": "002581",
@@ -4259,11 +4195,11 @@
    "market_cap_yi": 34.44,
    "v1_total": 58,
    "v1_level": "B",
-   "v1_rank": 146,
+   "v1_rank": 145,
    "note": "营收缺口8%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 133
+   "rank": 131
   },
   {
    "code": "002024",
@@ -4291,11 +4227,11 @@
    "market_cap_yi": 111.18,
    "v1_total": 64,
    "v1_level": "B",
-   "v1_rank": 84,
+   "v1_rank": 83,
    "note": "面值退市警戒",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 134
+   "rank": 132
   },
   {
    "code": "600084",
@@ -4323,11 +4259,11 @@
    "market_cap_yi": 48.54,
    "v1_total": 50,
    "v1_level": "B",
-   "v1_rank": 191,
+   "v1_rank": 189,
    "note": "实控人：中国中信集团有限公司（央企）；营收缺口61%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 135
+   "rank": 133
   },
   {
    "code": "000016",
@@ -4355,11 +4291,11 @@
    "market_cap_yi": 58.99,
    "v1_total": 51,
    "v1_level": "B",
-   "v1_rank": 183,
+   "v1_rank": 181,
    "note": "实控人：中国华润有限公司（央企）；无质押；资不抵债",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 136
+   "rank": 134
   },
   {
    "code": "605336",
@@ -4387,11 +4323,11 @@
    "market_cap_yi": 20.51,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 130,
+   "v1_rank": 129,
    "note": "无质押；营收缺口34%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 137
+   "rank": 135
   },
   {
    "code": "300123",
@@ -4419,11 +4355,11 @@
    "market_cap_yi": 46.08,
    "v1_total": 62,
    "v1_level": "B",
-   "v1_rank": 99,
+   "v1_rank": 98,
    "note": "低毛利收入占66%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 138
+   "rank": 136
   },
   {
    "code": "300338",
@@ -4451,11 +4387,11 @@
    "market_cap_yi": 12.84,
    "v1_total": 48,
    "v1_level": "B",
-   "v1_rank": 196,
+   "v1_rank": 194,
    "note": "市值≤壳基准5折(并购机会区)；资不抵债",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 139
+   "rank": 137
   },
   {
    "code": "002569",
@@ -4483,11 +4419,11 @@
    "market_cap_yi": 16.24,
    "v1_total": 60,
    "v1_level": "B",
-   "v1_rank": 122,
+   "v1_rank": 121,
    "note": "无质押；营收缺口56%且已戴*ST；扣非盈利",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 140
+   "rank": 138
   },
   {
    "code": "000078",
@@ -4515,11 +4451,11 @@
    "market_cap_yi": 42.36,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 125,
+   "v1_rank": 124,
    "note": "带强调事项",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 141
+   "rank": 139
   },
   {
    "code": "603272",
@@ -4547,11 +4483,11 @@
    "market_cap_yi": 15.56,
    "v1_total": 62,
    "v1_level": "B",
-   "v1_rank": 98,
+   "v1_rank": 97,
    "note": "无质押；营收缺口58%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 142
+   "rank": 140
   },
   {
    "code": "002323",
@@ -4579,11 +4515,11 @@
    "market_cap_yi": 27.36,
    "v1_total": 53,
    "v1_level": "B",
-   "v1_rank": 177,
+   "v1_rank": 175,
    "note": "面值退市警戒；无质押；营收缺口2%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 143
+   "rank": 141
   },
   {
    "code": "002691",
@@ -4611,11 +4547,11 @@
    "market_cap_yi": 15.44,
    "v1_total": 57,
    "v1_level": "B",
-   "v1_rank": 150,
+   "v1_rank": 149,
    "note": "营收缺口4%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 144
+   "rank": 142
   },
   {
    "code": "002932",
@@ -4643,11 +4579,11 @@
    "market_cap_yi": 35.65,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 131,
+   "v1_rank": 130,
    "note": "无质押；营收缺口27%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 145
+   "rank": 143
   },
   {
    "code": "300147",
@@ -4675,11 +4611,11 @@
    "market_cap_yi": 43.58,
    "v1_total": 65,
    "v1_level": "B",
-   "v1_rank": 76,
+   "v1_rank": 75,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 146
+   "rank": 144
   },
   {
    "code": "603828",
@@ -4707,11 +4643,11 @@
    "market_cap_yi": 30.93,
    "v1_total": 62,
    "v1_level": "B",
-   "v1_rank": 101,
+   "v1_rank": 100,
    "note": "低毛利收入占88%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 147
+   "rank": 145
   },
   {
    "code": "300212",
@@ -4739,11 +4675,11 @@
    "market_cap_yi": 55.65,
    "v1_total": 53,
    "v1_level": "B",
-   "v1_rank": 173,
+   "v1_rank": 172,
    "note": "资不抵债；申请/预重整；限制消费",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 148
+   "rank": 146
   },
   {
    "code": "600537",
@@ -4771,11 +4707,11 @@
    "market_cap_yi": 25.69,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 129,
+   "v1_rank": 128,
    "note": "无质押；资不抵债",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 149
+   "rank": 147
   },
   {
    "code": "002528",
@@ -4803,11 +4739,11 @@
    "market_cap_yi": 79.71,
    "v1_total": 52,
    "v1_level": "B",
-   "v1_rank": 180,
+   "v1_rank": 178,
    "note": "资不抵债；申请/预重整",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 150
+   "rank": 148
   },
   {
    "code": "300044",
@@ -4835,11 +4771,11 @@
    "market_cap_yi": 40.94,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 135,
+   "v1_rank": 134,
    "note": "资不抵债；营收缺口20%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 151
+   "rank": 149
   },
   {
    "code": "600730",
@@ -4867,11 +4803,11 @@
    "market_cap_yi": 58.67,
    "v1_total": 51,
    "v1_level": "B",
-   "v1_rank": 185,
+   "v1_rank": 183,
    "note": "无质押；营收缺口74%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 152
+   "rank": 150
   },
   {
    "code": "002542",
@@ -4899,11 +4835,11 @@
    "market_cap_yi": 32.33,
    "v1_total": 52,
    "v1_level": "B",
-   "v1_rank": 178,
+   "v1_rank": 176,
    "note": "资不抵债",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 153
+   "rank": 151
   },
   {
    "code": "603843",
@@ -4931,11 +4867,11 @@
    "market_cap_yi": 53.17,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 132,
+   "v1_rank": 131,
    "note": "带强调事项；出售资产/债务豁免",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 154
+   "rank": 152
   },
   {
    "code": "000609",
@@ -4963,11 +4899,11 @@
    "market_cap_yi": 30.08,
    "v1_total": 51,
    "v1_level": "B",
-   "v1_rank": 188,
+   "v1_rank": 186,
    "note": "资不抵债；营收缺口31%且已戴*ST；出售资产/债务豁免",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 155
+   "rank": 153
   },
   {
    "code": "600365",
@@ -4995,11 +4931,11 @@
    "market_cap_yi": 12.76,
    "v1_total": 60,
    "v1_level": "B",
-   "v1_rank": 121,
+   "v1_rank": 120,
    "note": "市值≤壳基准5折(并购机会区)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 156
+   "rank": 154
   },
   {
    "code": "688089",
@@ -5027,11 +4963,11 @@
    "market_cap_yi": 13.41,
    "v1_total": 53,
    "v1_level": "B",
-   "v1_rank": 171,
+   "v1_rank": 170,
    "note": "市值≤壳基准5折(并购机会区)；无质押；带强调事项",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 157
+   "rank": 155
   },
   {
    "code": "600053",
@@ -5059,11 +4995,11 @@
    "market_cap_yi": 33.6,
    "v1_total": 53,
    "v1_level": "B",
-   "v1_rank": 172,
+   "v1_rank": 171,
    "note": "高质押60%；营收缺口8%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 158
+   "rank": 156
   },
   {
    "code": "920023",
@@ -5091,11 +5027,11 @@
    "market_cap_yi": 0,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 126,
+   "v1_rank": 125,
    "note": "北交所数据降级；无质押；扣非盈利",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 159
+   "rank": 157
   },
   {
    "code": "688622",
@@ -5123,11 +5059,11 @@
    "market_cap_yi": 65.45,
    "v1_total": 60,
    "v1_level": "B",
-   "v1_rank": 114,
+   "v1_rank": 113,
    "note": "无质押；营收缺口10%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 160
+   "rank": 158
   },
   {
    "code": "002977",
@@ -5155,11 +5091,11 @@
    "market_cap_yi": 25.19,
    "v1_total": 55,
    "v1_level": "B",
-   "v1_rank": 162,
+   "v1_rank": 161,
    "note": "无质押；营收缺口157%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 161
+   "rank": 159
   },
   {
    "code": "300301",
@@ -5187,11 +5123,11 @@
    "market_cap_yi": 27.88,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 134,
+   "v1_rank": 133,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 162
+   "rank": 160
   },
   {
    "code": "002759",
@@ -5219,11 +5155,11 @@
    "market_cap_yi": 89.25,
    "v1_total": 58,
    "v1_level": "B",
-   "v1_rank": 139,
+   "v1_rank": 138,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 163
+   "rank": 161
   },
   {
    "code": "603378",
@@ -5251,11 +5187,11 @@
    "market_cap_yi": 27.9,
    "v1_total": 47,
    "v1_level": "B",
-   "v1_rank": 198,
+   "v1_rank": 196,
    "note": "资不抵债；低毛利收入占55%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 164
+   "rank": 162
   },
   {
    "code": "002547",
@@ -5283,11 +5219,11 @@
    "market_cap_yi": 30.12,
    "v1_total": 59,
    "v1_level": "B",
-   "v1_rank": 127,
+   "v1_rank": 126,
    "note": "资不抵债；低毛利收入占44%(冲量嫌疑)；申请/预重整",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 165
+   "rank": 163
   },
   {
    "code": "603429",
@@ -5315,11 +5251,11 @@
    "market_cap_yi": 44.79,
    "v1_total": 55,
    "v1_level": "B",
-   "v1_rank": 163,
+   "v1_rank": 162,
    "note": "无质押；营收缺口53%且已戴*ST；出售资产/债务豁免",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 166
+   "rank": 164
   },
   {
    "code": "300091",
@@ -5347,11 +5283,11 @@
    "market_cap_yi": 70.77,
    "v1_total": 51,
    "v1_level": "B",
-   "v1_rank": 186,
+   "v1_rank": 184,
    "note": "资不抵债",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 167
+   "rank": 165
   },
   {
    "code": "600265",
@@ -5379,11 +5315,11 @@
    "market_cap_yi": 29.7,
    "v1_total": 55,
    "v1_level": "B",
-   "v1_rank": 165,
+   "v1_rank": 164,
    "note": "营收缺口53%且已戴*ST；出售资产/债务豁免",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 168
+   "rank": 166
   },
   {
    "code": "600439",
@@ -5411,11 +5347,11 @@
    "market_cap_yi": 21.96,
    "v1_total": 48,
    "v1_level": "B",
-   "v1_rank": 194,
+   "v1_rank": 192,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 169
+   "rank": 167
   },
   {
    "code": "600187",
@@ -5443,11 +5379,11 @@
    "market_cap_yi": 21.95,
    "v1_total": 55,
    "v1_level": "B",
-   "v1_rank": 160,
+   "v1_rank": 159,
    "note": "面值退市警戒；营收缺口27%且已戴*ST；带强调事项",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 170
+   "rank": 168
   },
   {
    "code": "300198",
@@ -5475,11 +5411,11 @@
    "market_cap_yi": 24.65,
    "v1_total": 48,
    "v1_level": "B",
-   "v1_rank": 195,
+   "v1_rank": 193,
    "note": "无质押；资不抵债；营收缺口24%且已戴*ST；出售资产/债务豁免；限制消费",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 171
+   "rank": 169
   },
   {
    "code": "688066",
@@ -5507,11 +5443,11 @@
    "market_cap_yi": 21.44,
    "v1_total": 46,
    "v1_level": "B",
-   "v1_rank": 201,
+   "v1_rank": 199,
    "note": "资不抵债；立案调查中",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 172
+   "rank": 170
   },
   {
    "code": "000838",
@@ -5539,11 +5475,11 @@
    "market_cap_yi": 32.79,
    "v1_total": 45,
    "v1_level": "C",
-   "v1_rank": 203,
+   "v1_rank": 201,
    "note": "资不抵债；营收缺口6%且已戴*ST；申请/预重整；限制消费",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 173
+   "rank": 171
   },
   {
    "code": "600530",
@@ -5571,11 +5507,11 @@
    "market_cap_yi": 30.22,
    "v1_total": 56,
    "v1_level": "B",
-   "v1_rank": 159,
+   "v1_rank": 158,
    "note": "",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 174
+   "rank": 172
   },
   {
    "code": "300430",
@@ -5603,11 +5539,11 @@
    "market_cap_yi": 12.18,
    "v1_total": 63,
    "v1_level": "B",
-   "v1_rank": 86,
+   "v1_rank": 85,
    "note": "市值≤壳基准5折(并购机会区)；股份冻结；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 175
+   "rank": 173
   },
   {
    "code": "300396",
@@ -5635,11 +5571,11 @@
    "market_cap_yi": 19.69,
    "v1_total": 66,
    "v1_level": "A",
-   "v1_rank": 63,
+   "v1_rank": 62,
    "note": "实控人：中国华润有限公司（央企）；无质押；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 176
+   "rank": 174
   },
   {
    "code": "002667",
@@ -5667,11 +5603,11 @@
    "market_cap_yi": 49.51,
    "v1_total": 61,
    "v1_level": "B",
-   "v1_rank": 104,
+   "v1_rank": 103,
    "note": "无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 177
+   "rank": 175
   },
   {
    "code": "688022",
@@ -5699,11 +5635,11 @@
    "market_cap_yi": 15.6,
    "v1_total": 64,
    "v1_level": "B",
-   "v1_rank": 81,
+   "v1_rank": 80,
    "note": "无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 178
+   "rank": 176
   },
   {
    "code": "000677",
@@ -5731,11 +5667,11 @@
    "market_cap_yi": 15.98,
    "v1_total": 69,
    "v1_level": "A",
-   "v1_rank": 42,
+   "v1_rank": 41,
    "note": "扣非盈利；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 179
+   "rank": 177
   },
   {
    "code": "002109",
@@ -5763,11 +5699,11 @@
    "market_cap_yi": 35.86,
    "v1_total": 64,
    "v1_level": "B",
-   "v1_rank": 82,
+   "v1_rank": 81,
    "note": "实控人：陕西省人民政府国有资产监督管理委员会（省级国资）；无质押；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 180
+   "rank": 178
   },
   {
    "code": "002198",
@@ -5795,11 +5731,11 @@
    "market_cap_yi": 17.66,
    "v1_total": 67,
    "v1_level": "A",
-   "v1_rank": 53,
+   "v1_rank": 52,
    "note": "扣非盈利；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 181
+   "rank": 179
   },
   {
    "code": "002514",
@@ -5827,11 +5763,11 @@
    "market_cap_yi": 12.74,
    "v1_total": 47,
    "v1_level": "B",
-   "v1_rank": 197,
+   "v1_rank": 195,
    "note": "市值≤壳基准5折(并购机会区)；资不抵债；营收缺口28%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 182
+   "rank": 180
   },
   {
    "code": "600745",
@@ -5863,7 +5799,7 @@
    "note": "低毛利收入占56%(冲量嫌疑)；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 183
+   "rank": 181
   },
   {
    "code": "600370",
@@ -5891,11 +5827,11 @@
    "market_cap_yi": 65.17,
    "v1_total": 62,
    "v1_level": "B",
-   "v1_rank": 96,
+   "v1_rank": 95,
    "note": "高质押79%；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 184
+   "rank": 182
   },
   {
    "code": "688496",
@@ -5923,11 +5859,11 @@
    "market_cap_yi": 4.09,
    "v1_total": 62,
    "v1_level": "B",
-   "v1_rank": 97,
+   "v1_rank": 96,
    "note": "面值退市警戒；市值≤壳基准5折(并购机会区)；面值危机压制壳价值分；低毛利收入占63%(冲量嫌疑)",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 185
+   "rank": 183
   },
   {
    "code": "002598",
@@ -5959,7 +5895,7 @@
    "note": "无质押；扣非盈利；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 186
+   "rank": 184
   },
   {
    "code": "600107",
@@ -5987,11 +5923,11 @@
    "market_cap_yi": 20.81,
    "v1_total": 56,
    "v1_level": "B",
-   "v1_rank": 157,
+   "v1_rank": 156,
    "note": "股份冻结；营收缺口24%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 187
+   "rank": 185
   },
   {
    "code": "300152",
@@ -6019,11 +5955,11 @@
    "market_cap_yi": 12.4,
    "v1_total": 60,
    "v1_level": "B",
-   "v1_rank": 118,
+   "v1_rank": 117,
    "note": "市值≤壳基准5折(并购机会区)；无质押；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 188
+   "rank": 186
   },
   {
    "code": "300205",
@@ -6051,11 +5987,11 @@
    "market_cap_yi": 21.42,
    "v1_total": 51,
    "v1_level": "B",
-   "v1_rank": 187,
+   "v1_rank": 185,
    "note": "无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 189
+   "rank": 187
   },
   {
    "code": "300010",
@@ -6083,11 +6019,11 @@
    "market_cap_yi": 63.86,
    "v1_total": 58,
    "v1_level": "B",
-   "v1_rank": 148,
+   "v1_rank": 147,
    "note": "无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 190
+   "rank": 188
   },
   {
    "code": "002102",
@@ -6115,11 +6051,11 @@
    "market_cap_yi": 56.78,
    "v1_total": 69,
    "v1_level": "A",
-   "v1_rank": 48,
+   "v1_rank": 47,
    "note": "扣非盈利；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 191
+   "rank": 189
   },
   {
    "code": "200016",
@@ -6147,11 +6083,11 @@
    "market_cap_yi": 16.86,
    "v1_total": 54,
    "v1_level": "B",
-   "v1_rank": 169,
+   "v1_rank": 168,
    "note": "面值退市警戒；面值危机压制壳价值分；实控人：中国华润有限公司（央企）；无质押；（B股）",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 192
+   "rank": 190
   },
   {
    "code": "200488",
@@ -6179,11 +6115,11 @@
    "market_cap_yi": 16.77,
    "v1_total": 54,
    "v1_level": "B",
-   "v1_rank": 170,
+   "v1_rank": 169,
    "note": "面值退市警戒；面值危机压制壳价值分；无质押；低毛利收入占55%(冲量嫌疑)；（B股）",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 193
+   "rank": 191
   },
   {
    "code": "200056",
@@ -6211,11 +6147,11 @@
    "market_cap_yi": 6.03,
    "v1_total": 52,
    "v1_level": "B",
-   "v1_rank": 181,
+   "v1_rank": 179,
    "note": "面值退市警戒；市值≤壳基准5折(并购机会区)；面值危机压制壳价值分；无质押；（B股）",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 194
+   "rank": 192
   },
   {
    "code": "600340",
@@ -6243,11 +6179,11 @@
    "market_cap_yi": 42.44,
    "v1_total": 49,
    "v1_level": "B",
-   "v1_rank": 192,
+   "v1_rank": 190,
    "note": "面值退市警戒；面值危机压制壳价值分；资不抵债",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 195
+   "rank": 193
   },
   {
    "code": "603557",
@@ -6275,11 +6211,11 @@
    "market_cap_yi": 21.82,
    "v1_total": 50,
    "v1_level": "B",
-   "v1_rank": 190,
+   "v1_rank": 188,
    "note": "无质押；营收缺口48%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 196
+   "rank": 194
   },
   {
    "code": "603398",
@@ -6307,11 +6243,11 @@
    "market_cap_yi": 45.06,
    "v1_total": 47,
    "v1_level": "B",
-   "v1_rank": 200,
+   "v1_rank": 198,
    "note": "无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 197
+   "rank": 195
   },
   {
    "code": "600734",
@@ -6339,11 +6275,11 @@
    "market_cap_yi": 37.68,
    "v1_total": 44,
    "v1_level": "C",
-   "v1_rank": 204,
+   "v1_rank": 202,
    "note": "实控人：福建省人民政府国有资产监督管理委员会（省级国资）；营收缺口71%且已戴*ST；立案调查中",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 198
+   "rank": 196
   },
   {
    "code": "301030",
@@ -6371,11 +6307,11 @@
    "market_cap_yi": 16.51,
    "v1_total": 51,
    "v1_level": "B",
-   "v1_rank": 182,
+   "v1_rank": 180,
    "note": "资不抵债；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 199
+   "rank": 197
   },
   {
    "code": "002726",
@@ -6403,11 +6339,11 @@
    "market_cap_yi": 37.16,
    "v1_total": 58,
    "v1_level": "B",
-   "v1_rank": 141,
+   "v1_rank": 140,
    "note": "股份冻结；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 200
+   "rank": 198
   },
   {
    "code": "002501",
@@ -6435,11 +6371,11 @@
    "market_cap_yi": 46.51,
    "v1_total": 49,
    "v1_level": "B",
-   "v1_rank": 193,
+   "v1_rank": 191,
    "note": "面值退市警戒；营收缺口25%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 201
+   "rank": 199
   },
   {
    "code": "002731",
@@ -6467,11 +6403,11 @@
    "market_cap_yi": 2.18,
    "v1_total": 46,
    "v1_level": "B",
-   "v1_rank": 202,
+   "v1_rank": 200,
    "note": "面值退市警戒；市值≤壳基准5折(并购机会区)；面值危机压制壳价值分；扣非盈利；立案调查中",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 202
+   "rank": 200
   },
   {
    "code": "000056",
@@ -6499,11 +6435,11 @@
    "market_cap_yi": 24.6,
    "v1_total": 51,
    "v1_level": "B",
-   "v1_rank": 184,
+   "v1_rank": 182,
    "note": "资不抵债；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 203
+   "rank": 201
   },
   {
    "code": "600180",
@@ -6531,11 +6467,11 @@
    "market_cap_yi": 16.52,
    "v1_total": 54,
    "v1_level": "B",
-   "v1_rank": 166,
+   "v1_rank": 165,
    "note": "股份冻结；高质押51%；低毛利收入占89%(冲量嫌疑)；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 204
+   "rank": 202
   },
   {
    "code": "920575",
@@ -6563,11 +6499,11 @@
    "market_cap_yi": 0,
    "v1_total": 41,
    "v1_level": "C",
-   "v1_rank": 207,
+   "v1_rank": 205,
    "note": "北交所数据降级；无质押；营收缺口100%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 205
+   "rank": 203
   },
   {
    "code": "920090",
@@ -6595,11 +6531,11 @@
    "market_cap_yi": 0,
    "v1_total": 43,
    "v1_level": "C",
-   "v1_rank": 206,
+   "v1_rank": 204,
    "note": "北交所数据降级；无质押；营收缺口89%且已戴*ST",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 206
+   "rank": 204
   },
   {
    "code": "688121",
@@ -6627,11 +6563,11 @@
    "market_cap_yi": 4.11,
    "v1_total": 43,
    "v1_level": "C",
-   "v1_rank": 205,
+   "v1_rank": 203,
    "note": "市值≤壳基准5折(并购机会区)；立案调查中；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 207
+   "rank": 205
   },
   {
    "code": "300716",
@@ -6659,11 +6595,11 @@
    "market_cap_yi": 30.39,
    "v1_total": 37,
    "v1_level": "C",
-   "v1_rank": 208,
+   "v1_rank": 206,
    "note": "资不抵债；营收缺口55%且已戴*ST；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 208
+   "rank": 206
   },
   {
    "code": "002717",
@@ -6691,11 +6627,11 @@
    "market_cap_yi": 18.75,
    "v1_total": 37,
    "v1_level": "C",
-   "v1_rank": 209,
+   "v1_rank": 207,
    "note": "面值退市警戒；面值危机压制壳价值分；资不抵债；营收缺口63%且已戴*ST；无法表示/否定意见",
    "report_date": "20251231",
    "delisted": false,
-   "rank": 209
+   "rank": 207
   }
  ]
 }

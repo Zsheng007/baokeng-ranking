@@ -2926,20 +2926,6 @@
    "debt_waiver": [],
    "donation": []
   },
-  "600165": {
-   "investigation": [],
-   "penalty": [],
-   "warning": [],
-   "audit_adverse": [],
-   "audit_qualified": [],
-   "audit_emphasis": [],
-   "freeze": [],
-   "consume_limit": [],
-   "restructuring": [],
-   "asset_sale": [],
-   "debt_waiver": [],
-   "donation": []
-  },
   "002501": {
    "investigation": [],
    "penalty": [],
@@ -3050,20 +3036,6 @@
    "donation": []
   },
   "603359": {
-   "investigation": [],
-   "penalty": [],
-   "warning": [],
-   "audit_adverse": [],
-   "audit_qualified": [],
-   "audit_emphasis": [],
-   "freeze": [],
-   "consume_limit": [],
-   "restructuring": [],
-   "asset_sale": [],
-   "debt_waiver": [],
-   "donation": []
-  },
-  "600525": {
    "investigation": [],
    "penalty": [],
    "warning": [],

@@ -1505,49 +1505,6 @@
   "rank": 35
  },
  {
-  "code": "600525",
-  "name": "ST长园",
-  "type": "ST",
-  "board": "主板",
-  "reason": "其他风险警示：内控/违规担保/资金占用/持续经营",
-  "A1": 0,
-  "A2": 12,
-  "A3": 8,
-  "B1": 3,
-  "B2": 5,
-  "B3": 5,
-  "C1": 7,
-  "C2": 4,
-  "D1": 9,
-  "E1": 4,
-  "F1": 5,
-  "F2": 0,
-  "G1": 1,
-  "H1": 8,
-  "total": 71,
-  "level": "A",
-  "note": "基本面有支撑，短期退市风险低",
-  "price": 5.32,
-  "prev_close": 5.36,
-  "market_cap_yi": 70.16,
-  "flags": {
-   "investigation": false,
-   "adverse_audit": false,
-   "qualified_audit": false,
-   "penalty": false,
-   "warning": false,
-   "freeze": false,
-   "consume_limit": false,
-   "restructuring": false,
-   "asset_sale": false,
-   "debt_waiver": false,
-   "donation": false
-  },
-  "report_date": "20251231",
-  "delisted": false,
-  "rank": 36
- },
- {
   "code": "300831",
   "name": "ST派瑞",
   "type": "ST",
@@ -1588,7 +1545,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 37
+  "rank": 36
  },
  {
   "code": "002883",
@@ -1631,7 +1588,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 38
+  "rank": 37
  },
  {
   "code": "002217",
@@ -1674,7 +1631,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 39
+  "rank": 38
  },
  {
   "code": "600239",
@@ -1717,7 +1674,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 40
+  "rank": 39
  },
  {
   "code": "002872",
@@ -1760,7 +1717,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 41
+  "rank": 40
  },
  {
   "code": "000677",
@@ -1803,7 +1760,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 42
+  "rank": 41
  },
  {
   "code": "601718",
@@ -1846,7 +1803,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 43
+  "rank": 42
  },
  {
   "code": "600082",
@@ -1889,7 +1846,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 44
+  "rank": 43
  },
  {
   "code": "300237",
@@ -1932,7 +1889,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 45
+  "rank": 44
  },
  {
   "code": "688053",
@@ -1975,7 +1932,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 46
+  "rank": 45
  },
  {
   "code": "002630",
@@ -2018,7 +1975,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 47
+  "rank": 46
  },
  {
   "code": "002102",
@@ -2061,7 +2018,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 48
+  "rank": 47
  },
  {
   "code": "000911",
@@ -2104,7 +2061,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 49
+  "rank": 48
  },
  {
   "code": "300290",
@@ -2147,7 +2104,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 50
+  "rank": 49
  },
  {
   "code": "300352",
@@ -2190,7 +2147,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 51
+  "rank": 50
  },
  {
   "code": "300366",
@@ -2233,7 +2190,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 52
+  "rank": 51
  },
  {
   "code": "002198",
@@ -2276,7 +2233,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 53
+  "rank": 52
  },
  {
   "code": "601010",
@@ -2319,7 +2276,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 54
+  "rank": 53
  },
  {
   "code": "600735",
@@ -2362,7 +2319,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 55
+  "rank": 54
  },
  {
   "code": "000903",
@@ -2405,7 +2362,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 56
+  "rank": 55
  },
  {
   "code": "300211",
@@ -2448,7 +2405,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 57
+  "rank": 56
  },
  {
   "code": "605199",
@@ -2491,7 +2448,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 58
+  "rank": 57
  },
  {
   "code": "002789",
@@ -2534,7 +2491,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 59
+  "rank": 58
  },
  {
   "code": "002168",
@@ -2577,7 +2534,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 60
+  "rank": 59
  },
  {
   "code": "000669",
@@ -2620,7 +2577,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 61
+  "rank": 60
  },
  {
   "code": "688189",
@@ -2663,7 +2620,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 62
+  "rank": 61
  },
  {
   "code": "300396",
@@ -2706,7 +2663,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 63
+  "rank": 62
  },
  {
   "code": "600678",
@@ -2749,7 +2706,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 64
+  "rank": 63
  },
  {
   "code": "000632",
@@ -2792,7 +2749,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 65
+  "rank": 64
  },
  {
   "code": "002431",
@@ -2835,7 +2792,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 66
+  "rank": 65
  },
  {
   "code": "603377",
@@ -2878,7 +2835,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 67
+  "rank": 66
  },
  {
   "code": "300096",
@@ -2921,7 +2878,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 68
+  "rank": 67
  },
  {
   "code": "300167",
@@ -2964,7 +2921,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 69
+  "rank": 68
  },
  {
   "code": "002082",
@@ -3007,7 +2964,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 70
+  "rank": 69
  },
  {
   "code": "000826",
@@ -3050,7 +3007,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 71
+  "rank": 70
  },
  {
   "code": "000639",
@@ -3093,7 +3050,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 72
+  "rank": 71
  },
  {
   "code": "300245",
@@ -3136,7 +3093,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 73
+  "rank": 72
  },
  {
   "code": "002360",
@@ -3179,7 +3136,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 74
+  "rank": 73
  },
  {
   "code": "002305",
@@ -3222,7 +3179,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 75
+  "rank": 74
  },
  {
   "code": "300147",
@@ -3265,7 +3222,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 76
+  "rank": 75
  },
  {
   "code": "000488",
@@ -3308,7 +3265,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 77
+  "rank": 76
  },
  {
   "code": "000615",
@@ -3351,7 +3308,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 78
+  "rank": 77
  },
  {
   "code": "002122",
@@ -3394,7 +3351,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 79
+  "rank": 78
  },
  {
   "code": "600080",
@@ -3437,7 +3394,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 80
+  "rank": 79
  },
  {
   "code": "688022",
@@ -3480,7 +3437,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 81
+  "rank": 80
  },
  {
   "code": "002109",
@@ -3523,7 +3480,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 82
+  "rank": 81
  },
  {
   "code": "002227",
@@ -3566,7 +3523,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 83
+  "rank": 82
  },
  {
   "code": "002024",
@@ -3609,7 +3566,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 84
+  "rank": 83
  },
  {
   "code": "600289",
@@ -3652,7 +3609,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 85
+  "rank": 84
  },
  {
   "code": "300430",
@@ -3695,7 +3652,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 86
+  "rank": 85
  },
  {
   "code": "600337",
@@ -3738,7 +3695,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 87
+  "rank": 86
  },
  {
   "code": "603359",
@@ -3781,7 +3738,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 88
+  "rank": 87
  },
  {
   "code": "300385",
@@ -3824,7 +3781,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 89
+  "rank": 88
  },
  {
   "code": "688184",
@@ -3867,7 +3824,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 90
+  "rank": 89
  },
  {
   "code": "300020",
@@ -3910,7 +3867,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 91
+  "rank": 90
  },
  {
   "code": "000909",
@@ -3953,7 +3910,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 92
+  "rank": 91
  },
  {
   "code": "002816",
@@ -3996,7 +3953,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 93
+  "rank": 92
  },
  {
   "code": "600238",
@@ -4039,7 +3996,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 94
+  "rank": 93
  },
  {
   "code": "603189",
@@ -4082,7 +4039,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 95
+  "rank": 94
  },
  {
   "code": "600370",
@@ -4125,7 +4082,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 96
+  "rank": 95
  },
  {
   "code": "688496",
@@ -4168,7 +4125,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 97
+  "rank": 96
  },
  {
   "code": "603272",
@@ -4211,7 +4168,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 98
+  "rank": 97
  },
  {
   "code": "300123",
@@ -4254,7 +4211,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 99
+  "rank": 98
  },
  {
   "code": "002620",
@@ -4297,7 +4254,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 100
+  "rank": 99
  },
  {
   "code": "603828",
@@ -4340,7 +4297,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 101
+  "rank": 100
  },
  {
   "code": "603729",
@@ -4383,7 +4340,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 102
+  "rank": 101
  },
  {
   "code": "002175",
@@ -4426,7 +4383,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 103
+  "rank": 102
  },
  {
   "code": "002667",
@@ -4469,7 +4426,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 104
+  "rank": 103
  },
  {
   "code": "603718",
@@ -4512,7 +4469,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 105
+  "rank": 104
  },
  {
   "code": "603922",
@@ -4555,7 +4512,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 106
+  "rank": 105
  },
  {
   "code": "002193",
@@ -4598,7 +4555,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 107
+  "rank": 106
  },
  {
   "code": "600818",
@@ -4641,7 +4598,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 108
+  "rank": 107
  },
  {
   "code": "300295",
@@ -4684,7 +4641,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 109
+  "rank": 108
  },
  {
   "code": "603021",
@@ -4727,7 +4684,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 110
+  "rank": 109
  },
  {
   "code": "300419",
@@ -4770,7 +4727,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 111
+  "rank": 110
  },
  {
   "code": "002650",
@@ -4813,7 +4770,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 112
+  "rank": 111
  },
  {
   "code": "600568",
@@ -4856,7 +4813,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 113
+  "rank": 112
  },
  {
   "code": "688622",
@@ -4899,7 +4856,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 114
+  "rank": 113
  },
  {
   "code": "002512",
@@ -4942,7 +4899,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 115
+  "rank": 114
  },
  {
   "code": "603838",
@@ -4985,7 +4942,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 116
+  "rank": 115
  },
  {
   "code": "300477",
@@ -5028,7 +4985,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 117
+  "rank": 116
  },
  {
   "code": "300152",
@@ -5071,7 +5028,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 118
+  "rank": 117
  },
  {
   "code": "300555",
@@ -5114,7 +5071,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 119
+  "rank": 118
  },
  {
   "code": "002211",
@@ -5157,7 +5114,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 120
+  "rank": 119
  },
  {
   "code": "600365",
@@ -5200,7 +5157,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 121
+  "rank": 120
  },
  {
   "code": "002569",
@@ -5243,7 +5200,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 122
+  "rank": 121
  },
  {
   "code": "600243",
@@ -5286,7 +5243,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 123
+  "rank": 122
  },
  {
   "code": "600423",
@@ -5329,7 +5286,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 124
+  "rank": 123
  },
  {
   "code": "000078",
@@ -5372,7 +5329,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 125
+  "rank": 124
  },
  {
   "code": "920023",
@@ -5415,7 +5372,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 126
+  "rank": 125
  },
  {
   "code": "002547",
@@ -5458,7 +5415,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 127
+  "rank": 126
  },
  {
   "code": "002694",
@@ -5501,7 +5458,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 128
+  "rank": 127
  },
  {
   "code": "600537",
@@ -5544,7 +5501,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 129
+  "rank": 128
  },
  {
   "code": "605336",
@@ -5587,7 +5544,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 130
+  "rank": 129
  },
  {
   "code": "002932",
@@ -5630,7 +5587,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 131
+  "rank": 130
  },
  {
   "code": "603843",
@@ -5673,7 +5630,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 132
+  "rank": 131
  },
  {
   "code": "002822",
@@ -5716,7 +5673,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 133
+  "rank": 132
  },
  {
   "code": "300301",
@@ -5759,7 +5716,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 134
+  "rank": 133
  },
  {
   "code": "300044",
@@ -5802,7 +5759,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 135
+  "rank": 134
  },
  {
   "code": "000010",
@@ -5845,7 +5802,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 136
+  "rank": 135
  },
  {
   "code": "600119",
@@ -5888,7 +5845,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 137
+  "rank": 136
  },
  {
   "code": "002719",
@@ -5931,7 +5888,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 138
+  "rank": 137
  },
  {
   "code": "002759",
@@ -5974,7 +5931,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 139
+  "rank": 138
  },
  {
   "code": "600302",
@@ -6017,7 +5974,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 140
+  "rank": 139
  },
  {
   "code": "002726",
@@ -6060,7 +6017,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 141
+  "rank": 140
  },
  {
   "code": "300027",
@@ -6103,7 +6060,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 142
+  "rank": 141
  },
  {
   "code": "600476",
@@ -6146,7 +6103,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 143
+  "rank": 142
  },
  {
   "code": "300081",
@@ -6189,7 +6146,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 144
+  "rank": 143
  },
  {
   "code": "600624",
@@ -6232,7 +6189,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 145
+  "rank": 144
  },
  {
   "code": "002581",
@@ -6275,7 +6232,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 146
+  "rank": 145
  },
  {
   "code": "600381",
@@ -6318,7 +6275,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 147
+  "rank": 146
  },
  {
   "code": "300010",
@@ -6361,7 +6318,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 148
+  "rank": 147
  },
  {
   "code": "002306",
@@ -6404,7 +6361,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 149
+  "rank": 148
  },
  {
   "code": "002691",
@@ -6447,7 +6404,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 150
+  "rank": 149
  },
  {
   "code": "600889",
@@ -6490,7 +6447,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 151
+  "rank": 150
  },
  {
   "code": "603789",
@@ -6533,7 +6490,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 152
+  "rank": 151
  },
  {
   "code": "603959",
@@ -6576,7 +6533,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 153
+  "rank": 152
  },
  {
   "code": "002207",
@@ -6619,7 +6576,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 154
+  "rank": 153
  },
  {
   "code": "002634",
@@ -6662,7 +6619,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 155
+  "rank": 154
  },
  {
   "code": "300472",
@@ -6705,7 +6662,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 156
+  "rank": 155
  },
  {
   "code": "600107",
@@ -6748,7 +6705,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 157
+  "rank": 156
  },
  {
   "code": "002485",
@@ -6791,7 +6748,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 158
+  "rank": 157
  },
  {
   "code": "600530",
@@ -6834,7 +6791,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 159
+  "rank": 158
  },
  {
   "code": "600187",
@@ -6877,7 +6834,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 160
+  "rank": 159
  },
  {
   "code": "300076",
@@ -6920,7 +6877,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 161
+  "rank": 160
  },
  {
   "code": "002977",
@@ -6963,7 +6920,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 162
+  "rank": 161
  },
  {
   "code": "603429",
@@ -7006,7 +6963,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 163
+  "rank": 162
  },
  {
   "code": "000793",
@@ -7049,7 +7006,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 164
+  "rank": 163
  },
  {
   "code": "600265",
@@ -7092,7 +7049,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 165
+  "rank": 164
  },
  {
   "code": "600180",
@@ -7135,7 +7092,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 166
+  "rank": 165
  },
  {
   "code": "000610",
@@ -7178,7 +7135,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 167
+  "rank": 166
  },
  {
   "code": "600136",
@@ -7221,7 +7178,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 168
+  "rank": 167
  },
  {
   "code": "200016",
@@ -7264,7 +7221,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 169
+  "rank": 168
  },
  {
   "code": "200488",
@@ -7307,7 +7264,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 170
+  "rank": 169
  },
  {
   "code": "688089",
@@ -7350,7 +7307,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 171
+  "rank": 170
  },
  {
   "code": "600053",
@@ -7393,7 +7350,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 172
+  "rank": 171
  },
  {
   "code": "300212",
@@ -7436,50 +7393,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 173
- },
- {
-  "code": "600165",
-  "name": "ST宁科",
-  "type": "ST",
-  "board": "主板",
-  "reason": "其他风险警示：内控/违规担保/资金占用/持续经营",
-  "A1": 1,
-  "A2": 6,
-  "A3": 8,
-  "B1": 3,
-  "B2": 5,
-  "B3": 5,
-  "C1": 6,
-  "C2": 4,
-  "D1": 0,
-  "E1": 2,
-  "F1": 5,
-  "F2": 0,
-  "G1": 0,
-  "H1": 8,
-  "total": 53,
-  "level": "B",
-  "note": "中等风险，存在退市隐患但有缓冲",
-  "price": 3.16,
-  "prev_close": 3.22,
-  "market_cap_yi": 51.06,
-  "flags": {
-   "investigation": false,
-   "adverse_audit": false,
-   "qualified_audit": false,
-   "penalty": false,
-   "warning": false,
-   "freeze": false,
-   "consume_limit": false,
-   "restructuring": false,
-   "asset_sale": false,
-   "debt_waiver": false,
-   "donation": false
-  },
-  "report_date": "20251231",
-  "delisted": false,
-  "rank": 174
+  "rank": 172
  },
  {
   "code": "000711",
@@ -7522,7 +7436,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 175
+  "rank": 173
  },
  {
   "code": "600543",
@@ -7565,7 +7479,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 176
+  "rank": 174
  },
  {
   "code": "002323",
@@ -7608,7 +7522,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 177
+  "rank": 175
  },
  {
   "code": "002542",
@@ -7651,7 +7565,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 178
+  "rank": 176
  },
  {
   "code": "600581",
@@ -7694,7 +7608,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 179
+  "rank": 177
  },
  {
   "code": "002528",
@@ -7737,7 +7651,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 180
+  "rank": 178
  },
  {
   "code": "200056",
@@ -7780,7 +7694,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 181
+  "rank": 179
  },
  {
   "code": "301030",
@@ -7823,7 +7737,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 182
+  "rank": 180
  },
  {
   "code": "000016",
@@ -7866,7 +7780,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 183
+  "rank": 181
  },
  {
   "code": "000056",
@@ -7909,7 +7823,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 184
+  "rank": 182
  },
  {
   "code": "600730",
@@ -7952,7 +7866,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 185
+  "rank": 183
  },
  {
   "code": "300091",
@@ -7995,7 +7909,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 186
+  "rank": 184
  },
  {
   "code": "300205",
@@ -8038,7 +7952,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 187
+  "rank": 185
  },
  {
   "code": "000609",
@@ -8081,7 +7995,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 188
+  "rank": 186
  },
  {
   "code": "002856",
@@ -8124,7 +8038,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 189
+  "rank": 187
  },
  {
   "code": "603557",
@@ -8167,7 +8081,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 190
+  "rank": 188
  },
  {
   "code": "600084",
@@ -8210,7 +8124,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 191
+  "rank": 189
  },
  {
   "code": "600340",
@@ -8253,7 +8167,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 192
+  "rank": 190
  },
  {
   "code": "002501",
@@ -8296,7 +8210,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 193
+  "rank": 191
  },
  {
   "code": "600439",
@@ -8339,7 +8253,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 194
+  "rank": 192
  },
  {
   "code": "300198",
@@ -8382,7 +8296,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 195
+  "rank": 193
  },
  {
   "code": "300338",
@@ -8425,7 +8339,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 196
+  "rank": 194
  },
  {
   "code": "002514",
@@ -8468,7 +8382,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 197
+  "rank": 195
  },
  {
   "code": "603378",
@@ -8511,7 +8425,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 198
+  "rank": 196
  },
  {
   "code": "603825",
@@ -8554,7 +8468,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 199
+  "rank": 197
  },
  {
   "code": "603398",
@@ -8597,7 +8511,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 200
+  "rank": 198
  },
  {
   "code": "688066",
@@ -8640,7 +8554,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 201
+  "rank": 199
  },
  {
   "code": "002731",
@@ -8683,7 +8597,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 202
+  "rank": 200
  },
  {
   "code": "000838",
@@ -8726,7 +8640,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 203
+  "rank": 201
  },
  {
   "code": "600734",
@@ -8769,7 +8683,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 204
+  "rank": 202
  },
  {
   "code": "688121",
@@ -8812,7 +8726,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 205
+  "rank": 203
  },
  {
   "code": "920090",
@@ -8855,7 +8769,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 206
+  "rank": 204
  },
  {
   "code": "920575",
@@ -8898,7 +8812,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 207
+  "rank": 205
  },
  {
   "code": "300716",
@@ -8941,7 +8855,7 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 208
+  "rank": 206
  },
  {
   "code": "002717",
@@ -8984,6 +8898,6 @@
   },
   "report_date": "20251231",
   "delisted": false,
-  "rank": 209
+  "rank": 207
  }
 ]

@@ -23,6 +23,12 @@ TODAY = date.today().isoformat()
 
 GW_ST_URL = 'https://webf10.gw.com.cn/BK/B4/SH994429_B4.html'
 
+# ── 永久剔除名单（东财/国证板块残留的已摘帽标的，腾讯行情证实已不带ST前缀）──
+# 600165 宁科生物：2026-08 名单核验轮发现为板块残留，已摘帽
+# 600525 长园集团：同上
+# 新增残留时在此追加代码即可（每周五自动更新时过滤）
+EXCLUDE_CODES = {'600165', '600525'}
+
 # ── 工具函数 ─────────────────────────────────────────────
 
 def log(msg=''):
@@ -233,6 +239,14 @@ def main():
     log(f"  数据源: {GW_ST_URL}")
     valid_st = fetch_names_from_gwcn()
     log(f"  页面解析: {len(valid_st)} 只成分股")
+
+    # 永久剔除已摘帽的板块残留标的
+    dropped = sorted({c for c, _ in valid_st} & EXCLUDE_CODES)
+    valid_st = [(c, n) for c, n in valid_st if c not in EXCLUDE_CODES]
+    if dropped:
+        log(f"  🗑️ 剔除摘帽残留 {len(dropped)} 只: {', '.join(dropped)}")
+        log(f"  剔除后: {len(valid_st)} 只")
+
     if not valid_st:
         log("  ❌ 名单获取为空，终止更新，避免覆盖旧数据!")
         sys.exit(1)

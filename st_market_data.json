@@ -731,12 +731,6 @@
   "prev_close": 5.82,
   "market_cap_yi": 20.81
  },
- "600525": {
-  "name": "长园集团",
-  "price": 5.32,
-  "prev_close": 5.36,
-  "market_cap_yi": 70.16
- },
  "603838": {
   "name": "*ST四通",
   "price": 12.92,
@@ -892,12 +886,6 @@
   "price": 8.76,
   "prev_close": 8.72,
   "market_cap_yi": 42.8
- },
- "600165": {
-  "name": "宁科生物",
-  "price": 3.16,
-  "prev_close": 3.22,
-  "market_cap_yi": 51.06
  },
  "002822": {
   "name": "ST中装",

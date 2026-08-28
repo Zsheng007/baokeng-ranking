@@ -1016,15 +1016,6 @@
    "province": "湖北",
    "reg_capital_wan": 36000
   },
-  "600525": {
-   "secucode": "600525.SH",
-   "name": "长园集团",
-   "controller": "无",
-   "category": "无实控人",
-   "s1_base": 1,
-   "province": "广东",
-   "reg_capital_wan": 131878.0152
-  },
   "605199": {
    "secucode": "605199.SH",
    "name": "ST葫芦娃",
@@ -1240,15 +1231,6 @@
    "s1_base": 3,
    "province": "青海",
    "reg_capital_wan": 58706.0741
-  },
-  "600165": {
-   "secucode": "600165.SH",
-   "name": "宁科生物",
-   "controller": "刘喜荣",
-   "category": "民企(个人)",
-   "s1_base": 3,
-   "province": "宁夏",
-   "reg_capital_wan": 161588.3775
   },
   "300205": {
    "secucode": "300205.SZ",
