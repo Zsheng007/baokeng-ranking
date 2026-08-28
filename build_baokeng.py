@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""保壳风云榜 V7 评分引擎 — 十四维100分制，真实数据驱动（2026-08-28 升级）
+"""ST保壳评分系统V1 评分引擎 — 十四维100分制，真实数据驱动（2026-08-28 定版）
 
-升级要点（V618+G → V7）：
+正式名称：ST保壳评分系统V1（前身为 V618+G 十一维 / V7 十四维内部迭代版）
+
+升级要点（V618+G → ST保壳评分系统V1）：
   1. B1/B2/B3 从类型推演 → 巨潮公告真实数据（立案/处罚/非标审计意见）
   2. C1 拆分为 C1面值距离(8) + C2市值水平(4)
   3. 新增 F2 重组/纾困进度(7) — 重整阶段/资产出售/债务豁免/赠与
@@ -97,7 +99,7 @@ def fin_val(code, field, default=None):
 
 
 # ══════════════════════════════════════════════════════════
-# V7 评分引擎
+# ST保壳评分系统V1 评分引擎
 # ══════════════════════════════════════════════════════════
 def score_stock(code):
     name = name_map[code]
@@ -433,7 +435,7 @@ stats = {'A': 0, 'B': 0, 'C': 0, 'D': 0}
 for s in scores:
     stats[s['level']] += 1
 
-print(f'V7 引擎 | 财务报告期: {REPORT_LABEL} | 公告信号: {flags_meta.get("fetched_at", "无")}')
+print(f'ST保壳评分系统V1 引擎 | 财务报告期: {REPORT_LABEL} | 公告信号: {flags_meta.get("fetched_at", "无")}')
 print(f'Total: {len(scores)} stocks')
 print(f'A(>65): {stats["A"]}  B(46-65): {stats["B"]}  C(26-45): {stats["C"]}  D(<=25): {stats["D"]}')
 print(f'Score: {scores[-1]["total"]} ~ {scores[0]["total"]}')

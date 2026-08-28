@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Generate baokeng-rank.html from V7 scores (分数越高=保壳越容易)
-V7: 十四维100分制 + 巨潮公告风险信号 + 报告期标记
+"""Generate baokeng-rank.html from ST保壳评分系统V1 scores (分数越高=保壳越容易)
+ST保壳评分系统V1: 十四维100分制 + 巨潮公告风险信号 + 报告期标记
 RAW: [code,name,type,board,reason, A1..H1(14维), delisted, note, mkt_cap, mkt_str, prev_close, flags]
 """
 
@@ -34,7 +34,7 @@ FLAG_CN = {
     'asset_sale': '资产出售', 'debt_waiver': '债务豁免', 'donation': '资产赠与',
 }
 
-# Generate RAW data array (V7 14维 = 100分制)
+# Generate RAW data array (V1 14维 = 100分制)
 raw_lines = []
 for s in scores:
     mkt_cap = s.get('market_cap_yi', 0) or 0
@@ -56,7 +56,7 @@ html = f'''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>保壳风云榜 · A股退市风险评估 V7</title>
+<title>保壳风云榜 · A股退市风险评估 · ST保壳评分系统V1</title>
 <style>
 * {{ box-sizing: border-box; margin: 0; padding: 0; }}
 body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f7f2; color: #1a2b1f; font-size: 14px; }}
@@ -254,13 +254,13 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
 
 <div class="header">
 <div class="header-inner">
-  <h1>🌿 保壳风云榜 <span style="font-size:13px;font-weight:400;opacity:0.7">V7 · 公告信号版</span></h1>
+  <h1>🌿 保壳风云榜 <span style="font-size:13px;font-weight:400;opacity:0.7">ST保壳评分系统V1 · 公告信号版</span></h1>
   <p>A股 ST / *ST 上市公司保壳能力评估 · 100分制十四维评分 · 巨潮公告风险信号 · 实时排名</p>
   <div class="header-meta">
     <span>更新时间：{today}</span>
     <span>覆盖公司：{len(scores)} 家</span>
     <span>财务报告期：{report_label}</span>
-    <span>评分模型：V7 十四维100分制</span>
+    <span>评分模型：ST保壳评分系统V1（十四维100分制）</span>
     <span>公告信号：巨潮资讯网</span>
     <span>每周五更新</span>
   </div>
@@ -270,7 +270,7 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
 <div class="container">
 
   <div class="score-legend">
-    <h3>📐 V7 100分制十四维评分体系（分数越高=保壳能力越强 · ★=真实公告数据）</h3>
+    <h3>📐 ST保壳评分系统V1 · 100分制十四维评分体系（分数越高=保壳能力越强 · ★=真实公告数据）</h3>
     <div class="score-legend-grid">
       <div class="slg-item"><div class="slg-dim">A1 扣非净利润</div><div class="slg-weight">5分</div></div>
       <div class="slg-item"><div class="slg-dim">A2 营业收入</div><div class="slg-weight">12分</div></div>
@@ -304,7 +304,7 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
   </div>
 
   <div id="tab-rank" class="tab-content active">
-    <div class="source-tip">📊 数据覆盖 <b>{len(scores)}</b> 家 ST/*ST 公司 · V7十四维评分100分制 · 财务报告期 <b>{report_label}</b> · 公告信号来自巨潮资讯网（近24个月） · 分数越高保壳越容易</div>
+    <div class="source-tip">📊 数据覆盖 <b>{len(scores)}</b> 家 ST/*ST 公司 · ST保壳评分系统V1 十四维100分制 · 财务报告期 <b>{report_label}</b> · 公告信号来自巨潮资讯网（近24个月） · 分数越高保壳越容易</div>
     <div class="rank-grid">
       <div class="rank-panel">
         <div class="rank-header-easy">
@@ -385,21 +385,21 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
     <h4>⚠️ 免责声明</h4>
     <p>1. 本工具仅供学习研究参考，<b>不构成任何投资建议</b>。评分模型基于公开数据和算法推断，可能存在偏差与滞后。</p>
     <p>2. 投资者应自行判断风险，<b>据此操作风险自负</b>。退市涉及复杂的财务、法律及监管因素，本工具无法全面覆盖。</p>
-    <p>3. 数据来源：沪深交易所风险警示板公开名单、腾讯财经行情、巨潮资讯网公告、公开财务数据。财务维度基于 <b>{report_label}</b>，公告信号窗口为近24个月。评分模型 V7 为独立研究框架，<b>不代表任何机构观点</b>。</p>
+    <p>3. 数据来源：沪深交易所风险警示板公开名单、腾讯财经行情、巨潮资讯网公告、公开财务数据。财务维度基于 <b>{report_label}</b>，公告信号窗口为近24个月。评分模型「ST保壳评分系统V1」为独立研究框架，<b>不代表任何机构观点</b>。</p>
     <p>4. 历史评分不代表未来结果，保壳能力评分仅反映基于公开信息的综合评估，不保证准确性。北交所股票公告信号暂未覆盖（走规则推演）。</p>
   </div>
 
 </div>
 
 <script>
-// ===================== V7 保壳能力评分数据 =====================
+// ===================== ST保壳评分系统V1 保壳能力评分数据 =====================
 // [代码,简称,类型,板块,风险原因,
 //  A1,A2,A3, B1,B2,B3, C1,C2, D1,E1, F1,F2, G1,H1 (14个),
 //  已锁定退市, 备注, 市值_亿, 市值_显示, 昨收, 信号串]
 // 分数越高 = 保壳能力越强
 const RAW = {raw_str};
 
-// V7 保壳能力总分 = 14维之和（100分制）
+// V1 保壳能力总分 = 14维之和（100分制）
 function calcScore(r) {{ return r[5]+r[6]+r[7]+r[8]+r[9]+r[10]+r[11]+r[12]+r[13]+r[14]+r[15]+r[16]+r[17]+r[18]; }}
 
 function calcLevel(s) {{ return s>65?'A': s>45?'B': s>25?'C': 'D'; }}
@@ -631,7 +631,7 @@ function showReport(c){{
         <div class="signal-row">${{sigHTML}}</div>
       </div>
       <div class="factors-section">
-        <div class="factors-title">V7 十四维保壳能力评分明细（满分100分 · ★=真实公告数据）</div>
+        <div class="factors-title">ST保壳评分系统V1 十四维保壳能力评分明细（满分100分 · ★=真实公告数据）</div>
         ${{factors.map(f=>`<div class="factor-row">
           <div class="factor-label">${{f.label}}</div>
           <div class="factor-bar-wrap"><div class="factor-bar" style="width:${{Math.round(f.v/f.max*100)}}%;background:${{f.col}}"></div></div>
@@ -792,4 +792,4 @@ renderVoteRank();
 with open('baokeng-rank.html', 'w', encoding='utf-8') as f:
     f.write(html)
 
-print(f'Generated baokeng-rank.html ({len(html)} bytes) | V7 | 报告期: {report_label}')
+print(f'Generated baokeng-rank.html ({len(html)} bytes) | ST保壳评分系统V1 | 报告期: {report_label}')
