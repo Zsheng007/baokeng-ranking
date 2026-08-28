@@ -899,4 +899,9 @@ renderVoteRank();
 with open('baokeng-rank.html', 'w', encoding='utf-8') as f:
     f.write(html)
 
-print(f'Generated baokeng-rank.html ({len(html)} bytes) | V2十三维主口径+V1灰度对照 | 报告期: {report_label} | V2公司数: {len(v2scores)}')
+# GitHub Pages 首页同步：index.html 与 baokeng-rank.html 内容一致，
+# 别人打开 https://zsheng007.github.io/baokeng-ranking/ 即可看到最新版
+with open('index.html', 'w', encoding='utf-8') as f:
+    f.write(html)
+
+print(f'Generated baokeng-rank.html + index.html ({len(html)} bytes) | V2十三维主口径+V1灰度对照 | 报告期: {report_label} | V2公司数: {len(v2scores)}')
