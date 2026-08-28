@@ -1,0 +1,41 @@
+{
+ "meta": {
+  "verified_at": "2026-08-28 19:32:09",
+  "verdict": "FAIL",
+  "sse_scanned": 2515,
+  "szse_scanned": 2935,
+  "official_hs_total": 5291,
+  "official_hs_st": 206,
+  "eastmoney_hs": 206,
+  "bj_count": 3
+ },
+ "missing_in_eastmoney": {
+  "900915": "ST中路",
+  "301117": "ST佳缘"
+ },
+ "eastmoney_lag_unst": {
+  "600525": {
+   "ours": "ST长园",
+   "official": "长园集团",
+   "tencent": "长园集团"
+  },
+  "600165": {
+   "ours": "ST宁科",
+   "official": "宁科生物",
+   "tencent": "宁科生物"
+  }
+ },
+ "official_name_lag": {},
+ "delisted_in_eastmoney": {},
+ "name_mismatch": {
+  "300295": {
+   "ours": "*ST三六",
+   "official": "*ST三六五"
+  }
+ },
+ "bj_stocks": {
+  "920575": "*ST康乐",
+  "920023": "*ST田野",
+  "920090": "*ST同辉"
+ }
+}
