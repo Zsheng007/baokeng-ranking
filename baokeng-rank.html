@@ -244,6 +244,7 @@ tbody td { padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: hi
 
   <div class="tabs">
     <button class="tab active" onclick="switchTab('rank')">📊 风云榜</button>
+    <button class="tab" onclick="switchTab('moyu')">🎣 摸鱼榜</button>
     <button class="tab" onclick="switchTab('query')">🔍 查询详情</button>
     <button class="tab" onclick="switchTab('list')">📋 全名单（207家）</button>
     <button class="tab" onclick="switchTab('vote')">🗳️ 投票排行</button>
@@ -267,6 +268,18 @@ tbody td { padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: hi
         <div id="hardList"></div>
       </div>
     </div>
+  </div>
+
+  <div id="tab-moyu" class="tab-content">
+    <div class="source-tip">🎣 摸鱼指数 = 50%×V2保壳分 + 50%×壳便宜分（市值对数归一化，越便宜分越高）× 等级系数（A/B 1.0 · C 0.85 · D 0.6）· 已剔除锁定退市标的 · 指数越高 = 壳便宜 + 保壳稳 = 摸鱼综合机会越好</div>
+    <div class="rank-panel">
+      <div class="rank-header-easy" style="background:#fdf6e9;border-bottom:0.5px solid #f5dcb0">
+        <div class="rank-panel-title">🎣 ST摸鱼榜 TOP 20</div>
+        <div class="rank-panel-sub">市值越低 + 保壳分越高 = 捡壳综合机会越好 · 面值危机与审计红线已由保壳分惩罚 · 点击查看详情</div>
+      </div>
+      <div id="moyuList"></div>
+    </div>
+    <div class="source-tip" style="margin-top:12px">💡 摸鱼逻辑：壳越便宜，买方并购/借壳成本越低（对标28亿基准壳费）；保壳分越高，退市擦肩而过的概率越低。两者兼得 = 低位潜伏的综合机会。D级折扣防止"超便宜但快退市"的飞刀陷阱。</div>
   </div>
 
   <div id="tab-query" class="tab-content">
@@ -818,6 +831,22 @@ const UNIQUE = Array.from(CODE_MAP.values());
 const BY_SCORE = [...UNIQUE].sort((a,b)=>b.score-a.score);
 BY_SCORE.forEach((c,i)=>c.rank=i+1);
 
+// ===================== 摸鱼榜：市值越低 + 保壳分越高 = 综合机会越好 =====================
+// 壳便宜分：市值对数归一化（最便宜=100, 最贵=0, 仅非退市且市值>0）
+// 摸鱼指数 = (50%×保壳分 + 50%×壳便宜分) × 等级系数（A/B 1.0 · C 0.85 · D 0.6）
+const MOYU_LV_K = {'A':1.0,'B':1.0,'C':0.85,'D':0.6};
+const MOYU_POOL = UNIQUE.filter(c=>!c.delisted && c.market_cap_yi>0);
+{
+  const lns = MOYU_POOL.map(c=>Math.log(c.market_cap_yi));
+  const lnMin = Math.min(...lns), lnMax = Math.max(...lns), lnSpan = (lnMax-lnMin) || 1;
+  MOYU_POOL.forEach(c=>{
+    c.cheap = Math.round(100*(lnMax-Math.log(c.market_cap_yi))/lnSpan);
+    c.moyu = Math.round((c.score*0.5 + c.cheap*0.5) * MOYU_LV_K[c.level] * 10) / 10;
+  });
+}
+const BY_MOYU = [...MOYU_POOL].sort((a,b)=>b.moyu-a.moyu);
+BY_MOYU.forEach((c,i)=>c.moyuRank=i+1);
+
 const LC = {'A':'#27ae60','B':'#2980b9','C':'#e67e22','D':'#c0392b'};
 const LT = {'A':'低风险·退市概率低','B':'中风险·保壳有希望','C':'高风险·保壳难度大','D':'极高风险·退市警钟'};
 const LE = {'A':'✅ 综合评估：保壳能力较强','B':'🔵 综合评估：中等退市风险','C':'🟠 综合评估：较高退市风险','D':'🔴 综合评估：退市风险极高'};
@@ -867,6 +896,22 @@ function renderRank(){
   const hard = BY_SCORE.slice(-10).reverse();
   document.getElementById('easyList').innerHTML = easy.map((c,i)=>rankItem(c,i)).join('');
   document.getElementById('hardList').innerHTML = hard.map((c,i)=>rankItem(c,i)).join('');
+}
+
+function renderMoyu(){
+  const MC = '#b9770e';
+  document.getElementById('moyuList').innerHTML = BY_MOYU.slice(0,20).map((c,i)=>`
+  <div class="rank-item" onclick="gotoDetail('${c.code}')">
+    <div class="rank-num ${numClass(i)}">${i+1}</div>
+    <div class="rank-info">
+      <div class="rank-name">${c.name}<span class="rtag rtag-${c.level}">${c.level}</span></div>
+      <div class="rank-code">${c.code} · ${c.board} · 市值${c.market_cap_str}亿 · 保壳分${c.score} · 壳便宜分${c.cheap}</div>
+    </div>
+    <div class="rank-score-col">
+      <div class="mini-bar-wrap"><div class="mini-bar" style="width:${Math.min(100,Math.round(c.moyu))}%;background:${MC}"></div></div>
+      <div class="score-val" style="color:${MC}" title="摸鱼指数">${c.moyu}</div>
+    </div>
+  </div>`).join('');
 }
 
 function numClass(i){ return i===0?'gold':i===1?'silver':i===2?'bronze':'other'; }
@@ -924,7 +969,7 @@ function renderList(){
 }
 
 function switchTab(n){
-  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',['rank','query','list','vote'][i]===n));
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',['rank','moyu','query','list','vote'][i]===n));
   document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+n).classList.add('active');
   if(n==='vote') renderVoteRank();
@@ -1002,6 +1047,7 @@ function showReport(c){
         <div style="text-align:right">
           <div class="score-big" style="color:${col}">${c.score}<span style="font-size:16px;font-weight:400"> 分</span></div>
           <div class="score-label">全榜第 ${c.rank} / ${UNIQUE.length}（越高越易保壳）</div>
+          ${c.moyuRank ? `<div class="score-label" style="color:#b9770e">🎣 摸鱼榜第 ${c.moyuRank} / ${MOYU_POOL.length} · 指数 ${c.moyu}</div>` : ''}
         </div>
       </div>
       <div class="info-row">
@@ -1167,6 +1213,7 @@ function renderVoteRank(){
 
 initStats();
 renderRank();
+renderMoyu();
 renderList();
 renderVoteRank();
 </script>
