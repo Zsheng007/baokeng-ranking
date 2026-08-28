@@ -1,0 +1,1006 @@
+{
+ "meta": {
+  "fetched_at": "2026-08-28 19:58",
+  "window": "2021-08-01~2026-08-28"
+ },
+ "cases": {
+  "000673": {
+   "name": "*ST当代",
+   "date": "2022-06-03",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300312": {
+   "name": "*ST邦讯",
+   "date": "2022-06-02",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002684": {
+   "name": "*ST猛狮",
+   "date": "2022-05-30",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300023": {
+   "name": "*ST宝德",
+   "date": "2022-05-30",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000502": {
+   "name": "*ST绿景",
+   "date": "2022-05-27",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600896": {
+   "name": "*ST海医",
+   "date": "2022-06-21",
+   "title": "览海医疗关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002260": {
+   "name": "德奥退",
+   "date": "2022-06-16",
+   "title": "关于收到《股票终止上市复核决定书》的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600555": {
+   "name": "*ST海创",
+   "date": "2022-06-09",
+   "title": "*ST海创关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300202": {
+   "name": "*ST 聚龙",
+   "date": "2022-06-02",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 1
+   },
+   "category": "compliance"
+  },
+  "600090": {
+   "name": "*ST济堂",
+   "date": "2022-06-02",
+   "title": "新疆同济堂健康产业股份有限公司收到股票终止上市决定的公告",
+   "hits": {
+    "fraud": 14
+   },
+   "category": "fraud"
+  },
+  "600385": {
+   "name": "*ST金泰",
+   "date": "2022-06-02",
+   "title": "山东金泰集团股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300038": {
+   "name": "*ST数知",
+   "date": "2022-06-01",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300367": {
+   "name": "*ST网力",
+   "date": "2022-05-31",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000613": {
+   "name": "*ST东海A",
+   "date": "2022-05-31",
+   "title": "关于收到公司股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000735": {
+   "name": "罗 牛 山",
+   "date": "2022-05-31",
+   "title": "关于收到子公司大东海股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000611": {
+   "name": "*ST天首",
+   "date": "2022-05-28",
+   "title": "关于收到公司股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002464": {
+   "name": "*ST众应",
+   "date": "2022-05-28",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300325": {
+   "name": "*ST德威",
+   "date": "2022-05-27",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002447": {
+   "name": "*ST晨鑫",
+   "date": "2022-05-27",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300064": {
+   "name": "*ST金刚",
+   "date": "2022-05-26",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "fraud": 5
+   },
+   "category": "fraud"
+  },
+  "600146": {
+   "name": "*ST环球",
+   "date": "2022-05-26",
+   "title": "商赢环球股份有限公司收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600870": {
+   "name": "*ST厦华",
+   "date": "2022-05-26",
+   "title": "厦门华侨电子股份有限公司收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002770": {
+   "name": "*ST科迪",
+   "date": "2022-05-25",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002147": {
+   "name": "*ST新光",
+   "date": "2022-05-25",
+   "title": "关于收到公司股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002618": {
+   "name": "*ST丹邦",
+   "date": "2022-05-25",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000732": {
+   "name": "ST泰禾",
+   "date": "2023-07-29",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000918": {
+   "name": "*ST嘉凯",
+   "date": "2023-07-24",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002113": {
+   "name": "*ST天润",
+   "date": "2023-07-22",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 3
+   },
+   "category": "compliance"
+  },
+  "002503": {
+   "name": "*ST搜特",
+   "date": "2023-07-22",
+   "title": "关于收到股票和可转换公司债券终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300356": {
+   "name": "*ST光一",
+   "date": "2023-06-12",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000667": {
+   "name": "ST美置",
+   "date": "2023-07-08",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300297": {
+   "name": "*ST蓝盾",
+   "date": "2023-06-30",
+   "title": "关于收到股票及可转换公司债券终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300089": {
+   "name": "*ST文化",
+   "date": "2023-06-12",
+   "title": "关于收到股票终止上市决定暨公司股票将被终止上市的风险提示公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000540": {
+   "name": "*ST中天",
+   "date": "2023-06-16",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 1
+   },
+   "category": "compliance"
+  },
+  "002751": {
+   "name": "*ST易尚",
+   "date": "2023-06-13",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000038": {
+   "name": "*ST大通",
+   "date": "2023-06-10",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002411": {
+   "name": "*ST必康",
+   "date": "2023-06-10",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 4
+   },
+   "category": "compliance"
+  },
+  "300526": {
+   "name": "*ST中潜",
+   "date": "2023-06-09",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "200152": {
+   "name": "*ST山航B",
+   "date": "2023-06-08",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002417": {
+   "name": "*ST深南",
+   "date": "2023-06-08",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300392": {
+   "name": "*ST腾信",
+   "date": "2023-06-07",
+   "title": "腾信关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000806": {
+   "name": "*ST银河",
+   "date": "2023-06-06",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000606": {
+   "name": "*ST顺利",
+   "date": "2023-06-06",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300273": {
+   "name": "*ST和佳",
+   "date": "2023-06-05",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 3
+   },
+   "category": "compliance"
+  },
+  "002781": {
+   "name": "*ST奇信",
+   "date": "2023-06-03",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "fraud": 1,
+    "compliance": 2
+   },
+   "category": "fraud"
+  },
+  "300336": {
+   "name": "*ST新文",
+   "date": "2023-06-02",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "688555": {
+   "name": "*ST泽达",
+   "date": "2023-06-01",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "fraud": 3
+   },
+   "category": "fraud"
+  },
+  "688086": {
+   "name": "*ST紫晶",
+   "date": "2023-06-01",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 16,
+    "fraud": 3
+   },
+   "category": "fraud"
+  },
+  "600767": {
+   "name": "*ST运盛",
+   "date": "2023-05-24",
+   "title": "运盛医疗：关于收到终止上市决定书的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600242": {
+   "name": "*ST中昌",
+   "date": "2023-05-24",
+   "title": "中昌大数据股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600532": {
+   "name": "*ST未来",
+   "date": "2023-05-23",
+   "title": "上海智汇未来医疗服务股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 10,
+    "merger": 1
+   },
+   "category": "merger"
+  },
+  "600781": {
+   "name": "*ST辅仁",
+   "date": "2023-05-23",
+   "title": "*ST辅仁 关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 2
+   },
+   "category": "compliance"
+  },
+  "300330": {
+   "name": "计通退",
+   "date": "2023-05-19",
+   "title": "关于收到《股票终止上市复核决定书》的公告",
+   "hits": {
+    "fraud": 2
+   },
+   "category": "fraud"
+  },
+  "002621": {
+   "name": "*ST美吉",
+   "date": "2024-07-30",
+   "title": "2024-062-关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 3
+   },
+   "category": "compliance"
+  },
+  "000971": {
+   "name": "*ST高升",
+   "date": "2024-07-09",
+   "title": "关于收到终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300116": {
+   "name": "*ST保力",
+   "date": "2024-07-05",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300799": {
+   "name": "*ST左江",
+   "date": "2024-06-28",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000961": {
+   "name": "ST中南",
+   "date": "2024-06-25",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300742": {
+   "name": "*ST越博",
+   "date": "2024-06-21",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300282": {
+   "name": "*ST三盛",
+   "date": "2024-06-20",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002433": {
+   "name": "*ST太安",
+   "date": "2024-06-06",
+   "title": "广东太安堂药业股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000416": {
+   "name": "*ST民控",
+   "date": "2024-06-04",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002699": {
+   "name": "*ST美盛",
+   "date": "2024-06-04",
+   "title": "关于收到终止上市决定的公告",
+   "hits": {
+    "compliance": 4
+   },
+   "category": "compliance"
+  },
+  "000996": {
+   "name": "*ST中期",
+   "date": "2024-05-31",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002087": {
+   "name": "*ST新纺",
+   "date": "2024-05-30",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600766": {
+   "name": "*ST园城",
+   "date": "2024-05-29",
+   "title": "烟台园城黄金股份有限公司关于收到股票终止上市决定书的公告",
+   "hits": {
+    "compliance": 4
+   },
+   "category": "compliance"
+  },
+  "603133": {
+   "name": "*ST碳元",
+   "date": "2024-05-29",
+   "title": "碳元科技股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600647": {
+   "name": "*ST同达",
+   "date": "2024-05-29",
+   "title": "*ST同达关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600306": {
+   "name": "*ST商城",
+   "date": "2024-05-22",
+   "title": "沈阳商业城股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 1
+   },
+   "category": "compliance"
+  },
+  "000005": {
+   "name": "ST星源",
+   "date": "2024-04-12",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "603603": {
+   "name": "*ST博天",
+   "date": "2024-03-20",
+   "title": "博天环境集团股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {
+    "fraud": 10
+   },
+   "category": "fraud"
+  },
+  "002089": {
+   "name": "*ST新海",
+   "date": "2024-03-19",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "fraud": 31
+   },
+   "category": "fraud"
+  },
+  "002002": {
+   "name": "ST鸿达",
+   "date": "2024-02-27",
+   "title": "鸿达兴业股份有限公司关于收到股票及可转换公司债券终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002740": {
+   "name": "*ST爱迪",
+   "date": "2024-02-08",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000046": {
+   "name": "*ST泛海",
+   "date": "2024-01-27",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002776": {
+   "name": "*ST柏龙",
+   "date": "2024-01-20",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000666": {
+   "name": "经纬纺机",
+   "date": "2023-10-25",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "voluntary": 23
+   },
+   "category": "voluntary"
+  },
+  "000616": {
+   "name": "*ST海投",
+   "date": "2023-08-19",
+   "title": "2023-086：关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002504": {
+   "name": "*ST弘高",
+   "date": "2023-08-05",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300208": {
+   "name": "*ST中程",
+   "date": "2025-06-21",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600190": {
+   "name": "*ST锦港",
+   "date": "2025-06-21",
+   "title": "锦州港股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {
+    "fraud": 7,
+    "compliance": 2
+   },
+   "category": "fraud"
+  },
+  "000622": {
+   "name": "*ST恒立",
+   "date": "2025-06-19",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600462": {
+   "name": "*ST九有",
+   "date": "2025-06-17",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 5
+   },
+   "category": "compliance"
+  },
+  "000584": {
+   "name": "*ST工智",
+   "date": "2025-06-13",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600387": {
+   "name": "*ST海越",
+   "date": "2025-06-07",
+   "title": "海越能源关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002336": {
+   "name": "*ST人乐",
+   "date": "2025-06-06",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "603003": {
+   "name": "*ST龙宇",
+   "date": "2025-05-31",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 1
+   },
+   "category": "compliance"
+  },
+  "600804": {
+   "name": "*ST鹏博",
+   "date": "2025-05-31",
+   "title": "鹏博士关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 8
+   },
+   "category": "compliance"
+  },
+  "002750": {
+   "name": "*ST龙津",
+   "date": "2025-05-29",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300108": {
+   "name": "*ST吉药",
+   "date": "2025-05-26",
+   "title": "吉药控股集团股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 3,
+    "trade": 1
+   },
+   "category": "trade"
+  },
+  "000040": {
+   "name": "*ST旭蓝",
+   "date": "2025-04-30",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300117": {
+   "name": "*ST嘉寓",
+   "date": "2025-04-26",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300630": {
+   "name": "*ST普利",
+   "date": "2025-04-18",
+   "title": "关于收到公司股票及可转换公司债券终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600225": {
+   "name": "*ST卓朗",
+   "date": "2025-01-23",
+   "title": "天津卓朗信息科技股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000413": {
+   "name": "ST旭电",
+   "date": "2024-09-21",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002308": {
+   "name": "*ST威创",
+   "date": "2024-09-19",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300495": {
+   "name": "*ST美尚",
+   "date": "2024-09-13",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000861": {
+   "name": "海印股份",
+   "date": "2024-09-07",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002502": {
+   "name": "ST鼎龙",
+   "date": "2024-08-24",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000023": {
+   "name": "*ST深天",
+   "date": "2024-08-22",
+   "title": "2024-072  关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000976": {
+   "name": "*ST华铁",
+   "date": "2024-08-22",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002505": {
+   "name": "鹏都农牧",
+   "date": "2024-08-10",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002341": {
+   "name": "ST新纶",
+   "date": "2024-08-10",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002435": {
+   "name": "ST长康",
+   "date": "2024-08-08",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002665": {
+   "name": "ST航高",
+   "date": "2024-08-08",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002325": {
+   "name": "*ST洪涛",
+   "date": "2024-08-06",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002288": {
+   "name": "*ST超华",
+   "date": "2024-08-06",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 2
+   },
+   "category": "compliance"
+  },
+  "000982": {
+   "name": "中银绒业",
+   "date": "2024-08-03",
+   "title": "宁夏中银绒业股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300262": {
+   "name": "*ST巴安",
+   "date": "2024-08-03",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002898": {
+   "name": "*ST赛隆",
+   "date": "2026-06-18",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 1
+   },
+   "category": "compliance"
+  },
+  "300029": {
+   "name": "*ST天龙",
+   "date": "2026-06-10",
+   "title": "关于公司收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000004": {
+   "name": "*ST国华",
+   "date": "2026-06-13",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002808": {
+   "name": "*ST恒久",
+   "date": "2026-06-13",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "920305": {
+   "name": "*ST云创",
+   "date": "2026-06-09",
+   "title": "关于公司收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "605081": {
+   "name": "*ST太和",
+   "date": "2026-05-30",
+   "title": "上海太和水科技发展股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600608": {
+   "name": "*ST沪科",
+   "date": "2026-05-30",
+   "title": "*ST沪科关于公司收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600193": {
+   "name": "*ST创兴",
+   "date": "2026-05-30",
+   "title": "上海创兴资源开发股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 1
+   },
+   "category": "compliance"
+  },
+  "000638": {
+   "name": "*ST万方",
+   "date": "2026-05-26",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 1
+   },
+   "category": "compliance"
+  },
+  "600421": {
+   "name": "*ST华嵘",
+   "date": "2026-05-23",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600636": {
+   "name": "*ST国化",
+   "date": "2026-05-23",
+   "title": "国新文化控股股份有限公司收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600696": {
+   "name": "*ST岩石",
+   "date": "2026-05-23",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "600599": {
+   "name": "*ST熊猫",
+   "date": "2026-05-23",
+   "title": "*ST熊猫关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "688287": {
+   "name": "*ST观典",
+   "date": "2026-05-12",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300344": {
+   "name": "*ST立方",
+   "date": "2026-03-23",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "002231": {
+   "name": "*ST奥维",
+   "date": "2026-03-21",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300391": {
+   "name": "*ST长药",
+   "date": "2026-03-13",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "300379": {
+   "name": "*ST东通",
+   "date": "2025-12-22",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 2
+   },
+   "category": "compliance"
+  },
+  "600200": {
+   "name": "*ST苏吴",
+   "date": "2025-12-02",
+   "title": "江苏吴中医药发展股份有限公司关于收到股票终止上市决定的公告",
+   "hits": {
+    "fraud": 4,
+    "compliance": 3
+   },
+   "category": "fraud"
+  },
+  "920680": {
+   "name": "*ST广道",
+   "date": "2025-11-12",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {},
+   "category": "unknown"
+  },
+  "000851": {
+   "name": "*ST高鸿",
+   "date": "2025-11-04",
+   "title": "2025-142关于收到股票终止上市决定的公告",
+   "hits": {
+    "compliance": 3
+   },
+   "category": "compliance"
+  },
+  "000627": {
+   "name": "*ST天茂",
+   "date": "2025-09-26",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "voluntary": 18
+   },
+   "category": "voluntary"
+  },
+  "300280": {
+   "name": "*ST紫天",
+   "date": "2025-09-06",
+   "title": "关于收到股票终止上市决定的公告",
+   "hits": {
+    "fraud": 1
+   },
+   "category": "fraud"
+  }
+ }
+}
