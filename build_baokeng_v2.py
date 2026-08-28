@@ -88,7 +88,16 @@ if os.path.exists(os.path.join(BASE, 'st_scores.json')):
 
 codes = list(name_map.keys())
 TODAY = datetime.now()
-SHELL_BASE = 28.0  # 壳价值基准（亿）= 大Deal-168 壳费中位数
+
+# 壳价值基准（亿）：从shell-fee-base单源库动态读取own_stats口径（2026-08-28起）
+# 自家统计：近2年完成实控权变更154样本(市值<60亿)，市值中位数33.81亿
+try:
+    with open(r'C:\Users\xiaot\.workbuddy\skills\shell-fee-base\shell_transactions.json',
+              encoding='utf-8') as _f:
+        _cfg = json.load(_f).get('benchmark_config', {})
+    SHELL_BASE = float(_cfg.get('own_mcap_median_yi') or 33.81)
+except Exception:
+    SHELL_BASE = 33.81  # 兜底：单源库缺失时用自家统计值（原第三方锚28亿已降级为交叉验证）
 
 
 def months_ago(date_str, n):
@@ -161,13 +170,13 @@ def score_stock(code):
         notes.append('北交所数据降级')
 
     # ════ C2 壳价值锚定 (0-8) 老Z定稿：规则反转 ════
-    # 基准28亿：市值越低→并购成本越低→买壳注资保壳概率越高
+    # 基准SHELL_BASE(自家市值中位数33.81亿)：市值越低→并购成本越低→买壳注资保壳概率越高
     if mkt_cap <= 0:
         c2 = 4  # 数据缺失，中性
-    elif mkt_cap <= SHELL_BASE * 0.5:    c2 = 8   # ≤14亿
-    elif mkt_cap <= SHELL_BASE * 0.75:   c2 = 6   # ≤21亿
-    elif mkt_cap <= SHELL_BASE:          c2 = 4   # ≤28亿
-    elif mkt_cap <= SHELL_BASE * 1.5:    c2 = 2   # ≤42亿
+    elif mkt_cap <= SHELL_BASE * 0.5:    c2 = 8   # ≤16.9亿
+    elif mkt_cap <= SHELL_BASE * 0.75:   c2 = 6   # ≤25.4亿
+    elif mkt_cap <= SHELL_BASE:          c2 = 4   # ≤33.8亿
+    elif mkt_cap <= SHELL_BASE * 1.5:    c2 = 2   # ≤50.7亿
     else:                                 c2 = 0
     if mkt_cap > 0 and c2 == 8:
         notes.append('市值≤壳基准5折(并购机会区)')
@@ -412,7 +421,7 @@ payload = {
     'meta': {
         'system': 'ST保壳评分系统V2（老Z定稿2026-08-28，十三维100分制）',
         'philosophy': '退市概率打分：维度=退市通道，权重=5年176家退市案例实证贡献度',
-        'dims': 'C1面值6/C2壳价值8(规则反转,基准28亿)/S1实控人12(新增,涉造假封顶4)/'
+        'dims': 'C1面值6/C2壳价值8(规则反转,基准SHELL_BASE=33.81亿own口径)/S1实控人12(新增,涉造假封顶4)/'
                 'S2质押6(中登周报)/A1净资产10/A2扣非主营收入12(F10主营构成口径)/A3扣非6/'
                 'D1现金流4/B1立案造假10/B2审计12/F2重组6/F1趋势4(F10同比)/H1司法4',
         'levels': 'A(>70) B(51-70) C(31-50) D(≤30)，分数越高=保壳越容易；'

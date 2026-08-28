@@ -38,6 +38,15 @@ else:
 
 today = date.today().isoformat()
 
+# 壳价值基准（亿）：与 build_baokeng_v2.py 同源，读 shell-fee-base 单源库 own_stats 口径
+try:
+    with open(r'C:\Users\xiaot\.workbuddy\skills\shell-fee-base\shell_transactions.json', encoding='utf-8') as _f:
+        _cfg = json.load(_f).get('benchmark_config', {})
+    SHELL_BASE_YI = float(_cfg.get('own_mcap_median_yi') or 33.81)
+except Exception:
+    SHELL_BASE_YI = 33.81
+SHELL_BASE_LABEL = f'{SHELL_BASE_YI:.1f}'  # 展示口径
+
 # 信号中文名映射
 FLAG_CN = {
     'investigation': '立案调查', 'adverse_audit': '无法表示/否定意见',
@@ -439,7 +448,7 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
       </div>
       <div id="moyuList"></div>
     </div>
-    <div class="source-tip" style="margin-top:12px">💡 摸鱼逻辑：壳越便宜，买方并购/借壳成本越低（对标28亿基准壳费）；保壳分越高，退市擦肩而过的概率越低。两者兼得 = 低位潜伏的综合机会。D级折扣防止"超便宜但快退市"的飞刀陷阱。</div>
+    <div class="source-tip" style="margin-top:12px">💡 摸鱼逻辑：壳越便宜，买方并购/借壳成本越低（对标{SHELL_BASE_LABEL}亿基准壳费）；保壳分越高，退市擦肩而过的概率越低。两者兼得 = 低位潜伏的综合机会。D级折扣防止"超便宜但快退市"的飞刀陷阱。</div>
   </div>
 
   <div id="tab-query" class="tab-content">
@@ -519,6 +528,8 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
 //  已锁定退市, 备注, 实控人, 实控人分类, total]
 // 分数越高 = 保壳能力越强
 const REPORT_LABEL = "{report_label}";
+const SHELL_BASE_YI = {SHELL_BASE_YI};  // 壳基准（亿），与build_baokeng_v2.py同源
+const SHELL_BASE_LABEL = "{SHELL_BASE_LABEL}";
 const RAW = {raw_str};
 
 // V2 保壳能力总分 = 13维之和（100分制）+ 通道封顶（与build_baokeng_v2.py一致）
@@ -1018,7 +1029,7 @@ function showExpertReport(code){{
     ? `近24个月命中公告信号 ${{sigNames.length}} 项：${{sigNames.join('、')}}。${{c.rescueN>0?'其中含纾困/重组类正向信号，保壳主动权仍在。':'暂无纾困类正向信号，保壳动作有待观察。'}}`
     : '近24个月无公告信号命中，监管与司法层面暂无新增事件。';
   const moyuSec = c.moyuRank
-    ? `<div class="er-sec"><div class="er-sec-t">四、摸鱼视角（壳价 × 保壳）</div><div class="er-sec-b">摸鱼榜第 ${{c.moyuRank}} / ${{MOYU_POOL.length}} 名，指数 ${{c.moyu}}（壳便宜分 ${{c.cheap}}）。市值 ${{c.market_cap_str}}亿 ${{c.market_cap_yi<=28?'低于':'高于'}}28亿基准壳费线，${{c.moyu>=60?'并购/借壳成本优势与保壳确定性兼备，属于低位潜伏观察区。':'综合机会一般，壳价或保壳确定性至少一头不占优。'}}</div></div>`
+    ? `<div class="er-sec"><div class="er-sec-t">四、摸鱼视角（壳价 × 保壳）</div><div class="er-sec-b">摸鱼榜第 ${{c.moyuRank}} / ${{MOYU_POOL.length}} 名，指数 ${{c.moyu}}（壳便宜分 ${{c.cheap}}）。市值 ${{c.market_cap_str}}亿 ${{c.market_cap_yi<=SHELL_BASE_YI?'低于':'高于'}}${{SHELL_BASE_LABEL}}亿基准壳费线，${{c.moyu>=60?'并购/借壳成本优势与保壳确定性兼备，属于低位潜伏观察区。':'综合机会一般，壳价或保壳确定性至少一头不占优。'}}</div></div>`
     : '';
   document.getElementById('expBody').innerHTML = `
     <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
@@ -1081,10 +1092,10 @@ function showMoyuReport(code){{
   const weak = scored.slice(0,3).map(x=>`${{x.t}} ${{x.v}}/${{x.max}}`).join('　') || '暂缺V2维度数据';
   const KWHY = {{A:'A级保壳压力低，不折扣', B:'B级保壳压力中等，不折扣', C:'C级存在明确风险敞口，打85折', D:'D级多通道濒临触发，打6折防飞刀'}};
   const cap = c.market_cap_yi;
-  const capPct = cap>0 ? Math.round(cap/28*100) : null;
-  const capTxt = cap<=28
-    ? `当前市值 ${{c.market_cap_str}} 亿，仅为28亿基准壳费线的 ${{capPct}}% —— 买方并购/借壳成本低，壳价具备明显折价优势，是摸鱼模型"便宜"一侧的核心加分项。`
-    : `当前市值 ${{c.market_cap_str}} 亿，为28亿基准壳费线的 ${{capPct}}% —— 壳价偏贵，并购/借壳成本高于基准线，"便宜"一侧不占优。`;
+  const capPct = cap>0 ? Math.round(cap/SHELL_BASE_YI*100) : null;
+  const capTxt = cap<=SHELL_BASE_YI
+    ? `当前市值 ${{c.market_cap_str}} 亿，仅为${{SHELL_BASE_LABEL}}亿基准壳费线的 ${{capPct}}% —— 买方并购/借壳成本低，壳价具备明显折价优势，是摸鱼模型"便宜"一侧的核心加分项。`
+    : `当前市值 ${{c.market_cap_str}} 亿，为${{SHELL_BASE_LABEL}}亿基准壳费线的 ${{capPct}}% —— 壳价偏贵，并购/借壳成本高于基准线，"便宜"一侧不占优。`;
   let zone, zoneCol, zoneTxt;
   if(c.moyu>=65){{ zone='🎣 重点潜伏区'; zoneCol='#1a6b3a';
     zoneTxt='壳便宜与保壳确定性双优：市值低于或接近基准壳费线，同时V2保壳分不低，属于摸鱼模型的低位潜伏核心池。策略上适合小仓位跟踪公告信号，等待并购/借壳/重整预期发酵，不宜追高。'; }}
@@ -1118,7 +1129,7 @@ function showMoyuReport(code){{
         <tr><td><b>摸鱼指数（全池第 ${{c.moyuRank}} / ${{MOYU_POOL.length}} 名）</b></td><td><b>${{c.moyu}}</b></td></tr>
       </table>
     </div>
-    <div class="er-sec"><div class="er-sec-t" style="color:#8e6a1f">二、壳价分析（对标28亿基准壳费）</div><div class="er-sec-b">${{capTxt}}</div></div>
+    <div class="er-sec"><div class="er-sec-t" style="color:#8e6a1f">二、壳价分析（对标${{SHELL_BASE_LABEL}}亿基准壳费）</div><div class="er-sec-b">${{capTxt}}</div></div>
     <div class="er-sec"><div class="er-sec-t" style="color:#8e6a1f">三、保壳确定性</div><div class="er-sec-b">V2保壳评分 ${{c.score}} 分（${{c.level}}级），三大短板维度：${{weak}}。${{c.level==='A'||c.level==='B'?'退市通道短期内无集中触发迹象，确定性一侧达标。':'确定性一侧存在失分，需跟踪短板维度下一报告期的修复情况。'}}</div></div>
     <div class="er-sec"><div class="er-sec-t" style="color:#8e6a1f">四、公告信号面（巨潮资讯网 · 近24个月）</div><div class="er-sec-b">${{sigTxt}}</div></div>
     <div class="er-sec"><div class="er-sec-t" style="color:${{zoneCol}}">五、摸鱼结论：${{zone}}</div><div class="er-sec-b">${{zoneTxt}}</div></div>
@@ -1205,7 +1216,7 @@ function buildFormalReport(c){{
   if (v2.B1 === 0) capTxt.push('涉造假立案（B1=0），总分封顶30分');
   const capHtml = capTxt.length ? `<div class="fr-sec"><div class="fr-sec-t">六、通道封顶警示</div><div class="fr-sec-b"><b style="color:#c0392b">${{capTxt.join('；')}}。</b>该标的存在已触发的强制退市通道，评分封顶机制生效，实际退市风险显著高于总分表象。</div></div>` : '';
   const moyuSec = c.moyuRank
-    ? `<div class="fr-sec"><div class="fr-sec-t">五、摸鱼视角（壳价 × 保壳确定性）</div><div class="fr-sec-b">摸鱼榜第 ${{c.moyuRank}} / ${{MOYU_POOL.length}} 名，摸鱼指数 ${{c.moyu}}（壳便宜分 ${{c.cheap}}）。当前市值 ${{c.market_cap_str}} 亿，${{c.market_cap_yi<=28?'低于':'高于'}}28亿元基准壳费线。${{c.moyu>=60?'并购/借壳成本优势与保壳确定性兼备，属于低位潜伏观察区。':'综合机会一般，壳价或保壳确定性至少一头不占优。'}}</div></div>`
+    ? `<div class="fr-sec"><div class="fr-sec-t">五、摸鱼视角（壳价 × 保壳确定性）</div><div class="fr-sec-b">摸鱼榜第 ${{c.moyuRank}} / ${{MOYU_POOL.length}} 名，摸鱼指数 ${{c.moyu}}（壳便宜分 ${{c.cheap}}）。当前市值 ${{c.market_cap_str}} 亿，${{c.market_cap_yi<=SHELL_BASE_YI?'低于':'高于'}}${{SHELL_BASE_LABEL}}亿元基准壳费线。${{c.moyu>=60?'并购/借壳成本优势与保壳确定性兼备，属于低位潜伏观察区。':'综合机会一般，壳价或保壳确定性至少一头不占优。'}}</div></div>`
     : '<div class="fr-sec"><div class="fr-sec-t">五、摸鱼视角（壳价 × 保壳确定性）</div><div class="fr-sec-b">该标的因已锁定退市或无市值数据，未纳入摸鱼榜（摸鱼池仅含非退市且市值>0标的）。</div></div>';
   const now = new Date();
   const ts = now.getFullYear()+'年'+(now.getMonth()+1)+'月'+now.getDate()+'日 '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
