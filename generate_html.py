@@ -123,10 +123,11 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsof
 .tab-content {{ display: none; }}
 .tab-content.active {{ display: block; }}
 
-.rank-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }}
+.rank-grid {{ display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }}
 .rank-panel {{ background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; overflow: hidden; }}
 .rank-header-easy {{ padding: 14px 16px; border-bottom: 0.5px solid #c8e6d0; background: #edf7f1; }}
 .rank-header-hard {{ padding: 14px 16px; border-bottom: 0.5px solid #fad5d0; background: #fdf3f1; }}
+.rank-header-moyu {{ padding: 14px 16px; border-bottom: 0.5px solid #f5dcb0; background: #fdf6e9; }}
 .rank-panel-title {{ font-size: 14px; font-weight: 600; }}
 .rank-panel-sub {{ font-size: 12px; color: #888; margin-top: 2px; }}
 
@@ -151,6 +152,41 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsof
 .rtag-B {{ background: #d6eaf8; color: #1a5276; }}
 .rtag-C {{ background: #fde8d8; color: #a04000; }}
 .rtag-D {{ background: #fadbd8; color: #922b21; }}
+
+/* 首页 TOP10 四列表格：名称/代码/市值/评分 */
+.top-table {{ width: 100%; border-collapse: collapse; font-size: 12.5px; }}
+.top-table th {{ text-align: left; padding: 7px 10px; font-size: 11px; color: #8aa396; background: #fafcfb; border-bottom: 1px solid #e3f0e8; font-weight: 600; }}
+.top-table td {{ padding: 8px 10px; border-bottom: 0.5px solid #f2f9f4; }}
+.top-table tbody tr:last-child td {{ border-bottom: none; }}
+.top-table tbody tr {{ cursor: pointer; transition: background 0.15s; }}
+.top-table tbody tr:hover {{ background: #f4fbf6; }}
+.t-rank {{ width: 36px; color: #7aa088; font-weight: 700; }}
+.t-name {{ font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 110px; }}
+.t-code {{ color: #999; font-size: 11.5px; }}
+.t-cap {{ font-weight: 500; color: #1a3d2b; }}
+.t-score {{ font-weight: 700; text-align: right; }}
+
+/* 会员专享弹窗 + 专家报告 */
+.modal-mask {{ position: fixed; inset: 0; background: rgba(12,26,16,0.55); display: none; align-items: center; justify-content: center; z-index: 999; padding: 20px; }}
+.modal-mask.show {{ display: flex; }}
+.modal {{ background: #fff; border-radius: 14px; max-width: 640px; width: 100%; max-height: 86vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }}
+.modal-head {{ padding: 15px 20px; border-bottom: 0.5px solid #e3f0e8; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: #fff; z-index: 2; }}
+.modal-title {{ font-size: 15px; font-weight: 700; }}
+.modal-close {{ border: none; background: #eef7f1; color: #1a5e35; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 13px; }}
+.modal-close:hover {{ background: #d5edde; }}
+.modal-body {{ padding: 18px 20px; }}
+.expert-btn {{ display: block; width: 100%; margin-top: 14px; padding: 12px; border: none; border-radius: 10px; background: linear-gradient(135deg,#1a5e35,#2e7d52); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; letter-spacing: 0.5px; }}
+.expert-btn:hover {{ filter: brightness(1.1); }}
+.mem-input {{ width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #c8e6d0; border-radius: 8px; font-size: 13px; margin: 6px 0; outline: none; }}
+.mem-input:focus {{ border-color: #1a5e35; }}
+.mem-btn {{ width: 100%; padding: 11px; border: none; border-radius: 8px; background: #1a5e35; color: #fff; font-weight: 600; cursor: pointer; margin-top: 10px; font-size: 13.5px; }}
+.mem-btn:hover {{ background: #2e7d52; }}
+.mem-locked {{ text-align: center; padding: 22px 8px; }}
+.er-sec {{ margin-top: 14px; }}
+.er-sec-t {{ font-size: 13px; font-weight: 700; color: #1a5e35; margin-bottom: 5px; }}
+.er-sec-b {{ font-size: 12.8px; line-height: 1.75; color: #33473b; }}
+.er-member-tip {{ margin-top: 16px; padding: 9px 12px; background: #edf7f1; border-radius: 8px; font-size: 11.5px; color: #1a6b3a; }}
+.er-disclaim {{ margin-top: 12px; font-size: 11px; color: #aaa; line-height: 1.6; border-top: 0.5px dashed #dceee3; padding-top: 10px; }}
 
 .search-box {{ background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; padding: 20px; }}
 .search-row {{ display: flex; gap: 10px; margin-bottom: 16px; }}
@@ -347,6 +383,13 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
           <div class="rank-panel-sub">保壳能力分最低 · 退市风险最大</div>
         </div>
         <div id="hardList"></div>
+      </div>
+      <div class="rank-panel">
+        <div class="rank-header-moyu">
+          <div class="rank-panel-title">🎣 ST摸鱼榜 TOP 10</div>
+          <div class="rank-panel-sub">市值越低 + 保壳分越高 = 综合机会越好 · 点击查看详情</div>
+        </div>
+        <div id="moyuTopList"></div>
       </div>
     </div>
   </div>
@@ -556,11 +599,27 @@ function signalDots(c){{
   return out;
 }}
 
+// 首页三张 TOP10 表：名称 / 代码 / 市值 / 评分 四项
+function topTableHTML(list, getVal, getCol, label){{
+  return `<table class="top-table">
+    <thead><tr><th>名次</th><th>名称</th><th>代码</th><th>市值(亿)</th><th style="text-align:right">${{label}}</th></tr></thead>
+    <tbody>${{list.map((c,i)=>`
+      <tr onclick="gotoDetail('${{c.code}}')">
+        <td class="t-rank">${{i+1}}</td>
+        <td class="t-name" title="${{c.name}}">${{c.name}}</td>
+        <td class="t-code">${{c.code}}</td>
+        <td class="t-cap">${{c.market_cap_str}}</td>
+        <td class="t-score" style="color:${{getCol(c)}}">${{getVal(c)}}</td>
+      </tr>`).join('')}}</tbody></table>`;
+}}
+
 function renderRank(){{
   const easy = BY_SCORE.slice(0,10);
   const hard = BY_SCORE.slice(-10).reverse();
-  document.getElementById('easyList').innerHTML = easy.map((c,i)=>rankItem(c,i)).join('');
-  document.getElementById('hardList').innerHTML = hard.map((c,i)=>rankItem(c,i)).join('');
+  const moyu = BY_MOYU.slice(0,10);
+  document.getElementById('easyList').innerHTML = topTableHTML(easy, c=>c.score, c=>LC[c.level], '保壳分');
+  document.getElementById('hardList').innerHTML = topTableHTML(hard, c=>c.score, c=>LC[c.level], '保壳分');
+  document.getElementById('moyuTopList').innerHTML = topTableHTML(moyu, c=>c.moyu, ()=> '#b9770e', '摸鱼指数');
 }}
 
 function renderMoyu(){{
@@ -580,20 +639,6 @@ function renderMoyu(){{
 }}
 
 function numClass(i){{ return i===0?'gold':i===1?'silver':i===2?'bronze':'other'; }}
-function rankItem(c, i){{
-  const col = LC[c.level];
-  return `<div class="rank-item" onclick="gotoDetail('${{c.code}}')">
-    <div class="rank-num ${{numClass(i)}}">${{i+1}}</div>
-    <div class="rank-info">
-      <div class="rank-name">${{c.name}}<span class="rtag rtag-${{c.level}}">${{c.level}}</span></div>
-      <div class="rank-code">${{c.code}} · ${{c.board}} · 市值${{c.market_cap_str}}亿 · ${{c.reason.length>14?c.reason.slice(0,14)+'…':c.reason}}</div>
-    </div>
-    <div class="rank-score-col">
-      <div class="mini-bar-wrap"><div class="mini-bar" style="width:${{Math.min(100,Math.round(c.score))}}%;background:${{col}}"></div></div>
-      <div class="score-val" style="color:${{col}}">${{c.score}}</div>
-    </div>
-  </div>`;
-}}
 
 function getFiltered(){{
   let data;
@@ -737,6 +782,7 @@ function showReport(c){{
         <div class="conclusion-title">${{LE[c.level]}}</div>
         <div class="conclusion-text">${{v2Note}}</div>
       </div>
+      <button class="expert-btn" onclick="openExpertReport('${{c.code}}')">🧠 ST股分析专家 · 即时分析报告（会员专享）</button>
     </div>
     ${{voteSectionHTML(c.code)}}`;
 }}
@@ -876,12 +922,99 @@ function renderVoteRank(){{
     </div>`).join('');
 }}
 
+// ===================== ST股分析专家 · 即时分析报告（会员专享） =====================
+const MK = 'bkfl_member';
+function getMember(){{ try{{ return JSON.parse(localStorage.getItem(MK)); }}catch(e){{ return null; }} }}
+function closeModal(id){{ const el=document.getElementById(id); if(el) el.classList.remove('show'); }}
+function openExpertReport(code){{
+  if(getMember()){{ showExpertReport(code); return; }}
+  const c = UNIQUE.find(x=>x.code===code);
+  document.getElementById('memBody').innerHTML = `
+    <div class="mem-locked">
+      <div style="font-size:44px">🔐</div>
+      <div style="font-weight:700;font-size:15px;margin:10px 0 4px">即时分析报告为会员专享内容</div>
+      <div style="font-size:12.5px;color:#888">注册会员后即可免费查看「${{c?c.name+' ('+c.code+')':code}}」的 ST股分析专家即时报告</div>
+    </div>
+    <div style="margin-top:14px">
+      <input class="mem-input" id="memPhone" placeholder="手机号（11位）" maxlength="11" inputmode="numeric">
+      <input class="mem-input" id="memName" placeholder="昵称（选填）" maxlength="12">
+      <button class="mem-btn" onclick="doRegister('${{code}}')">注册会员并查看报告</button>
+      <div style="font-size:11px;color:#aaa;margin-top:8px;text-align:center">注册即代表同意《会员服务条款》· 会员信息仅保存在本机浏览器，不上传服务器</div>
+    </div>`;
+  document.getElementById('memMask').classList.add('show');
+}}
+function doRegister(code){{
+  const phone = (document.getElementById('memPhone').value||'').trim();
+  if(!/^1\\d{{10}}$/.test(phone)){{ alert('请输入正确的11位手机号'); return; }}
+  const name = (document.getElementById('memName').value||'').trim() || ('会员'+phone.slice(-4));
+  localStorage.setItem(MK, JSON.stringify({{phone:phone, name:name, ts:Date.now()}}));
+  closeModal('memMask');
+  showExpertReport(code);
+}}
+function showExpertReport(code){{
+  const c = UNIQUE.find(x=>x.code===code);
+  if(!c) return;
+  const m = getMember() || {{}};
+  const v2 = c.v2 || {{}};
+  const DIMP = [
+    ['C1','面值距离',6],['C2','壳价值',8],['S1','实控人性质',12],['S2','股权质押',6],
+    ['A1','净资产',10],['A2','扣非主营收入',12],['A3','扣非净利润',6],['D1','现金流质量',4],
+    ['B1','立案/造假',10],['B2','审计意见',12],['F2','重组纾困',6],['F1','财务趋势',4],['H1','司法风险',4]
+  ];
+  const scored = DIMP.map(d=>({{t:d[1], v:(v2[d[0]]!=null?v2[d[0]]:null), max:d[2]}}))
+    .filter(x=>x.v!=null).sort((a,b)=>a.v-b.v);
+  const weak = scored.slice(0,3).map(x=>`${{x.t}} ${{x.v}}/${{x.max}}`).join('　') || '暂缺V2维度数据';
+  const LV_TXT = {{
+    A:'保壳压力低、退市风险小，短期无强制退市通道命中的迹象。',
+    B:'保壳压力中等，个别维度存在失分，需跟踪下一报告期的修复情况。',
+    C:'保壳压力较大，存在明确风险敞口，若短板维度不修复，存在退市可能。',
+    D:'退市风险高，多通道濒临触发，除非出现实质性重整/纾困进展，否则应谨慎对待。'
+  }};
+  const sigNames = c.flags.map(f=>FLAG_CN[f]).filter(Boolean);
+  const sigTxt = sigNames.length
+    ? `近24个月命中公告信号 ${{sigNames.length}} 项：${{sigNames.join('、')}}。${{c.rescueN>0?'其中含纾困/重组类正向信号，保壳主动权仍在。':'暂无纾困类正向信号，保壳动作有待观察。'}}`
+    : '近24个月无公告信号命中，监管与司法层面暂无新增事件。';
+  const moyuSec = c.moyuRank
+    ? `<div class="er-sec"><div class="er-sec-t">四、摸鱼视角（壳价 × 保壳）</div><div class="er-sec-b">摸鱼榜第 ${{c.moyuRank}} / ${{MOYU_POOL.length}} 名，指数 ${{c.moyu}}（壳便宜分 ${{c.cheap}}）。市值 ${{c.market_cap_str}}亿 ${{c.market_cap_yi<=28?'低于':'高于'}}28亿基准壳费线，${{c.moyu>=60?'并购/借壳成本优势与保壳确定性兼备，属于低位潜伏观察区。':'综合机会一般，壳价或保壳确定性至少一头不占优。'}}</div></div>`
+    : '';
+  document.getElementById('expBody').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+      <div>
+        <div style="font-weight:700;font-size:16px">${{c.name}} <span class="rtag rtag-${{c.level}}">${{c.level}}</span></div>
+        <div style="font-size:11.5px;color:#999;margin-top:3px">${{c.code}} · ${{c.board}} · 全榜第 ${{c.rank}}/${{UNIQUE.length}} 名</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:26px;font-weight:800;color:${{LC[c.level]}}">${{c.score}}</div>
+        <div style="font-size:10.5px;color:#999">V2保壳分</div>
+      </div>
+    </div>
+    <div class="er-sec"><div class="er-sec-t">一、核心结论</div><div class="er-sec-b">${{c.name}}（${{c.code}}）当前V2保壳评分 ${{c.score}} 分，评级 ${{c.level}} 级，全榜第 ${{c.rank}} 名。${{LV_TXT[c.level]}}风险原因：${{c.reason}}。</div></div>
+    <div class="er-sec"><div class="er-sec-t">二、三大短板维度</div><div class="er-sec-b">${{weak}}</div></div>
+    <div class="er-sec"><div class="er-sec-t">三、公告信号面（巨潮资讯网 · 近24个月）</div><div class="er-sec-b">${{sigTxt}}</div></div>
+    ${{moyuSec}}
+    <div class="er-member-tip">👤 会员 ${{m.name||''}} 专属 · 报告基于报告期 <b>{report_label}</b> 数据即时生成</div>
+    <div class="er-disclaim">⚠️ 免责声明：本报告由ST股分析专家基于公开数据自动生成，仅供参考，不构成任何投资建议。数据来源：巨潮资讯网、东方财富、腾讯财经。股市有风险，投资需谨慎。</div>`;
+  document.getElementById('expMask').classList.add('show');
+}}
+
 initStats();
 renderRank();
 renderMoyu();
 renderList();
 renderVoteRank();
 </script>
+<div class="modal-mask" id="memMask" onclick="if(event.target===this)closeModal('memMask')">
+  <div class="modal">
+    <div class="modal-head"><div class="modal-title">🔐 会员专享 · ST股分析专家</div><button class="modal-close" onclick="closeModal('memMask')">✕</button></div>
+    <div class="modal-body" id="memBody"></div>
+  </div>
+</div>
+<div class="modal-mask" id="expMask" onclick="if(event.target===this)closeModal('expMask')">
+  <div class="modal">
+    <div class="modal-head"><div class="modal-title">🧠 ST股分析专家 · 即时分析报告</div><button class="modal-close" onclick="closeModal('expMask')">✕</button></div>
+    <div class="modal-body" id="expBody"></div>
+  </div>
+</div>
 </body>
 </html>'''
 
