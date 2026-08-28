@@ -1,0 +1,1056 @@
+{
+ "meta": {
+  "source": "东财datacenter RPT_CSDC_LIST（中登每周质押比例）",
+  "note": "无近期周报记录=质押已清零；90天内记录取最新PLEDGE_RATIO",
+  "generated_at": "2026-08-28 21:14:21",
+  "ok": 209,
+  "fail": 0
+ },
+ "data": {
+  "600439": {
+   "pledge_ratio": 10.6,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300087": {
+   "pledge_ratio": 4.71,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "688089": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "002759": {
+   "pledge_ratio": 1.8,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "688121": {
+   "pledge_ratio": 0.26,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300290": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2026-01-30",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "688189": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2023-01-06",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "300831": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "300430": {
+   "pledge_ratio": 12.87,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300352": {
+   "pledge_ratio": 10.47,
+   "trade_date": "2026-08-21",
+   "source": "中登周报(最新)"
+  },
+  "301139": {
+   "pledge_ratio": 29.25,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "301030": {
+   "pledge_ratio": 19.66,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300396": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2025-10-17",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002667": {
+   "pledge_ratio": 6.68,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002883": {
+   "pledge_ratio": 7.92,
+   "trade_date": "2026-08-21",
+   "source": "中登周报(最新)"
+  },
+  "688066": {
+   "pledge_ratio": 6.07,
+   "trade_date": "2026-08-21",
+   "source": "中登周报(最新)"
+  },
+  "688022": {
+   "pledge_ratio": 7.47,
+   "trade_date": "2026-08-21",
+   "source": "中登周报(最新)"
+  },
+  "000078": {
+   "pledge_ratio": 46.15,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002082": {
+   "pledge_ratio": 40.08,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002109": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2020-12-31",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002198": {
+   "pledge_ratio": 7.0,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002514": {
+   "pledge_ratio": 21.34,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600302": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2019-01-18",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "600337": {
+   "pledge_ratio": 33.99,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600340": {
+   "pledge_ratio": 12.47,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000677": {
+   "pledge_ratio": 15.68,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600745": {
+   "pledge_ratio": 4.78,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600187": {
+   "pledge_ratio": 10.99,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600965": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2024-12-13",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "603189": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2020-08-14",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "603359": {
+   "pledge_ratio": 21.78,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603922": {
+   "pledge_ratio": 29.15,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603378": {
+   "pledge_ratio": 39.53,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603718": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2022-07-08",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "601010": {
+   "pledge_ratio": 22.13,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600678": {
+   "pledge_ratio": 20.5,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "601718": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2020-11-06",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "600180": {
+   "pledge_ratio": 50.69,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "920575": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "600053": {
+   "pledge_ratio": 59.6,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600370": {
+   "pledge_ratio": 78.74,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "920023": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "000826": {
+   "pledge_ratio": 7.18,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002193": {
+   "pledge_ratio": 19.41,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600491": {
+   "pledge_ratio": 23.69,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000632": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002547": {
+   "pledge_ratio": 28.28,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "688496": {
+   "pledge_ratio": 2.0,
+   "trade_date": "2026-08-21",
+   "source": "中登周报(最新)"
+  },
+  "000016": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2020-03-06",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "000639": {
+   "pledge_ratio": 20.21,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "688622": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "688033": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "002694": {
+   "pledge_ratio": 12.54,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002856": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2023-12-22",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002691": {
+   "pledge_ratio": 28.78,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002726": {
+   "pledge_ratio": 19.38,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300068": {
+   "pledge_ratio": 14.68,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300027": {
+   "pledge_ratio": 5.41,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300076": {
+   "pledge_ratio": 26.36,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300594": {
+   "pledge_ratio": 16.14,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300212": {
+   "pledge_ratio": 2.98,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300245": {
+   "pledge_ratio": 6.28,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600476": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2019-08-23",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "600818": {
+   "pledge_ratio": 6.89,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603272": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "688201": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "600537": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2026-02-27",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002360": {
+   "pledge_ratio": 13.86,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002431": {
+   "pledge_ratio": 1.24,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002634": {
+   "pledge_ratio": 7.4,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000056": {
+   "pledge_ratio": 21.41,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000610": {
+   "pledge_ratio": 13.26,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000838": {
+   "pledge_ratio": 36.25,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603008": {
+   "pledge_ratio": 25.07,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600730": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2019-11-15",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "920090": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "300295": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2020-12-04",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "605336": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "002977": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2025-10-10",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "600889": {
+   "pledge_ratio": 2.06,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300123": {
+   "pledge_ratio": 14.66,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002227": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2025-10-10",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002542": {
+   "pledge_ratio": 1.29,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "688270": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "002932": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2022-11-04",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "600082": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2020-01-17",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "300081": {
+   "pledge_ratio": 10.42,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300385": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2020-11-06",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002598": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2026-04-30",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "600581": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2020-11-13",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002538": {
+   "pledge_ratio": 21.03,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603429": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2024-04-30",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002731": {
+   "pledge_ratio": 9.04,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002512": {
+   "pledge_ratio": 24.33,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000821": {
+   "pledge_ratio": 8.43,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300091": {
+   "pledge_ratio": 17.0,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300173": {
+   "pledge_ratio": 1.2,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002055": {
+   "pledge_ratio": 3.92,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600079": {
+   "pledge_ratio": 12.08,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603822": {
+   "pledge_ratio": 23.09,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300460": {
+   "pledge_ratio": 11.93,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600169": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2019-08-16",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002689": {
+   "pledge_ratio": 17.76,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603595": {
+   "pledge_ratio": 32.74,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600735": {
+   "pledge_ratio": 43.13,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300237": {
+   "pledge_ratio": 16.25,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000698": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2020-07-10",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "603517": {
+   "pledge_ratio": 1.18,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300366": {
+   "pledge_ratio": 11.52,
+   "trade_date": "2026-08-21",
+   "source": "中登周报(最新)"
+  },
+  "600624": {
+   "pledge_ratio": 10.19,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "688053": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "603825": {
+   "pledge_ratio": 15.59,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300527": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2019-03-08",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002581": {
+   "pledge_ratio": 10.49,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "688076": {
+   "pledge_ratio": 0.13,
+   "trade_date": "2026-08-21",
+   "source": "中登周报(最新)"
+  },
+  "000903": {
+   "pledge_ratio": 4.88,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300326": {
+   "pledge_ratio": 6.36,
+   "trade_date": "2026-08-21",
+   "source": "中登周报(最新)"
+  },
+  "300462": {
+   "pledge_ratio": 1.06,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300211": {
+   "pledge_ratio": 15.79,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300472": {
+   "pledge_ratio": 4.38,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "688184": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "603398": {
+   "pledge_ratio": 12.79,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600525": {
+   "pledge_ratio": 15.71,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603789": {
+   "pledge_ratio": 9.77,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603843": {
+   "pledge_ratio": 28.77,
+   "trade_date": "2026-08-21",
+   "source": "中登周报(最新)"
+  },
+  "600107": {
+   "pledge_ratio": 1.26,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603838": {
+   "pledge_ratio": 13.53,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "605199": {
+   "pledge_ratio": 35.03,
+   "trade_date": "2026-08-21",
+   "source": "中登周报(最新)"
+  },
+  "002305": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2019-09-20",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002620": {
+   "pledge_ratio": 39.76,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300477": {
+   "pledge_ratio": 3.23,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002630": {
+   "pledge_ratio": 9.44,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300716": {
+   "pledge_ratio": 10.87,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300152": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2024-09-20",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "300198": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2024-05-24",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002717": {
+   "pledge_ratio": 1.69,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600753": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2024-03-08",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002789": {
+   "pledge_ratio": 5.86,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603021": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2024-10-25",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "300147": {
+   "pledge_ratio": 21.86,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000488": {
+   "pledge_ratio": 22.66,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000793": {
+   "pledge_ratio": 3.23,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002424": {
+   "pledge_ratio": 17.55,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300419": {
+   "pledge_ratio": 13.6,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300020": {
+   "pledge_ratio": 6.61,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002528": {
+   "pledge_ratio": 5.84,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002217": {
+   "pledge_ratio": 0.33,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603377": {
+   "pledge_ratio": 11.89,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603959": {
+   "pledge_ratio": 11.89,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600381": {
+   "pledge_ratio": 24.56,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603869": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2024-05-24",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "603828": {
+   "pledge_ratio": 22.77,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600165": {
+   "pledge_ratio": 11.03,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002822": {
+   "pledge_ratio": 18.89,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300205": {
+   "pledge_ratio": 9.99,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000615": {
+   "pledge_ratio": 9.62,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000711": {
+   "pledge_ratio": 19.95,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000909": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2023-04-28",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "300096": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2024-10-18",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "600543": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2020-01-17",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "300167": {
+   "pledge_ratio": 0.52,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300010": {
+   "pledge_ratio": 2.25,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300555": {
+   "pledge_ratio": 7.85,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002816": {
+   "pledge_ratio": 3.3,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300301": {
+   "pledge_ratio": 0.11,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600136": {
+   "pledge_ratio": 10.59,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002485": {
+   "pledge_ratio": 68.5,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002211": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2020-11-20",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002024": {
+   "pledge_ratio": 18.64,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300338": {
+   "pledge_ratio": 6.16,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600759": {
+   "pledge_ratio": 16.33,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "300044": {
+   "pledge_ratio": 8.95,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000609": {
+   "pledge_ratio": 8.02,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603729": {
+   "pledge_ratio": 13.02,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "603557": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2024-11-08",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "600365": {
+   "pledge_ratio": 13.84,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002592": {
+   "pledge_ratio": 23.4,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600734": {
+   "pledge_ratio": 0.12,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600239": {
+   "pledge_ratio": 20.49,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002168": {
+   "pledge_ratio": 5.9,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002650": {
+   "pledge_ratio": 19.51,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002586": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2024-09-06",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002501": {
+   "pledge_ratio": 9.96,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002569": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2025-07-11",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002175": {
+   "pledge_ratio": 2.78,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002122": {
+   "pledge_ratio": 12.42,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002323": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2024-04-03",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "002207": {
+   "pledge_ratio": 12.0,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002102": {
+   "pledge_ratio": 3.97,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002306": {
+   "pledge_ratio": 17.82,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000010": {
+   "pledge_ratio": 11.27,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000911": {
+   "pledge_ratio": 17.49,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "000752": {
+   "pledge_ratio": 1.33,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600243": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2026-04-24",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "000669": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2024-01-12",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "600289": {
+   "pledge_ratio": 37.36,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600423": {
+   "pledge_ratio": 2.16,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600238": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2023-11-17",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "600568": {
+   "pledge_ratio": 25.91,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600530": {
+   "pledge_ratio": 12.14,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600119": {
+   "pledge_ratio": 0.0,
+   "trade_date": "2019-11-22",
+   "source": "中登周报(记录停更,质押已清零)"
+  },
+  "600080": {
+   "pledge_ratio": 21.04,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600084": {
+   "pledge_ratio": 29.62,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "002872": {
+   "pledge_ratio": 11.01,
+   "trade_date": "2026-08-21",
+   "source": "中登周报(最新)"
+  },
+  "002719": {
+   "pledge_ratio": 16.29,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "600265": {
+   "pledge_ratio": 2.5,
+   "trade_date": "2026-08-28",
+   "source": "中登周报(最新)"
+  },
+  "200016": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "200488": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  },
+  "200056": {
+   "pledge_ratio": 0.0,
+   "trade_date": "",
+   "source": "中登周报(无记录=无质押)"
+  }
+ }
+}

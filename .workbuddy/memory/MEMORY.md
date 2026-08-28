@@ -38,6 +38,15 @@
 ### 评级（分数越高=保壳越容易）
 - A级(>65) B级(46-65) C级(26-45) D级(≤25)
 
+## V2灰度版已上线（2026-08-28）
+- baokeng-rank.html 双口径：V2十三维主口径 + V1十四维灰度对照列；A60/B114/C34/D1
+- 莫高终验：V1 53分/171名 → V2 70分/B级/第64名（A线边界）
+- 回测终版：166家强制退市99.4%落C/D，漏报仅退市国化（已知边界案例）
+- V2数据管道：st_controllers/st_pledges/st_trends/st_deduct_income.json（209家全量）→ build_baokeng_v2.py → st_scores_v2.json
+- 通道封顶JS同步：C1=0/B2=0→封顶50、B1=0→封顶30（generate_html.py calcScore2）
+- V2RAW 22字段无reason，13维从idx4起（与V1索引差1）；verify_html.js生成后必跑
+- **遗留：V2五脚本未接入weekly_update_friday.py**（切换正式版前必须接入）；灰度两周后正式切换V2
+
 ## 更新流程（全自动化）
 1. 从东方财富API获取最新ST板块名单 → st_names.json
 2. 从腾讯API获取行情数据 → st_market_data.json

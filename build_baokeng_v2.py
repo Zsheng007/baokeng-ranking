@@ -59,6 +59,27 @@ if os.path.exists(os.path.join(BASE, 'st_controllers.json')):
 else:
     print('[WARN] st_controllers.json 不存在，S1 走中性降级')
 
+pledges = {}
+if os.path.exists(os.path.join(BASE, 'st_pledges.json')):
+    with open(os.path.join(BASE, 'st_pledges.json'), encoding='utf-8') as f:
+        pledges = json.load(f).get('data', {})
+else:
+    print('[WARN] st_pledges.json 不存在，S2 走旧质押字段')
+
+trends = {}
+if os.path.exists(os.path.join(BASE, 'st_trends.json')):
+    with open(os.path.join(BASE, 'st_trends.json'), encoding='utf-8') as f:
+        trends = json.load(f).get('data', {})
+else:
+    print('[WARN] st_trends.json 不存在，F1 走复合代理')
+
+deduct_inc = {}
+if os.path.exists(os.path.join(BASE, 'st_deduct_income.json')):
+    with open(os.path.join(BASE, 'st_deduct_income.json'), encoding='utf-8') as f:
+        deduct_inc = json.load(f).get('data', {})
+else:
+    print('[WARN] st_deduct_income.json 不存在，A2 用营业总收入口径')
+
 v1_scores = {}
 if os.path.exists(os.path.join(BASE, 'st_scores.json')):
     with open(os.path.join(BASE, 'st_scores.json'), encoding='utf-8') as f:
@@ -172,14 +193,20 @@ def score_stock(code):
     # 注：12分制中基础档封顶10，预留2分为"国资保壳资源佐证"（增持/注资公告），
     # 当前数据管道未覆盖，暂按基础档执行
 
-    # ════ S2 股权质押与控制权 (0-6) ════
+    # ════ S2 股权质押与控制权 (0-6) 数据源：中登周报 RPT_CSDC_LIST ════
     freeze = flag_bucket(code, 'freeze')
+    pl = pledges.get(code)
+    if pl is not None:
+        pledge_ratio = pl.get('pledge_ratio')  # 无近期记录=0(质押已清零)
     if freeze and not is_bj:
         s2 = 0  # 爆仓/冻结 → 控制权真空
         notes.append('股份冻结')
     elif pledge_ratio is None:
         s2 = 3  # 数据缺失，中性偏保守
-    elif pledge_ratio < 20: s2 = 6
+    elif pledge_ratio < 20:
+        s2 = 6
+        if pledge_ratio == 0 and pl is not None:
+            notes.append('无质押')
     elif pledge_ratio < 50: s2 = 4
     else:                   s2 = 2
     if pledge_ratio is not None and pledge_ratio >= 50:
@@ -199,9 +226,17 @@ def score_stock(code):
         a1 = 3  # 数据缺失，保守
 
     # ════ A2 扣非主营业务收入 (0-12) 老Z定稿：扣非主营口径 ════
-    # 当前数据管道口径=营业总收入；扣非主营（营业收入扣除项）待接入东财报表附注
+    # 口径：营业收入 × (1 - 其他/补充收入占比)，主营构成取自东财F10年报期
+    # 冲量嫌疑：低毛利项(毛利率0~5%)收入占比≥30% → -3（贸易冲量凑3亿风险）
+    di = deduct_inc.get(code) or {}
     if revenue is not None:
-        rev_yi = revenue / 1e8
+        other_ratio = di.get('other_ratio')
+        if other_ratio is not None:
+            rev_basis = revenue * (1 - other_ratio)  # 扣非主营收入
+        else:
+            rev_basis = revenue
+            notes.append('扣非口径未获取,按营业总收入')
+        rev_yi = rev_basis / 1e8
         gap = max(0.0, 1 - rev_yi / rev_threshold) if rev_yi < rev_threshold else 0.0
         if gap == 0:        a2 = 12
         elif gap <= 0.20:   a2 = 9
@@ -212,6 +247,11 @@ def score_stock(code):
         if is_star and gap > 0:
             a2 = max(0, a2 - 3)
             notes.append(f'营收缺口{gap*100:.0f}%且已戴*ST')
+        # 收入真实性：低毛利贸易类占比≥30% → -3
+        low_margin = di.get('low_margin_ratio')
+        if low_margin is not None and low_margin >= 0.30:
+            a2 = max(0, a2 - 3)
+            notes.append(f'低毛利收入占{low_margin*100:.0f}%(冲量嫌疑)')
     else:
         a2 = 3  # 数据缺失，保守
 
@@ -284,8 +324,16 @@ def score_stock(code):
             f2 = 2
             notes.append('出售资产/债务豁免')
 
-    # ════ F1 经营改善趋势 (0-4) — 扣非+营收复合代理 ════
-    if deducted is not None and revenue is not None:
+    # ════ F1 经营改善趋势 (0-4) 数据源：F10最新期vs上年同期 ════
+    tr = trends.get(code) or {}
+    rev_yoy, kc_yoy = tr.get('rev_yoy'), tr.get('kc_yoy')
+    if rev_yoy is not None and kc_yoy is not None:
+        rev_up, kc_up = rev_yoy > 0, kc_yoy > 0
+        if rev_up and kc_up:   f1 = 4
+        elif rev_up or kc_up:  f1 = 2
+        else:                  f1 = 0
+    elif deducted is not None and revenue is not None:
+        # 降级：复合代理（扣非为正+营收达标）
         d_pos = deducted > 0
         r_ok = (revenue / 1e8) >= rev_threshold
         if d_pos and r_ok:   f1 = 4
@@ -365,8 +413,8 @@ payload = {
         'system': 'ST保壳评分系统V2（老Z定稿2026-08-28，十三维100分制）',
         'philosophy': '退市概率打分：维度=退市通道，权重=5年176家退市案例实证贡献度',
         'dims': 'C1面值6/C2壳价值8(规则反转,基准28亿)/S1实控人12(新增,涉造假封顶4)/'
-                'S2质押6/A1净资产10/A2扣非主营收入12(口径待接入)/A3扣非6/D1现金流4/'
-                'B1立案造假10/B2审计12/F2重组6/F1趋势4/H1司法4',
+                'S2质押6(中登周报)/A1净资产10/A2扣非主营收入12(F10主营构成口径)/A3扣非6/'
+                'D1现金流4/B1立案造假10/B2审计12/F2重组6/F1趋势4(F10同比)/H1司法4',
         'levels': 'A(>70) B(51-70) C(31-50) D(≤30)，分数越高=保壳越容易；'
                   '联动规则：C1≤1时C2降档(面值危机压制壳价值)；涉造假立案S1封顶4',
         'report_date': REPORT_DATE,

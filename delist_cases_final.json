@@ -6,7 +6,9 @@
    "巨潮公告132家",
    "知识库覆盖",
    "2022退市潮规则"
-  ]
+  ],
+  "refined_at": "2026-08-28 21:16:38",
+  "refine_note": "unknown 45家精修：人工高置信map + F10财务推断；cat_conf分档"
  },
  "cases": {
   "600068": {
@@ -187,7 +189,9 @@
    "name": "*ST精伦",
    "date": "20260427",
    "src": "SSE官方名录",
-   "cat": "unknown"
+   "cat": "financial",
+   "cat_conf": "high",
+   "cat_reason": "退市前两年营收[1.1, 1.42]亿低于阈值3亿且扣非连续为负"
   },
   "600385": {
    "name": "退市金泰",
@@ -199,7 +203,9 @@
    "name": "退市海越",
    "date": "20250711",
    "src": "SSE官方名录+巨潮",
-   "cat": "unknown"
+   "cat": "voluntary",
+   "cat_conf": "high",
+   "cat_reason": "主动退市"
   },
   "600393": {
    "name": "ST粤泰",
@@ -253,7 +259,9 @@
    "name": "退市沪科",
    "date": "20260703",
    "src": "SSE官方名录+巨潮",
-   "cat": "unknown"
+   "cat": "financial",
+   "cat_conf": "high",
+   "cat_reason": "退市前两年营收[0.08, 0.14]亿低于阈值3亿且扣非连续为负"
   },
   "600636": {
    "name": "退市国化",
@@ -325,7 +333,9 @@
    "name": "*ST东方",
    "date": "20250430",
    "src": "SSE官方名录",
-   "cat": "unknown"
+   "cat": "fraud",
+   "cat_conf": "high",
+   "cat_reason": "东方集团财务造假重述，2025年重大违法退市"
   },
   "600823": {
    "name": "*ST世茂",
@@ -367,7 +377,9 @@
    "name": "退市海医",
    "date": "20220725",
    "src": "SSE官方名录+巨潮",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2022年面值退市"
   },
   "600898": {
    "name": "*ST美讯",
@@ -379,7 +391,9 @@
    "name": "玉龙股份",
    "date": "20250527",
    "src": "SSE官方名录",
-   "cat": "unknown"
+   "cat": "voluntary",
+   "cat_conf": "high",
+   "cat_reason": "私有化主动退市"
   },
   "601258": {
    "name": "*ST庞大",
@@ -391,7 +405,9 @@
    "name": "中国重工",
    "date": "20250905",
    "src": "SSE官方名录",
-   "cat": "unknown"
+   "cat": "merger",
+   "cat_conf": "high",
+   "cat_reason": "中国船舶换股吸收合并中国重工"
   },
   "603003": {
    "name": "退市龙宇",
@@ -403,7 +419,9 @@
    "name": "德邦股份",
    "date": "20260331",
    "src": "SSE官方名录",
-   "cat": "unknown"
+   "cat": "merger",
+   "cat_conf": "medium",
+   "cat_reason": "京东系吸收合并/私有化"
   },
   "603133": {
    "name": "退市碳元",
@@ -421,7 +439,9 @@
    "name": "*ST元成",
    "date": "20251205",
    "src": "SSE官方名录",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "medium",
+   "cat_reason": "2025年12月面值退市"
   },
   "603555": {
    "name": "ST贵人",
@@ -451,7 +471,9 @@
    "name": "退市太和",
    "date": "20260703",
    "src": "SSE官方名录+巨潮",
-   "cat": "unknown"
+   "cat": "financial",
+   "cat_conf": "high",
+   "cat_reason": "退市前两年营收[1.05, 1.03]亿低于阈值3亿且扣非连续为负"
   },
   "688086": {
    "name": "退市紫晶",
@@ -463,7 +485,9 @@
    "name": "退市观典",
    "date": "20260610",
    "src": "SSE官方名录+巨潮",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "medium",
+   "cat_reason": "2026年科创板面值退市"
   },
   "688555": {
    "name": "退市泽达",
@@ -583,13 +607,17 @@
    "name": "ST泰禾",
    "date": "2023-07-29",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年7月面值退市潮（*ST泰禾）"
   },
   "000918": {
    "name": "*ST嘉凯",
    "date": "2023-07-24",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年7月面值退市潮"
   },
   "002113": {
    "name": "*ST天润",
@@ -601,31 +629,41 @@
    "name": "*ST搜特",
    "date": "2023-07-22",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年7月面值退市潮（*ST搜特）"
   },
   "300356": {
    "name": "*ST光一",
    "date": "2023-06-12",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年6月面值退市潮"
   },
   "000667": {
    "name": "ST美置",
    "date": "2023-07-08",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年7月面值退市潮"
   },
   "300297": {
    "name": "*ST蓝盾",
    "date": "2023-06-30",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年6月面值退市潮"
   },
   "300089": {
    "name": "*ST文化",
    "date": "2023-06-12",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年6月面值退市潮"
   },
   "000540": {
    "name": "*ST中天",
@@ -637,13 +675,17 @@
    "name": "*ST易尚",
    "date": "2023-06-13",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年6月面值退市潮"
   },
   "000038": {
    "name": "*ST大通",
    "date": "2023-06-10",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年6月面值退市潮"
   },
   "002411": {
    "name": "*ST必康",
@@ -655,37 +697,49 @@
    "name": "*ST中潜",
    "date": "2023-06-09",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年6月面值退市潮"
   },
   "200152": {
    "name": "*ST山航B",
    "date": "2023-06-08",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年6月B股面值退市"
   },
   "002417": {
    "name": "*ST深南",
    "date": "2023-06-08",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年6月面值退市潮"
   },
   "300392": {
    "name": "*ST腾信",
    "date": "2023-06-07",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年6月面值退市潮"
   },
   "000806": {
    "name": "*ST银河",
    "date": "2023-06-06",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年6月面值退市潮"
   },
   "000606": {
    "name": "*ST顺利",
    "date": "2023-06-06",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年6月面值退市潮"
   },
   "300273": {
    "name": "*ST和佳",
@@ -703,7 +757,9 @@
    "name": "*ST新文",
    "date": "2023-06-02",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年6月面值退市潮"
   },
   "300330": {
    "name": "计通退",
@@ -829,43 +885,57 @@
    "name": "*ST海投",
    "date": "2023-08-19",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年8月面值退市潮"
   },
   "002504": {
    "name": "*ST弘高",
    "date": "2023-08-05",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2023年8月面值退市潮"
   },
   "300208": {
    "name": "*ST中程",
    "date": "2025-06-21",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2025年6月面值退市"
   },
   "000622": {
    "name": "*ST恒立",
    "date": "2025-06-19",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2025年6月面值退市（*ST恒立）"
   },
   "000584": {
    "name": "*ST工智",
    "date": "2025-06-13",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2025年6月面值退市"
   },
   "002336": {
    "name": "*ST人乐",
    "date": "2025-06-06",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2025年6月面值退市"
   },
   "002750": {
    "name": "*ST龙津",
    "date": "2025-05-29",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2025年5月面值退市"
   },
   "300108": {
    "name": "*ST吉药",
@@ -877,19 +947,25 @@
    "name": "*ST旭蓝",
    "date": "2025-04-30",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2025年4月面值退市"
   },
   "300117": {
    "name": "*ST嘉寓",
    "date": "2025-04-26",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "high",
+   "cat_reason": "2025年4月面值退市"
   },
   "300630": {
    "name": "*ST普利",
    "date": "2025-04-18",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "fraud",
+   "cat_conf": "high",
+   "cat_reason": "普利制药财务造假，2025年重大违法退市首单"
   },
   "000413": {
    "name": "ST旭电",
@@ -991,25 +1067,33 @@
    "name": "*ST天龙",
    "date": "2026-06-10",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "medium",
+   "cat_reason": "退市前两年营收[3.2, 1.61]亿达标，推断面值退市"
   },
   "000004": {
    "name": "*ST国华",
    "date": "2026-06-13",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "financial",
+   "cat_conf": "high",
+   "cat_reason": "退市前两年营收[1.77, 0.99]亿低于阈值3亿且扣非连续为负"
   },
   "002808": {
    "name": "*ST恒久",
    "date": "2026-06-13",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "low",
+   "cat_reason": "营收[3.17, 1.62]亿/扣非[-0.42, -0.44]亿，非典型财务类，倾向面值"
   },
   "920305": {
    "name": "*ST云创",
    "date": "2026-06-09",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "financial",
+   "cat_conf": "high",
+   "cat_reason": "退市前两年营收[0.31, 0.5]亿低于阈值1亿且扣非连续为负"
   },
   "000638": {
    "name": "*ST万方",
@@ -1021,19 +1105,25 @@
    "name": "*ST立方",
    "date": "2026-03-23",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "medium",
+   "cat_reason": "退市前两年营收[2.29, 2.59]亿达标，推断面值退市"
   },
   "002231": {
    "name": "*ST奥维",
    "date": "2026-03-21",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "financial",
+   "cat_conf": "medium",
+   "cat_reason": "退市前两年营收[0.38, 2.91]亿低于阈值3亿且扣非连续为负"
   },
   "300391": {
    "name": "*ST长药",
    "date": "2026-03-13",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "medium",
+   "cat_reason": "退市前两年营收[1.12, 11.98]亿达标，推断面值退市"
   },
   "300379": {
    "name": "*ST东通",
@@ -1045,7 +1135,9 @@
    "name": "*ST广道",
    "date": "2025-11-12",
    "src": "巨潮公告",
-   "cat": "unknown"
+   "cat": "trade",
+   "cat_conf": "medium",
+   "cat_reason": "2025年11月北交所面值退市"
   },
   "000851": {
    "name": "*ST高鸿",
