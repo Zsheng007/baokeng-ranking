@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate baokeng-rank.html from ST保壳评分系统V2 scores (分数越高=保壳越容易)
-V2十三维100分制（主口径，退市概率打分）+ V1十四维灰度对照列
-V1 RAW: [code,name,type,board,reason, A1..H1(14维), delisted, note, mkt_cap, mkt_str, prev_close, flags]
+V2十三维100分制（唯一口径，2026-08-28正式版，灰度对照已取消）
+RAW(V1承载数据字段): [code,name,type,board,reason, delisted, note, mkt_cap, mkt_str, prev_close, flags]
 V2 RAW: [code,name,type,board, C1,C2,S1,S2,A1,A2,A3,D1,B1,B2,F2,F1,H1(13维), delisted, note, controller, controller_cat, total]
 """
 
@@ -11,12 +11,11 @@ from datetime import date
 with open('st_scores.json', encoding='utf-8') as f:
     scores = json.load(f)
 
-try:
-    with open('st_scores_v2.json', encoding='utf-8') as f:
-        v2doc = json.load(f)
-    v2scores = v2doc.get('data') or []
-except Exception:
-    v2scores = []
+with open('st_scores_v2.json', encoding='utf-8') as f:
+    v2doc = json.load(f)
+v2scores = v2doc.get('data') or []
+if not v2scores:
+    raise SystemExit('st_scores_v2.json 无数据: V2为唯一口径, 请先运行 build_baokeng_v2.py')
 v2map = {s['code']: s for s in v2scores}
 
 
@@ -24,17 +23,11 @@ def esc(t):
     return (str(t or '')).replace('\\', '\\\\').replace('"', '\\"').replace('\n', ' ')
 
 
-# 统计按V2口径（无V2数据时降级V1）
+# 统计按V2口径
 active = [s for s in v2scores if not s.get('delisted')]
-if active:
-    stats = {'A': 0, 'B': 0, 'C': 0, 'D': 0}
-    for s in active:
-        stats[s['level']] += 1
-else:
-    active = [s for s in scores if not s['delisted']]
-    stats = {'A': 0, 'B': 0, 'C': 0, 'D': 0}
-    for s in active:
-        stats[s['level']] += 1
+stats = {'A': 0, 'B': 0, 'C': 0, 'D': 0}
+for s in active:
+    stats[s['level']] += 1
 
 # 报告期
 rd = (v2map.get(scores[0]['code'], {}).get('report_date') or scores[0].get('report_date', '')) if scores else ''
@@ -54,9 +47,11 @@ FLAG_CN = {
     'asset_sale': '资产出售', 'debt_waiver': '债务豁免', 'donation': '资产赠与',
 }
 
-# Generate RAW data array (V1 14维 = 100分制)
+# RAW 数据字段（V1评分维度已移除，仅承载 reason/flags/市值/昨收等展示数据）
 raw_lines = []
 for s in scores:
+    if s['code'] not in v2map:
+        continue
     mkt_cap = s.get('market_cap_yi', 0) or 0
     mkt_str = f'{mkt_cap:.1f}' if mkt_cap else '—'
     prev_close = s.get('prev_close', s.get('price', 0)) or 0
@@ -64,8 +59,6 @@ for s in scores:
     flag_str = ','.join(k for k in FLAG_CN if flags.get(k))
     raw_lines.append(
         f'  ["{esc(s["code"])}","{esc(s["name"])}","{esc(s["type"])}","{esc(s["board"])}","{esc(s["reason"])}",'
-        f'{s["A1"]},{s["A2"]},{s["A3"]},{s["B1"]},{s["B2"]},{s["B3"]},'
-        f'{s["C1"]},{s["C2"]},{s["D1"]},{s["E1"]},{s["F1"]},{s["F2"]},{s["G1"]},{s["H1"]},'
         f'{str(s["delisted"]).lower()},'
         f'"{esc(s["note"])}",{mkt_cap},"{mkt_str}",{prev_close},"{esc(flag_str)}"]'
     )
@@ -91,7 +84,7 @@ html = f'''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>保壳风云榜 · A股退市风险评估 · ST保壳评分系统V2灰度版</title>
+<title>保壳风云榜 · A股退市风险评估 · ST保壳评分系统V2</title>
 <style>
 * {{ box-sizing: border-box; margin: 0; padding: 0; }}
 body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f7f2; color: #1a2b1f; font-size: 14px; }}
@@ -289,14 +282,13 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
 
 <div class="header">
 <div class="header-inner">
-  <h1>🌿 保壳风云榜 <span style="font-size:13px;font-weight:400;opacity:0.7">ST保壳评分系统V2 · 灰度版（V1对照）</span></h1>
-  <p>A股 ST / *ST 上市公司保壳能力评估 · 十三维退市概率打分 · V1/V2双模型灰度并行 · 实时排名</p>
+  <h1>🌿 保壳风云榜 <span style="font-size:13px;font-weight:400;opacity:0.7">ST保壳评分系统V2 · 正式版</span></h1>
+  <p>A股 ST / *ST 上市公司保壳能力评估 · 十三维退市概率打分 · 实时排名</p>
   <div class="header-meta">
     <span>更新时间：{today}</span>
-    <span>覆盖公司：{len(scores)} 家</span>
+    <span>覆盖公司：{len(v2scores)} 家</span>
     <span>财务报告期：{report_label}</span>
-    <span>主口径：V2十三维100分制（A&gt;70 / B51-70 / C31-50 / D≤30）</span>
-    <span>灰度对照：V1十四维100分制</span>
+    <span>评分口径：V2十三维100分制（A&gt;70 / B51-70 / C31-50 / D≤30）</span>
     <span>每周五更新</span>
   </div>
 </div>
@@ -321,25 +313,25 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
       <div class="slg-item"><div class="slg-dim slg-real">F1 财务趋势◆</div><div class="slg-weight">4分</div></div>
       <div class="slg-item"><div class="slg-dim slg-real">H1 司法风险★</div><div class="slg-weight">4分</div></div>
     </div>
-    <p style="font-size:11px;color:#888;margin-top:8px">维度=退市通道，权重=近5年176家退市案例实证贡献度（交易类55%/财务类32%/规范类8%/违法类5-9%）· 联动规则：面值危机(C1≤1)压制壳价值；涉造假立案实控人维度封顶4分 · V1十四维作为灰度对照保留</p>
+    <p style="font-size:11px;color:#888;margin-top:8px">维度=退市通道，权重=近5年176家退市案例实证贡献度（交易类55%/财务类32%/规范类8%/违法类5-9%）· 联动规则：面值危机(C1≤1)压制壳价值；涉造假立案实控人维度封顶4分 · 通道封顶一票否决：C1=0/B2=0总分封顶50、B1=0封顶30</p>
   </div>
 
   <div class="stats-grid">
-    <div class="stat-card lv-A"><div class="stat-num">{stats["A"]}</div><div class="stat-label">A级 · 保壳能力强（&gt;70分 · V2口径）</div></div>
-    <div class="stat-card lv-B"><div class="stat-num">{stats["B"]}</div><div class="stat-label">B级 · 保壳有希望（51-70分 · V2口径）</div></div>
-    <div class="stat-card lv-C"><div class="stat-num">{stats["C"]}</div><div class="stat-label">C级 · 保壳难度大（31-50分 · V2口径）</div></div>
-    <div class="stat-card lv-D"><div class="stat-num">{stats["D"]}</div><div class="stat-label">D级 · 退市警钟（≤30分 · V2口径）</div></div>
+    <div class="stat-card lv-A"><div class="stat-num">{stats["A"]}</div><div class="stat-label">A级 · 保壳能力强（&gt;70分）</div></div>
+    <div class="stat-card lv-B"><div class="stat-num">{stats["B"]}</div><div class="stat-label">B级 · 保壳有希望（51-70分）</div></div>
+    <div class="stat-card lv-C"><div class="stat-num">{stats["C"]}</div><div class="stat-label">C级 · 保壳难度大（31-50分）</div></div>
+    <div class="stat-card lv-D"><div class="stat-num">{stats["D"]}</div><div class="stat-label">D级 · 退市警钟（≤30分）</div></div>
   </div>
 
   <div class="tabs">
     <button class="tab active" onclick="switchTab('rank')">📊 风云榜</button>
     <button class="tab" onclick="switchTab('query')">🔍 查询详情</button>
-    <button class="tab" onclick="switchTab('list')">📋 全名单（{len(scores)}家）</button>
+    <button class="tab" onclick="switchTab('list')">📋 全名单（{len(v2scores)}家）</button>
     <button class="tab" onclick="switchTab('vote')">🗳️ 投票排行</button>
   </div>
 
   <div id="tab-rank" class="tab-content active">
-    <div class="source-tip">📊 数据覆盖 <b>{len(scores)}</b> 家 ST/*ST 公司 · V2十三维主口径 + V1十四维灰度对照 · 财务报告期 <b>{report_label}</b> · 公告信号来自巨潮资讯网（近24个月） · 分数越高保壳越容易</div>
+    <div class="source-tip">📊 数据覆盖 <b>{len(v2scores)}</b> 家 ST/*ST 公司 · V2十三维退市概率打分 · 财务报告期 <b>{report_label}</b> · 公告信号来自巨潮资讯网（近24个月） · 分数越高保壳越容易</div>
     <div class="rank-grid">
       <div class="rank-panel">
         <div class="rank-header-easy">
@@ -371,30 +363,28 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
   </div>
 
   <div id="tab-list" class="tab-content">
-    <div class="source-tip"><b id="listTotal">{len(scores)}</b> 家 · 排序：按V2保壳能力分（分数越高保壳越容易）· ●红=风险信号 ●绿=纾困信号 · V2=主口径，V1=灰度对照</div>
+    <div class="source-tip"><b id="listTotal">{len(v2scores)}</b> 家 · 排序：按保壳能力分（分数越高保壳越容易）· ●红=风险信号 ●绿=纾困信号</div>
     <div class="filter-row">
       <span class="filter-chip active" onclick="setFilter('all',this)">全部</span>
       <span class="filter-chip" onclick="setFilter('ST',this)">ST</span>
       <span class="filter-chip" onclick="setFilter('*ST',this)">*ST</span>
-      <span class="filter-chip" onclick="setFilter('A',this)">V2A级 &gt;70</span>
-      <span class="filter-chip" onclick="setFilter('B',this)">V2 B级 51-70</span>
-      <span class="filter-chip" onclick="setFilter('C',this)">V2 C级 31-50</span>
-      <span class="filter-chip" onclick="setFilter('D',this)">V2 D级 ≤30</span>
+      <span class="filter-chip" onclick="setFilter('A',this)">A级 &gt;70</span>
+      <span class="filter-chip" onclick="setFilter('B',this)">B级 51-70</span>
+      <span class="filter-chip" onclick="setFilter('C',this)">C级 31-50</span>
+      <span class="filter-chip" onclick="setFilter('D',this)">D级 ≤30</span>
     </div>
     <div class="table-wrap">
       <table>
         <thead id="listHead">
           <tr>
-            <th style="width:46px" data-key="rank" onclick="sortBy('rank')" title="点击排序">V2排名</th>
+            <th style="width:46px" data-key="rank" onclick="sortBy('rank')" title="点击排序">排名</th>
             <th style="width:80px" data-key="code" onclick="sortBy('code')" title="点击排序">代码</th>
             <th style="width:100px" data-key="name" onclick="sortBy('name')" title="点击排序">简称</th>
             <th style="width:55px" data-key="type" onclick="sortBy('type')" title="点击排序">类型</th>
             <th data-key="reason" onclick="sortBy('reason')" title="点击排序">风险原因</th>
             <th style="width:58px" data-key="signal" onclick="sortBy('signal')" title="公告信号数">信号</th>
-            <th style="width:60px" data-key="score" onclick="sortBy('score')" title="点击排序">V2分</th>
-            <th style="width:50px" data-key="level" onclick="sortBy('level')" title="点击排序">V2级</th>
-            <th style="width:60px" data-key="v1_score" onclick="sortBy('v1_score')" title="点击排序">V1分</th>
-            <th style="width:50px" data-key="v1_level" onclick="sortBy('v1_level')" title="点击排序">V1级</th>
+            <th style="width:60px" data-key="score" onclick="sortBy('score')" title="点击排序">保壳分</th>
+            <th style="width:50px" data-key="level" onclick="sortBy('level')" title="点击排序">等级</th>
             <th style="width:75px" data-key="market_cap_yi" onclick="sortBy('market_cap_yi')" title="点击排序">市值(亿)</th>
             <th style="width:55px">详情</th>
           </tr>
@@ -422,18 +412,17 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
     <h4>⚠️ 免责声明</h4>
     <p>1. 本工具仅供学习研究参考，<b>不构成任何投资建议</b>。评分模型基于公开数据和算法推断，可能存在偏差与滞后。</p>
     <p>2. 投资者应自行判断风险，<b>据此操作风险自负</b>。退市涉及复杂的财务、法律及监管因素，本工具无法全面覆盖。</p>
-    <p>3. 数据来源：沪深交易所风险警示板公开名单、腾讯财经行情、巨潮资讯网公告、中登周报质押数据、东财F10主营构成/财务趋势、企查查实控人穿透。财务维度基于 <b>{report_label}</b>，公告信号窗口为近24个月。评分模型「ST保壳评分系统V2」为独立研究框架（V1十四维灰度对照并行），<b>不代表任何机构观点</b>。</p>
+    <p>3. 数据来源：沪深交易所风险警示板公开名单、腾讯财经行情、巨潮资讯网公告、中登周报质押数据、东财F10主营构成/财务趋势/实控人信息。财务维度基于 <b>{report_label}</b>，公告信号窗口为近24个月。评分模型「ST保壳评分系统V2」为独立研究框架，<b>不代表任何机构观点</b>。</p>
     <p>4. 历史评分不代表未来结果，保壳能力评分仅反映基于公开信息的综合评估，不保证准确性。北交所股票公告信号暂未覆盖（走规则推演）。</p>
   </div>
 
 </div>
 
 <script>
-// ===================== ST保壳评分系统 V1/V2 灰度并行数据 =====================
-// V1 RAW（灰度对照）: [代码,简称,类型,板块,风险原因,
-//  A1,A2,A3, B1,B2,B3, C1,C2, D1,E1, F1,F2, G1,H1 (14个),
+// ===================== ST保壳评分系统V2 正式版数据 =====================
+// RAW（数据字段）: [代码,简称,类型,板块,风险原因,
 //  已锁定退市, 备注, 市值_亿, 市值_显示, 昨收, 信号串]
-// V2 RAW（主口径）: [代码,简称,类型,板块,
+// V2RAW（唯一评分口径）: [代码,简称,类型,板块,
 //  C1,C2,S1,S2, A1,A2,A3, D1, B1,B2, F2,F1, H1 (13个),
 //  已锁定退市, 备注, 实控人, 实控人分类, total]
 // 分数越高 = 保壳能力越强
@@ -449,11 +438,6 @@ function calcScore2(r) {{
   return s;
 }}
 function calcLevel2(s) {{ return s>70?'A': s>50?'B': s>30?'C': 'D'; }}
-
-// V1 保壳能力总分 = 14维之和（100分制）
-function calcScore(r) {{ return r[5]+r[6]+r[7]+r[8]+r[9]+r[10]+r[11]+r[12]+r[13]+r[14]+r[15]+r[16]+r[17]+r[18]; }}
-
-function calcLevel(s) {{ return s>65?'A': s>45?'B': s>25?'C': 'D'; }}
 
 const V2MAP = new Map();
 V2RAW.forEach(r => {{
@@ -479,22 +463,17 @@ const SIG_CLASS = {{
 const RESCUE_SET = new Set(['restructuring','asset_sale','debt_waiver','donation']);
 
 const COS = RAW.map(r => {{
-  const v1sum = calcScore(r);
   const v2 = V2MAP.get(r[0]) || null;
-  const flags = (r[24]||'').split(',').filter(Boolean);
+  const flags = (r[10]||'').split(',').filter(Boolean);
   const rescueN = flags.filter(f=>RESCUE_SET.has(f)).length;
   const riskN = flags.length - rescueN;
   return {{ code:r[0], name:r[1], type:r[2], board:r[3], reason:r[4],
-    v1_A1:r[5], v1_A2:r[6], v1_A3:r[7], v1_B1:r[8], v1_B2:r[9], v1_B3:r[10],
-    v1_C1:r[11], v1_C2:r[12], v1_D1:r[13], v1_E1:r[14],
-    v1_F1:r[15], v1_F2:r[16], v1_G1:r[17], v1_H1:r[18],
-    delisted:r[19], note:r[20],
-    market_cap_yi:r[21], market_cap_str:r[22], prev_close:r[23],
+    delisted:r[5], note:r[6],
+    market_cap_yi:r[7], market_cap_str:r[8], prev_close:r[9],
     flags:flags, riskN:riskN, rescueN:rescueN,
     v2: v2,
-    v1_score:v1sum, v1_level:calcLevel(v1sum),
-    score: v2 ? v2.score2 : v1sum,
-    level: v2 ? v2.level2 : calcLevel(v1sum) }};
+    score: v2 ? v2.score2 : 0,
+    level: v2 ? v2.level2 : 'D' }};
 }});
 
 const CODE_MAP = new Map();
@@ -503,8 +482,6 @@ const UNIQUE = Array.from(CODE_MAP.values());
 
 const BY_SCORE = [...UNIQUE].sort((a,b)=>b.score-a.score);
 BY_SCORE.forEach((c,i)=>c.rank=i+1);
-const BY_V1 = [...UNIQUE].sort((a,b)=>b.v1_score-a.v1_score);
-BY_V1.forEach((c,i)=>c.v1_rank=i+1);
 
 const LC = {{'A':'#27ae60','B':'#2980b9','C':'#e67e22','D':'#c0392b'}};
 const LT = {{'A':'低风险·退市概率低','B':'中风险·保壳有希望','C':'高风险·保壳难度大','D':'极高风险·退市警钟'}};
@@ -519,7 +496,7 @@ function sortBy(key){{
   if(sortKey===key) {{ sortDir = -sortDir; }}
   else {{
     sortKey = key;
-    sortDir = (key==='code'||key==='name'||key==='type'||key==='reason'||key==='level'||key==='v1_level') ? 1 : -1;
+    sortDir = (key==='code'||key==='name'||key==='type'||key==='reason'||key==='level') ? 1 : -1;
   }}
   renderList();
 }}
@@ -560,16 +537,15 @@ function renderRank(){{
 function numClass(i){{ return i===0?'gold':i===1?'silver':i===2?'bronze':'other'; }}
 function rankItem(c, i){{
   const col = LC[c.level];
-  const v1tag = c.v2 ? `<span style="font-size:10px;color:#999;font-weight:400"> V1:${{c.v1_score}}分${{c.v1_rank?('·'+c.v1_rank+'名'):''}}</span>` : '';
   return `<div class="rank-item" onclick="gotoDetail('${{c.code}}')">
     <div class="rank-num ${{numClass(i)}}">${{i+1}}</div>
     <div class="rank-info">
-      <div class="rank-name">${{c.name}}<span class="rtag rtag-${{c.level}}">V2·${{c.level}}</span></div>
+      <div class="rank-name">${{c.name}}<span class="rtag rtag-${{c.level}}">${{c.level}}</span></div>
       <div class="rank-code">${{c.code}} · ${{c.board}} · 市值${{c.market_cap_str}}亿 · ${{c.reason.length>14?c.reason.slice(0,14)+'…':c.reason}}</div>
     </div>
     <div class="rank-score-col">
       <div class="mini-bar-wrap"><div class="mini-bar" style="width:${{Math.min(100,Math.round(c.score))}}%;background:${{col}}"></div></div>
-      <div class="score-val" style="color:${{col}}">${{c.score}}${{v1tag}}</div>
+      <div class="score-val" style="color:${{col}}">${{c.score}}</div>
     </div>
   </div>`;
 }}
@@ -606,8 +582,6 @@ function renderList(){{
       <td title="${{c.flags.map(f=>FLAG_CN[f]).join('、')||'无'}}">${{signalDots(c)}}</td>
       <td style="font-weight:700;color:${{LC[c.level]}}">${{c.score}}</td>
       <td><span class="rtag rtag-${{c.level}}">${{c.level}}</span></td>
-      <td style="font-weight:500;color:#7a8a80" title="V1灰度对照分（全榜第${{c.v1_rank}}）">${{c.v1_score}}</td>
-      <td><span class="rtag" style="background:#eef2ee;color:#7a8a80">${{c.v1_level}}</span></td>
       <td style="font-weight:500;color:#1a3d2b">${{c.market_cap_str}}</td>
       <td class="link-style">查看 →</td>
     </tr>`).join('');
@@ -676,43 +650,23 @@ function showReport(c){{
     {{label:'F1 财务趋势◆(4)',v:v2.F1,max:4,col:'#117a65'}},
     {{label:'H1 司法风险★(4)',v:v2.H1,max:4,col:'#af601a'}},
   ] : [];
-  const v1f = [
-    {{label:'A1 扣非净利润(5)',v:c.v1_A1,max:5,col:'#8aa89a'}},
-    {{label:'A2 营业收入(12)',v:c.v1_A2,max:12,col:'#7a968b'}},
-    {{label:'A3 净资产(8)',v:c.v1_A3,max:8,col:'#8fa8b8'}},
-    {{label:'B1 违规存量★(5)',v:c.v1_B1,max:5,col:'#9ab8c6'}},
-    {{label:'B2 内控审计★(5)',v:c.v1_B2,max:5,col:'#a3c6b0'}},
-    {{label:'B3 监管处罚★(6)',v:c.v1_B3,max:6,col:'#8db89f'}},
-    {{label:'C1 面值距离(8)',v:c.v1_C1,max:8,col:'#8fb3ab'}},
-    {{label:'C2 市值水平(4)',v:c.v1_C2,max:4,col:'#a8c9c4'}},
-    {{label:'D1 现金流质量(10)',v:c.v1_D1,max:10,col:'#93a8bb'}},
-    {{label:'E1 股权稳定性(8)',v:c.v1_E1,max:8,col:'#b0a3c0'}},
-    {{label:'F1 持续经营(9)',v:c.v1_F1,max:9,col:'#8fb3a6'}},
-    {{label:'F2 重组/纾困★(7)',v:c.v1_F2,max:7,col:'#c9b18a'}},
-    {{label:'G1 市值偏离度(5)',v:c.v1_G1,max:5,col:'#a0c4bb'}},
-    {{label:'H1 实控人风险★(8)',v:c.v1_H1,max:8,col:'#b9a3c9'}},
-  ];
   const sigHTML = c.flags.length
     ? c.flags.map(f=>`<span class="sig-tag ${{SIG_CLASS[f]}}">${{FLAG_CN[f]}}</span>`).join('')
     : '<span class="sig-tag sig-none">近24个月无命中信号</span>';
   const ctrlHTML = v2 && v2.controller
     ? `${{v2.controller}}<span style="font-size:10px;color:#999">（${{v2.controller_cat}}）</span>`
     : '未获取';
-  const diff = c.score - c.v1_score;
-  const diffHTML = Math.abs(diff) >= 1
-    ? `<span style="font-size:12px;color:${{diff>0?'#1a6b3a':'#c0392b'}}">${{diff>0?'▲':'▼'}}${{Math.abs(diff)}}分 vs V1</span>`
-    : `<span style="font-size:12px;color:#999">与V1持平</span>`;
   const v2Note = v2 && v2.note2 ? v2.note2 : c.note;
   document.getElementById('qResult').innerHTML=`
     <div class="report-card">
       <div class="report-top">
         <div>
-          <div class="report-name">${{c.name}} <span class="rtag rtag-${{c.level}}">V2·${{c.level}}</span></div>
-          <div class="report-sub">${{c.code}} · ${{c.board}} · ${{c.type}} <span class="rtag" style="background:#eef2ee;color:#7a8a80">V1·${{c.v1_level}} ${{c.v1_score}}分</span> ${{diffHTML}}</div>
+          <div class="report-name">${{c.name}} <span class="rtag rtag-${{c.level}}">${{c.level}}</span></div>
+          <div class="report-sub">${{c.code}} · ${{c.board}} · ${{c.type}}</div>
         </div>
         <div style="text-align:right">
           <div class="score-big" style="color:${{col}}">${{c.score}}<span style="font-size:16px;font-weight:400"> 分</span></div>
-          <div class="score-label">V2全榜第 ${{c.rank}} / ${{UNIQUE.length}}（越高越易保壳）</div>
+          <div class="score-label">全榜第 ${{c.rank}} / ${{UNIQUE.length}}（越高越易保壳）</div>
         </div>
       </div>
       <div class="info-row">
@@ -733,20 +687,8 @@ function showReport(c){{
           <div class="factor-score" style="color:${{f.col}}">${{f.v}}/${{f.max}}</div>
         </div>`).join('')}}
       </div>
-      <div class="factors-section" style="background:#f8faf8;border-radius:8px;padding:10px 12px">
-        <details>
-          <summary style="font-size:12px;color:#7a8a80;cursor:pointer;font-weight:500">▸ V1十四维灰度对照（V1总分 ${{c.v1_score}} · ${{c.v1_level}}级 · 全榜第${{c.v1_rank}}）——点击展开</summary>
-          <div style="margin-top:10px">
-          ${{v1f.map(f=>`<div class="factor-row">
-            <div class="factor-label" style="color:#7a8a80">${{f.label}}</div>
-            <div class="factor-bar-wrap"><div class="factor-bar" style="width:${{Math.round(f.v/f.max*100)}}%;background:${{f.col}}"></div></div>
-            <div class="factor-score" style="color:#7a8a80">${{f.v}}/${{f.max}}</div>
-          </div>`).join('')}}
-          </div>
-        </details>
-      </div>
       <div class="conclusion-box ${{c.level}}">
-        <div class="conclusion-title">${{LE[c.level]}}（V2口径）</div>
+        <div class="conclusion-title">${{LE[c.level]}}</div>
         <div class="conclusion-text">${{v2Note}}</div>
       </div>
     </div>
@@ -904,4 +846,4 @@ with open('baokeng-rank.html', 'w', encoding='utf-8') as f:
 with open('index.html', 'w', encoding='utf-8') as f:
     f.write(html)
 
-print(f'Generated baokeng-rank.html + index.html ({len(html)} bytes) | V2十三维主口径+V1灰度对照 | 报告期: {report_label} | V2公司数: {len(v2scores)}')
+print(f'Generated baokeng-rank.html + index.html ({len(html)} bytes) | ST保壳评分系统V2正式版(十三维) | 报告期: {report_label} | 公司数: {len(v2scores)}')

@@ -6,8 +6,10 @@
 3. 从新浪财经API(hq.sinajs.cn)获取实时价格、昨收
 4. 从腾讯财经API(qt.gtimg.cn)获取总市值（亿元）
 5. 对比新旧名单，生成变更报告
-6. 运行 build_baokeng.py 评分
-7. 运行 generate_html.py 生成 HTML
+6. 运行 build_baokeng.py 评分(V1数据字段)
+7-10. V2数据管道: fetch_controllers/pledges/trends/deduct_income
+11. 运行 build_baokeng_v2.py 评分(V2十三维唯一口径)
+12. 运行 generate_html.py 生成 HTML
 """
 import json
 import os
@@ -230,12 +232,12 @@ def main():
     log("=" * 60)
     log()
 
-    log("[1/8] 访问深交所/上交所风险警示板页面确认可达性...")
+    log("[1/13] 访问深交所/上交所风险警示板页面确认可达性...")
     log(f"  深交所页面片段: {fetch_szse_warn_date()[:120]}")
     log(f"  上交所页面片段: {fetch_sse_warn_date()[:120]}")
     log()
 
-    log("[2/8] 从国证 ST 板块成分股页面获取最新 ST/*ST 名单...")
+    log("[2/13] 从国证 ST 板块成分股页面获取最新 ST/*ST 名单...")
     log(f"  数据源: {GW_ST_URL}")
     valid_st = fetch_names_from_gwcn()
     log(f"  页面解析: {len(valid_st)} 只成分股")
@@ -270,7 +272,7 @@ def main():
     kept = old_codes & new_codes
 
     log()
-    log("[3/8] 对比新旧名单...")
+    log("[3/13] 对比新旧名单...")
     log(f"  维持: {len(kept)} 只 | 新增: {len(added)} 只 | 移除: {len(removed)} 只")
 
     if added:
@@ -287,7 +289,7 @@ def main():
     # 用新浪返回的完整简称替换页面简称（页面简称不含 ST 前缀）
     codes_all = sorted(new_codes)
     log()
-    log("[4/8] 从新浪财经API获取实时价格与完整简称...")
+    log("[4/13] 从新浪财经API获取实时价格与完整简称...")
     prices = fetch_prices_from_sina(codes_all)
     log(f"  新浪价格数据: {len(prices)}/{len(codes_all)} 只")
 
@@ -297,7 +299,7 @@ def main():
         name_map[code] = prices.get(code, {}).get('name') or old_names.get(code) or page_name
 
     log()
-    log("[5/8] 从腾讯财经API获取总市值（亿元）...")
+    log("[5/13] 从腾讯财经API获取总市值（亿元）...")
     caps = fetch_market_cap_from_tencent(codes_all)
     log(f"  市值数据: {len(caps)}/{len(codes_all)} 只")
 
@@ -335,25 +337,46 @@ def main():
 
     # 运行评分
     log()
-    log("[6/8] 运行 build_baokeng.py 评分...")
+    log("[6/13] 运行 build_baokeng.py 评分(V1数据字段)...")
     ret = subprocess.run([sys.executable, os.path.join(BASE, "build_baokeng.py")], cwd=BASE)
     if ret.returncode != 0:
         log("  ❌ 评分失败!")
         sys.exit(1)
 
+    # V2 数据管道（2026-08-28 V2正式版切换后接入：S1实控人/S2质押/F1趋势/A2扣非主营 → V2评分）
+    for i, (step_name, script) in enumerate([
+        ("S1实控人采集", "fetch_controllers.py"),
+        ("S2股权质押采集", "fetch_pledges.py"),
+        ("F1财务趋势采集", "fetch_trends.py"),
+        ("A2扣非主营口径采集", "fetch_deduct_income.py"),
+    ], start=7):
+        log()
+        log(f"[{i}/13] 运行 {script} {step_name}...")
+        r = subprocess.run([sys.executable, os.path.join(BASE, script)], cwd=BASE)
+        if r.returncode != 0:
+            log(f"  ⚠️ {script} 失败(returncode={r.returncode}), V2相应维度将走降级逻辑")
+
+    log()
+    log("[11/13] 运行 build_baokeng_v2.py 评分(V2十三维唯一口径)...")
+    retv2 = subprocess.run([sys.executable, os.path.join(BASE, "build_baokeng_v2.py")], cwd=BASE)
+    if retv2.returncode != 0:
+        log("  ❌ V2评分失败! 页面为V2单口径, 必须修复后再生成HTML")
+        sys.exit(1)
+
     # 生成HTML
     log()
-    log("[7/8] 运行 generate_html.py 生成HTML...")
+    log("[12/13] 运行 generate_html.py 生成HTML...")
     ret2 = subprocess.run([sys.executable, os.path.join(BASE, "generate_html.py")], cwd=BASE)
     if ret2.returncode != 0:
         log("  ❌ HTML生成失败!")
         sys.exit(1)
 
-    # 读取评分统计
-    with open(os.path.join(BASE, 'st_scores.json'), encoding='utf-8') as f:
-        scores = json.load(f)
+    # 读取评分统计（V2口径）
+    with open(os.path.join(BASE, 'st_scores_v2.json'), encoding='utf-8') as f:
+        v2doc = json.load(f)
+    scores = v2doc.get('data') or []
 
-    active = [s for s in scores if not s['delisted']]
+    active = [s for s in scores if not s.get('delisted')]
     stats = {'A': 0, 'B': 0, 'C': 0, 'D': 0}
     for s in active:
         stats[s['level']] += 1
@@ -366,9 +389,9 @@ def main():
     log(f"   行情数据: {len(market_data)}/{len(codes_all)} 只")
     log(f"   新浪价格: {len(prices)}/{len(codes_all)} 只")
     log(f"   市值数据: {len(caps)}/{len(codes_all)} 只")
-    log(f"   A级(>65): {stats['A']}  B级(46-65): {stats['B']}  C级(26-45): {stats['C']}  D级(≤25): {stats['D']}")
+    log(f"   V2评级 A级(>70): {stats['A']}  B级(51-70): {stats['B']}  C级(31-50): {stats['C']}  D级(≤30): {stats['D']}")
     log(f"   新增: {len(added)} 只 | 移除: {len(removed)} 只")
-    log(f"   HTML: {os.path.join(BASE, 'baokeng-rank.html')}")
+    log(f"   HTML: {os.path.join(BASE, 'baokeng-rank.html')} (同步index.html)")
     log("=" * 60)
 
     # 生成变更报告

@@ -38,23 +38,19 @@
 ### 评级（分数越高=保壳越容易）
 - A级(>65) B级(46-65) C级(26-45) D级(≤25)
 
-## V2灰度版已上线（2026-08-28）
-- baokeng-rank.html 双口径：V2十三维主口径 + V1十四维灰度对照列；A60/B114/C34/D1
+## V2正式版已切换（2026-08-28晚，灰度对照同日取消）
+- baokeng-rank.html/index.html 单口径：V2十三维；当前207家 A59/B113/C34/D1
 - 莫高终验：V1 53分/171名 → V2 70分/B级/第64名（A线边界）
 - 回测终版：166家强制退市99.4%落C/D，漏报仅退市国化（已知边界案例）
-- V2数据管道：st_controllers/st_pledges/st_trends/st_deduct_income.json（209家全量）→ build_baokeng_v2.py → st_scores_v2.json
+- V2数据管道：st_controllers/st_pledges/st_trends/st_deduct_income.json → build_baokeng_v2.py → st_scores_v2.json
 - 通道封顶JS同步：C1=0/B2=0→封顶50、B1=0→封顶30（generate_html.py calcScore2）
-- V2RAW 22字段无reason，13维从idx4起（与V1索引差1）；verify_html.js生成后必跑
-- **遗留：V2五脚本未接入weekly_update_friday.py**（切换正式版前必须接入）；灰度两周后正式切换V2
+- RAW瘦身为11字段纯数据（V1分值移除，承载reason/flags/市值/昨收）；V2RAW 22字段13维从idx4起；verify_html.js生成后必跑
+- **V2五脚本已接入weekly_update_friday.py（步骤7-11）**；build_baokeng.py保留在链中仅为提供RAW数据字段
 
 ## 更新流程（全自动化）
-1. 从东方财富API获取最新ST板块名单 → st_names.json
-2. 从腾讯API获取行情数据 → st_market_data.json
-3. 运行 fetch_financials.py → st_financials.json（AkShare批量+并发）
-4. 运行 fetch_risk_flags.py → st_risk_flags.json（巨潮公告信号，约11.5分钟，含去重）
-5. 运行 build_baokeng.py → st_scores.json（ST保壳评分系统V1十四维评分）
-6. 运行 generate_html.py → baokeng-rank.html
-7. 每周五9:00自动执行（weekly_update_friday.py）；11:00跑名单核验（verify_st_list.py）
+- weekly_update_friday.py（每周五9:00，共13步）：国证ST名单（EXCLUDE_CODES过滤摘帽残留）→ 新浪行情+腾讯市值 → build_baokeng.py（RAW数据字段载体）→ V2四采集（controllers/pledges/trends/deduct_income，纯requests）→ build_baokeng_v2.py（唯一评分口径）→ generate_html.py（baokeng-rank.html+index.html）
+- 财务/公告数据在链外刷新：fetch_financials.py（AkShare）与 fetch_risk_flags.py（巨潮，11.5分钟）读存量JSON进评分引擎，需另行定期跑（自动化prompt或手动）
+- 11:00跑名单核验（verify_st_list.py）
 
 ## 工具链
 - weekly_update_friday.py：每周五全自动更新脚本（含三层数据源降级 + AkShare并发）

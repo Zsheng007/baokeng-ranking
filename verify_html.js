@@ -1,4 +1,5 @@
-// 铁律一验证：V1/V2 RAW求和须与total一致（V2），V1求和在0-100范围
+// 铁律一验证：V2（唯一口径）RAW求和+通道封顶须与total一致
+// RAW 结构(11字段,纯数据): [code,name,type,board,reason, delisted(5), note(6), mkt_cap(7), mkt_str(8), prev_close(9), flags(10)]
 // V2RAW 结构: [code,name,type,board, C1..H1(13维, idx4-16), delisted(17), note(18), controller(19), controller_cat(20), total(21)]
 const fs = require('fs');
 const html = fs.readFileSync('baokeng-rank.html', 'utf8');
@@ -15,8 +16,8 @@ const V2RAW = extractArray('V2RAW');
 
 let bad1 = 0, bad2 = 0, mismatch = 0;
 RAW.forEach(r => {
-  const s = r.slice(5, 19).reduce((a, b) => a + b, 0);
-  if (s < 0 || s > 100) { bad1++; console.log('V1 out-of-range', r[0], s); }
+  if (r.length !== 11) { bad1++; console.log('RAW bad row len', r[0], r.length); }
+  if (typeof r[5] !== 'boolean') { bad1++; console.log('RAW delisted not bool', r[0]); }
 });
 V2RAW.forEach(r => {
   let s = r.slice(4, 17).reduce((a, b) => a + b, 0);
@@ -28,8 +29,8 @@ V2RAW.forEach(r => {
 });
 const c1 = new Set(RAW.map(r => r[0])), c2 = new Set(V2RAW.map(r => r[0]));
 c1.forEach(c => { if (!c2.has(c)) mismatch++; });
-console.log('V1 rows:', RAW.length, '| V2 rows:', V2RAW.length, '| row len:', V2RAW[0].length);
-console.log('V1 out-of-range:', bad1, '| V2 sum!=total:', bad2, '| V2 missing codes:', mismatch);
+console.log('RAW rows:', RAW.length, '| V2 rows:', V2RAW.length, '| V2 row len:', V2RAW[0].length);
+console.log('RAW bad rows:', bad1, '| V2 sum!=total:', bad2, '| V2 missing codes:', mismatch);
 
 // 统计卡等级分布（V2口径、非退市）
 const lv = { A: 0, B: 0, C: 0, D: 0 };
