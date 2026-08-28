@@ -187,6 +187,36 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsof
 .er-sec-b {{ font-size: 12.8px; line-height: 1.75; color: #33473b; }}
 .er-member-tip {{ margin-top: 16px; padding: 9px 12px; background: #edf7f1; border-radius: 8px; font-size: 11.5px; color: #1a6b3a; }}
 .er-disclaim {{ margin-top: 12px; font-size: 11px; color: #aaa; line-height: 1.6; border-top: 0.5px dashed #dceee3; padding-top: 10px; }}
+.pdf-btn {{ display: block; width: 100%; margin-top: 14px; padding: 12px; border: none; border-radius: 10px; background: linear-gradient(135deg,#8e6a1f,#b9770e); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; letter-spacing: 0.5px; }}
+.pdf-btn:hover {{ filter: brightness(1.12); }}
+.pdf-btn:disabled {{ filter: grayscale(0.5); cursor: wait; }}
+
+/* ===== 正式版PDF报告（A4 794px，html2pdf导出） ===== */
+.fr {{ width: 794px; background: #fff; color: #1f2d26; font-family: 'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif; }}
+.fr-pad {{ padding: 0 48px; }}
+.fr-band {{ height: 64px; background: linear-gradient(135deg,#1a5e35,#2e7d52); color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 0 48px; }}
+.fr-band-l {{ font-size: 17px; font-weight: 800; letter-spacing: 1px; }}
+.fr-band-r {{ font-size: 11px; opacity: 0.92; text-align: right; line-height: 1.5; }}
+.fr-title {{ margin-top: 30px; font-size: 24px; font-weight: 800; color: #14331f; text-align: center; line-height: 1.4; }}
+.fr-subtitle {{ margin-top: 8px; text-align: center; font-size: 12px; color: #6b7f74; letter-spacing: 2px; }}
+.fr-meta {{ margin-top: 22px; border: 1px solid #c8e6d0; border-radius: 8px; overflow: hidden; }}
+.fr-meta-grid {{ display: grid; grid-template-columns: 1fr 1fr; }}
+.fr-mcell {{ display: flex; border-bottom: 1px solid #e3f2e8; border-right: 1px solid #e3f2e8; }}
+.fr-mcell:nth-child(2n) {{ border-right: none; }}
+.fr-mcell:nth-last-child(1), .fr-mcell:nth-last-child(2):nth-child(2n-1) {{ border-bottom: none; }}
+.fr-mk {{ width: 108px; flex-shrink: 0; background: #edf7f1; color: #1a6b3a; font-size: 11.5px; font-weight: 600; padding: 8px 10px; }}
+.fr-mv {{ font-size: 11.5px; color: #26352c; padding: 8px 10px; line-height: 1.5; }}
+.fr-sec {{ margin-top: 22px; page-break-inside: avoid; break-inside: avoid; }}
+.fr-sec-t {{ font-size: 14.5px; font-weight: 800; color: #1a5e35; padding-left: 10px; border-left: 4px solid #2e7d52; margin-bottom: 9px; }}
+.fr-sec-b {{ font-size: 12px; line-height: 1.9; color: #33473b; text-align: justify; }}
+.fr-table {{ width: 100%; border-collapse: collapse; margin-top: 4px; }}
+.fr-table th {{ background: #1a5e35; color: #fff; font-size: 11.5px; padding: 7px 9px; text-align: left; font-weight: 600; }}
+.fr-table td {{ font-size: 11.5px; padding: 6.5px 9px; border-bottom: 1px solid #e3f2e8; color: #26352c; }}
+.fr-table tr {{ page-break-inside: avoid; break-inside: avoid; }}
+.fr-table tr:nth-child(2n) td {{ background: #f6fbf8; }}
+.fr-chip {{ display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10.5px; font-weight: 600; margin-right: 5px; }}
+.fr-foot {{ margin-top: 30px; margin-bottom: 26px; padding-top: 12px; border-top: 1px solid #c8e6d0; font-size: 10px; color: #8aa294; line-height: 1.7; text-align: center; }}
+.fr-disclaim {{ margin-top: 18px; background: #f6fbf8; border: 1px dashed #c8e6d0; border-radius: 8px; padding: 12px 14px; font-size: 10.5px; color: #6b7f74; line-height: 1.8; }}
 
 .search-box {{ background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; padding: 20px; }}
 .search-row {{ display: flex; gap: 10px; margin-bottom: 16px; }}
@@ -482,6 +512,7 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
 //  C1,C2,S1,S2, A1,A2,A3, D1, B1,B2, F2,F1, H1 (13个),
 //  已锁定退市, 备注, 实控人, 实控人分类, total]
 // 分数越高 = 保壳能力越强
+const REPORT_LABEL = "{report_label}";
 const RAW = {raw_str};
 
 // V2 保壳能力总分 = 13维之和（100分制）+ 通道封顶（与build_baokeng_v2.py一致）
@@ -992,9 +1023,130 @@ function showExpertReport(code){{
     <div class="er-sec"><div class="er-sec-t">二、三大短板维度</div><div class="er-sec-b">${{weak}}</div></div>
     <div class="er-sec"><div class="er-sec-t">三、公告信号面（巨潮资讯网 · 近24个月）</div><div class="er-sec-b">${{sigTxt}}</div></div>
     ${{moyuSec}}
+    <button class="pdf-btn" id="pdfBtn" onclick="exportPDF('${{c.code}}')">📄 下载正式PDF版报告（A4 · ST股分析专家）</button>
     <div class="er-member-tip">👤 会员 ${{m.name||''}} 专属 · 报告基于报告期 <b>{report_label}</b> 数据即时生成</div>
     <div class="er-disclaim">⚠️ 免责声明：本报告由ST股分析专家基于公开数据自动生成，仅供参考，不构成任何投资建议。数据来源：巨潮资讯网、东方财富、腾讯财经。股市有风险，投资需谨慎。</div>`;
   document.getElementById('expMask').classList.add('show');
+}}
+
+// ===================== 正式版PDF报告（A4版式 · html2pdf页面端导出） =====================
+// 引擎自托管于 assets/html2pdf.bundle.min.js（含html2canvas+jsPDF），首次点击懒加载
+function loadHtml2Pdf(){{
+  return new Promise((resolve, reject) => {{
+    if (window.html2pdf) return resolve();
+    const s = document.createElement('script');
+    s.src = 'assets/html2pdf.bundle.min.js';
+    s.onload = () => resolve();
+    s.onerror = () => reject(new Error('engine load failed'));
+    document.head.appendChild(s);
+  }});
+}}
+const DDESC = {{
+  C1:'股价对面值退市线的安全距离', C2:'市值越低，并购/借壳机会越大', S1:'实控人背景与资本运作能力',
+  S2:'质押比例反映股权稳定性', A1:'归母净资产充裕度', A2:'主营造血能力（主板3亿/双创1亿线）',
+  A3:'主业盈利修复能力', D1:'经营现金流对营收的支撑', B1:'涉造假立案的违法类退市通道',
+  B2:'年审意见类型对应的规范类通道', F2:'重整/出售/豁免等保壳动作', F1:'营收与扣非的趋势方向', H1:'实控人冻结/限高等司法事件'
+}};
+function buildFormalReport(c){{
+  const m = getMember() || {{}};
+  const v2 = c.v2 || {{}};
+  const DIMP = [
+    ['C1','面值距离',6],['C2','壳价值',8],['S1','实控人性质',12],['S2','股权质押',6],
+    ['A1','净资产',10],['A2','扣非主营收入',12],['A3','扣非净利润',6],['D1','现金流质量',4],
+    ['B1','立案/造假',10],['B2','审计意见',12],['F2','重组纾困',6],['F1','财务趋势',4],['H1','司法风险',4]
+  ];
+  const LV_TXT2 = {{
+    A:'保壳压力低、退市风险小，短期无强制退市通道命中的迹象。',
+    B:'保壳压力中等，个别维度存在失分，需跟踪下一报告期的修复情况。',
+    C:'保壳压力较大，存在明确风险敞口，若短板维度不修复，存在退市可能。',
+    D:'退市风险高，多通道濒临触发，除非出现实质性重整/纾困进展，否则应谨慎对待。'
+  }};
+  const dimRows = DIMP.map(d => {{
+    const v = (v2[d[0]] != null) ? v2[d[0]] : null;
+    const col = v==null ? '#8aa294' : (v/d[2]>=0.6 ? '#27ae60' : v/d[2]>=0.3 ? '#e67e22' : '#c0392b');
+    return `<tr><td>${{d[1]}}（${{d[0]}}）</td><td style="color:${{col}};font-weight:700">${{v==null?'—':v}}</td><td>${{d[2]}}</td><td style="color:#6b7f74">${{DDESC[d[0]]}}</td></tr>`;
+  }}).join('');
+  const scored = DIMP.map(d=>({{t:d[1], v:(v2[d[0]]!=null?v2[d[0]]:null), max:d[2]}})).filter(x=>x.v!=null).sort((a,b)=>a.v-b.v);
+  const weak = scored.slice(0,3).map(x=>`${{x.t}}（${{x.v}}/${{x.max}}分）`).join('、') || '暂缺V2维度数据';
+  const sigChips = c.flags.map(f=>`<span class="fr-chip" style="background:${{SIG_CLASS[f]==='sig-rescue'?'#d5f5e3':'#fadbd8'}};color:${{SIG_CLASS[f]==='sig-rescue'?'#1a6b3a':'#922b21'}}">${{FLAG_CN[f]||f}}</span>`).join('') || '<span style="color:#6b7f74">近24个月无公告信号命中</span>';
+  const sigTxt = c.flags.length
+    ? `近24个月命中公告信号 ${{c.flags.length}} 项（风险类 ${{c.riskN}} 项 / 纾困类 ${{c.rescueN}} 项）。${{c.rescueN>0?'其中含纾困/重组类正向信号，保壳主动权仍在公司手中。':'暂无纾困类正向信号，保壳动作有待观察。'}}`
+    : '近24个月无公告信号命中，监管与司法层面暂无新增事件。';
+  const capTxt = [];
+  if (v2.C1 === 0) capTxt.push('面值退市危机通道已触发（C1=0），总分封顶50分');
+  if (v2.B2 === 0) capTxt.push('审计意见为无法表示/否定意见（B2=0），总分封顶50分');
+  if (v2.B1 === 0) capTxt.push('涉造假立案（B1=0），总分封顶30分');
+  const capHtml = capTxt.length ? `<div class="fr-sec"><div class="fr-sec-t">六、通道封顶警示</div><div class="fr-sec-b"><b style="color:#c0392b">${{capTxt.join('；')}}。</b>该标的存在已触发的强制退市通道，评分封顶机制生效，实际退市风险显著高于总分表象。</div></div>` : '';
+  const moyuSec = c.moyuRank
+    ? `<div class="fr-sec"><div class="fr-sec-t">五、摸鱼视角（壳价 × 保壳确定性）</div><div class="fr-sec-b">摸鱼榜第 ${{c.moyuRank}} / ${{MOYU_POOL.length}} 名，摸鱼指数 ${{c.moyu}}（壳便宜分 ${{c.cheap}}）。当前市值 ${{c.market_cap_str}} 亿，${{c.market_cap_yi<=28?'低于':'高于'}}28亿元基准壳费线。${{c.moyu>=60?'并购/借壳成本优势与保壳确定性兼备，属于低位潜伏观察区。':'综合机会一般，壳价或保壳确定性至少一头不占优。'}}</div></div>`
+    : '<div class="fr-sec"><div class="fr-sec-t">五、摸鱼视角（壳价 × 保壳确定性）</div><div class="fr-sec-b">该标的因已锁定退市或无市值数据，未纳入摸鱼榜（摸鱼池仅含非退市且市值>0标的）。</div></div>';
+  const now = new Date();
+  const ts = now.getFullYear()+'年'+(now.getMonth()+1)+'月'+now.getDate()+'日 '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
+  const col = LC[c.level];
+  return `
+  <div class="fr">
+    <div class="fr-band">
+      <div class="fr-band-l">ST保壳评分系统 V2</div>
+      <div class="fr-band-r">A013-208号 · 会员专享正式报告<br>报告期：${{REPORT_LABEL}}</div>
+    </div>
+    <div class="fr-pad">
+      <div class="fr-title">${{c.name}}（${{c.code}}）<br>退市风险与保壳能力分析报告</div>
+      <div class="fr-subtitle">ST股分析专家 · 基于V2十三维评分体系</div>
+      <div class="fr-meta"><div class="fr-meta-grid">
+        <div class="fr-mcell"><div class="fr-mk">评级 / 总分</div><div class="fr-mv"><b style="color:${{col}};font-size:14px">${{c.level}} 级 · ${{c.score}} 分</b>（${{LT[c.level]}}）</div></div>
+        <div class="fr-mcell"><div class="fr-mk">全榜排名</div><div class="fr-mv">第 ${{c.rank}} 名 / 共 ${{UNIQUE.length}} 家 ST/*ST</div></div>
+        <div class="fr-mcell"><div class="fr-mk">摸鱼榜排名</div><div class="fr-mv">${{c.moyuRank?('第 '+c.moyuRank+' 名 · 指数 '+c.moyu):'未入池'}}</div></div>
+        <div class="fr-mcell"><div class="fr-mk">市值</div><div class="fr-mv">${{c.market_cap_str||'—'}} 亿元（昨收 ${{c.prev_close||'—'}} 元）</div></div>
+        <div class="fr-mcell"><div class="fr-mk">板块 / 类型</div><div class="fr-mv">${{c.board}} · ${{c.type}}</div></div>
+        <div class="fr-mcell"><div class="fr-mk">实控人</div><div class="fr-mv">${{v2.controller||'—'}}${{v2.controller_cat?('（'+v2.controller_cat+'）'):''}}</div></div>
+        <div class="fr-mcell"><div class="fr-mk">风险原因</div><div class="fr-mv">${{c.reason||'—'}}</div></div>
+        <div class="fr-mcell"><div class="fr-mk">退市状态</div><div class="fr-mv">${{c.delisted?'⚠️ 已锁定退市':'正常挂牌'}}</div></div>
+      </div></div>
+      <div class="fr-sec"><div class="fr-sec-t">一、核心结论</div><div class="fr-sec-b">${{c.name}}（${{c.code}}）当前V2保壳评分 <b>${{c.score}} 分</b>，评级 <b style="color:${{col}}">${{c.level}} 级</b>，全榜第 ${{c.rank}} 名。${{LV_TXT2[c.level]}}主要风险原因：${{c.reason}}。</div></div>
+      <div class="fr-sec"><div class="fr-sec-t">二、V2十三维评分明细（满分100）</div>
+        <table class="fr-table"><thead><tr><th style="width:26%">维度</th><th style="width:12%">得分</th><th style="width:10%">满分</th><th>评分说明</th></tr></thead><tbody>${{dimRows}}</tbody></table>
+      </div>
+      <div class="fr-sec"><div class="fr-sec-t">三、三大短板维度</div><div class="fr-sec-b">失分最严重的三个维度为：${{weak}}。上述维度是决定该标的保壳成败的关键观察点，建议重点跟踪下一报告期的修复进展。</div></div>
+      <div class="fr-sec"><div class="fr-sec-t">四、公告信号面（巨潮资讯网 · 近24个月）</div><div class="fr-sec-b" style="margin-bottom:6px">${{sigChips}}</div><div class="fr-sec-b">${{sigTxt}}</div></div>
+      ${{moyuSec}}
+      ${{capHtml}}
+      <div class="fr-disclaim">⚠️ 免责声明：本报告由ST股分析专家基于公开数据（巨潮资讯网、东方财富、腾讯财经）与V2十三维评分体系自动生成，仅供研究参考，不构成任何投资建议。评分与信号为动态数据，以最新公告为准。股市有风险，投资需谨慎。</div>
+      <div class="fr-foot">ST保壳评分系统 V2 · 保壳风云榜 &nbsp;|&nbsp; 会员：${{m.name||'—'}} &nbsp;|&nbsp; 生成时间：${{ts}} &nbsp;|&nbsp; 报告期：${{REPORT_LABEL}}</div>
+    </div>
+  </div>`;
+}}
+function exportPDF(code){{
+  const c = UNIQUE.find(x=>x.code===code);
+  if(!c) return;
+  const btn = document.getElementById('pdfBtn');
+  const ori = btn ? btn.innerHTML : '';
+  if(btn){{ btn.disabled = true; btn.innerHTML = '⏳ 正在生成正式版PDF报告…'; }}
+  loadHtml2Pdf().then(() => {{
+    const holder = document.createElement('div');
+    holder.style.cssText = 'position:fixed;left:-10000px;top:0;background:#fff;';
+    holder.innerHTML = buildFormalReport(c);
+    document.body.appendChild(holder);
+    const fname = 'ST保壳分析报告_'+c.code+'_'+(c.name||'').replace(/[*\\/:?<>|"]/g,'')+'.pdf';
+    const opt = {{
+      margin: 0,
+      filename: fname,
+      image: {{ type:'jpeg', quality: 0.95 }},
+      html2canvas: {{ scale: 2, useCORS: true, backgroundColor: '#ffffff', windowWidth: 794 }},
+      jsPDF: {{ unit:'mm', format:'a4', orientation:'portrait' }},
+      pagebreak: {{ mode: ['css','legacy'], avoid: ['.fr-sec','.fr-table tr','.fr-meta'] }}
+    }};
+    html2pdf().set(opt).from(holder.firstElementChild).save().then(() => {{
+      document.body.removeChild(holder);
+      if(btn){{ btn.disabled = false; btn.innerHTML = ori; }}
+    }}).catch(err => {{
+      if(holder.parentNode) document.body.removeChild(holder);
+      if(btn){{ btn.disabled = false; btn.innerHTML = ori; }}
+      alert('PDF生成失败：'+(err&&err.message||err));
+    }});
+  }}).catch(() => {{
+    if(btn){{ btn.disabled = false; btn.innerHTML = ori; }}
+    alert('PDF引擎加载失败，请检查网络后重试');
+  }});
 }}
 
 initStats();
