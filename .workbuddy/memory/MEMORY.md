@@ -81,3 +81,10 @@
 - 采集脚本：delist_history.py（巨潮按年分段，长窗口截断坑）/classify_delist.py/merge_delist.py/build_scoring_xlsx.py/gen_v2_report.js
 - S1数据源：企查查MCP批量穿透 + 巨潮实控人持股变动监测（akshare/westock均无全量实控人表）
 - 实施待办：老Z改完Excel → build_baokeng.py/generate_html.py V2改造、V1/V2灰度并行、176案例回测
+
+## V2权重老Z定稿（2026-08-28晚定稿，覆盖上节草案数值）
+- 定稿六处调整：C1面值10→6、B2审计8→12（与S1并列第一权重）、C2壳价值8分规则反转（市值≤28亿基准的5折→8分满，越便宜=并购机会越大）、A2改"扣非主营业务收入"口径、F2重组8→6、A3扣非4→6；总分=100
+- 五通道权重：市场14/财务红线32/监管22/股东调节18/纾困14
+- 莫高重演算仍≈68分/A级（B2/C2提权对冲C1收紧与A2口径加严）
+- Excel/build_scoring_xlsx.py/gen_v2_report.js+Word三处已同步定稿；Excel黄色列仍可微调
+- editor_sdk坐标坑：CSV读取跳过空行致行号错位，须用return_csv=false结构化读取定位
