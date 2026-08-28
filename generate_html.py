@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Generate baokeng-rank.html from V618+G scores (分数越高=保壳越容易)"""
+"""Generate baokeng-rank.html from V7 scores (分数越高=保壳越容易)
+V7: 十四维100分制 + 巨潮公告风险信号 + 报告期标记
+RAW: [code,name,type,board,reason, A1..H1(14维), delisted, note, mkt_cap, mkt_str, prev_close, flags]
+"""
 
 import json
 from datetime import date
@@ -9,49 +12,55 @@ with open('st_scores.json', encoding='utf-8') as f:
 
 active = [s for s in scores if not s['delisted']]
 
-# Count stats
-stats = {'A':0,'B':0,'C':0,'D':0}
-for s in active: stats[s['level']] += 1
+stats = {'A': 0, 'B': 0, 'C': 0, 'D': 0}
+for s in active:
+    stats[s['level']] += 1
 
-# Top lists (scores already sorted descending: highest = easiest first)
-easy10 = scores[:10]
-hard10 = scores[-10:][::-1]  # lowest scores = hardest
-
-# Colors
-LC = {'A':'#27ae60','B':'#2980b9','C':'#e67e22','D':'#c0392b'}
-LT = {'A':'低风险·退市概率低','B':'中风险·保壳有希望','C':'高风险·保壳难度大','D':'极高风险·退市警钟'}
-LE = {'A':'✅ 综合评估：保壳能力较强','B':'🔵 综合评估：中等退市风险','C':'🟠 综合评估：较高退市风险','D':'🔴 综合评估：退市风险极高'}
+# 报告期
+rd = scores[0].get('report_date', '') if scores else ''
+if len(rd) == 8:
+    report_label = f"{rd[:4]}年年报" if rd[4:6] == '12' else f"{rd[:4]}年{int(rd[4:6])}月报"
+else:
+    report_label = '未知报告期'
 
 today = date.today().isoformat()
 
-# Generate RAW data array (11维: A1,A2,A3,B1,B2,B3,C1,D1,E1,F1,G1 = 100分制)
+# 信号中文名映射
+FLAG_CN = {
+    'investigation': '立案调查', 'adverse_audit': '无法表示/否定意见',
+    'qualified_audit': '保留意见', 'penalty': '行政处罚',
+    'warning': '警示函/监管函', 'freeze': '股份冻结',
+    'consume_limit': '限制消费', 'restructuring': '重整',
+    'asset_sale': '资产出售', 'debt_waiver': '债务豁免', 'donation': '资产赠与',
+}
+
+# Generate RAW data array (V7 14维 = 100分制)
 raw_lines = []
 for s in scores:
     mkt_cap = s.get('market_cap_yi', 0) or 0
     mkt_str = f'{mkt_cap:.1f}' if mkt_cap else '—'
     prev_close = s.get('prev_close', s.get('price', 0)) or 0
+    flags = s.get('flags', {})
+    flag_str = ','.join(k for k in FLAG_CN if flags.get(k))
     raw_lines.append(
         f'  ["{s["code"]}","{s["name"]}","{s["type"]}","{s["board"]}","{s["reason"]}",'
         f'{s["A1"]},{s["A2"]},{s["A3"]},{s["B1"]},{s["B2"]},{s["B3"]},'
-        f'{s["C1"]},{s["D1"]},{s["E1"]},{s["F1"]},{s["G1"]},{str(s["delisted"]).lower()},'
-        f'"{s["note"]}",{mkt_cap},"{mkt_str}",{prev_close}]'
+        f'{s["C1"]},{s["C2"]},{s["D1"]},{s["E1"]},{s["F1"]},{s["F2"]},{s["G1"]},{s["H1"]},'
+        f'{str(s["delisted"]).lower()},'
+        f'"{s["note"]}",{mkt_cap},"{mkt_str}",{prev_close},"{flag_str}"]'
     )
 raw_str = '[\n' + ',\n'.join(raw_lines) + '\n]'
-
-# JS for scoring: 所有维度之和 = 保壳能力总分（越高越好）
-# Map: score = A1+A2+A3+B1+B2+B3+C1+D1+E1+F1+G1 (100分制 V618+G)
 
 html = f'''<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>保壳风云榜 · A股退市风险评估 V618+G</title>
+<title>保壳风云榜 · A股退市风险评估 V7</title>
 <style>
 * {{ box-sizing: border-box; margin: 0; padding: 0; }}
 body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f0f7f2; color: #1a2b1f; font-size: 14px; }}
 
-/* 头部 */
 .header {{ background: linear-gradient(135deg, #1a3d2b 0%, #0f2519 100%); color: #fff; padding: 22px 24px 16px; border-bottom: 2px solid #2d6e47; }}
 .header-inner {{ max-width: 1200px; margin: 0 auto; }}
 .header h1 {{ font-size: 24px; font-weight: 600; letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }}
@@ -59,18 +68,16 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsof
 .header-meta {{ display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; }}
 .header-meta span {{ font-size: 12px; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 20px; color: #a8d8b8; border: 0.5px solid rgba(255,255,255,0.15); }}
 
-/* 主容器 */
 .container {{ max-width: 1200px; margin: 0 auto; padding: 20px 16px; }}
 
-/* 评分体系说明 */
 .score-legend {{ background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; padding: 16px 20px; margin-bottom: 20px; }}
 .score-legend h3 {{ font-size: 14px; font-weight: 600; color: #1a3d2b; margin-bottom: 8px; }}
-.score-legend-grid {{ display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }}
+.score-legend-grid {{ display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }}
 .slg-item {{ font-size: 11px; padding: 8px; background: #f4fbf6; border-radius: 8px; text-align: center; }}
 .slg-dim {{ font-weight: 600; color: #1a5e35; }}
 .slg-weight {{ color: #999; font-size: 10px; }}
+.slg-real {{ color: #1a6b3a; }}
 
-/* 统计卡片 */
 .stats-grid {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }}
 .stat-card {{ background: #fff; border-radius: 12px; padding: 16px 12px; border: 0.5px solid #c8e6d0; text-align: center; }}
 .stat-num {{ font-size: 32px; font-weight: 700; margin-bottom: 4px; }}
@@ -80,7 +87,6 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsof
 .stat-card.lv-B .stat-num {{ color: #1a6b3a; }}
 .stat-card.lv-A .stat-num {{ color: #27ae60; }}
 
-/* Tab */
 .tabs {{ display: flex; background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; margin-bottom: 20px; overflow: hidden; }}
 .tab {{ flex: 1; padding: 12px 8px; text-align: center; font-size: 13px; cursor: pointer; border: none; background: transparent; color: #5a7a64; font-weight: 500; border-bottom: 2px solid transparent; transition: all 0.2s; }}
 .tab.active {{ color: #1a5e35; border-bottom-color: #27ae60; background: #edf7f1; }}
@@ -89,7 +95,6 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsof
 .tab-content {{ display: none; }}
 .tab-content.active {{ display: block; }}
 
-/* 排行榜 */
 .rank-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }}
 .rank-panel {{ background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; overflow: hidden; }}
 .rank-header-easy {{ padding: 14px 16px; border-bottom: 0.5px solid #c8e6d0; background: #edf7f1; }}
@@ -113,14 +118,12 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsof
 .mini-bar {{ height: 5px; border-radius: 3px; }}
 .score-val {{ font-size: 13px; font-weight: 700; }}
 
-/* 风险标签 */
 .rtag {{ font-size: 10px; padding: 1px 6px; border-radius: 8px; margin-left: 5px; flex-shrink: 0; }}
 .rtag-A {{ background: #d5f5e3; color: #1a6b3a; }}
 .rtag-B {{ background: #d6eaf8; color: #1a5276; }}
 .rtag-C {{ background: #fde8d8; color: #a04000; }}
 .rtag-D {{ background: #fadbd8; color: #922b21; }}
 
-/* 查询区 */
 .search-box {{ background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; padding: 20px; }}
 .search-row {{ display: flex; gap: 10px; margin-bottom: 16px; }}
 .search-input {{ flex: 1; padding: 10px 14px; border: 0.5px solid #a8d8b8; border-radius: 8px; font-size: 14px; outline: none; background: #f8fcf9; }}
@@ -128,7 +131,6 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsof
 .search-btn {{ padding: 10px 22px; background: #1a5e35; color: #fff; border: none; border-radius: 8px; font-size: 14px; cursor: pointer; }}
 .search-btn:hover {{ background: #1e7a44; }}
 
-/* 详情报告 */
 .report-card {{ border: 0.5px solid #c8e6d0; border-radius: 12px; padding: 20px; }}
 .report-top {{ display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 0.5px solid #e8f5ec; }}
 .report-name {{ font-size: 20px; font-weight: 700; }}
@@ -141,13 +143,21 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsof
 .info-chip-label {{ font-size: 11px; color: #7a9a82; margin-bottom: 3px; }}
 .info-chip-val {{ font-size: 13px; font-weight: 500; }}
 
+.signal-row {{ display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }}
+.sig-tag {{ font-size: 11px; padding: 4px 10px; border-radius: 12px; font-weight: 500; }}
+.sig-risk {{ background: #fadbd8; color: #922b21; border: 0.5px solid #e6b0aa; }}
+.sig-audit {{ background: #fde8d8; color: #a04000; border: 0.5px solid #f5c6a0; }}
+.sig-owner {{ background: #e8daef; color: #6c3483; border: 0.5px solid #d2b4de; }}
+.sig-rescue {{ background: #d5f5e3; color: #1a6b3a; border: 0.5px solid #a9dfbf; }}
+.sig-none {{ background: #f4f4f4; color: #999; border: 0.5px solid #ddd; }}
+
 .factors-section {{ margin-bottom: 14px; }}
 .factors-title {{ font-size: 12px; color: #5a7a64; font-weight: 500; margin-bottom: 8px; padding-bottom: 4px; border-bottom: 0.5px solid #e8f5ec; }}
 .factor-row {{ display: flex; align-items: center; gap: 10px; padding: 5px 0; }}
-.factor-label {{ width: 140px; font-size: 12px; color: #555; flex-shrink: 0; }}
+.factor-label {{ width: 150px; font-size: 12px; color: #555; flex-shrink: 0; }}
 .factor-bar-wrap {{ flex: 1; height: 6px; background: #e8f5ec; border-radius: 3px; }}
 .factor-bar {{ height: 6px; border-radius: 3px; transition: width 0.4s; }}
-.factor-score {{ width: 32px; text-align: right; font-size: 12px; font-weight: 600; }}
+.factor-score {{ width: 36px; text-align: right; font-size: 12px; font-weight: 600; }}
 
 .conclusion-box {{ padding: 12px 14px; border-radius: 8px; margin-top: 12px; }}
 .conclusion-box.A {{ background: #d5f5e3; border-left: 3px solid #27ae60; }}
@@ -157,7 +167,6 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsof
 .conclusion-title {{ font-size: 13px; font-weight: 600; margin-bottom: 4px; }}
 .conclusion-text {{ font-size: 12px; line-height: 1.7; color: #444; }}
 
-/* 全名单 */
 .table-wrap {{ overflow-x: auto; background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; }}
 table {{ width: 100%; border-collapse: collapse; }}
 thead th {{ background: #1a5e35; color: #fff; padding: 10px 12px; font-size: 12px; font-weight: 500; text-align: left; white-space: nowrap; }}
@@ -170,14 +179,15 @@ tbody tr:last-child {{ border-bottom: none; }}
 tbody tr:hover {{ background: #f4fbf6; }}
 tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
 .link-style {{ color: #1a5e35; cursor: pointer; }}
+.sig-dot {{ display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 3px; vertical-align: middle; }}
+.sig-dot.risk {{ background: #c0392b; }}
+.sig-dot.rescue {{ background: #27ae60; }}
 
-/* 筛选 */
 .filter-row {{ display: flex; gap: 8px; padding: 12px 16px; background: #edf7f1; border-bottom: 0.5px solid #c8e6d0; flex-wrap: wrap; }}
 .filter-chip {{ padding: 4px 12px; border-radius: 20px; font-size: 12px; cursor: pointer; border: 1px solid #c8e6d0; background: #fff; color: #5a7a64; transition: all 0.15s; }}
 .filter-chip.active {{ background: #1a5e35; color: #fff; border-color: #1a5e35; }}
 .filter-chip:hover:not(.active) {{ border-color: #27ae60; }}
 
-/* 投票（公司级） */
 .vote-box {{ background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; padding: 20px; }}
 .vote-box h3 {{ font-size: 15px; font-weight: 600; color: #1a3d2b; margin-bottom: 6px; }}
 .vote-desc {{ font-size: 12px; color: #7a9a82; margin-bottom: 14px; }}
@@ -208,7 +218,6 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
 .vbar-D {{ background: #c0392b; }}
 .voted-tip {{ font-size: 11px; color: #999; text-align: center; margin-top: 8px; }}
 
-/* 投票排行Tab */
 .vote-rank-intro {{ font-size: 13px; color: #5a7a64; margin-bottom: 16px; text-align: center; }}
 .vote-rank-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }}
 .vote-rank-card {{ background: #fff; border-radius: 12px; border: 0.5px solid #c8e6d0; padding: 16px; }}
@@ -225,10 +234,8 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
 
 .empty-state {{ text-align: center; padding: 40px 20px; color: #aaa; }}
 
-/* 数据来源提示 */
 .source-tip {{ font-size: 11px; color: #999; padding: 8px 16px; background: #fafafa; border-radius: 8px; margin-bottom: 16px; text-align: center; }}
 
-/* 免责声明 */
 .disclaimer {{ background: #fff; border-radius: 12px; border: 1px solid #d5d5d5; padding: 16px 20px; margin-top: 24px; }}
 .disclaimer h4 {{ font-size: 13px; font-weight: 600; color: #888; margin-bottom: 8px; }}
 .disclaimer p {{ font-size: 11px; color: #aaa; line-height: 1.8; }}
@@ -247,13 +254,14 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
 
 <div class="header">
 <div class="header-inner">
-  <h1>🌿 保壳风云榜 <span style="font-size:13px;font-weight:400;opacity:0.7">V618+G</span></h1>
-  <p>A股 ST / *ST 上市公司保壳能力评估 · 100分制十一维评分 · 实时排名</p>
+  <h1>🌿 保壳风云榜 <span style="font-size:13px;font-weight:400;opacity:0.7">V7 · 公告信号版</span></h1>
+  <p>A股 ST / *ST 上市公司保壳能力评估 · 100分制十四维评分 · 巨潮公告风险信号 · 实时排名</p>
   <div class="header-meta">
     <span>更新时间：{today}</span>
     <span>覆盖公司：{len(scores)} 家</span>
-    <span>数据来源：沪深交易所 · 风险警示板</span>
-    <span>评分模型：V618+G 十一维100分制</span>
+    <span>财务报告期：{report_label}</span>
+    <span>评分模型：V7 十四维100分制</span>
+    <span>公告信号：巨潮资讯网</span>
     <span>每周五更新</span>
   </div>
 </div>
@@ -261,21 +269,23 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
 
 <div class="container">
 
-  <!-- 评分体系说明 -->
   <div class="score-legend">
-    <h3>📐 V618+G 100分制十一维评分体系（分数越高=保壳能力越强）</h3>
+    <h3>📐 V7 100分制十四维评分体系（分数越高=保壳能力越强 · ★=真实公告数据）</h3>
     <div class="score-legend-grid">
       <div class="slg-item"><div class="slg-dim">A1 扣非净利润</div><div class="slg-weight">5分</div></div>
       <div class="slg-item"><div class="slg-dim">A2 营业收入</div><div class="slg-weight">12分</div></div>
       <div class="slg-item"><div class="slg-dim">A3 净资产</div><div class="slg-weight">8分</div></div>
-      <div class="slg-item"><div class="slg-dim">B1 违规存量</div><div class="slg-weight">7分</div></div>
-      <div class="slg-item"><div class="slg-dim">B2 内控审计</div><div class="slg-weight">7分</div></div>
-      <div class="slg-item"><div class="slg-dim">B3 监管处罚</div><div class="slg-weight">8分</div></div>
-      <div class="slg-item"><div class="slg-dim">C1 面值/市值</div><div class="slg-weight">13分</div></div>
-      <div class="slg-item"><div class="slg-dim">D1 现金流质量</div><div class="slg-weight">11分</div></div>
-      <div class="slg-item"><div class="slg-dim">E1 股权稳定性</div><div class="slg-weight">9分</div></div>
-      <div class="slg-item"><div class="slg-dim">F1 持续经营</div><div class="slg-weight">10分</div></div>
-      <div class="slg-item"><div class="slg-dim">G1 市值偏离度</div><div class="slg-weight">10分</div></div>
+      <div class="slg-item"><div class="slg-dim slg-real">B1 违规存量★</div><div class="slg-weight">5分</div></div>
+      <div class="slg-item"><div class="slg-dim slg-real">B2 内控审计★</div><div class="slg-weight">5分</div></div>
+      <div class="slg-item"><div class="slg-dim slg-real">B3 监管处罚★</div><div class="slg-weight">6分</div></div>
+      <div class="slg-item"><div class="slg-dim">C1 面值距离</div><div class="slg-weight">8分</div></div>
+      <div class="slg-item"><div class="slg-dim">C2 市值水平</div><div class="slg-weight">4分</div></div>
+      <div class="slg-item"><div class="slg-dim">D1 现金流质量</div><div class="slg-weight">10分</div></div>
+      <div class="slg-item"><div class="slg-dim">E1 股权稳定性</div><div class="slg-weight">8分</div></div>
+      <div class="slg-item"><div class="slg-dim">F1 持续经营</div><div class="slg-weight">9分</div></div>
+      <div class="slg-item"><div class="slg-dim slg-real">F2 重组/纾困★</div><div class="slg-weight">7分</div></div>
+      <div class="slg-item"><div class="slg-dim">G1 市值偏离度</div><div class="slg-weight">5分</div></div>
+      <div class="slg-item"><div class="slg-dim slg-real">H1 实控人风险★</div><div class="slg-weight">8分</div></div>
     </div>
   </div>
 
@@ -293,9 +303,8 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
     <button class="tab" onclick="switchTab('vote')">🗳️ 投票排行</button>
   </div>
 
-  <!-- 风云榜 -->
   <div id="tab-rank" class="tab-content active">
-    <div class="source-tip">📊 数据覆盖 <b>{len(scores)}</b> 家 ST/*ST 公司 · V618+G十一维评分 100分制 · 分数越高保壳越容易 · 更新于 {today}</div>
+    <div class="source-tip">📊 数据覆盖 <b>{len(scores)}</b> 家 ST/*ST 公司 · V7十四维评分100分制 · 财务报告期 <b>{report_label}</b> · 公告信号来自巨潮资讯网（近24个月） · 分数越高保壳越容易</div>
     <div class="rank-grid">
       <div class="rank-panel">
         <div class="rank-header-easy">
@@ -314,7 +323,6 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
     </div>
   </div>
 
-  <!-- 查询 -->
   <div id="tab-query" class="tab-content">
     <div class="search-box">
       <div class="search-row">
@@ -327,9 +335,8 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
     </div>
   </div>
 
-  <!-- 全名单 -->
   <div id="tab-list" class="tab-content">
-    <div class="source-tip"><b id="listTotal">{len(scores)}</b> 家 · 排序：按保壳能力分（分数越高保壳越容易）</div>
+    <div class="source-tip"><b id="listTotal">{len(scores)}</b> 家 · 排序：按保壳能力分（分数越高保壳越容易）· ●红=风险信号 ●绿=纾困信号</div>
     <div class="filter-row">
       <span class="filter-chip active" onclick="setFilter('all',this)">全部</span>
       <span class="filter-chip" onclick="setFilter('ST',this)">ST</span>
@@ -348,6 +355,7 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
             <th style="width:100px" data-key="name" onclick="sortBy('name')" title="点击排序">简称</th>
             <th style="width:55px" data-key="type" onclick="sortBy('type')" title="点击排序">类型</th>
             <th data-key="reason" onclick="sortBy('reason')" title="点击排序">风险原因</th>
+            <th style="width:58px" data-key="signal" onclick="sortBy('signal')" title="公告信号数">信号</th>
             <th style="width:55px" data-key="score" onclick="sortBy('score')" title="点击排序">保壳分</th>
             <th style="width:50px" data-key="level" onclick="sortBy('level')" title="点击排序">等级</th>
             <th style="width:75px" data-key="market_cap_yi" onclick="sortBy('market_cap_yi')" title="点击排序">市值(亿)</th>
@@ -359,7 +367,6 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
     </div>
   </div>
 
-  <!-- 投票排行 -->
   <div id="tab-vote" class="tab-content">
     <div class="vote-rank-intro">🗳️ 对每家ST公司的保壳难度投票 · 查看大家怎么看<br><span style="font-size:11px;color:#aaa">在查询页查看公司详情时即可参与投票</span></div>
     <div class="vote-rank-grid">
@@ -374,45 +381,60 @@ tbody td {{ padding: 9px 12px; font-size: 12px; white-space: nowrap; overflow: h
     </div>
   </div>
 
-  <!-- 免责声明 -->
   <div class="disclaimer">
     <h4>⚠️ 免责声明</h4>
     <p>1. 本工具仅供学习研究参考，<b>不构成任何投资建议</b>。评分模型基于公开数据和算法推断，可能存在偏差与滞后。</p>
     <p>2. 投资者应自行判断风险，<b>据此操作风险自负</b>。退市涉及复杂的财务、法律及监管因素，本工具无法全面覆盖。</p>
-    <p>3. 数据来源：沪深交易所风险警示板公开名单、公开市场行情。评分模型 V618+G 为独立研究框架，<b>不代表任何机构观点</b>。</p>
-    <p>4. 历史评分不代表未来结果，保壳能力评分仅反映基于公开信息的综合评估，不保证准确性。</p>
+    <p>3. 数据来源：沪深交易所风险警示板公开名单、腾讯财经行情、巨潮资讯网公告、公开财务数据。财务维度基于 <b>{report_label}</b>，公告信号窗口为近24个月。评分模型 V7 为独立研究框架，<b>不代表任何机构观点</b>。</p>
+    <p>4. 历史评分不代表未来结果，保壳能力评分仅反映基于公开信息的综合评估，不保证准确性。北交所股票公告信号暂未覆盖（走规则推演）。</p>
   </div>
 
 </div>
 
 <script>
-// ===================== V618+G 保壳能力评分数据 =====================
-// [代码, 简称, 类型, 板块, 风险原因, A1,A2,A3,B1,B2,B3,C1,D1,E1,F1,G1(11个), 已锁定退市, 备注, 市值_亿, 市值_显示, 昨收]
+// ===================== V7 保壳能力评分数据 =====================
+// [代码,简称,类型,板块,风险原因,
+//  A1,A2,A3, B1,B2,B3, C1,C2, D1,E1, F1,F2, G1,H1 (14个),
+//  已锁定退市, 备注, 市值_亿, 市值_显示, 昨收, 信号串]
 // 分数越高 = 保壳能力越强
 const RAW = {raw_str};
 
-// V618+G 保壳能力总分 = 所有维度之和（越高越好，100分制）
-function calcScore(r) {{ return r[5]+r[6]+r[7]+r[8]+r[9]+r[10]+r[11]+r[12]+r[13]+r[14]+r[15]; }}
+// V7 保壳能力总分 = 14维之和（100分制）
+function calcScore(r) {{ return r[5]+r[6]+r[7]+r[8]+r[9]+r[10]+r[11]+r[12]+r[13]+r[14]+r[15]+r[16]+r[17]+r[18]; }}
 
-// 评级（分数越高=保壳越容易）
 function calcLevel(s) {{ return s>65?'A': s>45?'B': s>25?'C': 'D'; }}
+
+const FLAG_CN = {{
+  investigation:'立案调查', adverse_audit:'无法表示/否定意见', qualified_audit:'保留意见',
+  penalty:'行政处罚', warning:'警示函/监管函', freeze:'股份冻结', consume_limit:'限制消费',
+  restructuring:'重整', asset_sale:'资产出售', debt_waiver:'债务豁免', donation:'资产赠与'
+}};
+const SIG_CLASS = {{
+  investigation:'sig-risk', penalty:'sig-risk', freeze:'sig-owner', consume_limit:'sig-owner',
+  adverse_audit:'sig-audit', qualified_audit:'sig-audit', warning:'sig-audit',
+  restructuring:'sig-rescue', asset_sale:'sig-rescue', debt_waiver:'sig-rescue', donation:'sig-rescue'
+}};
+const RESCUE_SET = new Set(['restructuring','asset_sale','debt_waiver','donation']);
 
 const COS = RAW.map(r => {{
   const s = calcScore(r);
+  const flags = (r[24]||'').split(',').filter(Boolean);
+  const rescueN = flags.filter(f=>RESCUE_SET.has(f)).length;
+  const riskN = flags.length - rescueN;
   return {{ code:r[0], name:r[1], type:r[2], board:r[3], reason:r[4],
     A1:r[5], A2:r[6], A3:r[7], B1:r[8], B2:r[9], B3:r[10],
-    C1:r[11], D1:r[12], E1:r[13], F1:r[14], G1:r[15],
-    delisted:r[16], note:r[17],
-    market_cap_yi:r[18], market_cap_str:r[19],
+    C1:r[11], C2:r[12], D1:r[13], E1:r[14],
+    F1:r[15], F2:r[16], G1:r[17], H1:r[18],
+    delisted:r[19], note:r[20],
+    market_cap_yi:r[21], market_cap_str:r[22], prev_close:r[23],
+    flags:flags, riskN:riskN, rescueN:rescueN,
     score:s, level:calcLevel(s) }};
 }});
 
-// 去重（按代码）
 const CODE_MAP = new Map();
 COS.forEach(c => {{ if(!CODE_MAP.has(c.code)) CODE_MAP.set(c.code, c); }});
 const UNIQUE = Array.from(CODE_MAP.values());
 
-// 按保壳能力分降序排列（高分=容易保壳排前面）
 const BY_SCORE = [...UNIQUE].sort((a,b)=>b.score-a.score);
 BY_SCORE.forEach((c,i)=>c.rank=i+1);
 
@@ -422,15 +444,13 @@ const LE = {{'A':'✅ 综合评估：保壳能力较强','B':'🔵 综合评估�
 
 let currentFilter = 'all';
 
-// ---- 全名单排序（点击表头切换） ----
-let sortKey = 'score';   // 当前排序列
-let sortDir = -1;        // 1=升序 -1=降序
+let sortKey = 'score';
+let sortDir = -1;
 
 function sortBy(key){{
   if(sortKey===key) {{ sortDir = -sortDir; }}
   else {{
     sortKey = key;
-    // 字符串列默认升序，数值列默认降序
     sortDir = (key==='code'||key==='name'||key==='type'||key==='reason'||key==='level') ? 1 : -1;
   }}
   renderList();
@@ -444,7 +464,6 @@ function updateSortIndicators(){{
   }});
 }}
 
-// ---- 统计 ----
 function initStats(){{
   try {{
     const active = UNIQUE.filter(c=>!c.delisted);
@@ -452,49 +471,40 @@ function initStats(){{
       const el = document.getElementById('s'+l);
       if(el) el.textContent=active.filter(c=>c.level===l).length;
     }});
-  }} catch(e){{ /* stats pre-filled, non-critical */ }}
+  }} catch(e){{ }}
 }}
 
-// ---- 排行榜 ----
+function signalDots(c){{
+  if(c.riskN===0 && c.rescueN===0) return '<span style="color:#ccc">—</span>';
+  let out = '';
+  if(c.riskN>0) out += `<span class="sig-dot risk" title="风险信号 ${{c.riskN}} 项"></span><span style="font-size:11px;color:#c0392b">${{c.riskN}}</span> `;
+  if(c.rescueN>0) out += `<span class="sig-dot rescue" title="纾困信号 ${{c.rescueN}} 项"></span><span style="font-size:11px;color:#1a6b3a">${{c.rescueN}}</span>`;
+  return out;
+}}
+
 function renderRank(){{
-  // BY_SCORE 已按降序排列：高分在前 = 容易保壳
   const easy = BY_SCORE.slice(0,10);
   const hard = BY_SCORE.slice(-10).reverse();
-  document.getElementById('easyList').innerHTML = easy.map((c,i)=>rankItemEasy(c,i)).join('');
-  document.getElementById('hardList').innerHTML = hard.map((c,i)=>rankItemHard(c,i)).join('');
+  document.getElementById('easyList').innerHTML = easy.map((c,i)=>rankItem(c,i)).join('');
+  document.getElementById('hardList').innerHTML = hard.map((c,i)=>rankItem(c,i)).join('');
 }}
 
 function numClass(i){{ return i===0?'gold':i===1?'silver':i===2?'bronze':'other'; }}
-function rankItemEasy(c, i){{
+function rankItem(c, i){{
   const col = LC[c.level];
   return `<div class="rank-item" onclick="gotoDetail('${{c.code}}')">
     <div class="rank-num ${{numClass(i)}}">${{i+1}}</div>
     <div class="rank-info">
       <div class="rank-name">${{c.name}}<span class="rtag rtag-${{c.level}}">${{c.level}}</span></div>
-      <div class="rank-code">${{c.code}} · ${{c.board}} · ${{c.reason.length>20?c.reason.slice(0,20)+'…':c.reason}}</div>
+      <div class="rank-code">${{c.code}} · ${{c.board}} · 市值${{c.market_cap_str}}亿 · ${{c.reason.length>14?c.reason.slice(0,14)+'…':c.reason}}</div>
     </div>
     <div class="rank-score-col">
-      <div class="mini-bar-wrap"><div class="mini-bar" style="width:${{Math.round(c.score/80*100)}}%;background:${{col}}"></div></div>
-      <div class="score-val" style="color:${{col}}">${{c.score}}</div>
-    </div>
-  </div>`;
-}}
-function rankItemHard(c, i){{
-  const col = LC[c.level];
-  return `<div class="rank-item" onclick="gotoDetail('${{c.code}}')">
-    <div class="rank-num ${{numClass(i)}}">${{i+1}}</div>
-    <div class="rank-info">
-      <div class="rank-name">${{c.name}}<span class="rtag rtag-${{c.level}}">${{c.level}}</span></div>
-      <div class="rank-code">${{c.code}} · ${{c.board}} · ${{c.reason.length>20?c.reason.slice(0,20)+'…':c.reason}}</div>
-    </div>
-    <div class="rank-score-col">
-      <div class="mini-bar-wrap"><div class="mini-bar" style="width:${{Math.round(c.score/80*100)}}%;background:${{col}}"></div></div>
+      <div class="mini-bar-wrap"><div class="mini-bar" style="width:${{Math.min(100,Math.round(c.score))}}%;background:${{col}}"></div></div>
       <div class="score-val" style="color:${{col}}">${{c.score}}</div>
     </div>
   </div>`;
 }}
 
-// ---- 全名单 ----
 function getFiltered(){{
   let data;
   if(currentFilter==='all') data = [...BY_SCORE];
@@ -504,6 +514,7 @@ function getFiltered(){{
   const k = sortKey, d = sortDir;
   data.sort((a,b)=>{{
     let va = a[k], vb = b[k];
+    if(k==='signal'){{ va=a.riskN-a.rescueN; vb=b.riskN-b.rescueN; }}
     if(typeof va==='string' || typeof vb==='string') return String(va).localeCompare(String(vb),'zh')*d;
     return (va-vb)*d;
   }});
@@ -523,6 +534,7 @@ function renderList(){{
     <tr onclick="gotoDetail('${{c.code}}')">
       <td>${{c.rank}}</td><td>${{c.code}}</td><td>${{c.name}}</td><td>${{c.type}}</td>
       <td title="${{c.reason}}">${{c.reason.length>20?c.reason.slice(0,20)+'…':c.reason}}</td>
+      <td title="${{c.flags.map(f=>FLAG_CN[f]).join('、')||'无'}}">${{signalDots(c)}}</td>
       <td style="font-weight:700;color:${{LC[c.level]}}">${{c.score}}</td>
       <td><span class="rtag rtag-${{c.level}}">${{c.level}}</span></td>
       <td style="font-weight:500;color:#1a3d2b">${{c.market_cap_str}}</td>
@@ -531,7 +543,6 @@ function renderList(){{
   updateSortIndicators();
 }}
 
-// ---- Tab ----
 function switchTab(n){{
   document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',['rank','query','list','vote'][i]===n));
   document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
@@ -539,8 +550,6 @@ function switchTab(n){{
   if(n==='vote') renderVoteRank();
 }}
 
-// ---- 查询 ----
-// 规范化输入：全角→半角、去空格、转大写（兼容中文输入法输入的全角代码/字母，如"６００５４３"、"ＳＴ"）
 function norm(s){{
   return (s||'').replace(/[\\uFF01-\\uFF5E]/g, ch=>String.fromCharCode(ch.charCodeAt(0)-0xFEE0))
     .replace(/\\u3000/g,' ').replace(/\\s+/g,'').toUpperCase();
@@ -581,18 +590,24 @@ function gotoDetail(code){{
 function showReport(c){{
   const col = LC[c.level];
   const factors = [
-    {{label:'A1 扣非净利润(5)','v':c.A1,'max':5,'col':'#27ae60'}},
-    {{label:'A2 营业收入(12)','v':c.A2,'max':12,'col':'#1a5e35'}},
-    {{label:'A3 净资产(8)','v':c.A3,'max':8,'col':'#2980b9'}},
-    {{label:'B1 违规存量(7)','v':c.B1,'max':7,'col':'#2e86c1'}},
-    {{label:'B2 内控审计(7)','v':c.B2,'max':7,'col':'#27ae60'}},
-    {{label:'B3 监管处罚(8)','v':c.B3,'max':8,'col':'#1e8449'}},
-    {{label:'C1 面值/市值(13)','v':c.C1,'max':13,'col':'#117a65'}},
-    {{label:'D1 现金流质量(11)','v':c.D1,'max':11,'col':'#1a5276'}},
-    {{label:'E1 股权稳定性(9)','v':c.E1,'max':9,'col':'#6c3483'}},
-    {{label:'F1 持续经营(10)','v':c.F1,'max':10,'col':'#117a65'}},
-    {{label:'G1 市值偏离度(10)','v':c.G1,'max':10,'col':'#16a085'}},
+    {{label:'A1 扣非净利润(5)',v:c.A1,max:5,col:'#27ae60'}},
+    {{label:'A2 营业收入(12)',v:c.A2,max:12,col:'#1a5e35'}},
+    {{label:'A3 净资产(8)',v:c.A3,max:8,col:'#2980b9'}},
+    {{label:'B1 违规存量★(5)',v:c.B1,max:5,col:'#2e86c1'}},
+    {{label:'B2 内控审计★(5)',v:c.B2,max:5,col:'#27ae60'}},
+    {{label:'B3 监管处罚★(6)',v:c.B3,max:6,col:'#1e8449'}},
+    {{label:'C1 面值距离(8)',v:c.C1,max:8,col:'#117a65'}},
+    {{label:'C2 市值水平(4)',v:c.C2,max:4,col:'#148f77'}},
+    {{label:'D1 现金流质量(10)',v:c.D1,max:10,col:'#1a5276'}},
+    {{label:'E1 股权稳定性(8)',v:c.E1,max:8,col:'#6c3483'}},
+    {{label:'F1 持续经营(9)',v:c.F1,max:9,col:'#117a65'}},
+    {{label:'F2 重组/纾困★(7)',v:c.F2,max:7,col:'#f39c12'}},
+    {{label:'G1 市值偏离度(5)',v:c.G1,max:5,col:'#16a085'}},
+    {{label:'H1 实控人风险★(8)',v:c.H1,max:8,col:'#8e44ad'}},
   ];
+  const sigHTML = c.flags.length
+    ? c.flags.map(f=>`<span class="sig-tag ${{SIG_CLASS[f]}}">${{FLAG_CN[f]}}</span>`).join('')
+    : '<span class="sig-tag sig-none">近24个月无命中信号</span>';
   document.getElementById('qResult').innerHTML=`
     <div class="report-card">
       <div class="report-top">
@@ -607,12 +622,16 @@ function showReport(c){{
       </div>
       <div class="info-row">
         <div class="info-chip"><div class="info-chip-label">风险原因</div><div class="info-chip-val" style="font-size:11px">${{c.reason}}</div></div>
-        <div class="info-chip"><div class="info-chip-label">所属板块</div><div class="info-chip-val">${{c.board}} · ${{c.type}}</div></div>
+        <div class="info-chip"><div class="info-chip-label">财务报告期</div><div class="info-chip-val">{report_label}</div></div>
+        <div class="info-chip"><div class="info-chip-label">昨收 / 总市值</div><div class="info-chip-val">${{c.prev_close}} · ${{c.market_cap_str}}亿</div></div>
         <div class="info-chip"><div class="info-chip-label">保壳能力</div><div class="info-chip-val" style="color:${{col}}">${{c.level}} 级 · ${{c.score}}分</div></div>
-        <div class="info-chip"><div class="info-chip-label">备注</div><div class="info-chip-val" style="font-size:11px">${{c.note}}</div></div>
+      </div>
+      <div class="factors-section" style="margin-bottom:8px">
+        <div class="factors-title">公告风险/纾困信号（巨潮资讯网 · 近24个月）</div>
+        <div class="signal-row">${{sigHTML}}</div>
       </div>
       <div class="factors-section">
-        <div class="factors-title">V618+G 十一维保壳能力评分明细（满分100分，得分越高保壳能力越强）</div>
+        <div class="factors-title">V7 十四维保壳能力评分明细（满分100分 · ★=真实公告数据）</div>
         ${{factors.map(f=>`<div class="factor-row">
           <div class="factor-label">${{f.label}}</div>
           <div class="factor-bar-wrap"><div class="factor-bar" style="width:${{Math.round(f.v/f.max*100)}}%;background:${{f.col}}"></div></div>
@@ -627,7 +646,6 @@ function showReport(c){{
     ${{voteSectionHTML(c.code)}}`;
 }}
 
-// ---- 投票（公司级保壳难度） ----
 const VK = 'bkfl_company_v1';
 
 function loadAllVotes(){{ try{{ return JSON.parse(localStorage.getItem(VK))||{{}}; }}catch(e){{ return {{}}; }} }}
@@ -763,7 +781,6 @@ function renderVoteRank(){{
     </div>`).join('');
 }}
 
-// ---- 启动 ----
 initStats();
 renderRank();
 renderList();
@@ -775,4 +792,4 @@ renderVoteRank();
 with open('baokeng-rank.html', 'w', encoding='utf-8') as f:
     f.write(html)
 
-print(f'Generated baokeng-rank.html ({len(html)} bytes)')
+print(f'Generated baokeng-rank.html ({len(html)} bytes) | V7 | 报告期: {report_label}')

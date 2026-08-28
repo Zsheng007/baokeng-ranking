@@ -1,0 +1,3710 @@
+{
+ "meta": {
+  "fetched_at": "2026-08-28 15:56",
+  "window": "2024-09-07~2026-08-28",
+  "keyword_stats": {
+   "非标准": 506,
+   "无法表示意见": 48,
+   "否定意见": 120,
+   "立案": 330,
+   "处罚": 90,
+   "警示函": 90,
+   "监管函": 536,
+   "重整": 1298,
+   "重大资产": 80,
+   "债务豁免": 24,
+   "赠与": 14,
+   "股份冻结": 318,
+   "限制消费": 9
+  }
+ },
+ "flags": {
+  "000909": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300385": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300147": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300527": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000010": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300477": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [
+    {
+     "title": "关于公司预重整债权申报通知的公告",
+     "date": "2026-08-14",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002193": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603008": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603189": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603272": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300173": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "301139": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600759": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300555": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600289": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603718": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600238": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [
+    {
+     "title": "*ST椰岛董事会关于公司2025年度财务报表审计及内部控制审计非标准审计意见的专项说明",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "关于海南椰岛（集团）股份有限公司2025年度财务报表、内部控制非标准审计意见的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300123": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600491": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [
+    {
+     "title": "龙元建设关于被债权人申请重整及预重整的专项自查报告",
+     "date": "2026-08-21",
+     "stage": "early"
+    },
+    {
+     "title": "龙元建设关于公司被债权人申请重整及预重整的提示性公告",
+     "date": "2026-08-14",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "920023": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603377": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [
+    {
+     "title": "关于被债权人申请重整及预重整的进展公告",
+     "date": "2026-08-08",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600265": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": [
+    {
+     "title": "关于与控股股东签订《资产赠与协议（二）》暨关联交易的公告",
+     "date": "2026-04-28"
+    },
+    {
+     "title": "云南景谷林业股份有限公司拟接受赠与49%股权所涉及的上海博达数智科技有限公司股东全部权益资产评估报告",
+     "date": "2026-04-28"
+    },
+    {
+     "title": "关于与控股股东签订《资产赠与协议》的进展公告",
+     "date": "2025-11-01"
+    },
+    {
+     "title": "云南景谷林业股份有限公司拟接受赠与上海博达数智科技有限公司51%股东权益价值项目资产评估报告（中勤评报字【2025】第25216号）",
+     "date": "2025-09-24"
+    },
+    {
+     "title": "关于与控股股东签订《资产赠与协议》暨关联交易的公告",
+     "date": "2025-09-24"
+    }
+   ]
+  },
+  "002759": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300831": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [
+    {
+     "title": "关于公司及相关当事人收到警示函的公告",
+     "date": "2026-08-01"
+    },
+    {
+     "title": "关于公司高级管理人员收到警示函的公告",
+     "date": "2026-08-01"
+    }
+   ],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603429": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [
+    {
+     "title": "集友股份关于重大资产重组的进展公告",
+     "date": "2026-08-28"
+    }
+   ],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "688270": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603959": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [
+    {
+     "title": "关于与重整投资人签订《现金赠与协议》的公告",
+     "date": "2026-08-26",
+     "stage": "early"
+    },
+    {
+     "title": "关于公开招募和遴选重整投资人并签署《重整投资协议》暨公司庭外重组进展的公告",
+     "date": "2026-08-26",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": [
+    {
+     "title": "关于与重整投资人签订《现金赠与协议》的公告",
+     "date": "2026-08-26"
+    },
+    {
+     "title": "百利科技关于接受关联方无偿赠与股权资产暨关联交易的公告",
+     "date": "2025-12-27"
+    }
+   ]
+  },
+  "300027": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [
+    {
+     "title": "关于公司全资子公司预重整债权申报的公告",
+     "date": "2026-08-26",
+     "stage": "early"
+    },
+    {
+     "title": "关于法院决定对公司全资子公司启动预重整并确定临时管理人的公告",
+     "date": "2026-08-25",
+     "stage": "early"
+    },
+    {
+     "title": "关于全资子公司被债权人申请重整及预重整的提示性公告",
+     "date": "2026-08-07",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002650": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002360": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [
+    {
+     "title": "关于公司及全资子公司收到《失信决定书》及《限制消费令》的公告",
+     "date": "2026-03-28"
+    },
+    {
+     "title": "关于收到《限制消费令》的公告",
+     "date": "2025-11-13"
+    }
+   ],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002789": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [
+    {
+     "title": "关于获得控股股东债务豁免、现金捐赠暨关联交易的公告",
+     "date": "2025-12-26"
+    }
+   ],
+   "donation": []
+  },
+  "688121": {
+   "investigation": [
+    {
+     "title": "关于公司立案调查进展暨退市风险提示公告",
+     "date": "2026-08-27"
+    },
+    {
+     "title": "关于公司立案调查进展暨退市风险提示公告",
+     "date": "2026-08-20"
+    },
+    {
+     "title": "关于公司立案调查进展暨退市风险提示公告",
+     "date": "2026-08-13"
+    },
+    {
+     "title": "关于公司立案调查进展暨风险提示公告",
+     "date": "2026-08-06"
+    },
+    {
+     "title": "关于公司立案调查进展暨股票可能被终止上市的第四次风险提示性公告",
+     "date": "2026-08-01"
+    },
+    {
+     "title": "关于公司立案调查进展暨股票可能被终止上市的第三次风险提示性公告",
+     "date": "2026-07-25"
+    },
+    {
+     "title": "关于公司立案调查进展暨股票可能被终止上市的第二次风险提示性公告",
+     "date": "2026-07-18"
+    }
+   ],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "天职国际会计师事务所（特殊普通合伙）关于对卓然股份2025年度财务报表出具无法表示意见审计报告的专项说明",
+     "date": "2026-08-06"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [
+    {
+     "title": "董事会关于非标准意见涉及事项的专项说明",
+     "date": "2026-08-06"
+    },
+    {
+     "title": "董事会关于非标准审计意见涉及事项的专项说明",
+     "date": "2026-08-06"
+    }
+   ],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603922": {
+   "investigation": [
+    {
+     "title": "金鸿顺关于公司实际控制人《立案告知书送达公告》的公告",
+     "date": "2026-08-01"
+    },
+    {
+     "title": "金鸿顺关于立案调查进展暨风险提示公告",
+     "date": "2026-07-28"
+    }
+   ],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002431": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002689": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "688033": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000610": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "688089": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [
+    {
+     "title": "大信会计师事务所（特殊普通合伙）关于对嘉必优生物技术（武汉）股份有限公司年度财务报表审计出具非标准审计意见报告的专项说明",
+     "date": "2026-06-25"
+    }
+   ],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600965": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000752": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600568": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300068": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300366": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300198": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [
+    {
+     "title": "关于子公司法定代表人被限制高消费的公告",
+     "date": "2025-11-18"
+    },
+    {
+     "title": "关于收到《限制消费令》的公告",
+     "date": "2025-10-22"
+    },
+    {
+     "title": "关于收到《限制消费令》的公告",
+     "date": "2025-07-30"
+    }
+   ],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [
+    {
+     "title": "关于公司获得债务豁免的公告",
+     "date": "2026-03-14"
+    },
+    {
+     "title": "关于公司获得债务豁免的公告",
+     "date": "2026-01-29"
+    }
+   ],
+   "donation": [
+    {
+     "title": "关于公司签署现金赠与协议的公告",
+     "date": "2026-01-29"
+    }
+   ]
+  },
+  "000669": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600735": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600624": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600107": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [
+    {
+     "title": "关于控股股东股份被冻结的公告",
+     "date": "2026-08-19"
+    }
+   ],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002211": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600053": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "200488": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "688496": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300081": {
+   "investigation": [
+    {
+     "title": "关于公司及控股股东、实际控制人收到中国证券监督管理委员会立案告知书的公告",
+     "date": "2026-07-27"
+    }
+   ],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600423": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "688076": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300396": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "迪瑞医疗内控报告——否定意见",
+     "date": "2026-04-30"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300076": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000821": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002055": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002305": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300301": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "688622": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002719": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600439": {
+   "investigation": [],
+   "penalty": [
+    {
+     "title": "关于收到《行政处罚决定书》的公告",
+     "date": "2026-08-27"
+    }
+   ],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600889": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300460": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002102": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "独立董事关于公司2025年度保留意见审计报告和否定意见内部控制审计报告所涉事项专项说明的意见",
+     "date": "2026-04-30"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600581": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600818": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [
+    {
+     "title": "关于对上海证券交易所《关于中路股份有限公司2025年年度报告的信息披露监管问询函》的回复公告",
+     "date": "2026-08-08"
+    },
+    {
+     "title": "中兴华会计师事务所（特殊普通合伙）关于对中路股份有限公司2025年年度报告的信息披露监管问询函的专项说明",
+     "date": "2026-08-08"
+    }
+   ],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300716": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "关于否定意见《内部控制审计报告》的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [
+    {
+     "title": "关于非标准审计意见涉及事项的专项说明",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "审计委员会对公司2025年度非标准审计意见涉及事项的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002731": {
+   "investigation": [
+    {
+     "title": "关于立案调查进展暨未在规定期限内披露定期报告暨股票可能被终止上市的第七次风险提示公告暨股票存在可能因市值被终止上市的第五次风险提示公告",
+     "date": "2026-08-25"
+    },
+    {
+     "title": "关于立案调查进展暨公司未在规定期限内披露定期报告暨股票可能被终止上市的第六次风险提示公告",
+     "date": "2026-08-18"
+    },
+    {
+     "title": "关于立案调查进展暨公司未在规定期限内披露定期报告暨股票可能被终止上市的第五次风险提示公告",
+     "date": "2026-08-11"
+    },
+    {
+     "title": "关于公司立案调查进展暨风险提示公告暨收到深圳证券交易所《关于对公司的关注函》的公告",
+     "date": "2026-08-07"
+    },
+    {
+     "title": "关于公司控股股东、实际控制人收到中国证券监督管理委员会立案告知书的公告",
+     "date": "2026-08-05"
+    },
+    {
+     "title": "关于公司持股5%以上股东一致行动人收到中国证券监督管理委员会立案告知书的公告",
+     "date": "2026-08-05"
+    },
+    {
+     "title": "关于立案调查进展暨公司未在规定期限内披露定期报告暨股票可能被终止上市的第四次风险提示公告",
+     "date": "2026-08-04"
+    },
+    {
+     "title": "关于立案调查进展暨公司未在规定期限内披露定期报告暨股票可能被终止上市的第三次风险提示公告",
+     "date": "2026-07-28"
+    },
+    {
+     "title": "关于立案调查进展暨公司未在规定期限内披露定期报告暨股票可能被终止上市的第二次风险提示公告",
+     "date": "2026-07-21"
+    }
+   ],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600745": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "董事会关于公司2025年度无法表示意见的内部控制审计报告的专项说明",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "董事会关于公司2025年度无法表示意见的审计报告的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300237": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000615": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [
+    {
+     "title": "关于子公司获得债务豁免暨关联交易的公告",
+     "date": "2026-04-24"
+    }
+   ],
+   "donation": []
+  },
+  "600734": {
+   "investigation": [
+    {
+     "title": "福建实达集团股份有限公司关于收到中国证券监督管理委员会立案告知书的公告",
+     "date": "2026-08-08"
+    }
+   ],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300295": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300419": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300290": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "688053": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600530": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603729": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600370": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "德皓核字[2026]00001167号江苏三房巷聚材股份有限公司出具无法表示意见涉及事项的专项说明",
+     "date": "2026-04-29"
+    },
+    {
+     "title": "江苏三房巷聚材股份有限公司董事会审计委员会对《董事会关于会计师事务所出具无法表示意见审计报告和否定意见内部控制审计报告涉及事项的专项说明》的意见",
+     "date": "2026-04-29"
+    },
+    {
+     "title": "江苏三房巷聚材股份有限公司董事会关于会计师事务所出具无法表示意见审计报告和否定意见内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-29"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002694": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000698": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603843": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [
+    {
+     "title": "关于正平路桥建设股份有限公司2024年度审计报告、内部控制审计报告非标准意见涉及事项影响已消除的审核报告（中瑞诚函字[2026]第612001号）",
+     "date": "2026-04-30"
+    }
+   ],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [
+    {
+     "title": "正平股份关于公司部分债务豁免的公告",
+     "date": "2025-10-31"
+    }
+   ],
+   "donation": []
+  },
+  "603398": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [
+    {
+     "title": "江西沐邦高科股份有限公司关于上海证券交易所《关于对江西沐邦高科股份有限公司2025年年度报告的信息披露监管问询函》的回复公告",
+     "date": "2026-08-12"
+    },
+    {
+     "title": "大华会计师事务所（特殊普通合伙）关于江西沐邦高科股份有限公司2025年年度报告的信息披露监管问询函的回复",
+     "date": "2026-08-12"
+    }
+   ],
+   "audit_adverse": [
+    {
+     "title": "江西沐邦高科股份有限公司出具2024年度内部控制否定意见涉及事项影响已消除的审核报告",
+     "date": "2026-05-01"
+    },
+    {
+     "title": "江西沐邦高科股份有限公司董事会关于公司2024年度内部控制审计报告否定意见涉及事项影响已消除的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [
+    {
+     "title": "江西沐邦高科股份有限公司2025年度非标准意见涉及事项的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300211": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600543": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002514": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000609": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": [
+    {
+     "title": "中迪投资关于接受公司关联方无偿赠与股权资产暨关联交易的进展公告",
+     "date": "2026-05-29"
+    },
+    {
+     "title": "中迪投资关于接受公司关联方无偿赠与股权资产暨关联交易的公告",
+     "date": "2026-04-18"
+    }
+   ]
+  },
+  "002122": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600340": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000677": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "恒天海龙股份有限公司董事会审计委员会关于会计师事务所对公司2025年度出具保留意见审计报告和否定意见内部控制审计报告所涉事项的专项说明",
+     "date": "2026-05-06"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002856": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002109": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "董事会关于2025年度否定意见的内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603825": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002175": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300472": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [
+    {
+     "title": "关于实际控制人、董事长被限制高消费的公告",
+     "date": "2025-06-18"
+    }
+   ],
+   "restructuring": [
+    {
+     "title": "关于公司预重整事项的进展公告",
+     "date": "2026-08-04",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [
+    {
+     "title": "关于获得债务豁免暨关联交易的公告",
+     "date": "2025-12-30"
+    },
+    {
+     "title": "关于公司获得债务豁免的公告",
+     "date": "2025-12-30"
+    },
+    {
+     "title": "关于获得债务豁免暨关联交易的公告",
+     "date": "2025-12-26"
+    }
+   ],
+   "donation": []
+  },
+  "002306": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [
+    {
+     "title": "关于公司关联方现金赠与、豁免债务暨关联交易的公告",
+     "date": "2025-12-20"
+    }
+   ],
+   "donation": [
+    {
+     "title": "关于公司控股股东赠与现金资产事项的进展公告",
+     "date": "2025-12-31"
+    },
+    {
+     "title": "关于公司关联方现金赠与、豁免债务暨关联交易的公告",
+     "date": "2025-12-20"
+    }
+   ]
+  },
+  "000488": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600080": {
+   "investigation": [],
+   "penalty": [
+    {
+     "title": "金花企业（集团）股份有限公司关于公司董事长收到中国证券监督管理委员会陕西监管局《行政处罚事先告知书》的公告",
+     "date": "2026-08-22"
+    }
+   ],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300352": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600187": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [
+    {
+     "title": "关于上海证券交易所对公司2025年年度报告的信息披露监管问询函的剩余问题回复公告",
+     "date": "2026-08-20"
+    },
+    {
+     "title": "关于《关于黑龙江国中水务股份有限公司2025年年度报告的信息披露监管问询函》的剩余问题回复意见",
+     "date": "2026-08-20"
+    }
+   ],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [
+    {
+     "title": "深旭泰核字[2026]037号-黑龙江国中水务股份有限公司非标准意见涉及事项的专项说明（修订版）",
+     "date": "2026-05-06"
+    },
+    {
+     "title": "董事会关于2025年度财务报告非标准审计意见涉及事项的专项说明（修订版）",
+     "date": "2026-05-06"
+    },
+    {
+     "title": "深旭泰核字[2026]037号-黑龙江国中水务股份有限公司非标准意见涉及事项的专项说明",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "董事会关于2025年度财务报告非标准审计意见涉及事项的专项说明",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "董事会关于2025年度非标准内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000016": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300044": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002082": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [
+    {
+     "title": "关于对2025年度非标准审计意见涉及事项自查进展暨公司股票可能被叠加实施其他风险警示的提示公告",
+     "date": "2026-08-27"
+    },
+    {
+     "title": "审计委员会关于2025年度非标准审计意见涉及事项的专项说明",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "董事会关于公司2025年度非标准审计意见涉及事项的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002822": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600119": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "688189": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [
+    {
+     "title": "关于公司及有关责任人员收到警示函的公告",
+     "date": "2026-08-14"
+    }
+   ],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002538": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600243": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600180": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "瑞茂通董事会及审计委员会关于2025年度无法表示意见的财务会计报告审计报告和否定意见的财务报告内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-29"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [
+    {
+     "title": "关于瑞茂通供应链管理股份有限公司2025年度财务报告非标准审计意见的专项说明（更正后）",
+     "date": "2026-06-25"
+    }
+   ],
+   "freeze": [
+    {
+     "title": "关于控股股东股份被轮候冻结的公告",
+     "date": "2026-08-18"
+    }
+   ],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300430": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "审计委员会关于会计师事务所出具无法表示意见审计报告和否定意见内控审计报告涉及事项的专项说明（1）",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "信永中和会计师事务所关于2025年度财务报表出具无法表示意见审计报告的专项说明",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "董事会关于会计师事务所出具无法表示意见审计报告和否定意见内控审计报告涉及事项的专项说明（2）",
+     "date": "2026-04-30"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [
+    {
+     "title": "关于实际控制人部分股份司法冻结的公告",
+     "date": "2026-08-17"
+    }
+   ],
+   "consume_limit": [
+    {
+     "title": "关于控股股东、实际控制人部分股份被司法冻结及实际控制人被采取限制消费措施的公告",
+     "date": "2026-06-22"
+    }
+   ],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000056": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "关于2025 年度财务报表出具无法表示意见审计报告的专项审计说明",
+     "date": "2026-04-24"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600302": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002581": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002198": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "审计委员会关于2025年度保留意见审计报告和否定意见内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "独立董事关于2025年度保留意见审计报告和否定意见内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "董事会关于2025年度保留意见审计报告和否定意见内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002872": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300245": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002024": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002168": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [
+    {
+     "title": "关于公司预重整第二次债权人会议表决结果的公告",
+     "date": "2026-08-18",
+     "stage": "early"
+    },
+    {
+     "title": "关于公司被债权人申请重整的专项自查报告",
+     "date": "2026-08-06",
+     "stage": "early"
+    },
+    {
+     "title": "关于公司被债权人申请重整的提示性公告",
+     "date": "2026-08-06",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000911": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600476": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300212": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [
+    {
+     "title": "关于公司及公司法定代表人被限制高消费的公告",
+     "date": "2026-03-20"
+    }
+   ],
+   "restructuring": [
+    {
+     "title": "关于招募重整投资人的进展公告",
+     "date": "2026-08-20",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300338": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603822": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002528": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [
+    {
+     "title": "关于公司及全资子公司深圳英飞拓仁用信息有限公司公开招募重整投资人的公告",
+     "date": "2026-08-25",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [
+    {
+     "title": "关于子公司获得债务豁免暨关联交易的公告",
+     "date": "2026-07-11"
+    }
+   ],
+   "donation": []
+  },
+  "002883": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600678": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600136": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "605199": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [
+    {
+     "title": "海南葫芦娃药业集团股份有限公司关于收到海南证监局警示函的整改报告",
+     "date": "2026-08-15"
+    },
+    {
+     "title": "海南葫芦娃药业集团股份有限公司关于公司及相关责任人收到海南证监局警示函的公告",
+     "date": "2026-07-18"
+    }
+   ],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "601718": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603838": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300152": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "董事会关于公司2025年度否定意见内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-29"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000826": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [
+    {
+     "title": "关于与财务投资人签署重整投资协议的公告",
+     "date": "2026-08-25",
+     "stage": "early"
+    },
+    {
+     "title": "关于公司预重整事项进展的公告",
+     "date": "2026-08-13",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002620": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002512": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002932": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000793": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [
+    {
+     "title": "关于公司及相关人员收到海南证监局警示函的公告",
+     "date": "2026-08-22"
+    }
+   ],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002717": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "审计委员会对董事会关于对无法表示意见的审计报告和否定意见的内部控制审计报告涉及事项专项说明的意见",
+     "date": "2026-04-29"
+    },
+    {
+     "title": "董事会关于对无法表示意见的审计报告和否定意见的内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-29"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002485": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "200056": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002547": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [
+    {
+     "title": "关于公开招募和遴选重整投资人的公告",
+     "date": "2026-08-15",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300594": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [
+    {
+     "title": "山东朗进科技股份有限公司关于控股股东部分股份质押及部分股份被司法冻结的公告",
+     "date": "2026-08-20"
+    },
+    {
+     "title": "山东朗进科技股份有限公司关于控股股东部分股份解除质押和司法冻结以及部分股份再质押的公告",
+     "date": "2026-08-18"
+    }
+   ],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "200016": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000639": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603021": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300096": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000903": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000632": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300010": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "董事会审计委员会对《董事会关于2025年度否定意见的内部控制审计报告涉及事项的专项说明》的意见",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "董事会关于2025年度否定意见的内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300020": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000711": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600365": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600337": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [
+    {
+     "title": "美克国际家居用品股份有限公司关于债务豁免事项的公告",
+     "date": "2026-08-28"
+    }
+   ],
+   "donation": []
+  },
+  "000838": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [
+    {
+     "title": "关于公司及控股子公司被纳入失信被执行人名单及限制消费的公告",
+     "date": "2026-06-13"
+    }
+   ],
+   "restructuring": [
+    {
+     "title": "关于与预重整财务投资人签署《重整投资协议》的公告",
+     "date": "2026-08-26",
+     "stage": "early"
+    },
+    {
+     "title": "关于与预重整财务投资人签署《重整投资协议》的公告",
+     "date": "2026-08-24",
+     "stage": "early"
+    },
+    {
+     "title": "关于与预重整投资人签署《重整投资协议》暨公司股票复牌的公告",
+     "date": "2026-08-10",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "688022": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "董事会关于2025年度否定意见内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "董事会审计委员会关于2025年度否定意见内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300462": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "605336": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002569": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603595": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600165": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002501": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002634": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [
+    {
+     "title": "关于与财务投资人签署《重整投资协议》的公告",
+     "date": "2026-08-18",
+     "stage": "early"
+    }
+   ],
+   "asset_sale": [],
+   "debt_waiver": [
+    {
+     "title": "关于公司获得债务豁免暨关联交易的公告",
+     "date": "2026-06-27"
+    }
+   ],
+   "donation": []
+  },
+  "002217": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603557": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "920575": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600084": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603828": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603359": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600525": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603378": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300326": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600239": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603517": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300205": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "董事会关于2024年度无法表示意见财务报表审计报告涉及事项影响已消除的专项说明",
+     "date": "2026-04-23"
+    },
+    {
+     "title": "关于解决2024年报无法表示意见审计报告部分所涉事项暨关联交易的公告",
+     "date": "2025-12-26"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002726": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "关于对山东龙大美食股份有限公司出具否定意见内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-29"
+    },
+    {
+     "title": "董事会审计委员会关于2025年度带持续经营重大不确定性段落的无保留意见审计报告和否定意见内部控制审计报告的专项说明",
+     "date": "2026-04-29"
+    },
+    {
+     "title": "董事会关于2025年度带持续经营重大不确定性段落的无保留意见审计报告和否定意见的内部控制审计报告的专项说明",
+     "date": "2026-04-29"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [
+    {
+     "title": "关于控股股东部分股份司法拍卖完成过户、部分股份被司法划转、股份质押及冻结情况发生变化的公告",
+     "date": "2026-08-22"
+    }
+   ],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600169": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600730": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "688066": {
+   "investigation": [
+    {
+     "title": "关于收到中国证券监督管理委员会立案告知书的公告",
+     "date": "2026-08-08"
+    }
+   ],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002207": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002977": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002630": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002542": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "000078": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [
+    {
+     "title": "董事局审计委员会关于2025年度非标准财务报表审计意见和非标准内部控制审计意见涉及事项专项说明的意见",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "董事局关于2025年度非标准财务报表审计意见和非标准内部控制审计意见涉及事项专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "601010": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [
+    {
+     "title": "大信会计师事务所（特殊普通合伙）《关于文峰大世界连锁发展股份有限公司2025年年度报告的信息披露监管问询函》的回复",
+     "date": "2026-08-18"
+    },
+    {
+     "title": "关于2025年年度报告的信息披露监管问询函的部分回复公告",
+     "date": "2026-08-18"
+    }
+   ],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600537": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002691": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600079": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "301030": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "董事会关于公司2025年度无法表示意见审计报告的专项说明",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "关于否定意见内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [
+    {
+     "title": "舜天信诚非标准意见涉及事项的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300091": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002586": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "688184": {
+   "investigation": [
+    {
+     "title": "浙江帕瓦新能源股份有限公司关于收到《浙江省诸暨市人民检察院起诉书》暨张宝被公安机关立案侦查的进展公告",
+     "date": "2026-08-27"
+    }
+   ],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600753": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": [
+    {
+     "title": "海钦股份关于控股股东无偿赠与股权资产的进展公告",
+     "date": "2025-10-28"
+    },
+    {
+     "title": "海钦股份关于控股股东无偿赠与股权资产暨关联交易的公告",
+     "date": "2025-09-09"
+    }
+   ]
+  },
+  "300167": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002816": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002667": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "董事会审计委员会关于2025年度保留意见审计报告和否定意见内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-30"
+    },
+    {
+     "title": "董事会关于2025年度保留意见审计报告和否定意见内部控制审计报告涉及事项的专项说明",
+     "date": "2026-04-30"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002424": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "300087": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002323": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002592": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600381": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603869": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "920090": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "600082": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "603789": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [
+    {
+     "title": "ST星农：2025年度财务报告非标准审计意见的专项说明（修订版）",
+     "date": "2026-06-23"
+    }
+   ],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002598": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [
+    {
+     "title": "中诚信国际关于关注山东省章丘鼓风机股份有限公司被出具否定意见的内部控制审计报告、股票交易被叠加实施其他风险警示和可能被实施退市风险警示的公告",
+     "date": "2026-05-09"
+    }
+   ],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "002227": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  },
+  "688201": {
+   "investigation": [],
+   "penalty": [],
+   "warning": [],
+   "audit_adverse": [],
+   "audit_qualified": [],
+   "audit_emphasis": [],
+   "freeze": [],
+   "consume_limit": [],
+   "restructuring": [],
+   "asset_sale": [],
+   "debt_waiver": [],
+   "donation": []
+  }
+ }
+}
