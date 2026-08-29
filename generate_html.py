@@ -1292,7 +1292,8 @@ renderRank();
 renderMoyu();
 renderList();
 renderVoteRank();
-checkHashRoute();
+// 首次进入的 #moyu-代码 直达路由须等模态框DOM（memBody/expBody在本script之后）解析完毕再执行
+window.addEventListener('DOMContentLoaded', ()=>{{ checkHashRoute(); }});
 </script>
 <div class="modal-mask" id="memMask" onclick="if(event.target===this)closeModal('memMask')">
   <div class="modal">
