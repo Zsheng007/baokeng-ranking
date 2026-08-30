@@ -1,0 +1,2613 @@
+{
+ "meta": {
+  "built_at": "2026-08-30 12:35:01",
+  "event_window": "2023-08-30~2026-08-30",
+  "snapshot_rule": "事件年-1 的 8月30日",
+  "n_delist": 99,
+  "n_uncap": 152,
+  "n_excluded": 37,
+  "excluded": [
+   {
+    "code": "600530",
+    "name": "ST交昂",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "300338",
+    "name": "*ST开元",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "300108",
+    "name": "*ST吉药",
+    "reason": "摘帽后仍退市(归退市组)"
+   },
+   {
+    "code": "002485",
+    "name": "ST雪发",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "600306",
+    "name": "退市商城",
+    "reason": "仅部分摘帽(仍ST)"
+   },
+   {
+    "code": "600759",
+    "name": "ST洲际",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "600136",
+    "name": "ST明诚",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "300010",
+    "name": "ST豆神",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "000711",
+    "name": "ST京蓝",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "000615",
+    "name": "*ST美谷",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "600734",
+    "name": "*ST实达",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "600265",
+    "name": "*ST景谷",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "000752",
+    "name": "*ST西发",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "600543",
+    "name": "*ST莫高",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "002816",
+    "name": "*ST和科",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "002217",
+    "name": "ST合力泰",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "600289",
+    "name": "ST信通",
+    "reason": "仅部分摘帽(仍ST)"
+   },
+   {
+    "code": "300020",
+    "name": "ST银江",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "002424",
+    "name": "ST百灵",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "300167",
+    "name": "ST迪威迅",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "000609",
+    "name": "*ST中迪",
+    "reason": "仅部分摘帽(仍ST)"
+   },
+   {
+    "code": "603959",
+    "name": "ST百利",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "300301",
+    "name": "ST长方",
+    "reason": "仅部分摘帽(仍ST)"
+   },
+   {
+    "code": "603377",
+    "name": "ST东时",
+    "reason": "仅部分摘帽(仍ST)"
+   },
+   {
+    "code": "300716",
+    "name": "*ST泉为",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "002168",
+    "name": "ST惠程",
+    "reason": "仅部分摘帽(仍ST)"
+   },
+   {
+    "code": "002586",
+    "name": "ST围海",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "002822",
+    "name": "ST中装",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "603843",
+    "name": "*ST正平",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "603789",
+    "name": "ST星农",
+    "reason": "摘帽后重新戴帽"
+   },
+   {
+    "code": "600735",
+    "name": "ST新华锦",
+    "reason": "仅部分摘帽(仍ST)"
+   },
+   {
+    "code": "600753",
+    "name": "ST海钦",
+    "reason": "仅部分摘帽(仍ST)"
+   },
+   {
+    "code": "002872",
+    "name": "ST天圣",
+    "reason": "仅部分摘帽(仍ST)"
+   },
+   {
+    "code": "002306",
+    "name": "ST云网",
+    "reason": "仅部分摘帽(仍ST)"
+   },
+   {
+    "code": "000793",
+    "name": "ST华闻",
+    "reason": "仅部分摘帽(仍ST)"
+   },
+   {
+    "code": "600238",
+    "name": "ST椰岛",
+    "reason": "仅部分摘帽(仍ST)"
+   },
+   {
+    "code": "000903",
+    "name": "ST云动",
+    "reason": "仅部分摘帽(仍ST)"
+   }
+  ],
+  "kw_windows": 37
+ },
+ "delist": [
+  {
+   "code": "002776",
+   "name": "*ST柏龙",
+   "group": "delist",
+   "event_date": "2024-01-20",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "000046",
+   "name": "*ST泛海",
+   "group": "delist",
+   "event_date": "2024-01-27",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002740",
+   "name": "*ST爱迪",
+   "group": "delist",
+   "event_date": "2024-02-08",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002002",
+   "name": "ST鸿达",
+   "group": "delist",
+   "event_date": "2024-02-27",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002089",
+   "name": "*ST新海",
+   "group": "delist",
+   "event_date": "2024-03-19",
+   "cat": "fraud",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "000005",
+   "name": "ST星源",
+   "group": "delist",
+   "event_date": "2024-04-12",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002087",
+   "name": "*ST新纺",
+   "group": "delist",
+   "event_date": "2024-05-30",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "000996",
+   "name": "*ST中期",
+   "group": "delist",
+   "event_date": "2024-05-31",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "000416",
+   "name": "*ST民控",
+   "group": "delist",
+   "event_date": "2024-06-04",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002699",
+   "name": "*ST美盛",
+   "group": "delist",
+   "event_date": "2024-06-04",
+   "cat": "compliance",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002433",
+   "name": "*ST太安",
+   "group": "delist",
+   "event_date": "2024-06-06",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "300282",
+   "name": "*ST三盛",
+   "group": "delist",
+   "event_date": "2024-06-20",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "300742",
+   "name": "*ST越博",
+   "group": "delist",
+   "event_date": "2024-06-21",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "000961",
+   "name": "ST中南",
+   "group": "delist",
+   "event_date": "2024-06-25",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "300799",
+   "name": "*ST左江",
+   "group": "delist",
+   "event_date": "2024-06-28",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "300116",
+   "name": "*ST保力",
+   "group": "delist",
+   "event_date": "2024-07-05",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "000971",
+   "name": "*ST高升",
+   "group": "delist",
+   "event_date": "2024-07-09",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002621",
+   "name": "*ST美吉",
+   "group": "delist",
+   "event_date": "2024-07-30",
+   "cat": "compliance",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "000982",
+   "name": "中银绒业",
+   "group": "delist",
+   "event_date": "2024-08-03",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "300262",
+   "name": "*ST巴安",
+   "group": "delist",
+   "event_date": "2024-08-03",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002325",
+   "name": "*ST洪涛",
+   "group": "delist",
+   "event_date": "2024-08-06",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002288",
+   "name": "*ST超华",
+   "group": "delist",
+   "event_date": "2024-08-06",
+   "cat": "compliance",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002435",
+   "name": "ST长康",
+   "group": "delist",
+   "event_date": "2024-08-08",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002665",
+   "name": "ST航高",
+   "group": "delist",
+   "event_date": "2024-08-08",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002505",
+   "name": "鹏都农牧",
+   "group": "delist",
+   "event_date": "2024-08-10",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002341",
+   "name": "ST新纶",
+   "group": "delist",
+   "event_date": "2024-08-10",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "000023",
+   "name": "*ST深天",
+   "group": "delist",
+   "event_date": "2024-08-22",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "000976",
+   "name": "*ST华铁",
+   "group": "delist",
+   "event_date": "2024-08-22",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002502",
+   "name": "ST鼎龙",
+   "group": "delist",
+   "event_date": "2024-08-24",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "000861",
+   "name": "海印股份",
+   "group": "delist",
+   "event_date": "2024-09-07",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "300495",
+   "name": "*ST美尚",
+   "group": "delist",
+   "event_date": "2024-09-13",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "002308",
+   "name": "*ST威创",
+   "group": "delist",
+   "event_date": "2024-09-19",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "000413",
+   "name": "ST旭电",
+   "group": "delist",
+   "event_date": "2024-09-21",
+   "cat": "trade*",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600290",
+   "name": "*ST华仪",
+   "group": "delist",
+   "event_date": "2024-01-16",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "603555",
+   "name": "ST贵人",
+   "group": "delist",
+   "event_date": "2024-03-29",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "603603",
+   "name": "退市博天",
+   "group": "delist",
+   "event_date": "2024-04-25",
+   "cat": "fraud",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600823",
+   "name": "*ST世茂",
+   "group": "delist",
+   "event_date": "2024-06-14",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600306",
+   "name": "退市商城",
+   "group": "delist",
+   "event_date": "2024-06-26",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600321",
+   "name": "正源股份",
+   "group": "delist",
+   "event_date": "2024-06-27",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600647",
+   "name": "退市同达",
+   "group": "delist",
+   "event_date": "2024-07-03",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600766",
+   "name": "退市园城",
+   "group": "delist",
+   "event_date": "2024-07-03",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "603133",
+   "name": "退市碳元",
+   "group": "delist",
+   "event_date": "2024-07-03",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600220",
+   "name": "ST阳光",
+   "group": "delist",
+   "event_date": "2024-07-10",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600836",
+   "name": "*ST易连",
+   "group": "delist",
+   "event_date": "2024-07-11",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600277",
+   "name": "ST亿利",
+   "group": "delist",
+   "event_date": "2024-07-18",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600565",
+   "name": "ST迪马",
+   "group": "delist",
+   "event_date": "2024-08-07",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600112",
+   "name": "*ST天成",
+   "group": "delist",
+   "event_date": "2024-08-15",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600297",
+   "name": "广汇汽车",
+   "group": "delist",
+   "event_date": "2024-08-28",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "600213",
+   "name": "*ST亚星",
+   "group": "delist",
+   "event_date": "2024-10-17",
+   "cat": "trade",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024
+  },
+  {
+   "code": "300630",
+   "name": "*ST普利",
+   "group": "delist",
+   "event_date": "2025-04-18",
+   "cat": "fraud",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "300117",
+   "name": "*ST嘉寓",
+   "group": "delist",
+   "event_date": "2025-04-26",
+   "cat": "trade",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "000040",
+   "name": "*ST旭蓝",
+   "group": "delist",
+   "event_date": "2025-04-30",
+   "cat": "trade",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "300108",
+   "name": "*ST吉药",
+   "group": "delist",
+   "event_date": "2025-05-26",
+   "cat": "trade",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "002750",
+   "name": "*ST龙津",
+   "group": "delist",
+   "event_date": "2025-05-29",
+   "cat": "trade",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "002336",
+   "name": "*ST人乐",
+   "group": "delist",
+   "event_date": "2025-06-06",
+   "cat": "trade",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "000584",
+   "name": "*ST工智",
+   "group": "delist",
+   "event_date": "2025-06-13",
+   "cat": "trade",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "000622",
+   "name": "*ST恒立",
+   "group": "delist",
+   "event_date": "2025-06-19",
+   "cat": "trade",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "300208",
+   "name": "*ST中程",
+   "group": "delist",
+   "event_date": "2025-06-21",
+   "cat": "trade",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "300280",
+   "name": "*ST紫天",
+   "group": "delist",
+   "event_date": "2025-09-06",
+   "cat": "fraud",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "000627",
+   "name": "*ST天茂",
+   "group": "delist",
+   "event_date": "2025-09-26",
+   "cat": "voluntary",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "000851",
+   "name": "*ST高鸿",
+   "group": "delist",
+   "event_date": "2025-11-04",
+   "cat": "compliance",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "920680",
+   "name": "*ST广道",
+   "group": "delist",
+   "event_date": "2025-11-12",
+   "cat": "trade",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "300379",
+   "name": "*ST东通",
+   "group": "delist",
+   "event_date": "2025-12-22",
+   "cat": "compliance",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "600898",
+   "name": "*ST美讯",
+   "group": "delist",
+   "event_date": "2025-02-10",
+   "cat": "financial",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "600837",
+   "name": "海通证券",
+   "group": "delist",
+   "event_date": "2025-03-04",
+   "cat": "merger",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "600083",
+   "name": "*ST博信",
+   "group": "delist",
+   "event_date": "2025-03-05",
+   "cat": "trade",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "600225",
+   "name": "退市卓朗",
+   "group": "delist",
+   "event_date": "2025-03-06",
+   "cat": "fraud",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "603963",
+   "name": "*ST大药",
+   "group": "delist",
+   "event_date": "2025-03-21",
+   "cat": "trade",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "600070",
+   "name": "*ST富润",
+   "group": "delist",
+   "event_date": "2025-04-30",
+   "cat": "financial",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "600811",
+   "name": "*ST东方",
+   "group": "delist",
+   "event_date": "2025-04-30",
+   "cat": "fraud",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "600705",
+   "name": "中航产融",
+   "group": "delist",
+   "event_date": "2025-05-27",
+   "cat": "voluntary",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "601028",
+   "name": "玉龙股份",
+   "group": "delist",
+   "event_date": "2025-05-27",
+   "cat": "voluntary",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "600804",
+   "name": "退市鹏博",
+   "group": "delist",
+   "event_date": "2025-07-03",
+   "cat": "compliance",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "603003",
+   "name": "退市龙宇",
+   "group": "delist",
+   "event_date": "2025-07-03",
+   "cat": "compliance",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "600387",
+   "name": "退市海越",
+   "group": "delist",
+   "event_date": "2025-07-11",
+   "cat": "voluntary",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "600462",
+   "name": "退市九有",
+   "group": "delist",
+   "event_date": "2025-07-21",
+   "cat": "compliance",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "600190",
+   "name": "退市锦港",
+   "group": "delist",
+   "event_date": "2025-07-28",
+   "cat": "fraud",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "601989",
+   "name": "中国重工",
+   "group": "delist",
+   "event_date": "2025-09-05",
+   "cat": "merger",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "603388",
+   "name": "*ST元成",
+   "group": "delist",
+   "event_date": "2025-12-05",
+   "cat": "trade",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "600200",
+   "name": "退市苏吴",
+   "group": "delist",
+   "event_date": "2025-12-31",
+   "cat": "fraud",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025
+  },
+  {
+   "code": "300391",
+   "name": "*ST长药",
+   "group": "delist",
+   "event_date": "2026-03-13",
+   "cat": "trade",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "002231",
+   "name": "*ST奥维",
+   "group": "delist",
+   "event_date": "2026-03-21",
+   "cat": "financial",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "300344",
+   "name": "*ST立方",
+   "group": "delist",
+   "event_date": "2026-03-23",
+   "cat": "trade",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "000638",
+   "name": "*ST万方",
+   "group": "delist",
+   "event_date": "2026-05-26",
+   "cat": "compliance",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "920305",
+   "name": "*ST云创",
+   "group": "delist",
+   "event_date": "2026-06-09",
+   "cat": "financial",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "300029",
+   "name": "*ST天龙",
+   "group": "delist",
+   "event_date": "2026-06-10",
+   "cat": "trade",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "000004",
+   "name": "*ST国华",
+   "group": "delist",
+   "event_date": "2026-06-13",
+   "cat": "financial",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "002808",
+   "name": "*ST恒久",
+   "group": "delist",
+   "event_date": "2026-06-13",
+   "cat": "trade",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "002898",
+   "name": "*ST赛隆",
+   "group": "delist",
+   "event_date": "2026-06-18",
+   "cat": "compliance",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "603056",
+   "name": "德邦股份",
+   "group": "delist",
+   "event_date": "2026-03-31",
+   "cat": "merger",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "600355",
+   "name": "*ST精伦",
+   "group": "delist",
+   "event_date": "2026-04-27",
+   "cat": "financial",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "688287",
+   "name": "退市观典",
+   "group": "delist",
+   "event_date": "2026-06-10",
+   "cat": "trade",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "600421",
+   "name": "退市华嵘",
+   "group": "delist",
+   "event_date": "2026-06-26",
+   "cat": "financial",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "600599",
+   "name": "退市熊猫",
+   "group": "delist",
+   "event_date": "2026-06-26",
+   "cat": "compliance",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "600636",
+   "name": "退市国化",
+   "group": "delist",
+   "event_date": "2026-06-29",
+   "cat": "financial",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "600696",
+   "name": "退市岩石",
+   "group": "delist",
+   "event_date": "2026-06-29",
+   "cat": "financial",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "600608",
+   "name": "退市沪科",
+   "group": "delist",
+   "event_date": "2026-07-03",
+   "cat": "financial",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "605081",
+   "name": "退市太和",
+   "group": "delist",
+   "event_date": "2026-07-03",
+   "cat": "financial",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  },
+  {
+   "code": "600193",
+   "name": "退市创兴",
+   "group": "delist",
+   "event_date": "2026-07-06",
+   "cat": "compliance",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026
+  }
+ ],
+ "uncap": [
+  {
+   "code": "300256",
+   "name": "ST星星",
+   "group": "uncap",
+   "event_date": "2023-09-02",
+   "title": "关于公司股票撤销其他风险警示暨停牌一天的公告",
+   "t0": "2022-08-30",
+   "snapshot_year": 2023,
+   "cur_name": "星星科技"
+  },
+  {
+   "code": "000546",
+   "name": "ST金圆",
+   "group": "uncap",
+   "event_date": "2023-10-18",
+   "title": "关于撤销其他风险警示暨停牌的公告",
+   "t0": "2022-08-30",
+   "snapshot_year": 2023,
+   "cur_name": "金圆股份"
+  },
+  {
+   "code": "002313",
+   "name": "*ST日海",
+   "group": "uncap",
+   "event_date": "2023-11-02",
+   "title": "关于公司股票交易撤销退市风险警示和其他风险警示暨停复牌公告",
+   "t0": "2022-08-30",
+   "snapshot_year": 2023,
+   "cur_name": "日海智能"
+  },
+  {
+   "code": "600816",
+   "name": "ST建元",
+   "group": "uncap",
+   "event_date": "2023-11-06",
+   "title": "关于公司股票撤销其他风险警示暨停牌的公告",
+   "t0": "2022-08-30",
+   "snapshot_year": 2023,
+   "cur_name": "建元信托"
+  },
+  {
+   "code": "002692",
+   "name": "ST远程",
+   "group": "uncap",
+   "event_date": "2023-11-06",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2022-08-30",
+   "snapshot_year": 2023,
+   "cur_name": "远程股份"
+  },
+  {
+   "code": "000620",
+   "name": "*ST新联",
+   "group": "uncap",
+   "event_date": "2024-05-20",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨停复牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "盈新发展"
+  },
+  {
+   "code": "000692",
+   "name": "*ST惠天",
+   "group": "uncap",
+   "event_date": "2024-05-28",
+   "title": "关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "惠天热电"
+  },
+  {
+   "code": "300859",
+   "name": "*ST西域",
+   "group": "uncap",
+   "event_date": "2024-05-29",
+   "title": "关于公司股票交易撤销退市风险警示暨停牌一天的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "西域旅游"
+  },
+  {
+   "code": "000564",
+   "name": "ST大集",
+   "group": "uncap",
+   "event_date": "2024-05-30",
+   "title": "关于公司股票交易撤销其他风险警示暨停复牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "供销大集"
+  },
+  {
+   "code": "002021",
+   "name": "*ST中捷",
+   "group": "uncap",
+   "event_date": "2024-05-31",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨停复牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "中捷资源"
+  },
+  {
+   "code": "600396",
+   "name": "*ST金山",
+   "group": "uncap",
+   "event_date": "2024-06-04",
+   "title": "关于撤销退市风险警示及其他风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "华电辽能"
+  },
+  {
+   "code": "000839",
+   "name": "ST国安",
+   "group": "uncap",
+   "event_date": "2024-06-07",
+   "title": "关于公司股票交易撤销其他风险警示暨停复牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "国安股份"
+  },
+  {
+   "code": "688500",
+   "name": "*ST慧辰",
+   "group": "uncap",
+   "event_date": "2024-06-07",
+   "title": "关于公司股票撤销退市风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "慧辰股份"
+  },
+  {
+   "code": "688272",
+   "name": "*ST富吉",
+   "group": "uncap",
+   "event_date": "2024-06-07",
+   "title": "关于撤销退市风险警示暨停牌公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "富吉瑞"
+  },
+  {
+   "code": "002157",
+   "name": "*ST 正邦",
+   "group": "uncap",
+   "event_date": "2024-06-08",
+   "title": "关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "正邦科技"
+  },
+  {
+   "code": "002086",
+   "name": "*ST东洋",
+   "group": "uncap",
+   "event_date": "2024-06-08",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨停复牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "东方海洋"
+  },
+  {
+   "code": "300220",
+   "name": "ST金运",
+   "group": "uncap",
+   "event_date": "2024-06-11",
+   "title": "关于公司股票交易撤销其他风险警示暨停复牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "金运激光"
+  },
+  {
+   "code": "000637",
+   "name": "ST实华",
+   "group": "uncap",
+   "event_date": "2024-06-11",
+   "title": "关于公司股票交易撤销其他风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "茂化实华"
+  },
+  {
+   "code": "002800",
+   "name": "ST天顺",
+   "group": "uncap",
+   "event_date": "2024-06-12",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "天顺股份"
+  },
+  {
+   "code": "600589",
+   "name": "*ST榕泰",
+   "group": "uncap",
+   "event_date": "2024-06-13",
+   "title": "关于公司股票撤销退市风险警示及其他风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "大位科技"
+  },
+  {
+   "code": "002482",
+   "name": "*ST广田",
+   "group": "uncap",
+   "event_date": "2024-06-15",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨停复牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "广田集团"
+  },
+  {
+   "code": "600078",
+   "name": "ST澄星",
+   "group": "uncap",
+   "event_date": "2024-06-21",
+   "title": "江苏澄星磷化工股份有限公司关于撤销其他风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "澄星股份"
+  },
+  {
+   "code": "600654",
+   "name": "ST中安",
+   "group": "uncap",
+   "event_date": "2024-06-25",
+   "title": "关于撤销其他风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "中安科"
+  },
+  {
+   "code": "603001",
+   "name": "ST奥康",
+   "group": "uncap",
+   "event_date": "2024-06-25",
+   "title": "关于公司股票撤销其他风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "奥康国际"
+  },
+  {
+   "code": "603880",
+   "name": "ST南卫",
+   "group": "uncap",
+   "event_date": "2024-06-25",
+   "title": "南卫股份关于撤销其他风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "南卫股份"
+  },
+  {
+   "code": "000007",
+   "name": "*ST全新",
+   "group": "uncap",
+   "event_date": "2024-07-01",
+   "title": "关于公司股票交易撤销退市风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "全新好"
+  },
+  {
+   "code": "600518",
+   "name": "ST康美",
+   "group": "uncap",
+   "event_date": "2024-07-03",
+   "title": "康美药业关于公司股票撤销其他风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "康美药业"
+  },
+  {
+   "code": "603030",
+   "name": "ST全筑",
+   "group": "uncap",
+   "event_date": "2024-07-09",
+   "title": "关于公司股票撤销其他风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "全筑股份"
+  },
+  {
+   "code": "600117",
+   "name": "ST西钢",
+   "group": "uncap",
+   "event_date": "2024-07-17",
+   "title": "西宁特殊钢股份有限公司关于公司股票撤销其他风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "西宁特钢"
+  },
+  {
+   "code": "603117",
+   "name": "ST万林",
+   "group": "uncap",
+   "event_date": "2024-07-27",
+   "title": "江苏万林现代物流股份有限公司关于公司股票撤销其他风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "万林物流"
+  },
+  {
+   "code": "600666",
+   "name": "ST瑞德",
+   "group": "uncap",
+   "event_date": "2024-08-17",
+   "title": "ST瑞德关于撤销其他风险警示暨停牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "奥瑞德"
+  },
+  {
+   "code": "300427",
+   "name": "红相股份",
+   "group": "uncap",
+   "event_date": "2024-10-11",
+   "title": "联合资信评估股份有限公司关于红相股份有限公司收到《关于对红相股份有限公司、杨成、廖雪林的监管函》《厦门证监局行政监管措施",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "红相股份"
+  },
+  {
+   "code": "000796",
+   "name": "ST凯撒",
+   "group": "uncap",
+   "event_date": "2024-10-26",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2023-08-30",
+   "snapshot_year": 2024,
+   "cur_name": "凯撒旅业"
+  },
+  {
+   "code": "002700",
+   "name": "ST浩源",
+   "group": "uncap",
+   "event_date": "2025-03-21",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "万憬能源"
+  },
+  {
+   "code": "002564",
+   "name": "*ST天沃",
+   "group": "uncap",
+   "event_date": "2025-04-14",
+   "title": "关于公司股票交易撤销退市风险警示、其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "天沃科技"
+  },
+  {
+   "code": "600375",
+   "name": "*ST汉马",
+   "group": "uncap",
+   "event_date": "2025-04-17",
+   "title": "汉马科技集团股份有限公司关于撤销退市风险警示及其他风险警示的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "汉马科技"
+  },
+  {
+   "code": "002251",
+   "name": "ST步步高",
+   "group": "uncap",
+   "event_date": "2025-04-18",
+   "title": "关于公司股票交易撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "步步高"
+  },
+  {
+   "code": "600303",
+   "name": "ST曙光",
+   "group": "uncap",
+   "event_date": "2025-04-18",
+   "title": "ST曙光关于撤销其他风险警示暨停牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "曙光股份"
+  },
+  {
+   "code": "000809",
+   "name": "*ST和展",
+   "group": "uncap",
+   "event_date": "2025-04-24",
+   "title": "关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "和展能源"
+  },
+  {
+   "code": "600715",
+   "name": "*ST文投",
+   "group": "uncap",
+   "event_date": "2025-04-30",
+   "title": "文投控股股份有限公司关于撤销退市风险警示及其他风险警示的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "文投控股"
+  },
+  {
+   "code": "603879",
+   "name": "ST永悦",
+   "group": "uncap",
+   "event_date": "2025-04-30",
+   "title": "永悦科技关于撤销其他风险警示暨停牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "永悦科技"
+  },
+  {
+   "code": "300965",
+   "name": "*ST恒宇",
+   "group": "uncap",
+   "event_date": "2025-04-30",
+   "title": "关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "恒宇信通"
+  },
+  {
+   "code": "002490",
+   "name": "ST墨龙",
+   "group": "uncap",
+   "event_date": "2025-04-30",
+   "title": "关于公司股票撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "山东墨龙"
+  },
+  {
+   "code": "002124",
+   "name": "ST天邦",
+   "group": "uncap",
+   "event_date": "2025-04-30",
+   "title": "关于公司股票交易撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "天邦食品"
+  },
+  {
+   "code": "688282",
+   "name": "*ST导航",
+   "group": "uncap",
+   "event_date": "2025-04-30",
+   "title": "北京理工导航控制科技股份有限公司关于撤销退市风险警示暨停牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "理工导航"
+  },
+  {
+   "code": "603608",
+   "name": "*ST天创",
+   "group": "uncap",
+   "event_date": "2025-04-30",
+   "title": "关于撤销退市风险警示及其他风险警示暨停牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "天创时尚"
+  },
+  {
+   "code": "300013",
+   "name": "*ST新宁",
+   "group": "uncap",
+   "event_date": "2025-04-30",
+   "title": "关于公司股票交易撤销退市风险警示和其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "新宁物流"
+  },
+  {
+   "code": "000989",
+   "name": "ST九芝",
+   "group": "uncap",
+   "event_date": "2025-05-01",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "九芝堂"
+  },
+  {
+   "code": "300209",
+   "name": "*ST有树",
+   "group": "uncap",
+   "event_date": "2025-05-12",
+   "title": "关于公司股票交易撤销退市风险警示和其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "行云科技"
+  },
+  {
+   "code": "600671",
+   "name": "ST目药",
+   "group": "uncap",
+   "event_date": "2025-05-17",
+   "title": "杭州天目山药业股份有限公司关于撤销其他风险警示暨停牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "天目药业"
+  },
+  {
+   "code": "603363",
+   "name": "*ST傲农",
+   "group": "uncap",
+   "event_date": "2025-05-17",
+   "title": "福建傲农生物科技集团股份有限公司关于撤销退市风险警示及其他风险警示的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "傲农生物"
+  },
+  {
+   "code": "002092",
+   "name": "ST中泰",
+   "group": "uncap",
+   "event_date": "2025-05-17",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "中泰化学"
+  },
+  {
+   "code": "600234",
+   "name": "*ST科新",
+   "group": "uncap",
+   "event_date": "2025-05-17",
+   "title": "山西科新发展股份有限公司关于撤销退市风险警示的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "科新发展"
+  },
+  {
+   "code": "002259",
+   "name": "ST升达",
+   "group": "uncap",
+   "event_date": "2025-05-19",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "升达林业"
+  },
+  {
+   "code": "002748",
+   "name": "ST世龙",
+   "group": "uncap",
+   "event_date": "2025-05-21",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "世龙实业"
+  },
+  {
+   "code": "002951",
+   "name": "*ST金时",
+   "group": "uncap",
+   "event_date": "2025-05-22",
+   "title": "关于撤销退市风险警示及其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "金时科技"
+  },
+  {
+   "code": "300536",
+   "name": "*ST农尚",
+   "group": "uncap",
+   "event_date": "2025-05-22",
+   "title": "关于公司股票交易撤销退市风险警示暨停复牌公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "农尚环境"
+  },
+  {
+   "code": "300368",
+   "name": "ST汇金",
+   "group": "uncap",
+   "event_date": "2025-05-23",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "汇金股份"
+  },
+  {
+   "code": "002310",
+   "name": "*ST东园",
+   "group": "uncap",
+   "event_date": "2025-05-28",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨停复牌公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "东方新能"
+  },
+  {
+   "code": "300600",
+   "name": "ST瑞科",
+   "group": "uncap",
+   "event_date": "2025-05-30",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "国瑞科技"
+  },
+  {
+   "code": "300163",
+   "name": "ST先锋",
+   "group": "uncap",
+   "event_date": "2025-05-30",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "先锋新材"
+  },
+  {
+   "code": "603023",
+   "name": "*ST威帝",
+   "group": "uncap",
+   "event_date": "2025-05-31",
+   "title": "哈尔滨威帝电子股份有限公司关于撤销退市风险警示暨停牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "威帝股份"
+  },
+  {
+   "code": "000889",
+   "name": "ST中嘉",
+   "group": "uncap",
+   "event_date": "2025-06-03",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "中嘉博创"
+  },
+  {
+   "code": "000506",
+   "name": "*ST中润",
+   "group": "uncap",
+   "event_date": "2025-06-04",
+   "title": "关于撤销退市风险警示及其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "招金黄金"
+  },
+  {
+   "code": "000525",
+   "name": "ST红太阳",
+   "group": "uncap",
+   "event_date": "2025-06-12",
+   "title": "关于公司股票交易撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "红太阳"
+  },
+  {
+   "code": "002721",
+   "name": "ST金一",
+   "group": "uncap",
+   "event_date": "2025-06-13",
+   "title": "关于公司股票交易撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "金一文化"
+  },
+  {
+   "code": "002052",
+   "name": "*ST同洲",
+   "group": "uncap",
+   "event_date": "2025-06-16",
+   "title": "关于公司股票撤销退市风险警示及其他风险警示暨停复牌公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "同洲电子"
+  },
+  {
+   "code": "002141",
+   "name": "*ST贤丰",
+   "group": "uncap",
+   "event_date": "2025-06-27",
+   "title": "关于撤销退市风险警示及其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "贤丰控股"
+  },
+  {
+   "code": "002309",
+   "name": "ST中利",
+   "group": "uncap",
+   "event_date": "2025-07-08",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "中利集团"
+  },
+  {
+   "code": "000070",
+   "name": "ST特信",
+   "group": "uncap",
+   "event_date": "2025-07-08",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "特发信息"
+  },
+  {
+   "code": "600287",
+   "name": "ST舜天",
+   "group": "uncap",
+   "event_date": "2025-07-15",
+   "title": "江苏舜天关于撤销其他风险警示暨停牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "苏豪时尚"
+  },
+  {
+   "code": "300300",
+   "name": "ST峡创",
+   "group": "uncap",
+   "event_date": "2025-08-13",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "海峡创新"
+  },
+  {
+   "code": "600711",
+   "name": "ST盛屯",
+   "group": "uncap",
+   "event_date": "2025-08-13",
+   "title": "盛屯矿业集团股份有限公司关于撤销其他风险警示暨停牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "盛屯矿业"
+  },
+  {
+   "code": "002316",
+   "name": "ST亚联",
+   "group": "uncap",
+   "event_date": "2025-08-26",
+   "title": "关于公司股票交易撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "亚联发展"
+  },
+  {
+   "code": "600603",
+   "name": "ST广物",
+   "group": "uncap",
+   "event_date": "2025-10-28",
+   "title": "广汇物流股份有限公司关于撤销股票其他风险警示暨停牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "广汇物流"
+  },
+  {
+   "code": "600831",
+   "name": "ST广网",
+   "group": "uncap",
+   "event_date": "2025-11-07",
+   "title": "关于撤销其他风险警示的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "广电网络"
+  },
+  {
+   "code": "002602",
+   "name": "ST华通",
+   "group": "uncap",
+   "event_date": "2025-11-11",
+   "title": "关于公司股票交易撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "世纪华通"
+  },
+  {
+   "code": "300137",
+   "name": "ST先河",
+   "group": "uncap",
+   "event_date": "2025-12-05",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "先河环保"
+  },
+  {
+   "code": "002425",
+   "name": "ST凯文",
+   "group": "uncap",
+   "event_date": "2025-12-10",
+   "title": "关于公司股票交易撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "凯撒文化"
+  },
+  {
+   "code": "002197",
+   "name": "ST证通",
+   "group": "uncap",
+   "event_date": "2025-12-23",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2024-08-30",
+   "snapshot_year": 2025,
+   "cur_name": "证通电子"
+  },
+  {
+   "code": "002388",
+   "name": "ST新亚",
+   "group": "uncap",
+   "event_date": "2026-01-10",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "新亚制程"
+  },
+  {
+   "code": "300376",
+   "name": "ST易事特",
+   "group": "uncap",
+   "event_date": "2026-01-13",
+   "title": "关于公司股票交易撤销其他风险警示暨停牌一天的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "易事特"
+  },
+  {
+   "code": "300165",
+   "name": "ST天瑞",
+   "group": "uncap",
+   "event_date": "2026-03-27",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "天瑞仪器"
+  },
+  {
+   "code": "300097",
+   "name": "ST智云",
+   "group": "uncap",
+   "event_date": "2026-03-30",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "智云股份"
+  },
+  {
+   "code": "002647",
+   "name": "*ST仁东",
+   "group": "uncap",
+   "event_date": "2026-04-11",
+   "title": "关于公司股票交易撤销退市风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "仁东控股"
+  },
+  {
+   "code": "300052",
+   "name": "ST中青宝",
+   "group": "uncap",
+   "event_date": "2026-04-15",
+   "title": "关于撤销其他风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "中青宝"
+  },
+  {
+   "code": "603268",
+   "name": "*ST松发",
+   "group": "uncap",
+   "event_date": "2026-04-17",
+   "title": "关于撤销退市风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "松发股份"
+  },
+  {
+   "code": "600358",
+   "name": "ST联合",
+   "group": "uncap",
+   "event_date": "2026-04-17",
+   "title": "国旅文化投资集团股份有限公司关于撤销其他风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "国旅联合"
+  },
+  {
+   "code": "603007",
+   "name": "*ST花王",
+   "group": "uncap",
+   "event_date": "2026-04-18",
+   "title": "关于撤销退市风险警示及其他风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "顺景科技"
+  },
+  {
+   "code": "688511",
+   "name": "*ST天微",
+   "group": "uncap",
+   "event_date": "2026-04-18",
+   "title": "关于撤销退市风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "天微电子"
+  },
+  {
+   "code": "600130",
+   "name": "*ST波导",
+   "group": "uncap",
+   "event_date": "2026-04-29",
+   "title": "*ST波导关于撤销退市风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "波导股份"
+  },
+  {
+   "code": "000697",
+   "name": "ST炼石",
+   "group": "uncap",
+   "event_date": "2026-04-30",
+   "title": "关于公司股票交易撤销其他风险警示暨停复牌公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "炼石航空"
+  },
+  {
+   "code": "002742",
+   "name": "*ST三圣",
+   "group": "uncap",
+   "event_date": "2026-04-30",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "冀衡医药"
+  },
+  {
+   "code": "300268",
+   "name": "*ST佳沃",
+   "group": "uncap",
+   "event_date": "2026-05-12",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨临时停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "佳沃食品"
+  },
+  {
+   "code": "002868",
+   "name": "*ST绿康",
+   "group": "uncap",
+   "event_date": "2026-05-12",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "绿康生化"
+  },
+  {
+   "code": "301288",
+   "name": "*ST清研",
+   "group": "uncap",
+   "event_date": "2026-05-12",
+   "title": "关于公司股票撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "清研环境"
+  },
+  {
+   "code": "300899",
+   "name": "*ST凯鑫",
+   "group": "uncap",
+   "event_date": "2026-05-13",
+   "title": "关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "上海凯鑫"
+  },
+  {
+   "code": "000430",
+   "name": "ST张家界",
+   "group": "uncap",
+   "event_date": "2026-05-15",
+   "title": "张家界旅游集团股份有限公司关于撤销其他风险警示暨停复牌公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "张家界"
+  },
+  {
+   "code": "600360",
+   "name": "*ST华微",
+   "group": "uncap",
+   "event_date": "2026-05-19",
+   "title": "吉林华微电子股份有限公司关于撤销退市风险警示及其他风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "华微电子"
+  },
+  {
+   "code": "001270",
+   "name": "*ST铖昌",
+   "group": "uncap",
+   "event_date": "2026-05-19",
+   "title": "浙江铖昌科技股份有限公司关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "铖昌科技"
+  },
+  {
+   "code": "003004",
+   "name": "*ST声迅",
+   "group": "uncap",
+   "event_date": "2026-05-19",
+   "title": "关于公司股票交易撤销退市风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "声迅股份"
+  },
+  {
+   "code": "000518",
+   "name": "*ST四环",
+   "group": "uncap",
+   "event_date": "2026-05-19",
+   "title": "江苏四环生物股份有限公司关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "四环生物"
+  },
+  {
+   "code": "002047",
+   "name": "*ST宝鹰",
+   "group": "uncap",
+   "event_date": "2026-05-20",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "宝鹰股份"
+  },
+  {
+   "code": "000608",
+   "name": "*ST阳光",
+   "group": "uncap",
+   "event_date": "2026-05-20",
+   "title": "关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "阳光股份"
+  },
+  {
+   "code": "002693",
+   "name": "*ST双成",
+   "group": "uncap",
+   "event_date": "2026-05-22",
+   "title": "海南双成药业股份有限公司关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "双成药业"
+  },
+  {
+   "code": "300561",
+   "name": "*ST汇科",
+   "group": "uncap",
+   "event_date": "2026-05-27",
+   "title": "关于公司股票交易撤销退市风险警示、其他风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "汇金科技"
+  },
+  {
+   "code": "000691",
+   "name": "*ST亚太",
+   "group": "uncap",
+   "event_date": "2026-05-29",
+   "title": "关于公司股票交易撤销退市风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "亚太实业"
+  },
+  {
+   "code": "002848",
+   "name": "*ST高斯",
+   "group": "uncap",
+   "event_date": "2026-05-30",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "高斯贝尔"
+  },
+  {
+   "code": "603721",
+   "name": "*ST天择",
+   "group": "uncap",
+   "event_date": "2026-05-30",
+   "title": "中广天择传媒股份有限公司关于撤销退市风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "中广天择"
+  },
+  {
+   "code": "002200",
+   "name": "*ST交投",
+   "group": "uncap",
+   "event_date": "2026-06-02",
+   "title": "关于撤销退市风险警示和其他风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "交投生态"
+  },
+  {
+   "code": "000668",
+   "name": "*ST荣控",
+   "group": "uncap",
+   "event_date": "2026-06-02",
+   "title": "荣丰控股集团关于公司股票交易撤销退市风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "荣丰控股"
+  },
+  {
+   "code": "300175",
+   "name": "ST朗源",
+   "group": "uncap",
+   "event_date": "2026-06-02",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "朗源股份"
+  },
+  {
+   "code": "000736",
+   "name": "*ST中地",
+   "group": "uncap",
+   "event_date": "2026-06-02",
+   "title": "关于公司股票交易撤销退市风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "中交发展"
+  },
+  {
+   "code": "600228",
+   "name": "*ST返利",
+   "group": "uncap",
+   "event_date": "2026-06-06",
+   "title": "返利网数字科技股份有限公司关于撤销退市风险警示并停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "返利科技"
+  },
+  {
+   "code": "003032",
+   "name": "*ST传智",
+   "group": "uncap",
+   "event_date": "2026-06-10",
+   "title": "关于公司股票交易撤销退市风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "传智教育"
+  },
+  {
+   "code": "300225",
+   "name": "*ST金泰",
+   "group": "uncap",
+   "event_date": "2026-06-10",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "金力泰"
+  },
+  {
+   "code": "000908",
+   "name": "ST景峰",
+   "group": "uncap",
+   "event_date": "2026-06-11",
+   "title": "关于公司股票撤销其他风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "石药景峰"
+  },
+  {
+   "code": "300093",
+   "name": "*ST金刚",
+   "group": "uncap",
+   "event_date": "2026-06-11",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "金刚光伏"
+  },
+  {
+   "code": "000504",
+   "name": "*ST生物",
+   "group": "uncap",
+   "event_date": "2026-06-11",
+   "title": "南华生物关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "南华生物"
+  },
+  {
+   "code": "002529",
+   "name": "*ST海源",
+   "group": "uncap",
+   "event_date": "2026-06-12",
+   "title": "关于公司股票交易撤销退市风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "海源复材"
+  },
+  {
+   "code": "002058",
+   "name": "*ST威尔",
+   "group": "uncap",
+   "event_date": "2026-06-12",
+   "title": "关于公司股票撤销退市风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "紫竹高科"
+  },
+  {
+   "code": "000929",
+   "name": "*ST兰黄",
+   "group": "uncap",
+   "event_date": "2026-06-13",
+   "title": "关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "兰州黄河"
+  },
+  {
+   "code": "300343",
+   "name": "ST联创",
+   "group": "uncap",
+   "event_date": "2026-06-13",
+   "title": "关于撤销其他风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "联创股份"
+  },
+  {
+   "code": "603261",
+   "name": "*ST立航",
+   "group": "uncap",
+   "event_date": "2026-06-13",
+   "title": "成都立航科技股份有限公司关于撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "立航科技"
+  },
+  {
+   "code": "603813",
+   "name": "*ST原尚",
+   "group": "uncap",
+   "event_date": "2026-06-13",
+   "title": "广东原尚物流股份有限公司关于撤销退市风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "原尚股份"
+  },
+  {
+   "code": "300506",
+   "name": "ST名家汇",
+   "group": "uncap",
+   "event_date": "2026-06-15",
+   "title": "关于撤销其他风险警示暨股票停牌一天的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "名家汇"
+  },
+  {
+   "code": "002496",
+   "name": "*ST辉丰",
+   "group": "uncap",
+   "event_date": "2026-06-17",
+   "title": "关于撤销退市风险警示及其他风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "辉丰股份"
+  },
+  {
+   "code": "300313",
+   "name": "*ST天山",
+   "group": "uncap",
+   "event_date": "2026-06-18",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "天山生物"
+  },
+  {
+   "code": "300159",
+   "name": "*ST新研",
+   "group": "uncap",
+   "event_date": "2026-06-18",
+   "title": "关于公司股票撤销退市风险警示暨停牌一天的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "新研股份"
+  },
+  {
+   "code": "002762",
+   "name": "*ST金比",
+   "group": "uncap",
+   "event_date": "2026-06-18",
+   "title": "2026-032号 关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "金发拉比"
+  },
+  {
+   "code": "002076",
+   "name": "*ST星光",
+   "group": "uncap",
+   "event_date": "2026-06-18",
+   "title": "关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "星光股份"
+  },
+  {
+   "code": "600777",
+   "name": "*ST新潮",
+   "group": "uncap",
+   "event_date": "2026-06-19",
+   "title": "山东新潮能源股份有限公司关于撤销退市风险警示及其他风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "新潮能源"
+  },
+  {
+   "code": "002289",
+   "name": "*ST宇顺",
+   "group": "uncap",
+   "event_date": "2026-06-25",
+   "title": "关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "宇顺电子"
+  },
+  {
+   "code": "002253",
+   "name": "*ST智胜",
+   "group": "uncap",
+   "event_date": "2026-06-25",
+   "title": "四川川大智胜软件股份有限公司关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "川大智胜"
+  },
+  {
+   "code": "000972",
+   "name": "*ST中基",
+   "group": "uncap",
+   "event_date": "2026-06-26",
+   "title": "关于公司股票交易撤销退市风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "中基健康"
+  },
+  {
+   "code": "603389",
+   "name": "*ST亚振",
+   "group": "uncap",
+   "event_date": "2026-06-30",
+   "title": "关于撤销退市风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "亚振家居"
+  },
+  {
+   "code": "600892",
+   "name": "*ST大晟",
+   "group": "uncap",
+   "event_date": "2026-06-30",
+   "title": "关于撤销退市风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "大晟文化"
+  },
+  {
+   "code": "603580",
+   "name": "*ST艾艾",
+   "group": "uncap",
+   "event_date": "2026-06-30",
+   "title": "艾艾精密工业输送系统（上海）股份有限公司关于撤销退市风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "艾艾精工"
+  },
+  {
+   "code": "603559",
+   "name": "ST通脉",
+   "group": "uncap",
+   "event_date": "2026-07-01",
+   "title": "中通国脉通信股份有限公司关于撤销公司股票其他风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "中通国脉"
+  },
+  {
+   "code": "000656",
+   "name": "*ST金科",
+   "group": "uncap",
+   "event_date": "2026-07-01",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "金科股份"
+  },
+  {
+   "code": "000595",
+   "name": "*ST宝实",
+   "group": "uncap",
+   "event_date": "2026-07-01",
+   "title": "关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "新能股份"
+  },
+  {
+   "code": "002005",
+   "name": "ST德豪",
+   "group": "uncap",
+   "event_date": "2026-07-11",
+   "title": "关于公司股票交易撤销其他风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "德豪润达"
+  },
+  {
+   "code": "002656",
+   "name": "*ST摩登",
+   "group": "uncap",
+   "event_date": "2026-07-17",
+   "title": "关于公司股票撤销退市风险警示暨停复牌安排的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "摩登大道"
+  },
+  {
+   "code": "002713",
+   "name": "*ST东易",
+   "group": "uncap",
+   "event_date": "2026-07-17",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "东易日盛"
+  },
+  {
+   "code": "002199",
+   "name": "*ST东晶",
+   "group": "uncap",
+   "event_date": "2026-07-22",
+   "title": "关于公司股票交易撤销退市风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "东晶电子"
+  },
+  {
+   "code": "000820",
+   "name": "*ST节能",
+   "group": "uncap",
+   "event_date": "2026-07-29",
+   "title": "关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "神雾节能"
+  },
+  {
+   "code": "002214",
+   "name": "*ST大立",
+   "group": "uncap",
+   "event_date": "2026-08-04",
+   "title": "浙江大立科技股份有限公司关于公司股票交易撤销退市风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "大立科技"
+  },
+  {
+   "code": "300311",
+   "name": "ST任子行",
+   "group": "uncap",
+   "event_date": "2026-08-04",
+   "title": "关于撤销其他风险警示暨股票停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "任子行"
+  },
+  {
+   "code": "300125",
+   "name": "*ST聆达",
+   "group": "uncap",
+   "event_date": "2026-08-06",
+   "title": "关于公司股票交易撤销退市风险警示及其他风险警示暨停复牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "聆达股份"
+  },
+  {
+   "code": "688646",
+   "name": "ST逸飞",
+   "group": "uncap",
+   "event_date": "2026-08-12",
+   "title": "逸飞激光关于撤销其他风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "逸飞激光"
+  },
+  {
+   "code": "600165",
+   "name": "ST宁科",
+   "group": "uncap",
+   "event_date": "2026-08-25",
+   "title": "ST宁科关于撤销其他风险警示暨临时停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "宁科生物"
+  },
+  {
+   "code": "600525",
+   "name": "ST长园",
+   "group": "uncap",
+   "event_date": "2026-08-25",
+   "title": "关于撤销其他风险警示暨停牌的公告",
+   "t0": "2025-08-30",
+   "snapshot_year": 2026,
+   "cur_name": "长园集团"
+  }
+ ]
+}
