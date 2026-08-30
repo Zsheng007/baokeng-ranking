@@ -999,11 +999,48 @@ function doRegister(){{
   const phone = (document.getElementById('memPhone').value||'').trim();
   if(!/^1\\d{{10}}$/.test(phone)){{ alert('请输入正确的11位手机号'); return; }}
   const name = (document.getElementById('memName').value||'').trim() || ('会员'+phone.slice(-4));
-  localStorage.setItem(MK, JSON.stringify({{phone:phone, name:name, ts:Date.now()}}));
+  localStorage.setItem(MK, JSON.stringify({{phone:phone, name:name, ts:Date.now(), quota:3, used:0}}));
   closeModal('memMask');
   const a = MEM_AFTER; MEM_AFTER = null;
   if(a && a.fn==='moyu') showMoyuReport(a.code);
   else if(a && a.code) showExpertReport(a.code);
+}}
+function memberQuota(){{ // 会员免费深度报告配额（老会员无quota字段默认3篇）
+  const m = getMember(); if(!m) return null;
+  const q = (m.quota==null?3:m.quota), u = (m.used||0);
+  return {{free: Math.max(0, q-u), used: u, total: q}};
+}}
+function applyDeepReport(code){{
+  const m = getMember();
+  if(!m){{ openMoyuReport(code); return; }}
+  const q = memberQuota();
+  const c = UNIQUE.find(x=>x.code===code);
+  if(q.free<=0){{
+    alert('您的3篇免费深度报告额度已用完。\\n如需追加报告，请在公众号留言或联系企微客服获取增值服务。');
+    return;
+  }}
+  if(!confirm('将消耗1篇免费额度，为「'+(c?c.name+' ('+code+')':code)+'」生成：\\n\\n《ST股票分析专家 · V168+G 九章式深度分析报告》\\n\\n· 含退市时间表推演、股权穿透、索赔路径、清算价值测算等九章\\n· 由专家模型跑批生成，1个工作日内通过企业微信交付\\n\\n确认申请？')) return;
+  m.used = (m.used||0)+1;
+  localStorage.setItem(MK, JSON.stringify(m));
+  const q2 = memberQuota();
+  const reqCode = 'BK-'+(m.phone||'').slice(-4)+'-'+code;
+  document.getElementById('expTitle').textContent = '🧠 深度分析报告 · 申请回执';
+  document.getElementById('expBody').innerHTML = `
+    <div style="text-align:center;padding:8px 0 4px">
+      <div style="font-size:44px">📨</div>
+      <div style="font-weight:700;font-size:15px;margin:10px 0 4px">申请已受理：${{c?c.name:code}}（${{code}}）</div>
+    </div>
+    <div class="er-sec"><div class="er-sec-t">一、您的申请码</div>
+      <div style="font-size:20px;font-weight:800;letter-spacing:1px;color:#1a5276;background:#eaf2f8;border-radius:8px;padding:10px;text-align:center;margin:6px 0">${{reqCode}}</div>
+      <div class="er-sec-b">请添加企微客服（联系方式见公众号菜单「联系我们」），发送此申请码领取报告。1个工作日内交付《V168+G九章式深度分析报告》Word版。</div>
+    </div>
+    <div class="er-sec"><div class="er-sec-t">二、剩余额度</div>
+      <div class="er-sec-b">免费深度报告剩余 <b>${{q2.free}}</b> / ${{q2.total}} 篇（本机记录，注册手机号 ${{m.phone||''}}）。额度用完后可在公众号获取增值服务。</div>
+    </div>
+    <div class="er-sec"><div class="er-sec-t">三、报告内容预告（九章式）</div>
+      <div class="er-sec-b">① 标的概览与核心指标 ② 股权结构与实控人风险 ③ 主业经营与现金流 ④ 戴帽原因/审计内控 ⑤ 退市风险矩阵与摘帽概率 ⑥ 资本运作成本与清算视角 ⑦ 多空驱动 ⑧ 分层落地策略 ⑨ 关键追踪时点。参考样本：《301139_ST元道_V168G深度分析报告》。</div>
+    </div>
+    <div class="er-disclaim">⚠️ 免责声明：深度报告由ST股票分析专家基于公开数据生成，仅供参考，不构成任何投资建议。额度信息仅保存在本机浏览器。</div>`;
 }}
 function showExpertReport(code){{
   const c = UNIQUE.find(x=>x.code===code);
@@ -1064,7 +1101,7 @@ function openMoyuReport(code){{
     <div class="mem-locked">
       <div style="font-size:44px">🔐🎣</div>
       <div style="font-weight:700;font-size:15px;margin:10px 0 4px">摸鱼分析报告为会员专享内容</div>
-      <div style="font-size:12.5px;color:#888">注册会员后即可免费查看「${{c.name}}（${{c.code}}）」的 ST摸鱼模型摸鱼分析报告</div>
+      <div style="font-size:12.5px;color:#888">注册会员后即可免费查看「${{c.name}}（${{c.code}}）」的 ST摸鱼模型摸鱼分析报告，并获赠 3 篇「ST股票分析专家」V168+G 九章式深度分析报告免费额度</div>
     </div>
     <div style="margin-top:14px">
       <input class="mem-input" id="memPhone" placeholder="手机号（11位）" maxlength="11" inputmode="numeric">
@@ -1134,6 +1171,7 @@ function showMoyuReport(code){{
     <div class="er-sec"><div class="er-sec-t" style="color:#8e6a1f">四、公告信号面（巨潮资讯网 · 近24个月）</div><div class="er-sec-b">${{sigTxt}}</div></div>
     <div class="er-sec"><div class="er-sec-t" style="color:${{zoneCol}}">五、摸鱼结论：${{zone}}</div><div class="er-sec-b">${{zoneTxt}}</div></div>
     <button class="moyu-btn" onclick="copyMoyuLink('${{c.code}}')">🔗 复制本报告链接（#moyu-${{c.code}}，打开直达）</button>
+    <button style="display:block;width:100%;margin-top:10px;padding:12px;border:none;border-radius:10px;background:linear-gradient(135deg,#1a5276,#2471a3);color:#fff;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.5px" onmouseover="this.style.filter='brightness(1.12)'" onmouseout="this.style.filter='none'" onclick="applyDeepReport('${{c.code}}')">🧠 申请「ST股票分析专家」深度分析报告 · V168+G九章式（会员免费3篇，剩 ${{getMember()?(memberQuota().free):3}} 篇）</button>
     <div class="er-member-tip">👤 会员 ${{m.name||''}} 专属 · ST摸鱼模型基于报告期 <b>{report_label}</b> 数据即时生成</div>
     <div class="er-disclaim">⚠️ 免责声明：本报告由ST摸鱼模型基于公开数据自动生成，"摸鱼指数"仅为壳价与保壳确定性的复合观察指标，不构成任何投资建议。数据来源：巨潮资讯网、东方财富、腾讯财经。股市有风险，投资需谨慎。</div>`;
   document.getElementById('expTitle').textContent = '🎣 ST摸鱼模型 · 摸鱼分析报告';

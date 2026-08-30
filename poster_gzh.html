@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { width:750px; font-family:"Noto Sans SC","Microsoft YaHei",sans-serif; background:#F5F8EF; color:#2B3A1A; }
+.hero { background:linear-gradient(135deg,#3B6D11 0%,#639922 60%,#97C45B 100%); padding:64px 40px 52px; text-align:center; }
+.hero .tag { display:inline-block; border:1px solid rgba(255,255,255,.5); color:#fff; font-size:22px; padding:6px 22px; border-radius:999px; letter-spacing:2px; margin-bottom:26px; }
+.hero h1 { color:#fff; font-size:64px; letter-spacing:8px; font-weight:800; }
+.hero h2 { color:#EFF7E2; font-size:26px; font-weight:400; margin-top:18px; letter-spacing:2px; }
+.hero .meta { color:rgba(255,255,255,.85); font-size:20px; margin-top:26px; }
+.stats { display:flex; padding:28px 30px; gap:14px; background:#fff; margin:-30px 24px 24px; border-radius:16px; box-shadow:0 6px 24px rgba(59,109,17,.14); position:relative; }
+.st { flex:1; text-align:center; }
+.st b { display:block; font-size:44px; color:#3B6D11; font-weight:800; }
+.st i { font-style:normal; font-size:19px; color:#7B8A6A; }
+.card { background:#fff; margin:0 24px 24px; border-radius:16px; padding:30px 28px 22px; box-shadow:0 4px 18px rgba(59,109,17,.10); }
+.ct { font-size:34px; font-weight:800; color:#3B6D11; margin-bottom:6px; }
+.ct .cs { display:block; font-size:20px; color:#8A9A78; font-weight:400; margin-top:6px; }
+.dist { display:flex; align-items:center; gap:12px; padding:9px 0; }
+.dl { width:40px; height:40px; border-radius:10px; color:#fff; font-size:22px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.dn { width:210px; font-size:21px; }
+.bar { flex:1; height:16px; background:#EDF2E4; border-radius:8px; overflow:hidden; }
+.bar i { display:block; height:100%; }
+.dv { width:76px; text-align:right; font-size:21px; font-weight:700; }
+.thead { display:flex; align-items:center; padding:14px 0 8px; border-bottom:2px solid #E8EFDC; color:#8A9A78; font-size:18px; }
+.row { display:flex; align-items:center; padding:13px 0; border-bottom:1px solid #F0F4E8; font-size:22px; }
+.thead span:nth-child(1) { width:70px; }
+.row .rk { width:70px; color:#97A88A; font-weight:700; }
+.row .nm { flex:1; font-weight:700; }
+.row .cd { font-size:17px; color:#A0AE8E; font-weight:400; margin-left:10px; }
+.row .ex { width:170px; text-align:right; color:#5C6B4A; font-size:20px; }
+.row .lv { width:48px; height:34px; margin:0 12px 0 20px; border-radius:8px; color:#fff; font-size:18px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.row .sc { width:76px; text-align:right; font-size:26px; font-weight:800; }
+.ch { display:flex; align-items:center; gap:14px; padding:10px 0; }
+.chn { width:160px; font-size:22px; font-weight:700; }
+.chn i { display:block; font-style:normal; font-size:16px; color:#97A88A; font-weight:400; }
+.bar2 { flex:1; height:14px; background:#EDF2E4; border-radius:7px; }
+.bar2 i { display:block; height:100%; border-radius:7px; }
+.chv { width:64px; text-align:right; font-size:22px; font-weight:800; color:#3B6D11; }
+.note { font-size:20px; color:#5C6B4A; line-height:1.7; padding:6px 0; }
+.c2box { margin:14px 24px; background:linear-gradient(135deg,#EFF7E2,#FDFEF8); border:1px dashed #97C45B; border-radius:16px; padding:24px 28px; }
+.c2box b { color:#3B6D11; font-size:24px; }
+.c2box p { font-size:20px; color:#5C6B4A; line-height:1.7; margin-top:8px; }
+.foot { background:#3B6D11; margin-top:8px; padding:48px 40px 36px; text-align:center; }
+.foot h3 { color:#fff; font-size:30px; letter-spacing:2px; }
+.foot p { color:rgba(255,255,255,.85); font-size:20px; margin-top:14px; line-height:1.7; }
+.foot .go { display:inline-block; margin-top:24px; background:#fff; color:#3B6D11; font-size:24px; font-weight:800; padding:14px 44px; border-radius:999px; }
+.disclaim { background:#EAF0DF; padding:26px 30px 34px; font-size:16px; color:#8A9A78; line-height:1.8; }
+</style></head><body>
+
+<div class="hero">
+<div class="tag">V2 · 十三维 · 100分制</div>
+<h1>保壳风云榜</h1>
+<h2>A股 ST/*ST 全市场退市风险横评</h2>
+<div class="meta">覆盖 207 家 · 财务基准 2025年报 · 生成日期 2026-08-29 · 每周五更新</div>
+</div>
+
+<div class="stats">
+<div class="st"><b>207</b><i>覆盖ST/*ST公司</i></div>
+<div class="st"><b>13</b><i>评分维度</i></div>
+<div class="st"><b>30</b><i>并购机会区标的</i></div>
+<div class="st"><b>176</b><i>退市案例回测样本</i></div>
+</div>
+
+<div class="card">
+<div class="ct">等级分布<span class="cs">分数越高 = 保壳越容易</span></div>
+<div class="dist"><span class="dl" style="background:#2E7D32">A</span>
+<span class="dn">保壳无忧（>70）</span><div class="bar"><i style="width:31%;background:#2E7D32"></i></div>
+<span class="dv">64家</span></div>
+<div class="dist"><span class="dl" style="background:#639922">B</span>
+<span class="dn">保壳较稳（51-70）</span><div class="bar"><i style="width:53%;background:#639922"></i></div>
+<span class="dv">109家</span></div>
+<div class="dist"><span class="dl" style="background:#E8920A">C</span>
+<span class="dn">保壳承压（31-50）</span><div class="bar"><i style="width:16%;background:#E8920A"></i></div>
+<span class="dv">33家</span></div>
+<div class="dist"><span class="dl" style="background:#C62828">D</span>
+<span class="dn">退市高危（≤30）</span><div class="bar"><i style="width:0%;background:#C62828"></i></div>
+<span class="dv">1家</span></div>
+</div>
+
+<div class="card">
+<div class="ct">保壳最容易 TOP 10<span class="cs">国资背景 + 财务达标 + 无监管雷区</span></div>
+<div class="thead"><span>排名</span><span>公司</span><span style="text-align:right">实控人</span><span>等级</span><span>得分</span></div>
+<div class="row">
+<div class="rk">1</div>
+<div class="nm">ST沈化<span class="cd">000698</span></div>
+<div class="ex">央企</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">85</div>
+</div>
+<div class="row">
+<div class="rk">2</div>
+<div class="nm">ST应急<span class="cd">300527</span></div>
+<div class="ex">央企</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">84</div>
+</div>
+<div class="row">
+<div class="rk">3</div>
+<div class="nm">ST海泰<span class="cd">600082</span></div>
+<div class="ex">市县国资</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">83</div>
+</div>
+<div class="row">
+<div class="rk">4</div>
+<div class="nm">*ST西发<span class="cd">000752</span></div>
+<div class="ex">民企(个人)</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">83</div>
+</div>
+<div class="row">
+<div class="rk">5</div>
+<div class="nm">ST派瑞<span class="cd">300831</span></div>
+<div class="ex">省级国资</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">82</div>
+</div>
+<div class="row">
+<div class="rk">6</div>
+<div class="nm">*ST中设<span class="cd">002883</span></div>
+<div class="ex">市县国资</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">82</div>
+</div>
+<div class="row">
+<div class="rk">7</div>
+<div class="nm">ST人福<span class="cd">600079</span></div>
+<div class="ex">央企</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">82</div>
+</div>
+<div class="row">
+<div class="rk">8</div>
+<div class="nm">ST南新<span class="cd">688189</span></div>
+<div class="ex">省级国资</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">81</div>
+</div>
+<div class="row">
+<div class="rk">9</div>
+<div class="nm">ST信安<span class="cd">688201</span></div>
+<div class="ex">民企(法人)</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">81</div>
+</div>
+<div class="row">
+<div class="rk">10</div>
+<div class="nm">ST太重<span class="cd">600169</span></div>
+<div class="ex">省级国资</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">80</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ct">摸鱼指数 TOP 10<span class="cs">壳便宜 × 保壳稳 —— 低成本并购视角</span></div>
+<div class="thead"><span>排名</span><span>公司</span><span style="text-align:right">摸鱼指数</span><span>等级</span><span>得分</span></div>
+<div class="row">
+<div class="rk">1</div>
+<div class="nm">*ST元道<span class="cd">301139</span></div>
+<div class="ex">81.8</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">76</div>
+</div>
+<div class="row">
+<div class="rk">2</div>
+<div class="nm">*ST中设<span class="cd">002883</span></div>
+<div class="ex">71.7</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">82</div>
+</div>
+<div class="row">
+<div class="rk">3</div>
+<div class="nm">ST龙韵<span class="cd">603729</span></div>
+<div class="ex">69.7</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">72</div>
+</div>
+<div class="row">
+<div class="rk">4</div>
+<div class="nm">ST海泰<span class="cd">600082</span></div>
+<div class="ex">69.5</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">83</div>
+</div>
+<div class="row">
+<div class="rk">5</div>
+<div class="nm">ST南新<span class="cd">688189</span></div>
+<div class="ex">69.1</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">81</div>
+</div>
+<div class="row">
+<div class="rk">6</div>
+<div class="nm">ST如意<span class="cd">002193</span></div>
+<div class="ex">69.1</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">76</div>
+</div>
+<div class="row">
+<div class="rk">7</div>
+<div class="nm">*ST西发<span class="cd">000752</span></div>
+<div class="ex">67.7</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">83</div>
+</div>
+<div class="row">
+<div class="rk">8</div>
+<div class="nm">ST天圣<span class="cd">002872</span></div>
+<div class="ex">67.5</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">78</div>
+</div>
+<div class="row">
+<div class="rk">9</div>
+<div class="nm">ST金花<span class="cd">600080</span></div>
+<div class="ex">67.4</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">78</div>
+</div>
+<div class="row">
+<div class="rk">10</div>
+<div class="nm">*ST建艺<span class="cd">002789</span></div>
+<div class="ex">67.4</div>
+<div class="lv" style="background:#2E7D32">A</div>
+<div class="sc" style="color:#2E7D32">76</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ct">保壳最难 TOP 10<span class="cs">临近面值/财务红线/监管高压，退市高危区</span></div>
+<div class="thead"><span>排名</span><span>公司</span><span style="text-align:right">市值</span><span>等级</span><span>得分</span></div>
+<div class="row">
+<div class="rk">1</div>
+<div class="nm">*ST岭南<span class="cd">002717</span></div>
+<div class="ex">18.8亿</div>
+<div class="lv" style="background:#C62828">D</div>
+<div class="sc" style="color:#C62828">29</div>
+</div>
+<div class="row">
+<div class="rk">2</div>
+<div class="nm">*ST泉为<span class="cd">300716</span></div>
+<div class="ex">30.4亿</div>
+<div class="lv" style="background:#E65100">C</div>
+<div class="sc" style="color:#E65100">33</div>
+</div>
+<div class="row">
+<div class="rk">3</div>
+<div class="nm">*ST卓然<span class="cd">688121</span></div>
+<div class="ex">4.1亿</div>
+<div class="lv" style="background:#E65100">C</div>
+<div class="sc" style="color:#E65100">36</div>
+</div>
+<div class="row">
+<div class="rk">4</div>
+<div class="nm">*ST康乐<span class="cd">920575</span></div>
+<div class="ex">—</div>
+<div class="lv" style="background:#E65100">C</div>
+<div class="sc" style="color:#E65100">39</div>
+</div>
+<div class="row">
+<div class="rk">5</div>
+<div class="nm">*ST同辉<span class="cd">920090</span></div>
+<div class="ex">—</div>
+<div class="lv" style="background:#E65100">C</div>
+<div class="sc" style="color:#E65100">39</div>
+</div>
+<div class="row">
+<div class="rk">6</div>
+<div class="nm">*ST瑞茂<span class="cd">600180</span></div>
+<div class="ex">16.5亿</div>
+<div class="lv" style="background:#E65100">C</div>
+<div class="sc" style="color:#E65100">42</div>
+</div>
+<div class="row">
+<div class="rk">7</div>
+<div class="nm">*ST萃华<span class="cd">002731</span></div>
+<div class="ex">2.2亿</div>
+<div class="lv" style="background:#E65100">C</div>
+<div class="sc" style="color:#E65100">44</div>
+</div>
+<div class="row">
+<div class="rk">8</div>
+<div class="nm">*ST皇庭<span class="cd">000056</span></div>
+<div class="ex">24.6亿</div>
+<div class="lv" style="background:#E65100">C</div>
+<div class="sc" style="color:#E65100">45</div>
+</div>
+<div class="row">
+<div class="rk">9</div>
+<div class="nm">ST龙大<span class="cd">002726</span></div>
+<div class="ex">37.2亿</div>
+<div class="lv" style="background:#E65100">C</div>
+<div class="sc" style="color:#E65100">46</div>
+</div>
+<div class="row">
+<div class="rk">10</div>
+<div class="nm">*ST实达<span class="cd">600734</span></div>
+<div class="ex">37.7亿</div>
+<div class="lv" style="background:#E65100">C</div>
+<div class="sc" style="color:#E65100">48</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ct">评分体系<span class="cs">五通道权重 = 5年176家退市案例实证贡献度</span></div>
+<div class="ch"><div class="chn">市场类<i>面值·壳价值</i></div><div class="bar2"><i style="width:35.0%;background:linear-gradient(90deg,#639922,#97C45B)"></i></div><span class="chv">14%</span></div>
+<div class="ch"><div class="chn">财务红线<i>净资产·营收·扣非·现金流</i></div><div class="bar2"><i style="width:80.0%;background:linear-gradient(90deg,#639922,#97C45B)"></i></div><span class="chv">32%</span></div>
+<div class="ch"><div class="chn">监管类<i>立案造假·审计意见</i></div><div class="bar2"><i style="width:55.0%;background:linear-gradient(90deg,#639922,#97C45B)"></i></div><span class="chv">22%</span></div>
+<div class="ch"><div class="chn">股东调节<i>实控人·质押·司法</i></div><div class="bar2"><i style="width:45.0%;background:linear-gradient(90deg,#639922,#97C45B)"></i></div><span class="chv">18%</span></div>
+<div class="ch"><div class="chn">纾困类<i>重组·趋势</i></div><div class="bar2"><i style="width:35.0%;background:linear-gradient(90deg,#639922,#97C45B)"></i></div><span class="chv">14%</span></div>
+<div class="note" style="margin-top:12px">十三维：C1面值6 · C2壳价值8 · S1实控人12 · S2质押6 · A1净资产10 · A2扣非主营收入12 · A3扣非6 · D1现金流4 · B1立案造假10 · B2审计12 · F2重组6 · F1趋势4 · H1司法4；联动闸门：面值危机压制壳价值、涉造假立案实控人维度封顶。</div>
+</div>
+
+<div class="c2box">
+<b>并购机会区（C2满分，30家）</b>
+<p>市值 ≤ 16.9亿（壳基准33.8亿的五折）：*ST元道(4.0亿)、*ST卓然(4.1亿)、*ST东珠(10.2亿)、ST龙韵(10.9亿)、ST麦趣(11.5亿)、*ST益通(12.2亿) 等。壳价值评分规则反转——市值越低于壳基准，并购重组的机会弹性越大。</p>
+</div>
+
+<div class="foot">
+<h3>完整榜单 · 个股保壳报告 · 摸鱼榜</h3>
+<p>全市场207家排序 / 通道封顶预警 / 点击个股看13维明细</p>
+<div class="go">点击文末「阅读原文」查看 →</div>
+</div>
+
+<div class="disclaim">
+免责声明：本榜单基于公开数据（巨潮公告、交易所行情、AkShare财务数据）自动量化生成，评分仅供研究参考，不构成任何投资建议。ST/*ST股票退市风险高、流动性差，数据可能存在滞后或口径差异，请以交易所及上市公司正式披露为准。据此操作，风险自担。
+</div>
+
+</body></html>

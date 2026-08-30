@@ -1,0 +1,246 @@
+{
+  "system": "ST保壳评分系统V2 十三维100分制（老Z定稿2026-08-28）",
+  "config_version": "v2.1",
+  "created": "2026-08-29",
+  "note": "阶段3分头解耦：权重/档位/闸门/评级全部外置本文件，改配置不改代码；批量fetch管道不动",
+  "shell_base": {
+    "json": "C:\\Users\\xiaot\\.workbuddy\\skills\\shell-fee-base\\shell_transactions.json",
+    "key": "benchmark_config.own_mcap_median_yi",
+    "fallback": 33.81
+  },
+  "dims": {
+    "C1": {
+      "name": "面值距离",
+      "max": 6,
+      "price_brackets": [
+        [
+          5,
+          6
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          1.5,
+          2
+        ],
+        [
+          1.2,
+          1
+        ]
+      ],
+      "floor": 0
+    },
+    "C2": {
+      "name": "壳价值锚定",
+      "max": 8,
+      "base_ratio_brackets": [
+        [
+          0.5,
+          8
+        ],
+        [
+          0.75,
+          6
+        ],
+        [
+          1.0,
+          4
+        ],
+        [
+          1.5,
+          2
+        ]
+      ],
+      "floor": 0,
+      "missing": 4,
+      "c1_linkage": {
+        "0": 2,
+        "1": 4
+      }
+    },
+    "S1": {
+      "name": "实控人性质与保壳能力",
+      "max": 12,
+      "default": 3,
+      "fraud_cap": 4
+    },
+    "S2": {
+      "name": "股权质押与控制权",
+      "max": 6,
+      "freeze": 0,
+      "missing": 3,
+      "pledge_brackets": [
+        [
+          20,
+          6
+        ],
+        [
+          50,
+          4
+        ]
+      ],
+      "floor": 2
+    },
+    "A1": {
+      "name": "净资产充裕度",
+      "max": 10,
+      "nav_yi_brackets": [
+        [
+          10,
+          10
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "floor": 0,
+      "missing": 3
+    },
+    "A2": {
+      "name": "扣非主营业务收入",
+      "max": 12,
+      "gap_brackets": [
+        [
+          0.0,
+          12
+        ],
+        [
+          0.2,
+          9
+        ],
+        [
+          0.4,
+          6
+        ],
+        [
+          0.6,
+          3
+        ]
+      ],
+      "floor": 0,
+      "star_penalty": 3,
+      "low_margin_ratio": 0.3,
+      "low_margin_penalty": 3,
+      "missing": 3
+    },
+    "A3": {
+      "name": "扣非盈利",
+      "max": 6,
+      "profit": 6,
+      "star_loss": 0,
+      "loss": 3,
+      "missing": 2
+    },
+    "D1": {
+      "name": "现金流质量",
+      "max": 4,
+      "ocf_rev_ratio_brackets": [
+        [
+          0.1,
+          4
+        ],
+        [
+          0.0,
+          2
+        ]
+      ],
+      "floor": 0,
+      "missing": 1
+    },
+    "B1": {
+      "name": "立案/造假信号",
+      "max": 10,
+      "bj": 7,
+      "fraud": 0,
+      "none": 10,
+      "inv_recent": 4,
+      "inv_old": 7
+    },
+    "B2": {
+      "name": "审计意见",
+      "max": 12,
+      "bj": 6,
+      "adverse": 0,
+      "qualified": 6,
+      "emphasis": 9,
+      "clean": 12
+    },
+    "F2": {
+      "name": "重组/纾困进度",
+      "max": 6,
+      "exec": 6,
+      "applied": 4,
+      "asset_ops": 2,
+      "none": 0
+    },
+    "F1": {
+      "name": "经营改善趋势",
+      "max": 4,
+      "both_up": 4,
+      "one_up": 2,
+      "none_up": 0,
+      "proxy_both": 4,
+      "proxy_one": 2,
+      "proxy_none": 0,
+      "missing": 1
+    },
+    "H1": {
+      "name": "实控人司法风险",
+      "max": 4,
+      "bj": 2,
+      "freeze_or_ctrl_case": 0,
+      "consume_limit": 2,
+      "clean": 4
+    }
+  },
+  "gates": [
+    {
+      "when": "C1==0",
+      "cap_total": 50,
+      "note": "面值危机：交易类通道已实质触发，封顶C档上沿"
+    },
+    {
+      "when": "B2==0",
+      "cap_total": 50,
+      "note": "无法表示/否定意见：规范类直接通道触发，封顶50"
+    },
+    {
+      "when": "B1==0",
+      "cap_total": 30,
+      "note": "重大违法处罚落地(立案→处罚全链条)：零容忍，封顶D档上沿"
+    }
+  ],
+  "rating": [
+    {
+      "min": 70,
+      "label": "A"
+    },
+    {
+      "min": 50,
+      "label": "B"
+    },
+    {
+      "min": 30,
+      "label": "C"
+    },
+    {
+      "min": 0,
+      "label": "D"
+    }
+  ]
+}
