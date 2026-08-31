@@ -726,7 +726,7 @@ function showReport(c){
         <div class="conclusion-title">${LE[c.level]}</div>
         <div class="conclusion-text">${v2Note}</div>
       </div>
-      <button class="expert-btn" onclick="openExpertReport('${c.code}')">🧠 ST股分析专家 · 即时分析报告（会员专享）</button>
+      <button class="expert-btn" onclick="openExpertReport('${c.code}')">🧠 ST摸鱼风云-V2 · 即时跟读报告（会员专享）</button>
       ${c.moyuRank ? `<button class="moyu-btn" onclick="openMoyuReport('${c.code}')">🎣 ST摸鱼模型 · 摸鱼分析报告（会员专享 · 可分享链接）</button>` : ''}
     </div>
     ${voteSectionHTML(c.code)}`;
@@ -867,7 +867,7 @@ function renderVoteRank(){
     </div>`).join('');
 }
 
-// ===================== ST股分析专家 · 即时分析报告（会员专享） =====================
+// ===================== ST摸鱼风云-V2 · 即时跟读报告（会员专享） =====================
 const MK = 'bkfl_member';
 function getMember(){ try{ return JSON.parse(localStorage.getItem(MK)); }catch(e){ return null; } }
 function closeModal(id){ const el=document.getElementById(id); if(el) el.classList.remove('show'); }
@@ -880,7 +880,7 @@ function openExpertReport(code){
     <div class="mem-locked">
       <div style="font-size:44px">🔐</div>
       <div style="font-weight:700;font-size:15px;margin:10px 0 4px">即时分析报告为会员专享内容</div>
-      <div style="font-size:12.5px;color:#888">注册会员后即可免费查看「${c?c.name+' ('+c.code+')':code}」的 ST股分析专家即时报告</div>
+      <div style="font-size:12.5px;color:#888">注册会员后即可免费查看「${c?c.name+' ('+c.code+')':code}」的 ST摸鱼风云-V2 即时跟读报告</div>
     </div>
     <div style="margin-top:14px">
       <input class="mem-input" id="memPhone" placeholder="手机号（11位）" maxlength="11" inputmode="numeric">
@@ -900,7 +900,7 @@ function doRegister(){
   if(a && a.fn==='moyu') showMoyuReport(a.code);
   else if(a && a.code) showExpertReport(a.code);
 }
-function memberQuota(){ // 会员免费深度报告配额（老会员无quota字段默认3篇）
+function memberQuota(){ // 会员免费跟读报告（完整版）配额（老会员无quota字段默认3篇）
   const m = getMember(); if(!m) return null;
   const q = (m.quota==null?3:m.quota), u = (m.used||0);
   return {free: Math.max(0, q-u), used: u, total: q};
@@ -911,15 +911,15 @@ function applyDeepReport(code){
   const q = memberQuota();
   const c = UNIQUE.find(x=>x.code===code);
   if(q.free<=0){
-    alert('您的3篇免费深度报告额度已用完。\n如需追加报告，请在公众号留言或联系企微客服获取增值服务。');
+    alert('您的3篇免费跟读报告（完整版）额度已用完。\n如需追加报告，请在公众号留言或联系企微客服获取增值服务。');
     return;
   }
-  if(!confirm('将消耗1篇免费额度，为「'+(c?c.name+' ('+code+')':code)+'」生成：\n\n《ST股票分析专家 · V168+G 九章式深度分析报告》\n\n· 含退市时间表推演、股权穿透、索赔路径、清算价值测算等九章\n· 由专家模型跑批生成，1个工作日内通过企业微信交付\n\n确认申请？')) return;
+  if(!confirm('将消耗1篇免费额度，为「'+(c?c.name+' ('+code+')':code)+'」生成：\n\n《ST摸鱼风云-V2 · 跟读报告（完整版）》\n\n· 以V2十三维评分模块为骨架的完整版分析：报告说明/评分总览/逐维深度解读/维度画像/保壳逻辑/风险清单/风险提示\n· 由自动化管道生成，60分钟内通过企业微信交付 Word 版\n\n确认申请？')) return;
   m.used = (m.used||0)+1;
   localStorage.setItem(MK, JSON.stringify(m));
   const q2 = memberQuota();
   const reqCode = 'BK-'+(m.phone||'').slice(-4)+'-'+code;
-  document.getElementById('expTitle').textContent = '🧠 深度分析报告 · 申请回执';
+  document.getElementById('expTitle').textContent = '📋 摸鱼风云-V2跟读报告 · 申请回执';
   document.getElementById('expBody').innerHTML = `
     <div style="text-align:center;padding:8px 0 4px">
       <div style="font-size:44px">📨</div>
@@ -927,15 +927,21 @@ function applyDeepReport(code){
     </div>
     <div class="er-sec"><div class="er-sec-t">一、您的申请码</div>
       <div style="font-size:20px;font-weight:800;letter-spacing:1px;color:#1a5276;background:#eaf2f8;border-radius:8px;padding:10px;text-align:center;margin:6px 0">${reqCode}</div>
-      <div class="er-sec-b">请添加企微客服（联系方式见公众号菜单「联系我们」），发送此申请码领取报告。1个工作日内交付《V168+G九章式深度分析报告》Word版。</div>
+      <div class="er-sec-b"><b>60分钟内</b>通过企业微信发送《ST摸鱼风云-V2 · 跟读报告（完整版）》Word版。扫码添加企微客服，发送申请码即可领取 ↓</div>
+      <div style="text-align:center;margin-top:8px">
+        <img src="assets/wecom_qr.png" alt="企微客服二维码" style="width:150px;height:150px;border-radius:10px;border:1px solid #cfe3d2"
+             onerror="this.style.display='none';var el=document.getElementById('qrFallback');if(el)el.style.display='block';">
+        <div id="qrFallback" style="display:none;font-size:11.5px;color:#888;margin-top:6px">（企微客服二维码待配置：将二维码图片保存为 assets/wecom_qr.png 后自动显示）</div>
+        <div style="font-size:11.5px;color:#666;margin-top:4px">👆 扫码添加企微客服 · 也可通过公众号菜单「联系我们」添加</div>
+      </div>
     </div>
     <div class="er-sec"><div class="er-sec-t">二、剩余额度</div>
-      <div class="er-sec-b">免费深度报告剩余 <b>${q2.free}</b> / ${q2.total} 篇（本机记录，注册手机号 ${m.phone||''}）。额度用完后可在公众号获取增值服务。</div>
+      <div class="er-sec-b">免费跟读报告（完整版）剩余 <b>${q2.free}</b> / ${q2.total} 篇（本机记录，注册手机号 ${m.phone||''}）。额度用完后可在公众号获取增值服务。</div>
     </div>
-    <div class="er-sec"><div class="er-sec-t">三、报告内容预告（九章式）</div>
-      <div class="er-sec-b">① 标的概览与核心指标 ② 股权结构与实控人风险 ③ 主业经营与现金流 ④ 戴帽原因/审计内控 ⑤ 退市风险矩阵与摘帽概率 ⑥ 资本运作成本与清算视角 ⑦ 多空驱动 ⑧ 分层落地策略 ⑨ 关键追踪时点。参考样本：《301139_ST元道_V168G深度分析报告》。</div>
+    <div class="er-sec"><div class="er-sec-t">三、报告内容（V2十三维完整版）</div>
+      <div class="er-sec-b">① 报告说明与口径 ② 评分总览（13维明细表）③ 逐维深度解读 ④ 维度画像：安全垫 vs 风险源 ⑤ 保壳逻辑（模型解读）⑥ 风险点清单 ⑦ 风险提示与研究局限。参考样本：《ST摸鱼风云-V2跟读报告_01_002883_ST中设_20260831.docx》。</div>
     </div>
-    <div class="er-disclaim">⚠️ 免责声明：深度报告由ST股票分析专家基于公开数据生成，仅供参考，不构成任何投资建议。额度信息仅保存在本机浏览器。</div>`;
+    <div class="er-disclaim">⚠️ 免责声明：跟读报告由ST摸鱼风云-V2模型基于公开数据生成，仅供参考，不构成任何投资建议。额度信息仅保存在本机浏览器。</div>`;
 }
 function showExpertReport(code){
   const c = UNIQUE.find(x=>x.code===code);
@@ -978,10 +984,10 @@ function showExpertReport(code){
     <div class="er-sec"><div class="er-sec-t">二、三大短板维度</div><div class="er-sec-b">${weak}</div></div>
     <div class="er-sec"><div class="er-sec-t">三、公告信号面（巨潮资讯网 · 近24个月）</div><div class="er-sec-b">${sigTxt}</div></div>
     ${moyuSec}
-    <button class="pdf-btn" id="pdfBtn" onclick="exportPDF('${c.code}')">📄 下载正式PDF版报告（A4 · ST股分析专家）</button>
+    <button class="pdf-btn" id="pdfBtn" onclick="exportPDF('${c.code}')">📄 下载正式PDF版报告（A4 · ST摸鱼风云-V2）</button>
     <div class="er-member-tip">👤 会员 ${m.name||''} 专属 · 报告基于报告期 <b>2025年年报</b> 数据即时生成</div>
-    <div class="er-disclaim">⚠️ 免责声明：本报告由ST股分析专家基于公开数据自动生成，仅供参考，不构成任何投资建议。数据来源：巨潮资讯网、东方财富、腾讯财经。股市有风险，投资需谨慎。</div>`;
-  document.getElementById('expTitle').textContent = '🧠 ST股分析专家 · 即时分析报告';
+    <div class="er-disclaim">⚠️ 免责声明：本报告由ST摸鱼风云-V2模型基于公开数据自动生成，仅供参考，不构成任何投资建议。数据来源：巨潮资讯网、东方财富、腾讯财经。股市有风险，投资需谨慎。</div>`;
+  document.getElementById('expTitle').textContent = '🧠 ST摸鱼风云-V2 · 即时跟读报告';
   document.getElementById('expMask').classList.add('show');
 }
 
@@ -996,7 +1002,7 @@ function openMoyuReport(code){
     <div class="mem-locked">
       <div style="font-size:44px">🔐🎣</div>
       <div style="font-weight:700;font-size:15px;margin:10px 0 4px">摸鱼分析报告为会员专享内容</div>
-      <div style="font-size:12.5px;color:#888">注册会员后即可免费查看「${c.name}（${c.code}）」的 ST摸鱼模型摸鱼分析报告，并获赠 3 篇「ST股票分析专家」V168+G 九章式深度分析报告免费额度</div>
+      <div style="font-size:12.5px;color:#888">注册会员后即可免费查看「${c.name}（${c.code}）」的 ST摸鱼模型摸鱼分析报告，并获赠 3 篇「ST摸鱼风云-V2」跟读报告（完整版）免费额度</div>
     </div>
     <div style="margin-top:14px">
       <input class="mem-input" id="memPhone" placeholder="手机号（11位）" maxlength="11" inputmode="numeric">
@@ -1066,7 +1072,7 @@ function showMoyuReport(code){
     <div class="er-sec"><div class="er-sec-t" style="color:#8e6a1f">四、公告信号面（巨潮资讯网 · 近24个月）</div><div class="er-sec-b">${sigTxt}</div></div>
     <div class="er-sec"><div class="er-sec-t" style="color:${zoneCol}">五、摸鱼结论：${zone}</div><div class="er-sec-b">${zoneTxt}</div></div>
     <button class="moyu-btn" onclick="copyMoyuLink('${c.code}')">🔗 复制本报告链接（#moyu-${c.code}，打开直达）</button>
-    <button style="display:block;width:100%;margin-top:10px;padding:12px;border:none;border-radius:10px;background:linear-gradient(135deg,#1a5276,#2471a3);color:#fff;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.5px" onmouseover="this.style.filter='brightness(1.12)'" onmouseout="this.style.filter='none'" onclick="applyDeepReport('${c.code}')">🧠 申请「ST股票分析专家」深度分析报告 · V168+G九章式（会员免费3篇，剩 ${getMember()?(memberQuota().free):3} 篇）</button>
+    <button style="display:block;width:100%;margin-top:10px;padding:12px;border:none;border-radius:10px;background:linear-gradient(135deg,#1a5276,#2471a3);color:#fff;font-size:14px;font-weight:600;cursor:pointer;letter-spacing:0.5px" onmouseover="this.style.filter='brightness(1.12)'" onmouseout="this.style.filter='none'" onclick="applyDeepReport('${c.code}')">🧠 申请「ST摸鱼风云-V2」跟读报告（完整版）· 60分钟企微交付（会员免费3篇，剩 ${getMember()?(memberQuota().free):3} 篇）</button>
     <div class="er-member-tip">👤 会员 ${m.name||''} 专属 · ST摸鱼模型基于报告期 <b>2025年年报</b> 数据即时生成</div>
     <div class="er-disclaim">⚠️ 免责声明：本报告由ST摸鱼模型基于公开数据自动生成，"摸鱼指数"仅为壳价与保壳确定性的复合观察指标，不构成任何投资建议。数据来源：巨潮资讯网、东方财富、腾讯财经。股市有风险，投资需谨慎。</div>`;
   document.getElementById('expTitle').textContent = '🎣 ST摸鱼模型 · 摸鱼分析报告';
@@ -1162,7 +1168,7 @@ function buildFormalReport(c){
     </div>
     <div class="fr-pad">
       <div class="fr-title">${c.name}（${c.code}）<br>退市风险与保壳能力分析报告</div>
-      <div class="fr-subtitle">ST股分析专家 · 基于V2十三维评分体系</div>
+      <div class="fr-subtitle">ST摸鱼风云-V2 · 基于V2十三维评分体系</div>
       <div class="fr-meta"><div class="fr-meta-grid">
         <div class="fr-mcell"><div class="fr-mk">评级 / 总分</div><div class="fr-mv"><b style="color:${col};font-size:14px">${c.level} 级 · ${c.score} 分</b>（${LT[c.level]}）</div></div>
         <div class="fr-mcell"><div class="fr-mk">全榜排名</div><div class="fr-mv">第 ${c.rank} 名 / 共 ${UNIQUE.length} 家 ST/*ST</div></div>
@@ -1181,7 +1187,7 @@ function buildFormalReport(c){
       <div class="fr-sec"><div class="fr-sec-t">四、公告信号面（巨潮资讯网 · 近24个月）</div><div class="fr-sec-b" style="margin-bottom:6px">${sigChips}</div><div class="fr-sec-b">${sigTxt}</div></div>
       ${moyuSec}
       ${capHtml}
-      <div class="fr-disclaim">⚠️ 免责声明：本报告由ST股分析专家基于公开数据（巨潮资讯网、东方财富、腾讯财经）与V2十三维评分体系自动生成，仅供研究参考，不构成任何投资建议。评分与信号为动态数据，以最新公告为准。股市有风险，投资需谨慎。</div>
+      <div class="fr-disclaim">⚠️ 免责声明：本报告由ST摸鱼风云-V2模型基于公开数据（巨潮资讯网、东方财富、腾讯财经）与V2十三维评分体系自动生成，仅供研究参考，不构成任何投资建议。评分与信号为动态数据，以最新公告为准。股市有风险，投资需谨慎。</div>
       <div class="fr-foot">ST保壳评分系统 V2 · 保壳风云榜 &nbsp;|&nbsp; 会员：${m.name||'—'} &nbsp;|&nbsp; 生成时间：${ts} &nbsp;|&nbsp; 报告期：${REPORT_LABEL}</div>
     </div>
   </div>`;

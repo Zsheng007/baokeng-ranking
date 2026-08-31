@@ -158,7 +158,8 @@ def add_toc(doc):
     for e in (f1, it, f2, t, f3):
         run._r.append(e)
 
-def build(code, rank, moyu, cheap, total, lv, mcap, price, br, cat, note, dims, logic, risk):
+def build(code, rank, moyu, cheap, total, lv, mcap, price, br, cat, note, dims, logic, risk,
+          out_dir=BASE, report_date_str='2026年8月31日', gen_date='20260831'):
     c = by_code[code]
     name = c['name']
     doc = Document()
@@ -180,7 +181,7 @@ def build(code, rank, moyu, cheap, total, lv, mcap, price, br, cat, note, dims, 
     r = s.add_run('ST摸鱼风云-V2 · 跟读报告（详细版）'); r.font.size = Pt(15); r.font.color.rgb = RGBColor(0x1a, 0x52, 0x76)
     s2 = doc.add_paragraph(); s2.alignment = WD_ALIGN_PARAGRAPH.CENTER
     r = s2.add_run(f"摸鱼榜第 {rank} 名 ｜ 摸鱼指数 {moyu:.1f} ｜ V2保壳分 {total} ｜ {lv}级 ｜ 全榜第 {br} 名\n"
-                   f"报告日期：2026年8月31日\n"
+                   f"报告日期：{report_date_str}\n"
                    f"榜单时点：{meta.get('updated', '')}（财务报告期 {meta.get('report_date', '')}）\n"
                    f"评分模型：ST保壳评分系统V2（十三维100分制）· 榜单分数 = 报告分数")
     r.font.size = Pt(10); r.font.color.rgb = RGBColor(0x66, 0x66, 0x66)
@@ -196,10 +197,10 @@ def build(code, rank, moyu, cheap, total, lv, mcap, price, br, cat, note, dims, 
     h2(doc, '1.1 评级标准')
     para(doc, 'A级 >70（低风险·退市概率低）｜B级 50~70（中风险·保壳有希望）｜C级 30~50（高风险）｜D级 ≤30（极高风险）')
     h2(doc, '1.2 关键口径')
-    para(doc, '· 财务数据：财务报告期 ' + str(meta.get('report_date', '')) + '；公告信号窗口：近24个月巨潮公告定向采集。\n'
-              '· 行情数据：榜单生成日（2026-08-30）收盘快照。\n'
-              '· 壳价值锚定：壳基准 33.81 亿（近2年154笔实控权变更市值中位数，own口径）。\n'
-              '· 营收红线：主板≥3亿 / 双创≥1亿（扣非口径）。')
+    para(doc, f'· 财务数据：财务报告期 ' + str(meta.get('report_date', '')) + '；公告信号窗口：近24个月巨潮公告定向采集。\n'
+              f'· 行情数据：榜单生成日（{meta.get("updated", "")[:10]}）收盘快照。\n'
+              f'· 壳价值锚定：壳基准 33.81 亿（近2年154笔实控权变更市值中位数，own口径）。\n'
+              f'· 营收红线：主板≥3亿 / 双创≥1亿（扣非口径）。')
 
     # ── 二、评分总览 ──
     h1(doc, '二、评分总览')
@@ -260,18 +261,19 @@ def build(code, rank, moyu, cheap, total, lv, mcap, price, br, cat, note, dims, 
         '评分模型V2在点时回测（《ST保壳评分系统V2三年回测报告_20260830.docx》）中总分AUC≈0.53接近随机，'
         '判别力主要来自 F2重组信号(0.657) 与 C1面值距离(0.635)；B1/B2封顶机制存在选择效应，'
         '高保壳分≠一定摘帽、低保壳分≠一定退市，需结合年报原文与最新公告二次核验。',
-        '数据时点：榜单2026-08-30生成（财务报告期20251231），行情为当日快照；此后如有重大公告（立案/重组/审计更换）需重新评估。',
+        f'数据时点：榜单{meta.get("updated","")[:10]}生成（财务报告期{meta.get("report_date","")}），行情为当日快照；此后如有重大公告（立案/重组/审计更换）需重新评估。',
     ])
     para(doc, '')
     para(doc, '—— 报告完 ——', size=9)
 
-    fn = f'{BASE}\\ST摸鱼风云-V2跟读报告_{int(rank):02d}_{code}_{name.replace("*", "")}_20260831.docx'
+    fn = f'{out_dir}\\ST摸鱼风云-V2跟读报告_{int(rank):03d}_{code}_{name.replace("*", "")}_{gen_date}.docx'
     doc.save(fn)
     return fn
 
-made = []
-for code, rank, moyu, cheap, total, lv, mcap, price, br, cat, note, dims, logic, risk in TOPS:
-    fn = build(code, rank, moyu, cheap, total, lv, mcap, price, br, cat, note, dims, logic, risk)
-    made.append(fn)
-    print('已生成:', os.path.basename(fn))
-print(f'\n共 {len(made)} 份')
+if __name__ == '__main__':
+    made = []
+    for code, rank, moyu, cheap, total, lv, mcap, price, br, cat, note, dims, logic, risk in TOPS:
+        fn = build(code, rank, moyu, cheap, total, lv, mcap, price, br, cat, note, dims, logic, risk)
+        made.append(fn)
+        print('已生成:', os.path.basename(fn))
+    print(f'\n共 {len(made)} 份')
